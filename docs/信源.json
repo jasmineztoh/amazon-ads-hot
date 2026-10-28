@@ -1,0 +1,1101 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-28",
+  "purpose": "信源研究与接入建议，非 industry/sources.json 的种子配置；未启动自动监控",
+  "navigation": [
+    "全部",
+    "行业动态",
+    "教程（新人入门与进阶）",
+    "案例",
+    "工具",
+    "AI营销"
+  ],
+  "summary": {
+    "candidateEntries": 23,
+    "recommendedEntries": 9,
+    "recommendedPublisherGroups": 7,
+    "reserveEntries": 14,
+    "initialPageChecks": 24,
+    "additionalChineseIndexChecks": 1,
+    "feedChecks": 8,
+    "validFeeds": 7,
+    "detailPagesChecked": 16,
+    "detailHttp200": 16,
+    "htmlListMetadataChecked": 34,
+    "livePipelineVerified": false
+  },
+  "sources": [
+    {
+      "id": "amazon-ads-updates",
+      "name": "Amazon Ads 更新",
+      "url": "https://advertising.amazon.com/en-us/resources/whats-new",
+      "publisherGroup": "amazon",
+      "recommendation": "recommended",
+      "role": "官方更新",
+      "sections": [
+        "行业动态",
+        "工具",
+        "AI营销"
+      ],
+      "note": "动态列表需适配；不能只抓置顶卡片",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:44.110Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "Discover new releases from Amazon Ads | Amazon Ads",
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      }
+    },
+    {
+      "id": "amazon-seller-blog",
+      "name": "Amazon 卖家博客",
+      "url": "https://sell.amazon.com/blog",
+      "publisherGroup": "amazon",
+      "recommendation": "recommended",
+      "role": "官方营销与入门指南",
+      "sections": [
+        "行业动态",
+        "教程",
+        "案例",
+        "AI营销"
+      ],
+      "note": "过滤物流、一般开店运营与其他无关内容",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:43.333Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "Amazon Selling Partner Blog | Sell on Amazonarrow_outwardarrow_outwardarrow_outwardarrow_outwardarrow_outwardarrow_outwardarrow_outwardarrow_outwardarrow_outwardarrow_outward",
+        "feedChecks": [],
+        "htmlListCheck": {
+          "itemCount": 9,
+          "itemsWithDate": 9,
+          "latestObservedPublishedAt": "Oct 20, 2026"
+        }
+      },
+      "readingDraft": {
+        "kind": "web_list",
+        "config": {
+          "url": "https://sell.amazon.com/blog",
+          "itemSelector": ".PagePromoC, .PagePromoB",
+          "titleSelector": ".PagePromo-title",
+          "linkSelector": ".PagePromo-title a",
+          "publishedAtSelector": ".PagePromo-date",
+          "parseMode": "html"
+        },
+        "status": "已在本次保存的 HTML 中验证标题、链接、日期；尚未经过框架预览、调度与入库验收"
+      }
+    },
+    {
+      "id": "amazon-ads-library",
+      "name": "Amazon Ads 资料库",
+      "url": "https://advertising.amazon.com/en-us/resources/library",
+      "publisherGroup": "amazon",
+      "recommendation": "recommended",
+      "role": "官方案例与专家文章",
+      "sections": [
+        "行业动态",
+        "教程",
+        "案例",
+        "AI营销"
+      ],
+      "note": "动态列表需适配，案例公开结果为来源自述",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:44.177Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "洞见 - 广告案例研究、窍门和资源 | 亚马逊广告",
+        "feedChecks": [],
+        "htmlListCheck": null,
+        "englishVariant": {
+          "url": "https://advertising.amazon.com/en-us/resources/library",
+          "httpStatus": 200
+        }
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      }
+    },
+    {
+      "id": "adbadger",
+      "name": "Ad Badger",
+      "url": "https://www.adbadger.com/blog/",
+      "publisherGroup": "adbadger",
+      "recommendation": "recommended",
+      "role": "广告教学与节目",
+      "sections": [
+        "教程",
+        "工具",
+        "AI营销"
+      ],
+      "note": "RSS 摘要不等于完整节目文字，长教程再取详情",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:43.715Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "Ad Badger Blog - Amazon PPC Strategies & Techniques | Ad Badger",
+        "feedChecks": [
+          {
+            "url": "https://www.adbadger.com/feed/",
+            "httpStatus": 200,
+            "format": "RSS",
+            "itemCount": 6,
+            "latestObservedPublishedAt": "Fri, 23 Oct 2026 14:00:00 +0000",
+            "fullContentPresentInLatest": false,
+            "error": null
+          }
+        ],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "rss",
+        "config": {
+          "feedUrl": "https://www.adbadger.com/feed/"
+        },
+        "status": "本机获取与 RSS/Atom 解析成功；尚未经过框架预览、调度与入库验收"
+      }
+    },
+    {
+      "id": "my-amazon-guy",
+      "name": "My Amazon Guy",
+      "url": "https://myamazonguy.com/",
+      "publisherGroup": "my-amazon-guy",
+      "recommendation": "recommended",
+      "role": "商品页、搜索与广告实操",
+      "sections": [
+        "教程",
+        "案例",
+        "AI营销"
+      ],
+      "note": "排除机构榜单和无关运营；机制判断注明经验性质",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:47.111Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "My Amazon Guy: Full-Service Amazon Growth Agency",
+        "feedChecks": [
+          {
+            "url": "https://myamazonguy.com/feed/",
+            "httpStatus": 200,
+            "format": "RSS",
+            "itemCount": 10,
+            "latestObservedPublishedAt": "Mon, 26 Oct 2026 19:59:00 +0000",
+            "fullContentPresentInLatest": true,
+            "error": null
+          }
+        ],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "rss",
+        "config": {
+          "feedUrl": "https://myamazonguy.com/feed/"
+        },
+        "status": "本机获取与 RSS/Atom 解析成功；尚未经过框架预览、调度与入库验收"
+      }
+    },
+    {
+      "id": "intentwise",
+      "name": "Intentwise",
+      "url": "https://www.intentwise.com/blog",
+      "publisherGroup": "intentwise",
+      "recommendation": "recommended",
+      "role": "进阶教程与 AI 工作流",
+      "sections": [
+        "教程",
+        "案例",
+        "工具",
+        "AI营销"
+      ],
+      "note": "过滤其他平台与自我宣传，厂商案例注明自述",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:45.752Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "Amazon & Retail Media Blog | Intentwise",
+        "feedChecks": [],
+        "htmlListCheck": {
+          "itemCount": 13,
+          "itemsWithDate": 13,
+          "latestObservedPublishedAt": "October 26, 2026"
+        }
+      },
+      "readingDraft": {
+        "kind": "web_list",
+        "config": {
+          "url": "https://www.intentwise.com/blog",
+          "itemSelector": ".n-article_wrap, .blog_feature_card",
+          "titleSelector": ".blog-card-title, h2",
+          "linkSelector": "a[href^=\"/blog/\"]",
+          "publishedAtSelector": ".n-text-12.no-wrap-span, .n-16-text.is-white",
+          "parseMode": "html"
+        },
+        "status": "已在本次保存的 HTML 中验证标题、链接、日期；尚未经过框架预览、调度与入库验收"
+      }
+    },
+    {
+      "id": "helium10",
+      "name": "Helium 10 博客",
+      "url": "https://www.helium10.com/blog/",
+      "publisherGroup": "pacvue",
+      "recommendation": "recommended",
+      "role": "入门、工具与 AI 教学",
+      "sections": [
+        "教程",
+        "案例",
+        "工具",
+        "AI营销"
+      ],
+      "note": "RSS 超时，先走网页；排除选品、其他平台和纯促销",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:46.134Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "The Best Blog for Amazon FBA Sellers | Helium 10",
+        "feedChecks": [
+          {
+            "url": "https://www.helium10.com/feed/",
+            "httpStatus": null,
+            "format": null,
+            "itemCount": null,
+            "latestObservedPublishedAt": null,
+            "fullContentPresentInLatest": null,
+            "error": "The operation was aborted due to timeout"
+          }
+        ],
+        "htmlListCheck": {
+          "itemCount": 12,
+          "itemsWithDate": 12,
+          "latestObservedPublishedAt": "October 27, 2026"
+        }
+      },
+      "readingDraft": {
+        "kind": "web_list",
+        "config": {
+          "url": "https://www.helium10.com/blog/",
+          "itemSelector": ".POSTS-GRID__grid a.grid-item",
+          "titleSelector": "h3",
+          "linkSelector": ".POSTS-GRID__grid a.grid-item",
+          "publishedAtSelector": ".published",
+          "parseMode": "html"
+        },
+        "status": "已在本次保存的 HTML 中验证标题、链接、日期；尚未经过框架预览、调度与入库验收"
+      },
+      "ownershipEvidence": "https://www.helium10.com/about/"
+    },
+    {
+      "id": "marketplace-pulse",
+      "name": "Marketplace Pulse",
+      "url": "https://www.marketplacepulse.com/articles",
+      "publisherGroup": "marketplace-pulse",
+      "recommendation": "recommended",
+      "role": "研究与行业观察",
+      "sections": [
+        "行业动态",
+        "AI营销"
+      ],
+      "note": "只保留直接影响 Amazon 营销的内容，低频与旧文不冒充新热点",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:47.321Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "Articles - Marketplace Pulse",
+        "feedChecks": [
+          {
+            "url": "https://www.marketplacepulse.com/articles/recent.atom",
+            "httpStatus": 200,
+            "format": "Atom",
+            "itemCount": 20,
+            "latestObservedPublishedAt": "2026-10-09T13:45:00Z",
+            "fullContentPresentInLatest": true,
+            "error": null
+          }
+        ],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "rss",
+        "config": {
+          "feedUrl": "https://www.marketplacepulse.com/articles/recent.atom"
+        },
+        "status": "本机获取与 RSS/Atom 解析成功；尚未经过框架预览、调度与入库验收"
+      }
+    },
+    {
+      "id": "adbrew",
+      "name": "Adbrew",
+      "url": "https://adbrew.io/blog",
+      "publisherGroup": "adbrew",
+      "recommendation": "recommended",
+      "role": "工具说明与广告实践",
+      "sections": [
+        "行业动态",
+        "教程",
+        "案例",
+        "工具",
+        "AI营销"
+      ],
+      "note": "响应式卡片重复，标题需详情校验；厂商自评不当中立评测",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:46.271Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "Adbrew Blogs",
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "web_list",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      }
+    },
+    {
+      "id": "seller-sessions",
+      "name": "Seller Sessions",
+      "url": "https://sellersessions.com/episodes/",
+      "publisherGroup": "seller-sessions",
+      "recommendation": "reserve",
+      "role": "从业者深度文章与节目讲义",
+      "sections": [
+        "教程",
+        "案例",
+        "AI营销"
+      ],
+      "note": "使用节目专用 RSS；只选营销相关主题，普通博客流较旧",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:45.592Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "Podcast Episodes Archive - Seller Sessions",
+        "feedChecks": [
+          {
+            "url": "https://sellersessions.com/feed/",
+            "httpStatus": 200,
+            "format": "RSS",
+            "itemCount": 10,
+            "latestObservedPublishedAt": "Thu, 05 Feb 2026 15:00:49 +0000",
+            "fullContentPresentInLatest": true,
+            "error": null
+          },
+          {
+            "url": "https://sellersessions.com/episodes/feed/",
+            "httpStatus": 200,
+            "format": "RSS",
+            "itemCount": 8,
+            "latestObservedPublishedAt": "Thu, 15 Oct 2026 05:34:00 +0000",
+            "fullContentPresentInLatest": true,
+            "error": null
+          }
+        ],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "rss",
+        "config": {
+          "feedUrl": "https://sellersessions.com/episodes/feed/"
+        },
+        "status": "本机获取与 RSS/Atom 解析成功；尚未经过框架预览、调度与入库验收"
+      }
+    },
+    {
+      "id": "ppc-ninja",
+      "name": "Ritu Java / AI for E-Commerce",
+      "url": "https://www.ppc-ninja.com/",
+      "publisherGroup": "ppc-ninja",
+      "recommendation": "reserve",
+      "role": "Ritu Java 个人 Newsletter",
+      "sections": [
+        "教程",
+        "AI营销"
+      ],
+      "note": "网页工具可读，本机 403；通用 AI 效率话题按营销价值再筛",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:12:09.521Z",
+        "pageHttpStatus": 403,
+        "pageError": null,
+        "observedPageTitle": "Just a moment...",
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      }
+    },
+    {
+      "id": "pacvue",
+      "name": "Pacvue",
+      "url": "https://pacvue.com/blog/",
+      "publisherGroup": "pacvue",
+      "recommendation": "reserve",
+      "role": "研究与工具更新",
+      "sections": [
+        "行业动态",
+        "工具",
+        "AI营销"
+      ],
+      "note": "本机 403，先人工选文",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:47.789Z",
+        "pageHttpStatus": 403,
+        "pageError": null,
+        "observedPageTitle": "Just a moment...",
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      },
+      "ownershipEvidence": "https://www.helium10.com/about/"
+    },
+    {
+      "id": "pacvue-cases",
+      "name": "Pacvue 案例",
+      "url": "https://pacvue.com/customerstories/",
+      "publisherGroup": "pacvue",
+      "recommendation": "reserve",
+      "role": "厂商案例",
+      "sections": [
+        "案例",
+        "工具",
+        "AI营销"
+      ],
+      "note": "本机 403；效果为厂商自述",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:47.887Z",
+        "pageHttpStatus": 403,
+        "pageError": null,
+        "observedPageTitle": "Just a moment...",
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      },
+      "ownershipEvidence": "https://www.helium10.com/about/"
+    },
+    {
+      "id": "ampm",
+      "name": "AM/PM Podcast",
+      "url": "https://ampmpodcast.podbean.com/",
+      "publisherGroup": "pacvue",
+      "recommendation": "reserve",
+      "role": "实操访谈",
+      "sections": [
+        "教程",
+        "案例",
+        "AI营销"
+      ],
+      "note": "网页工具可读，本机请求失败；优先从 Helium 10 文字页补充",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:55.835Z",
+        "pageHttpStatus": null,
+        "pageError": "fetch failed",
+        "observedPageTitle": null,
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      },
+      "ownershipEvidence": "https://www.helium10.com/about/"
+    },
+    {
+      "id": "jungle-scout",
+      "name": "Jungle Scout",
+      "url": "https://www.junglescout.com/resources/articles/",
+      "publisherGroup": "jungle-scout",
+      "recommendation": "reserve",
+      "role": "工具与市场研究",
+      "sections": [
+        "教程",
+        "工具",
+        "AI营销"
+      ],
+      "note": "与首批工具商内容重复，保留新增数据或方法",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:49.056Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "Best Ecommerce Blog for Amazon FBA Sellers - Jungle Scout",
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      }
+    },
+    {
+      "id": "smartscout",
+      "name": "SmartScout",
+      "url": "https://www.smartscout.com/blog",
+      "publisherGroup": "smartscout",
+      "recommendation": "reserve",
+      "role": "数据与工具内容",
+      "sections": [
+        "行业动态",
+        "工具",
+        "AI营销"
+      ],
+      "note": "列表中榜单与替代品内容较多，先按内容质量挑选",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:48.833Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "SmartScout Blog — Amazon FBA Insights, Tips & Data Reports",
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      }
+    },
+    {
+      "id": "perpetua",
+      "name": "Perpetua",
+      "url": "https://perpetua.io/blog/",
+      "publisherGroup": "perpetua",
+      "recommendation": "reserve",
+      "role": "工具消息与案例",
+      "sections": [
+        "行业动态",
+        "教程",
+        "案例",
+        "工具"
+      ],
+      "note": "网页可读，部分推荐文章较旧，不能按置顶判新鲜",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:50.012Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "eCommerce Advertising Blog | Perpetua",
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      }
+    },
+    {
+      "id": "junglr",
+      "name": "Junglr",
+      "url": "https://junglr.com/blog/",
+      "publisherGroup": "junglr",
+      "recommendation": "reserve",
+      "role": "专家机构博客",
+      "sections": [
+        "教程"
+      ],
+      "note": "RSS 最新为 4 月 7 日，包含下载和预约条目；不优先用于更新",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:49.690Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "Blog - Junglr",
+        "feedChecks": [
+          {
+            "url": "https://junglr.com/feed/",
+            "httpStatus": 200,
+            "format": "RSS",
+            "itemCount": 3,
+            "latestObservedPublishedAt": "Tue, 07 Apr 2026 13:40:06 +0000",
+            "fullContentPresentInLatest": true,
+            "error": null
+          }
+        ],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "rss",
+        "config": {
+          "feedUrl": "https://junglr.com/feed/"
+        },
+        "status": "本机获取与 RSS/Atom 解析成功；尚未经过框架预览、调度与入库验收"
+      }
+    },
+    {
+      "id": "ad-advance",
+      "name": "Ad Advance",
+      "url": "https://adadvance.com/blog/",
+      "publisherGroup": "ad-advance",
+      "recommendation": "reserve",
+      "role": "进阶广告文章",
+      "sections": [
+        "行业动态",
+        "教程",
+        "案例"
+      ],
+      "note": "列表最近有日期的条目为 4 月 9 日，保留历史教学样本",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:12:12.998Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "Amazon Advertising Insights and Articles - Ad Advance",
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      }
+    },
+    {
+      "id": "amazon-retail-news",
+      "name": "About Amazon 零售消息",
+      "url": "https://www.aboutamazon.com/news/retail",
+      "publisherGroup": "amazon",
+      "recommendation": "reserve",
+      "role": "Amazon 零售变化",
+      "sections": [
+        "行业动态",
+        "AI营销"
+      ],
+      "note": "全站 RSS 仅 10 条且包含大量非营销业务；需针对零售主题读取",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:41.543Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "Retail",
+        "feedChecks": [
+          {
+            "url": "https://www.aboutamazon.com/rss/feed.rss",
+            "httpStatus": 200,
+            "format": "RSS",
+            "itemCount": 10,
+            "latestObservedPublishedAt": "Tue, 27 Oct 2026 22:42:00 GMT",
+            "fullContentPresentInLatest": false,
+            "error": null
+          }
+        ],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "rss",
+        "config": {
+          "feedUrl": "https://www.aboutamazon.com/rss/feed.rss"
+        },
+        "status": "本机获取与 RSS/Atom 解析成功；尚未经过框架预览、调度与入库验收"
+      }
+    },
+    {
+      "id": "seller-forum-news",
+      "name": "Amazon Seller Forums 新闻入口",
+      "url": "https://sellercentral.amazon.com/forums/c/news/2",
+      "publisherGroup": "amazon-forum-mixed",
+      "recommendation": "reserve",
+      "role": "官方公告补充与社区线索",
+      "sections": [
+        "行业动态",
+        "教程"
+      ],
+      "note": "公告与用户讨论混合，必须核对发布者身份；不能整站当作官方",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:12:09.901Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "AmazonSeller Forums",
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      }
+    },
+    {
+      "id": "amazon-cn-news",
+      "name": "亚马逊全球开店中文新闻",
+      "url": "https://gs.amazon.cn/news-center",
+      "publisherGroup": "amazon",
+      "recommendation": "reserve",
+      "role": "中文官方消息",
+      "sections": [
+        "行业动态",
+        "案例",
+        "AI营销"
+      ],
+      "note": "已定位公开新闻索引；供应链与大会内容较多，按营销价值选取",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:12:09.222Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "亚马逊全球开店中国重磅发布“下一代跨境链“，并宣布2026年四大业务战略重点arrow_outwardarrow_outwardarrow_outwardarrow_outward",
+        "feedChecks": [],
+        "htmlListCheck": null,
+        "indexFollowup": {
+          "httpStatus": 200,
+          "finalUrl": "https://globalselling.amazon.com/news-center",
+          "articleLinksObserved": 12,
+          "latestObservedPublishedDate": "2026-10-15",
+          "note": "仅为索引观察，不代表已验证全部文章"
+        }
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      }
+    },
+    {
+      "id": "sellersprite",
+      "name": "卖家精灵",
+      "url": "https://cn.sellersprite.com/v3/knowledge",
+      "publisherGroup": "sellersprite",
+      "recommendation": "reserve",
+      "role": "中文工具与教学候选",
+      "sections": [
+        "教程",
+        "工具",
+        "AI营销"
+      ],
+      "note": "列表本机为空外壳；课程报名介绍不等于可用的课程正文",
+      "productionEnabled": false,
+      "verification": {
+        "checkedAt": "2026-10-28T04:08:48.006Z",
+        "pageHttpStatus": 200,
+        "pageError": null,
+        "observedPageTitle": "SellerSprite",
+        "feedChecks": [],
+        "htmlListCheck": null
+      },
+      "readingDraft": {
+        "kind": "pending",
+        "config": null,
+        "status": "需进一步验证采集路径"
+      }
+    }
+  ],
+  "samples": [
+    {
+      "sourceId": "amazon-ads-updates",
+      "topic": "按地区寻找品牌增长机会的新功能",
+      "url": "https://advertising.amazon.com/en-ca/resources/whats-new/geographic-insights-activation-pre-built-indices",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:41.915Z",
+      "publishedEvidence": [
+        {
+          "key": "datePublished",
+          "value": "2026-10-02"
+        }
+      ],
+      "observedReadableChars": 1408,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "amazon-ads-library",
+      "topic": "WD-40 的 AI 视频推广案例",
+      "url": "https://advertising.amazon.com/en-gb/library/case-studies/wd-40-and-bizon/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:41.915Z",
+      "publishedEvidence": [
+        {
+          "key": "datePublished",
+          "value": "2026-06-23"
+        }
+      ],
+      "observedReadableChars": 1058,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "amazon-ads-updates",
+      "topic": "DVA+ 新广告活动与开放条件",
+      "url": "https://advertising.amazon.com/resources/whats-new/dva-plus-display-video-audio-campaigns",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:41.904Z",
+      "publishedEvidence": [
+        {
+          "key": "datePublished",
+          "value": "2026-09-29"
+        }
+      ],
+      "observedReadableChars": 3525,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "adbadger",
+      "topic": "使用 AI 技能处理广告工作的节目说明",
+      "url": "https://www.adbadger.com/blog/free-ai-skills-find-your-amazon-ppc-wasted-spend-n-grams-the-ppc-den-podcast/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:43.571Z",
+      "publishedEvidence": [
+        {
+          "key": "article:published_time",
+          "value": "2026-10-23T14:00:00+00:00"
+        },
+        {
+          "key": "datePublished",
+          "value": "2026-10-23T14:00:00+00:00"
+        },
+        {
+          "key": "datePublished",
+          "value": "2026-10-23T14:00:00+00:00"
+        }
+      ],
+      "observedReadableChars": 833,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "adbadger",
+      "topic": "广告预算的设置与分配教程",
+      "url": "https://www.adbadger.com/blog/amazon-ppc-education/amazon-ppc-budgets-the-how-to-guide/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:43.772Z",
+      "publishedEvidence": [
+        {
+          "key": "article:published_time",
+          "value": "2026-10-20T16:35:25+00:00"
+        },
+        {
+          "key": "datePublished",
+          "value": "2026-10-20T16:35:25+00:00"
+        },
+        {
+          "key": "datePublished",
+          "value": "2026-10-20T16:35:25+00:00"
+        }
+      ],
+      "observedReadableChars": 12762,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "amazon-seller-blog",
+      "topic": "为不同顾客设置优惠的官方教程",
+      "url": "https://sell.amazon.com/blog/brand-tailored-promotions",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:43.552Z",
+      "publishedEvidence": [
+        {
+          "key": "article:published_time",
+          "value": "2026-01-20T13:15:24.525"
+        }
+      ],
+      "observedReadableChars": 10569,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "intentwise",
+      "topic": "把 Amazon 工作方法写成 Claude 技能",
+      "url": "https://www.intentwise.com/blog/4-claude-skills-for-your-amazon-business",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:49.364Z",
+      "publishedEvidence": [
+        {
+          "key": "datePublished",
+          "value": "2026-10-19T17:00:00.000Z"
+        }
+      ],
+      "observedReadableChars": 5208,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "my-amazon-guy",
+      "topic": "服务商对评论与搜索表现的经验解释",
+      "url": "https://myamazonguy.com/seo/amazon-review-strategy-to-improve-search-ranking/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:47.544Z",
+      "publishedEvidence": [
+        {
+          "key": "datePublished",
+          "value": "2026-10-21T18:04:00-04:00"
+        }
+      ],
+      "observedReadableChars": 9642,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "intentwise",
+      "topic": "三家公司使用 Claude 的厂商案例",
+      "url": "https://www.intentwise.com/blog/how-3-businesses-sped-up-amazon-analytics-with-claude",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:50.261Z",
+      "publishedEvidence": [
+        {
+          "key": "datePublished",
+          "value": "2026-09-08T17:00:00.000Z"
+        }
+      ],
+      "observedReadableChars": 5560,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "my-amazon-guy",
+      "topic": "黑五广告预算的分配方法",
+      "url": "https://myamazonguy.com/advertising/cyber-five-budget-for-sponsored-ads-and-dsp/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:48.108Z",
+      "publishedEvidence": [
+        {
+          "key": "datePublished",
+          "value": "2026-10-19T19:01:00-04:00"
+        }
+      ],
+      "observedReadableChars": 10331,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "helium10",
+      "topic": "AI 写商品内容时如何减少编造",
+      "url": "https://www.helium10.com/blog/how-to-prompt-ai-and-avoid-hallucinations-for-amazon-listings/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:50.812Z",
+      "publishedEvidence": [
+        {
+          "key": "article:published_time",
+          "value": "2026-10-26T22:28:18+00:00"
+        },
+        {
+          "key": "datePublished",
+          "value": "2026-10-26T22:28:18+00:00"
+        },
+        {
+          "key": "datePublished",
+          "value": "2026-10-26T22:28:18+00:00"
+        },
+        {
+          "key": "datePublished",
+          "value": "2026-09-21T14:03:39+0000"
+        }
+      ],
+      "observedReadableChars": 11044,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "helium10",
+      "topic": "服务商使用 AI 关键词工具的厂商案例",
+      "url": "https://www.helium10.com/blog/reduce-keyword-analysis-time-with-our-new-agent-helium/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:50.932Z",
+      "publishedEvidence": [
+        {
+          "key": "article:published_time",
+          "value": "2026-10-21T17:29:33+00:00"
+        },
+        {
+          "key": "datePublished",
+          "value": "2026-10-21T17:29:33+00:00"
+        },
+        {
+          "key": "datePublished",
+          "value": "2026-10-21T17:29:33+00:00"
+        },
+        {
+          "key": "datePublished",
+          "value": "2024-03-05T13:04:47"
+        }
+      ],
+      "observedReadableChars": 3923,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "adbrew",
+      "topic": "广告 MCP 能力与操作记录的厂商解释",
+      "url": "https://adbrew.io/blog/not-all-amazon-ads-mcps-are-built-equal",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:50.978Z",
+      "publishedEvidence": [],
+      "observedReadableChars": 5879,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "amazon-seller-blog",
+      "topic": "品牌分析的官方入门指南",
+      "url": "https://sell.amazon.com/blog/brand-analytics",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:41.916Z",
+      "publishedEvidence": [
+        {
+          "key": "article:published_time",
+          "value": "2026-10-20T12:06:00"
+        }
+      ],
+      "observedReadableChars": 12778,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "marketplace-pulse",
+      "topic": "Amazon AI 与搜索排名的研究观察",
+      "url": "https://www.marketplacepulse.com/articles/amazons-ai-doesnt-read-the-rankings",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:52.496Z",
+      "publishedEvidence": [
+        {
+          "key": "article:published_time",
+          "value": "2026-07-16T14:30:00"
+        }
+      ],
+      "observedReadableChars": 3456,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    },
+    {
+      "sourceId": "seller-sessions",
+      "topic": "卖家自动化维护成本的节目讲义",
+      "url": "https://sellersessions.com/episode/10-hidden-costs-automating-amazon-fba-business/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-28T04:14:53.122Z",
+      "publishedEvidence": [
+        {
+          "key": "datePublished",
+          "value": "2026-10-15T05:34:00+00:00"
+        },
+        {
+          "key": "datePublished",
+          "value": "2026-10-15T05:34:00+00:00"
+        }
+      ],
+      "observedReadableChars": 4516,
+      "note": "HTTP 成功、日期字段与文字片段检查；字符数不证明正文完整，未运行正式精选与发布"
+    }
+  ],
+  "safeguards": [
+    "分类入口可以交叉，不用主题边界淘汰有价值内容",
+    "旧文、修改日期、置顶顺序不当作今日新消息",
+    "厂商研究与案例注明来源和适用条件",
+    "同主体多入口不能重复计算独立来源；论坛用户不能算作 Amazon 官方",
+    "默认仅发布摘要与原文链接；原文有全文不代表取得转载许可"
+  ]
+}
