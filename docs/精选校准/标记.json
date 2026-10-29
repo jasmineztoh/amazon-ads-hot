@@ -1,5 +1,621 @@
 {
   "version": "2026-10-29-v1",
-  "status": "等待用户打标",
-  "labels": []
+  "status": "开发集36篇收录标注完成；验证集12篇未标",
+  "completedAt": "2026-10-29",
+  "meaning": "仅确认36篇允许收录；未标首页优先级、精选分值或事实正确性",
+  "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容",
+  "labels": [
+    {
+      "caseId": "article-001",
+      "number": "001",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-002",
+      "number": "002",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-003",
+      "number": "003",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-004",
+      "number": "004",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-005",
+      "number": "005",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-006",
+      "number": "006",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-007",
+      "number": "007",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-008",
+      "number": "008",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-009",
+      "number": "009",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-010",
+      "number": "010",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-011",
+      "number": "011",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-012",
+      "number": "012",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-013",
+      "number": "013",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-014",
+      "number": "014",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-015",
+      "number": "015",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-016",
+      "number": "016",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-017",
+      "number": "017",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-018",
+      "number": "018",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-019",
+      "number": "019",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-020",
+      "number": "020",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-021",
+      "number": "021",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-022",
+      "number": "022",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-023",
+      "number": "023",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-024",
+      "number": "024",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-025",
+      "number": "025",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-026",
+      "number": "026",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-027",
+      "number": "027",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-028",
+      "number": "028",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-029",
+      "number": "029",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要标",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": "原文保留“要标”；结合用户对36篇全部通过的明确确认，归一为允许收录。"
+    },
+    {
+      "caseId": "article-030",
+      "number": "030",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-031",
+      "number": "031",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-032",
+      "number": "032",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-033",
+      "number": "033",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-034",
+      "number": "034",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-035",
+      "number": "035",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    },
+    {
+      "caseId": "article-036",
+      "number": "036",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "f972856af332103eb1ca21c82b8a87edcef426835c340075526850755b2dba75",
+        "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
+      },
+      "normalization": null
+    }
+  ]
 }

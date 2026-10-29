@@ -1,7 +1,7 @@
 {
   "version": "2026-10-29-v1",
-  "status": "等待用户打标，不是金标集",
-  "scope": "Amazon营销、流量与相关AI内容；判断文章本身是否值得本站推荐",
+  "status": "36篇用户允许收录；没有拒收例；尚未标首页优先级",
+  "scope": "本轮用户明确确认的收录许可；不得混作首页精选金标",
   "labelOptions": [
     "要",
     "不要",
@@ -49,9 +49,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -93,9 +97,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -137,9 +145,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -181,9 +193,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -225,9 +241,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -269,9 +289,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -313,9 +337,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -357,9 +385,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -401,9 +433,13 @@
         "usedPriorSnapshot": true
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -445,9 +481,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -489,9 +529,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -533,9 +577,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -577,9 +625,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -621,9 +673,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -665,9 +721,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -709,9 +769,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -753,9 +817,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -797,9 +865,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -841,9 +913,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -885,9 +961,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -929,9 +1009,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -973,9 +1057,13 @@
         "usedPriorSnapshot": true
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1017,9 +1105,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1061,9 +1153,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1105,9 +1201,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1149,9 +1249,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1193,9 +1297,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1237,9 +1345,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1281,9 +1393,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要标",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1325,9 +1441,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1369,9 +1489,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1413,9 +1537,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1457,9 +1585,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1501,9 +1633,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1545,9 +1681,13 @@
         "usedPriorSnapshot": true
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -1589,9 +1729,13 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     }
   ]

@@ -1,0 +1,730 @@
+{
+  "version": "2026-10-29-v1",
+  "status": "36篇人工允许收录的静态内容池；尚未导入应用数据库或发布网站",
+  "approvedBy": "用户",
+  "approvedAt": "2026-10-29",
+  "approvalScope": "collection",
+  "total": 36,
+  "items": [
+    {
+      "id": "article-001",
+      "title": "团队怎样用AI制作Amazon商品图",
+      "sourceName": "BellaVix",
+      "sourceId": "source-120",
+      "url": "https://www.bellavix.com/ai-amazon-listing-images-how-ai-is-changing-our-creative-process/",
+      "publishedAt": "2026-10-13",
+      "updatedAt": null,
+      "format": "实践文章",
+      "summary": "BellaVix分享团队用AI制作Amazon商品图的过程，以一瓶芥末酱的白底照片生成野餐场景为例。",
+      "points": [
+        "第一版出现标签字母错误、净含量模糊、背景拥挤等问题，文章逐项展示并说明修改方向。",
+        "后续提示词要求保留原商品外形和标签，重新安排光线、场景与留给文案的空间。",
+        "文中同时介绍团队使用的工具，最后提供自家设计服务入口。"
+      ],
+      "materialNote": "文章带制作前后图片；下述摘要不能代替查看图片细节。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-002",
+      "title": "ACOS是什么，怎样结合利润和投放目标理解它",
+      "sourceName": "Adbrew",
+      "sourceId": "source-008",
+      "url": "https://adbrew.io/blog/reduce-acos-on-amazon",
+      "publishedAt": "2026-10-27",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "Adbrew从ACOS的含义和计算开始，解释广告投入、商品利润与投放目标之间的关系。",
+      "points": [
+        "用商品售价、点击成本和转化率的算例，分别说明哪些变化会影响ACOS。",
+        "讨论成熟商品、新品、品牌词和清库存时，目标为何可能不同。",
+        "给出关键词、广告位和页面方面的调整思路，并链接到其它教程及自家产品。"
+      ],
+      "materialNote": "是一篇基础概念加操作建议的长文；举例数值不代表所有账户。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-003",
+      "title": "Amazon卖家的10种AI工具，各自解决什么工作",
+      "sourceName": "SmartScout",
+      "sourceId": "source-014",
+      "url": "https://www.smartscout.com/blog/ai-tools-for-amazon-sellers",
+      "publishedAt": "2026-10-27",
+      "updatedAt": null,
+      "format": "工具清单",
+      "summary": "SmartScout按工作用途列出10种AI工具，覆盖商品文案、图片、关键词、广告和AI搜索可见度。",
+      "points": [
+        "把SmartScout自家工具列在第一项，随后介绍Amazon原生工具以及Helium 10、Photoroom、Canva等。",
+        "每项说明用途及使用场景，不是统一条件下的横向实测。",
+        "文章区分工具自己的评分、AI回答中的出现次数与实际销售结果，并提醒功能取决于套餐和账户资格。"
+      ],
+      "materialNote": "工具厂商写的工具清单，包含自家产品。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-004",
+      "title": "Amazon把其它平台的经营接入Seller Central",
+      "sourceName": "Marketplace Pulse",
+      "sourceId": "source-007",
+      "url": "http://www.marketplacepulse.com/articles/amazon-opens-seller-central-to-rival-marketplaces",
+      "publishedAt": "2026-09-24",
+      "updatedAt": null,
+      "format": "行业报道",
+      "summary": "Marketplace Pulse报道，Amazon在Accelerate会议宣布将其它渠道的部分经营工作接入Seller Central。",
+      "points": [
+        "据报道，卖家可在一个工作区处理部分eBay、Shopify、TikTok Shop和Walmart商品、订单及盈利信息。",
+        "功能逐步向美国卖家开放，报道还梳理了Amazon过去几年的多渠道举措。",
+        "作者结合卖家调查讨论：经营更方便的同时，卖家也可能更加依赖Amazon的软件。"
+      ],
+      "materialNote": "包含新闻事实和记者分析，功能范围应以官方公告及账户实际开放为准。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-005",
+      "title": "两款AI商品图工具怎样比较额度、修改次数和功能",
+      "sourceName": "AMZ One Step",
+      "sourceId": "source-067",
+      "url": "https://amzonestep.com/blog/pixii-alternative/",
+      "publishedAt": "2026-10-07",
+      "updatedAt": null,
+      "format": "工具比较",
+      "summary": "AMZ One Step比较Pixii与自家ListingOptimization.ai，重点放在商品图修改空间、收费方式和团队使用。",
+      "points": [
+        "按文章所列套餐，计算积分制下每个商品能够分到多少图片生成或修改次数。",
+        "对比按积分与按ASIN计费，以及A+内容、API和团队席位等功能。",
+        "作者主张多次修改和测试比一次生成更重要，并引导读者使用自家产品。"
+      ],
+      "materialNote": "比较来自竞争产品的一方；文内报价是文章当时的口径。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-006",
+      "title": "零食品牌Wilde怎样结合零售渠道、广告和AI",
+      "sourceName": "Retailgentic / Scot Wingo",
+      "sourceId": "source-094",
+      "url": "https://www.retailgentic.com/p/the-shelf-is-a-zero-sum-game-wilde",
+      "publishedAt": "2026-10-15",
+      "updatedAt": null,
+      "format": "节目文字介绍",
+      "summary": "Retailgentic介绍与Wilde Brands电商负责人Justin Bomberowitz的访谈，谈零食品牌的渠道、广告和AI应用。",
+      "points": [
+        "涉及Costco上架、TikTok直播、Walmart配送和零售促销，不只讨论Amazon。",
+        "嘉宾举例，用Amazon销售的邮编分布观察不同地区的口味偏好，再用AI快速制作对应创意。",
+        "还介绍统一多渠道数据、监控促销价格并据此决定广告动作的做法。"
+      ],
+      "materialNote": "目前可读材料是约4000英文字符的节目介绍和要点，不是完整逐字稿；做法来自嘉宾自述。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-007",
+      "title": "A+内容怎样回答买家犹豫的问题",
+      "sourceName": "SellerSprite / 卖家精灵",
+      "sourceId": "source-060",
+      "url": "https://www.sellersprite.com/en/blog/amazon-a-content-and-enhanced-brand-content",
+      "publishedAt": "2026-10-28",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "卖家精灵讲A+内容的不同形式，以及怎样围绕买家尚未解决的问题安排页面。",
+      "points": [
+        "区分基础A+、品牌故事与高级A+的用途、模块和资格。",
+        "建议从商品事实与买家疑问出发安排内容，检查手机端文字和图片是否可读。",
+        "讨论原生文字、图片内文案、内容规范和符合条件的A/B测试，未把页面美观直接当成销售提升。"
+      ],
+      "materialNote": "文章很长，同时包含官方功能解释与作者设计建议。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-008",
+      "title": "一个Amazon品牌怎样把AMC用于广告和自然销售",
+      "sourceName": "Scale Insights",
+      "sourceId": "source-111",
+      "url": "https://blog.scaleinsights.com/100m-brand-amc-targeting-to-grow-organic-sales",
+      "publishedAt": "2026-09-01",
+      "updatedAt": null,
+      "format": "客户案例",
+      "summary": "Scale Insights分享一个规模约1亿美元的Amazon品牌使用AMC受众的案例。",
+      "points": [
+        "文中展示部分受众策略的转化率高于账户整体，并讨论与自然销售和排名的关系。",
+        "介绍批量建立广告、出价和时段调整等执行方法，其中用到自家软件。",
+        "案例没有公开品牌名，部分策略名称经过替换；结果和解释来自品牌经营者及工具方。"
+      ],
+      "materialNote": "有账户数据和做法，但不是控制其它变量的实验；不能据此认定普遍因果关系。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-009",
+      "title": "有排名却没拿到销售，怎样读搜索词市场份额",
+      "sourceName": "My Amazon Guy",
+      "sourceId": "source-004",
+      "url": "https://myamazonguy.com/seo/amazon-search-query-performance-market-share-data/",
+      "publishedAt": "2026-10-14",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "My Amazon Guy讲怎样用搜索词表现报告，区分商品有曝光、有点击和最终拿到订单这几件事。",
+      "points": [
+        "按曝光、点击、加购、购买四个阶段比较品牌份额，查找份额开始下滑的位置。",
+        "给出整理一段时间数据、筛词、定位问题、修改后复查的步骤。",
+        "方法面向已有一定关键词覆盖和排名基础的商品；文中阶段与门槛是机构自己的工作框架。"
+      ],
+      "materialNote": "属于经营方法教学，包含数据解读和自家服务介绍。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-010",
+      "title": "消费者为什么反复购买同一个品牌",
+      "sourceName": "Kiri Masters / Retail Media Breakfast Club",
+      "sourceId": "source-092",
+      "url": "https://retailmediabreakfastclub.com/pov-your-mum-always-buys-the-same-brand/",
+      "publishedAt": "2026-10-20",
+      "updatedAt": null,
+      "format": "观点与研究解读",
+      "summary": "Kiri Masters从母亲坚持购买熟悉品牌谈起，讨论消费者怎样解释自己的品牌忠诚，以及AI推荐是否改变选择。",
+      "points": [
+        "引用自己与Bazaarvoice参与的调查，比较受访者声称重视产品表现与实际选择熟悉品牌的情况。",
+        "讨论购买前的多次接触、信任和习惯如何影响选择。",
+        "引用多项研究，不是Amazon操作教程；解释中包含作者观点。"
+      ],
+      "materialNote": "研究结果与作者解释应分开看，文章讨论的是更广泛的品牌购买行为。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-011",
+      "title": "Amazon品牌分析有哪些功能，卖家怎样使用",
+      "sourceName": "Amazon 卖家博客",
+      "sourceId": "source-002",
+      "url": "https://sell.amazon.com/zh/blog/brand-analytics",
+      "publishedAt": "2025-10-08",
+      "updatedAt": null,
+      "format": "官方教程",
+      "summary": "Amazon官方介绍品牌分析的功能、访问资格，以及卖家可以从中回答哪些经营问题。",
+      "points": [
+        "覆盖搜索表现、热门搜索词、重复购买、人口统计、市场篮子等功能。",
+        "用例包括了解买家搜索语言、判断商品在哪一步流失顾客，以及寻找复购和关联购买机会。",
+        "同时说明专业销售计划、品牌注册等前提，并链接其它官方学习资源。"
+      ],
+      "materialNote": "本次返回官方中文版，页面首发日期为2025-10-08；不把它包装成今日新功能。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-012",
+      "title": "把Amazon业务自动化，可能增加哪些隐藏工作",
+      "sourceName": "Seller Sessions",
+      "sourceId": "source-009",
+      "url": "https://sellersessions.com/episode/10-hidden-costs-automating-amazon-fba-business/",
+      "publishedAt": "2026-10-15",
+      "updatedAt": null,
+      "format": "节目文字讲义",
+      "summary": "Seller Sessions一期单人节目讨论Amazon经营自动化节省时间之外，可能增加的维护和判断成本。",
+      "points": [
+        "举例多个自动化同时失效、配置被遗忘、重复执行和结果没有检查等情况。",
+        "按自动化数量增长，讨论责任人、测试、故障识别与维护工作如何变化。",
+        "重点是经营工作流和组织方式，没有集中讲某个广告功能或营销案例。"
+      ],
+      "materialNote": "可读材料为节目文字讲义；不是音频完整转录。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-013",
+      "title": "用AI写Listing时，怎样减少编造的产品信息",
+      "sourceName": "Helium 10",
+      "sourceId": "source-006",
+      "url": "https://www.helium10.com/blog/how-to-prompt-ai-and-avoid-hallucinations-for-amazon-listings/",
+      "publishedAt": "2026-10-26",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "Helium 10讨论用AI写Amazon Listing时，怎样限制编造并检查生成内容。",
+      "points": [
+        "建议先给出可核实的商品资料，再说明受众、输出形式和不能虚构的条件。",
+        "将缺少资料的项目保留为空缺或待确认，而不是让模型自行补产品能力。",
+        "把核实商品事实、检查提示词和人工复核串起来，文中也介绍自家工具。"
+      ],
+      "materialNote": "是写作流程教学；并不证明使用某个提示词后就不会出错。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-014",
+      "title": "什么时候值得把Amazon企业买家的广告单独做",
+      "sourceName": "Clear Ads",
+      "sourceId": "source-027",
+      "url": "https://clearadsagency.com/amazon-business-ads/",
+      "publishedAt": "2026-10-22",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "Clear Ads讨论面向Amazon Business企业买家的广告，什么时候应当与普通消费者广告分开。",
+      "points": [
+        "先区分已有广告可触达企业买家、企业买家广告位加价、专门的企业买家广告等方式。",
+        "建议结合商品是否适合企业采购、企业买家占比及广告表现判断，而非一律拆分。",
+        "文章把Amazon公布的功能与机构自己的经验阈值分开说明。"
+      ],
+      "materialNote": "资格、地区与功能开放范围不能从标题推断为所有账户都可用。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-015",
+      "title": "要不要让AI直接修改Amazon广告出价",
+      "sourceName": "Seller Labs",
+      "sourceId": "source-056",
+      "url": "https://www.sellerlabs.com/blog/should-i-let-ai-change-my-amazon-bids/",
+      "publishedAt": "2026-10-16",
+      "updatedAt": null,
+      "format": "产品与方法讨论",
+      "summary": "Seller Labs用AI代办付款的例子引入一个问题：让代理处理工作时，哪些地方仍要由人确认。",
+      "points": [
+        "应用到Amazon广告时，建议固定条件交给规则，涉及判断的工作再考虑AI。",
+        "让AI先列出旧值、新值与修改理由，在最终执行前停下来复核。",
+        "讨论最小权限、预算和记录，而不是承诺AI可以独立管理所有广告。"
+      ],
+      "materialNote": "作者给出的经验和建议，不是平台强制规范或效果试验。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-016",
+      "title": "Amazon卖家可以怎样准备万圣节营销",
+      "sourceName": "eStore Factory",
+      "sourceId": "source-070",
+      "url": "https://www.estorefactory.com/blog/halloween-marketing-ideas-for-amazon-sellers/",
+      "publishedAt": "2026-10-12",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "eStore Factory列出Amazon卖家准备万圣节营销的12种做法。",
+      "points": [
+        "涉及季节关键词、Listing、品牌店铺、广告、优惠和社交媒体推广。",
+        "按筹备到节日前的时间，说明商品、页面、预算和库存需要协调。",
+        "内容以建议和常见问题为主，末尾提供机构服务入口。"
+      ],
+      "materialNote": "季节营销清单，没有围绕一个具体品牌披露完整实施过程。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-017",
+      "title": "PickFu把消费者测试接入Accio的产品介绍",
+      "sourceName": "PickFu",
+      "sourceId": "source-103",
+      "url": "https://www.pickfu.com/blog/meet-customers-where-they-already-work-accio-pickfu",
+      "publishedAt": "2026-10-08",
+      "updatedAt": null,
+      "format": "产品发布",
+      "summary": "PickFu联合创始人介绍把消费者测试接入Accio，让卖家在生成和修改商品内容的工作环境中发起测试。",
+      "points": [
+        "介绍Product Test Designer代理如何协助决定是否需要测试、设计问题并设置调查。",
+        "产品想解决的是在不同工具之间切换的工作成本。",
+        "文章强调真实消费者反馈，同时介绍自家与合作方产品；没有完整展开一个Amazon案例。"
+      ],
+      "materialNote": "产品方的一手介绍，并非第三方评测。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-018",
+      "title": "Amazon卖家费用的完整说明",
+      "sourceName": "zonguru.com",
+      "sourceId": "source-058",
+      "url": "https://www.zonguru.com/blog/selling-on-amazon-fees",
+      "publishedAt": "2026-10-22",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "ZonGuru汇总Amazon销售账户、佣金、配送与其它经营费用。",
+      "points": [
+        "区分Vendor、第三方卖家和不同销售计划，并拆解费用组成。",
+        "提示费用受商品、站点和经营方式影响，给出计算时需要确认的项目。",
+        "主体是卖家成本与经营模式，不集中讨论引流、推广或内容制作。"
+      ],
+      "materialNote": "包含费用口径；这里评选文章价值，不采用文内金额替代当前官方费用表。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-019",
+      "title": "从10万条提示词观察Alexa怎样解释商品推荐",
+      "sourceName": "RetailPlaybook / Andrew Bell",
+      "sourceId": "source-160",
+      "url": "https://www.retailplaybook.ai/p/100k-alexa-for-shopping-prompt-study",
+      "publishedAt": "2026-09-30",
+      "updatedAt": null,
+      "format": "研究文章",
+      "summary": "RetailPlaybook介绍其10万条Alexa购物提示词研究，观察系统怎样呈现商品和解释推荐。",
+      "points": [
+        "分析商品是否进入某个购物任务的候选组、组内位置，以及推荐理由里的商品事实。",
+        "用服装、消费品和电子产品举例，建议把规格、适用条件及可证明的优势写清楚。",
+        "作者强调改变AI回答并不证明增加了销售，且研究并非Amazon官方排序机制说明。"
+      ],
+      "materialNote": "研究由ReFiBuy相关作者开展，观察结果和建议均保留作者口径。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-020",
+      "title": "一组品牌的秋季大促复盘：增长来自日常基线还是活动",
+      "sourceName": "Incrementum Digital",
+      "sourceId": "source-122",
+      "url": "https://incrementumdigital.com/blog/advertising/amazon-prime-big-deal-days-2026-results/",
+      "publishedAt": "2026-10-14",
+      "updatedAt": null,
+      "format": "机构研究",
+      "summary": "Incrementum用其服务品牌组合的数据，复盘2026年Amazon秋季大促，并据此讨论黑五准备。",
+      "points": [
+        "案例中的活动销售约为普通日的1.78倍，与上一年相近；同比增长也要与活动前基线增长比较。",
+        "拆分品牌、品类、两天活动以及广告和自然销售，而不只报总销售增长。",
+        "文中说明样本与统计限制，并提供机构服务入口。"
+      ],
+      "materialNote": "数据来自其管理的品牌，不代表Amazon全站。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-021",
+      "title": "Amazon后台搜索词怎样补足商品被找到的机会",
+      "sourceName": "LandingCube",
+      "sourceId": "source-085",
+      "url": "https://landingcube.com/amazon-backend-keywords/",
+      "publishedAt": "2026-08-31",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "LandingCube讲Amazon后台搜索词字段怎样补充商品被找到的机会。",
+      "points": [
+        "区分适合放在可见页面与后台字段的信息，讨论相关词、同义表达和搜索意图。",
+        "介绍从搜索词、竞品和关键词研究里找词，再去重、检查限制和回看效果。",
+        "强调后台关键词不能代替产品定位、页面表达或买家需要看到的规格。"
+      ],
+      "materialNote": "文章发布日期为2026-08-31，属于知识教程而非最新功能公告。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-022",
+      "title": "商品目录中的问题为什么会拖累品牌增长",
+      "sourceName": "My Amazon Guy",
+      "sourceId": "source-004",
+      "url": "https://myamazonguy.com/amazon-account-management/amazon-catalog-management-for-growing-brands/",
+      "publishedAt": "2026-10-22",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "My Amazon Guy从品牌商品数量变多后增长停滞的情况，讨论目录管理问题。",
+      "points": [
+        "涉及商品资料、变体、重复条目、关键词、品牌表达和内容一致性。",
+        "把目录检查与搜索表现、广告承接、页面质量联系起来，给出检查思路。",
+        "同时包含运营处理和机构服务介绍，不只讲营销。"
+      ],
+      "materialNote": "品牌经营的综合教程，部分内容涉及后台与目录维护。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-023",
+      "title": "大品牌与私牌在Amazon上分别拥有什么优势",
+      "sourceName": "Ecommerce Nurse",
+      "sourceId": "source-133",
+      "url": "https://ecommercenurse.com/big-brands-vs-private-label-on-amazon-who-has-the-advantage/",
+      "publishedAt": "2026-10-13",
+      "updatedAt": null,
+      "format": "从业观点",
+      "summary": "Ecommerce Nurse比较成熟大品牌与私牌在Amazon上的不同优势。",
+      "points": [
+        "讨论品牌认知、资源和既有需求，与私牌的敏捷性、渠道专注和试验速度。",
+        "作者认为加广告预算本身不能替代页面、商品和品牌基础。",
+        "文章给出策略层面的比较，不是单个品牌的完整投放案例。"
+      ],
+      "materialNote": "机构从业观点，不能当作任何大品牌或私牌必然成功的规律。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-024",
+      "title": "一家营销机构列出的Amazon营销公司榜单",
+      "sourceName": "thriveagency.com",
+      "sourceId": "source-034",
+      "url": "https://thriveagency.com/news/best-amazon-marketing-companies/",
+      "publishedAt": "2026-02-27",
+      "updatedAt": null,
+      "format": "机构榜单",
+      "summary": "Thrive发布一份Amazon营销公司榜单，并介绍各机构的服务与特点。",
+      "points": [
+        "把自家机构放在名单前部，随后列出其它服务商。",
+        "主要帮助读者比较可以外包哪些营销工作，以及寻找机构。",
+        "采用公司介绍和选择建议的形式，不是某项Amazon营销方法的实操讲解。"
+      ],
+      "materialNote": "首发为2026-02-27；名单和介绍来自参与竞争的机构。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-025",
+      "title": "用AI虚拟达人视频给Amazon引流",
+      "sourceName": "AM/PM Podcast",
+      "sourceId": "source-052",
+      "url": "https://www.ampmpodcast.com/560-drive-amazon-traffic-without-paying-for-ads/",
+      "publishedAt": "2026-10-03",
+      "updatedAt": null,
+      "format": "访谈逐字稿",
+      "summary": "AM/PM第560期演示制作AI虚拟达人视频，把社交内容的注意力引向Amazon商品。",
+      "points": [
+        "嘉宾先研究Instagram视频，再设计虚拟人物、拆分脚本并在Google Flow生成场景。",
+        "访谈展示从商品受众到人物、脚本和视频素材的操作过程。",
+        "嘉宾用部分品牌广告数据较少的现象讨论站外流量；销售和归因判断仍是嘉宾口径。"
+      ],
+      "materialNote": "页面有约5万英文字符的公开逐字稿；本站没有复验其销量归因。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-026",
+      "title": "m19团队解释自己的AI广告引擎",
+      "sourceName": "m19",
+      "sourceId": "source-063",
+      "url": "https://www.m19.com/blog/frugal-yet-powerful-under-the-hood-of-m19s-ai-engine",
+      "publishedAt": "2026-10-27",
+      "updatedAt": null,
+      "format": "厂商技术文章",
+      "summary": "m19通过CTO介绍自家AI广告引擎的技术和产品选择。",
+      "points": [
+        "解释模型怎样随客户数据和市场条件调整，以及为什么追求计算效率。",
+        "强调客户数据隔离，并讨论自动化与广告主利益之间的关系。",
+        "内容以团队口述与产品原理介绍为主，末尾回到自家产品。"
+      ],
+      "materialNote": "厂商自己的技术说明，不是独立测试或可复现的开源教程。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-027",
+      "title": "商品怎样具备承接Amazon流量和AI推荐的基础",
+      "sourceName": "CommerceIQ",
+      "sourceId": "source-112",
+      "url": "https://www.commerceiq.ai/blog/amazon-retail-readiness-conversion",
+      "publishedAt": "2026-10-02",
+      "updatedAt": null,
+      "format": "方法文章",
+      "summary": "CommerceIQ讨论在AI购物推荐增加的背景下，商品怎样具备接住流量并完成销售的基础。",
+      "points": [
+        "涉及库存、购物车、商品内容和价格等因素之间的联系。",
+        "举例AI可用来监控变化、发现问题并提出建议，避免广告继续投向无法成交的商品。",
+        "引用自家研究和产品场景，同时提供解决方案介绍。"
+      ],
+      "materialNote": "作者观点、厂商统计与Amazon官方说法需要分别识别。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-028",
+      "title": "为什么品牌要重新检查Google Merchant Center商品资料",
+      "sourceName": "Profitero",
+      "sourceId": "source-116",
+      "url": "https://www.profitero.com/blog/the-100m-blind-spot-why-your-google-merchant-center-feed-is-the-new-front-door-for-ai-shopping",
+      "publishedAt": "2026-10-22",
+      "updatedAt": null,
+      "format": "从业文章",
+      "summary": "Profitero从一次品牌客户讨论出发，提出Google Merchant Center商品资料的管理责任容易被忽略。",
+      "points": [
+        "认为库存、属性、分类与描述不完整，会影响商品被搜索和AI购物系统发现。",
+        "给出确认负责人、检查资料缺口、补充商品属性等步骤。",
+        "主要讨论Google商品资料与跨渠道AI发现，未具体展开Amazon账户或商品页面操作。"
+      ],
+      "materialNote": "品牌电商的跨平台方法文章；讨论中的参会人数表述也需要核对，摘要不替作者修正。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-029",
+      "title": "用ChatGPT连接AMZScout数据做选品研究",
+      "sourceName": "AMZScout",
+      "sourceId": "source-049",
+      "url": "https://amzscout.net/blog/chatgpt-mcp-for-amazon-5-tested-prompts-with-live-data/",
+      "publishedAt": "2026-10-23",
+      "updatedAt": "2026-10-27",
+      "format": "工具实测",
+      "summary": "AMZScout演示连接自家MCP后，用ChatGPT和商品数据做研究与对比。",
+      "points": [
+        "围绕宠物饮水器测试五类提示词，涉及细分市场、商品对比和关键词机会。",
+        "关键词部分讨论哪些词有机会、哪些词与商品功能不符，例如有线商品不应按无线商品描述。",
+        "把AI返回内容与自家工具数据比较，也说明样本量和估算的限制。"
+      ],
+      "materialNote": "工具方自己做的演示；文章结构化数据首发为10月23日、更新为27日，图片自己的时间不作为文章首发。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-030",
+      "title": "一套AI商品图与A+内容生成流程",
+      "sourceName": "AMZ One Step",
+      "sourceId": "source-067",
+      "url": "https://amzonestep.com/blog/ai-amazon-listing-images-a-plus-content/",
+      "publishedAt": "2026-10-05",
+      "updatedAt": null,
+      "format": "工具教程",
+      "summary": "AMZ One Step对比在ChatGPT手动做图与使用自家工具，标题称后者约10分钟完成。",
+      "points": [
+        "手动流程包括准备商品资料、研究评论中的购买疑虑、逐张提示和修改。",
+        "自家工具的流程以输入ASIN后生成商品图与A+内容为主。",
+        "作者声称自家工具处理了Amazon图像规则，用户不必再检查；文中未提供本站能复现的合规验证。"
+      ],
+      "materialNote": "耗时、效果与合规能力来自作者口径，本站没有复验，也不替作者删掉这一承诺。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-031",
+      "title": "Amazon广告从搭建到优化的一篇长指南",
+      "sourceName": "Tinuiti",
+      "sourceId": "source-039",
+      "url": "https://tinuiti.com/blog/amazon/amazon-ads-strategy/",
+      "publishedAt": "2026-10-13",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "Tinuiti用一篇长指南覆盖Amazon广告的搭建、预算、投放、页面承接和效果判断。",
+      "points": [
+        "把商品推广、品牌推广、展示与DSP等广告形式放到不同经营目标下讨论。",
+        "包含账户和活动组织、投放方法，以及广告之外的商品准备。",
+        "既有基础解释，也有进阶内容，并介绍机构自己的服务与产品。"
+      ],
+      "materialNote": "约4万英文字符的综合教程，不是一条单独的新消息。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-032",
+      "title": "包装怎样同时影响Amazon营销和经营成本",
+      "sourceName": "FordeBaker",
+      "sourceId": "source-132",
+      "url": "https://fordebaker.com/blog/packaging-as-a-performance-lever/",
+      "publishedAt": "2026-10-01",
+      "updatedAt": null,
+      "format": "从业文章",
+      "summary": "FordeBaker讨论包装设计不只影响外观，还会影响Amazon和TikTok Shop的营销与经营。",
+      "points": [
+        "把包装尺寸、重量、损坏、退货、评论和转化联系起来。",
+        "讨论手机端小图中品牌、规格和变体是否容易辨认，并引用相关图像研究。",
+        "同时包含配送成本、设计建议和自家包装服务。"
+      ],
+      "materialNote": "内容跨越营销、设计和供应链，不能只按一个主题词判断。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-033",
+      "title": "用AI助手追踪Amazon采购订单",
+      "sourceName": "sellerassistant.app",
+      "sourceId": "source-059",
+      "url": "https://www.sellerassistant.app/blog/track-every-amazon-purchase-order-with-an-ai-assistant/",
+      "publishedAt": "2026-10-06",
+      "updatedAt": null,
+      "format": "工具教程",
+      "summary": "Seller Assistant演示用AI助手查询和追踪Amazon采购订单。",
+      "points": [
+        "让助手整理订单状态、处理进度和需要跟进的问题。",
+        "内容围绕采购和运营工作流，强调减少人工查找与整理。",
+        "介绍的是工具方自己的助手及其使用方式。"
+      ],
+      "materialNote": "确实涉及Amazon和AI，但文章主任务是采购订单管理。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-034",
+      "title": "AMZ One Step创始人谈AI商品图的制作与测试",
+      "sourceName": "RetailPlaybook / Andrew Bell",
+      "sourceId": "source-160",
+      "url": "https://www.retailplaybook.ai/p/dont-generate-images-just-because",
+      "publishedAt": "2026-10-21",
+      "updatedAt": null,
+      "format": "节目文字介绍",
+      "summary": "RetailPlaybook介绍对AMZ One Step创始人的访谈，围绕Amazon AI商品图的制作、策略和测试。",
+      "points": [
+        "嘉宾提出先理解市场与制作目标，再生成图片，而非先写一句生成提示词。",
+        "介绍分开处理策略、文案、画面和手机端可读性，以及生成后的A/B测试与消费者反馈。",
+        "访谈同时介绍嘉宾创办的图像软件，效果比例由嘉宾自己报告。"
+      ],
+      "materialNote": "当前可读内容是约2300英文字符的节目讲义，不能等同于完整演示或逐字稿。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-035",
+      "title": "零售媒体投入可能挤占哪些其它获客机会",
+      "sourceName": "Practical Ecommerce",
+      "sourceId": "source-138",
+      "url": "https://www.practicalecommerce.com/retail-medias-opportunity-cost",
+      "publishedAt": "2026-10-11",
+      "updatedAt": null,
+      "format": "从业观点",
+      "summary": "Practical Ecommerce从Walmart一页搜索结果里广告占据前六个位置的例子，讨论零售媒体与商品经营的目标冲突。",
+      "points": [
+        "广告收入容易被单独计算，广告挤占自然商品位置对购物体验的影响却较难归因。",
+        "作者讨论零售商应怎样平衡广告部门、商品团队和长期顾客价值。",
+        "这是一篇零售媒体观点文，不提供Amazon卖家的具体操作步骤。"
+      ],
+      "materialNote": "主要场景是零售商如何经营广告位，并非付费获客渠道选择指南。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-036",
+      "title": "Amazon官方的A+内容设计指南",
+      "sourceName": "Amazon 卖家博客",
+      "sourceId": "source-002",
+      "url": "https://sell.amazon.com/zh/blog/a-plus-content-design-guide",
+      "publishedAt": "2025-09-24",
+      "updatedAt": null,
+      "format": "官方教程",
+      "summary": "Amazon官方中文指南介绍基础A+、品牌故事和高级A+，以及怎样创建和安排内容。",
+      "points": [
+        "解释图片、文字、比较表等模块的用途与资格。",
+        "建议用商品优势、使用说明及常见问题减少买家的购买疑虑，并给出布局示例。",
+        "介绍创建步骤、内容规范和可以继续阅读的官方资料。"
+      ],
+      "materialNote": "首发为2025-09-24，属于较早发布的教程；这里评文章是否值得推荐，不把它当新公告。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    }
+  ]
+}
