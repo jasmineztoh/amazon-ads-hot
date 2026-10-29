@@ -1,0 +1,17 @@
+{
+  "provider": "Sites",
+  "projectId": "appgprj_6ae3019c6b588191b973803a2593165f",
+  "url": "https://amazon-marketing-digest.jasmineztoh.chatgpt.site",
+  "audience": "owner-only",
+  "contentMode": "published-snapshot",
+  "deploymentId": "appgdep_6ae303bfbce48191b3f9163a73a37fb1",
+  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_64e3464a83bc8191bd75e60e3030f84a",
+  "sourceCommit": "e138dd8b947f9aea3063f2e5bbd9020532a1afae",
+  "deployedAt": "2026-10-29T08:28:56.508521+00:00",
+  "verified": {
+    "anonymousStatus": 401,
+    "ownerStatus": 200,
+    "articles": 77,
+    "contentSha256": "58ac9d7c49cf88bdfc4fed6eec759df656f3ae53002730ce3a81325821958760"
+  }
+}

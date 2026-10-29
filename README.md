@@ -1,4 +1,4 @@
-> 本项目正在改为 Amazon 营销与 AI 内容站。48篇用户样本已标注，现已接入7个公开信源做本地增量更新。运行 `node scripts/start-mvp.mjs` 启动，不需要数据库或模型密钥；英文内容尚由Agent整理。见[自动更新](docs/自动更新.md)。项目方向先读[纪律.md](纪律.md)与[instruction.md](instruction.md)；下方保留原框架说明，不能当作本项目已完成的功能。
+> 本项目正在改为 Amazon 营销与 AI 内容站。[独立网站](https://amazon-marketing-digest.jasmineztoh.chatgpt.site)已发布，按用户选择仅本人登录可见，当前为77篇内容快照，云端自动采集未开启。发布与维护见[网站](docs/网站.md)。48篇用户样本已标注，已接入7个公开信源做本地增量更新。运行 `node scripts/start-mvp.mjs` 启动本地采集，不需要数据库或模型密钥；英文内容尚由Agent整理。见[自动更新](docs/自动更新.md)。项目方向先读[纪律.md](纪律.md)与[instruction.md](instruction.md)；下方保留原框架说明，不能当作本项目已完成的功能。
 
 <p align="center">
   <picture>

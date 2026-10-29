@@ -2,11 +2,16 @@ import { feed, priority } from './curation.js';
 const $ = id => document.getElementById(id);
 const el = (tag, text, className) => { const x = document.createElement(tag); if (text) x.textContent = text; if (className) x.className = className; return x; };
 const link = (text, url, className) => { const a = el('a', text, className); a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; };
-let data, section = '', limit = 12, runtimeLive = false;
+let data, section = '', limit = 12, runtimeLive = false, hosted = false;
+async function readRuntime() {
+  const response = await fetch('./runtime.json');
+  if (!response.ok) throw Error('运行状态读取失败');
+  const runtime = await response.json(); runtimeLive = runtime.live === true; hosted = runtime.mode === 'hosted';
+}
 function updateNote() {
   const checked = data.updatedAt ? new Date(data.updatedAt).toLocaleString('zh-CN', {timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}) : null;
   $('collection-note').textContent = `${data.total} 篇已收录内容${checked ? ` · 最近检查 ${checked}` : ''}`;
-  $('update-note').textContent = runtimeLive ? '本机服务运行中，每2小时检查信源；官方中文摘要核对正文后收录，英文内容经整理后展示。' : '当前显示已保存内容；本次预览未开启自动采集。';
+  $('update-note').textContent = hosted ? '已发布内容，可独立访问。当前尚未开启云端自动采集，原文日期见每条内容。' : runtimeLive ? '本机服务运行中，每2小时检查信源；官方中文摘要核对正文后收录，英文内容经整理后展示。' : '当前显示已保存内容；本次预览未开启自动采集。';
 }
 function render() {
   const result = feed(data.items, { section, query: $('search').value, sort: $('sort').value });
@@ -35,8 +40,8 @@ function render() {
   $('more').hidden = visible.length >= result.groups.length;
 }
 try {
-  const response = await fetch('/content.json'); if (!response.ok) throw Error('数据读取失败'); data = await response.json();
-  try { runtimeLive = (await (await fetch('/runtime.json')).json()).live === true; } catch {}
+  const response = await fetch('./content.json'); if (!response.ok) throw Error('数据读取失败'); data = await response.json();
+  try { await readRuntime(); } catch {}
   for (const s of ['', ...data.sections]) {
     const b = el('button', s || '全部'); b.type = 'button'; b.setAttribute('aria-pressed', String(!s));
     b.addEventListener('click', () => { section = s; limit = 12; for (const x of $('filters').children) x.setAttribute('aria-pressed', String(x === b)); render(); });
@@ -47,9 +52,9 @@ try {
   $('more').addEventListener('click', () => { limit += 12; render(); }); updateNote(); render();
   setInterval(async () => {
     try {
-      const response = await fetch('/content.json'); if (!response.ok) return;
+      const response = await fetch('./content.json'); if (!response.ok) return;
       const next = await response.json(), changed = next.revision !== data.revision;
-      try { runtimeLive = (await (await fetch('/runtime.json')).json()).live === true; } catch { runtimeLive = false; }
+      try { await readRuntime(); } catch { runtimeLive = false; }
       data = next; updateNote(); if (changed) render();
     } catch { runtimeLive = false; updateNote(); /* 暂时读取失败时保留当前可读内容。 */ }
   }, 60_000);
