@@ -1,0 +1,20 @@
+import fs from 'node:fs/promises';
+import { stripTypeScriptTypes } from 'node:module';
+const pool = JSON.parse(await fs.readFile('docs/收录池.json', 'utf8'));
+const annotations = JSON.parse(await fs.readFile('industry/preview-annotations.json', 'utf8'));
+const { SECTIONS, feed } = await import('../industry/curation.ts');
+if (pool.items.length !== pool.total || pool.total !== 48) throw Error('收录数量不一致');
+const items = pool.items.map(a => {
+  const found = annotations.items.filter(x => `article-${x.number}` === a.id);
+  if (found.length !== 1 || !a.collectionApproved) throw Error(`缺少唯一标注/收录许可 ${a.id}`);
+  const { number, ...features } = found[0];
+  if (!features.sections.length || features.sections.some(s => !SECTIONS.includes(s))) throw Error(`栏目无效 ${a.id}`);
+  if (!/^https?:\/\//.test(a.url)) throw Error(`原文地址无效 ${a.id}`);
+  const { featuredDecision, editorialTextReviewed, ...publicItem } = a;
+  return { ...publicItem, features };
+});
+await fs.mkdir('site/preview', { recursive: true });
+await fs.writeFile('site/preview/content.json', JSON.stringify({ reviewedAt: '2026-10-29', total: pool.total, sections: SECTIONS, items }, null, 2) + '\n');
+const js = stripTypeScriptTypes(await fs.readFile('industry/curation.ts', 'utf8')).replace(/[ \t]+$/gm, '');
+await fs.writeFile('site/preview/curation.js', '// 由 scripts/build-preview.mjs 生成；请修改 industry/curation.ts。\n' + js);
+console.log(JSON.stringify({ articles: items.length, groupedRows: feed(items).groups.length, sections: SECTIONS }));

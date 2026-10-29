@@ -1,7 +1,7 @@
 {
   "version": "2026-10-29-v1",
-  "status": "已呈现037—048，等待用户验证收录口径；尚无标签",
-  "scope": "面向目标读者的收录许可；不把允许收录自动当作首页优先级",
+  "status": "12篇标注完成；已用于v2修订，不再作为未见验证集",
+  "scope": "保留原分组与冻结初判；当前用于规则开发",
   "labelOptions": [
     "要",
     "不要",
@@ -50,9 +50,14 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "priorityPreference": null,
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -94,9 +99,18 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
-        "reason": null,
-        "labeledAt": null
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
+        "reason": "文章定位如果重点在于推广自己的产品的话，优先级可以降低",
+        "priorityPreference": {
+          "direction": "lower",
+          "condition": "文章重点在推广自家产品时",
+          "scope": "conditional"
+        },
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -138,9 +152,14 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "priorityPreference": null,
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -182,9 +201,14 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "priorityPreference": null,
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -226,9 +250,14 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "priorityPreference": null,
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -270,9 +299,18 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
-        "reason": null,
-        "labeledAt": null
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
+        "reason": "尤其对于广告效果和打法和分析方面的文章优先级可以提高",
+        "priorityPreference": {
+          "direction": "higher",
+          "condition": "广告效果、打法与分析",
+          "scope": "preference"
+        },
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -314,9 +352,18 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
-        "reason": null,
-        "labeledAt": null
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
+        "reason": "对于特定性品类的营销，可以多抓一些不同的类目，增加多样性，不要只侧重某一个品类",
+        "priorityPreference": {
+          "direction": "diversify",
+          "condition": "覆盖不同商品品类",
+          "scope": "portfolio"
+        },
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -358,9 +405,18 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
-        "reason": null,
-        "labeledAt": null
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
+        "reason": "对于AI于ADS 的工作流自动化相关的知识，优先级可以提高",
+        "priorityPreference": {
+          "direction": "higher",
+          "condition": "AI与广告的工作流自动化",
+          "scope": "preference"
+        },
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -402,9 +458,14 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "priorityPreference": null,
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -446,9 +507,14 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "priorityPreference": null,
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -490,9 +556,18 @@
         "usedPriorSnapshot": true
       },
       "human": {
-        "decision": null,
-        "reason": null,
-        "labeledAt": null
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
+        "reason": "只涉及到纯软件，技术类的知识，优先级降低",
+        "priorityPreference": {
+          "direction": "lower",
+          "condition": "只涉及纯软件、技术知识",
+          "scope": "preference"
+        },
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     },
     {
@@ -534,9 +609,14 @@
         "usedPriorSnapshot": false
       },
       "human": {
-        "decision": null,
+        "decision": "select",
+        "decisionScope": "collection",
+        "featuredDecision": null,
+        "rawMark": "要",
         "reason": null,
-        "labeledAt": null
+        "priorityPreference": null,
+        "labeledAt": "2026-10-29",
+        "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
     }
   ]

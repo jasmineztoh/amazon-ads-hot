@@ -1,6 +1,6 @@
 {
   "version": "2026-10-29-v1",
-  "status": "36篇用户允许收录；没有拒收例；尚未标首页优先级",
+  "status": "36篇收录完成；与已标12篇共同用于新版规则开发",
   "scope": "本轮用户明确确认的收录许可；不得混作首页精选金标",
   "labelOptions": [
     "要",
@@ -54,6 +54,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -102,6 +103,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -150,6 +152,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -198,6 +201,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -246,6 +250,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -294,6 +299,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -342,6 +348,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -390,6 +397,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -438,6 +446,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -486,6 +495,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -534,6 +544,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -582,6 +593,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -630,6 +642,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -678,6 +691,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -726,6 +740,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -774,6 +789,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -822,6 +838,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -870,6 +887,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -918,6 +936,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -966,6 +985,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1014,6 +1034,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1062,6 +1083,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1110,6 +1132,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1158,6 +1181,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1206,6 +1230,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1254,6 +1279,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1302,6 +1328,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1350,6 +1377,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1398,6 +1426,7 @@
         "featuredDecision": null,
         "rawMark": "要标",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1446,6 +1475,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1494,6 +1524,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1542,6 +1573,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1590,6 +1622,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1638,6 +1671,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1686,6 +1720,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }
@@ -1734,6 +1769,7 @@
         "featuredDecision": null,
         "rawMark": "要",
         "reason": null,
+        "priorityPreference": null,
         "labeledAt": "2026-10-29",
         "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料"
       }

@@ -1,9 +1,9 @@
 {
-  "version": "2026-10-29-v1",
-  "status": "开发集36篇收录标注完成；验证集12篇未标",
+  "version": "2026-10-29-v2",
+  "status": "48篇全部完成；5条偏好说明；无拒收例",
   "completedAt": "2026-10-29",
-  "meaning": "仅确认36篇允许收录；未标首页优先级、精选分值或事实正确性",
-  "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容",
+  "meaning": "全部允许收录；优先级偏好与逐篇首页精选许可分开记录；不表示事实背书",
+  "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成。本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明",
   "labels": [
     {
       "caseId": "article-001",
@@ -616,6 +616,253 @@
         "globalConfirmation": "我已经在待标文章里全部做好了标记，所有的都已经标注完成，现有36篇都可以纳入我们的收录池，没有需要淘汰的内容"
       },
       "normalization": null
+    },
+    {
+      "caseId": "article-037",
+      "number": "037",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": null
+    },
+    {
+      "caseId": "article-038",
+      "number": "038",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": "文章定位如果重点在于推广自己的产品的话，优先级可以降低",
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": {
+        "direction": "lower",
+        "condition": "文章重点在推广自家产品时",
+        "scope": "conditional"
+      }
+    },
+    {
+      "caseId": "article-039",
+      "number": "039",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": null
+    },
+    {
+      "caseId": "article-040",
+      "number": "040",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": null
+    },
+    {
+      "caseId": "article-041",
+      "number": "041",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": null
+    },
+    {
+      "caseId": "article-042",
+      "number": "042",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": "尤其对于广告效果和打法和分析方面的文章优先级可以提高",
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": {
+        "direction": "higher",
+        "condition": "广告效果、打法与分析",
+        "scope": "preference"
+      }
+    },
+    {
+      "caseId": "article-043",
+      "number": "043",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": "对于特定性品类的营销，可以多抓一些不同的类目，增加多样性，不要只侧重某一个品类",
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": {
+        "direction": "diversify",
+        "condition": "覆盖不同商品品类",
+        "scope": "portfolio"
+      }
+    },
+    {
+      "caseId": "article-044",
+      "number": "044",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": "对于AI于ADS 的工作流自动化相关的知识，优先级可以提高",
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": {
+        "direction": "higher",
+        "condition": "AI与广告的工作流自动化",
+        "scope": "preference"
+      }
+    },
+    {
+      "caseId": "article-045",
+      "number": "045",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": null
+    },
+    {
+      "caseId": "article-046",
+      "number": "046",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": null
+    },
+    {
+      "caseId": "article-047",
+      "number": "047",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": "只涉及到纯软件，技术类的知识，优先级降低",
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": {
+        "direction": "lower",
+        "condition": "只涉及纯软件、技术知识",
+        "scope": "preference"
+      }
+    },
+    {
+      "caseId": "article-048",
+      "number": "048",
+      "decision": "select",
+      "decisionScope": "collection",
+      "featuredDecision": null,
+      "rawMark": "要",
+      "reason": null,
+      "labeledAt": "2026-10-29",
+      "readingBasis": "未说明是否逐篇阅读全文；已审阅本轮阅读材料",
+      "evidence": {
+        "file": "docs/精选校准/待标文章.md",
+        "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4",
+        "globalConfirmation": "本轮仍然没有淘汰的文章，但是部分内容做了优先级划分和理由说明"
+      },
+      "normalization": null,
+      "priorityPreference": null
+    }
+  ],
+  "rounds": [
+    {
+      "range": "001—036",
+      "outcome": "全部允许收录；理由空白"
+    },
+    {
+      "range": "037—048",
+      "outcome": "全部允许收录；5条偏好说明",
+      "sourceFileSha256": "3979e7a26754bd23020a94ac422e69ccc0e2740535f4c6771b89e7a3daf55da4"
     }
   ]
 }

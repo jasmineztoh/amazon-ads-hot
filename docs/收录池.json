@@ -1,10 +1,10 @@
 {
-  "version": "2026-10-29-v1",
-  "status": "36篇人工允许收录的静态内容池；尚未导入应用数据库或发布网站",
+  "version": "2026-10-29-v2",
+  "status": "48篇用户允许收录的静态内容池；供本地试读，未导入应用数据库",
   "approvedBy": "用户",
   "approvedAt": "2026-10-29",
   "approvalScope": "collection",
-  "total": 36,
+  "total": 48,
   "items": [
     {
       "id": "article-001",
@@ -722,6 +722,246 @@
         "介绍创建步骤、内容规范和可以继续阅读的官方资料。"
       ],
       "materialNote": "首发为2025-09-24，属于较早发布的教程；这里评文章是否值得推荐，不把它当新公告。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-037",
+      "title": "Amazon发布Ads Agent及新的广告购买方式",
+      "sourceName": "Amazon Ads",
+      "sourceId": "source-001",
+      "url": "https://advertising.amazon.com/library/news/amazon-ads-agent",
+      "publishedAt": "2026-09-29",
+      "updatedAt": null,
+      "format": "官方公告",
+      "summary": "Amazon在unBoxed 2026介绍Ads Agent，以及全流域广告活动和DVA+等广告购买能力。",
+      "points": [
+        "把不同类型的广告购买放到统一平台中，并增加自然语言交互。",
+        "说明广告主可以使用手动工具、AI优化或二者结合。",
+        "具体能力的开放时间和测试状态不同，公告包含相关范围与脚注。"
+      ],
+      "materialNote": "本轮取得中文版正文；是平台自己的产品发布，不是第三方效果验证。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-038",
+      "title": "Skai现场解读Amazon unBoxed的AI广告变化",
+      "sourceName": "Skai",
+      "sourceId": "source-108",
+      "url": "https://skai.io/blog/amazon-just-made-its-agentic-advertising-bet-skais-take-on-unboxed-2026/",
+      "publishedAt": "2026-09-29",
+      "updatedAt": null,
+      "format": "会议解读",
+      "summary": "Skai从现场参会视角解读Amazon unBoxed 2026的AI广告变化。",
+      "points": [
+        "讨论AI从协助分析走向执行，以及媒介购买、创意和测量之间的联系。",
+        "作者进一步谈跨平台数据和控制能力为何仍然重要。",
+        "内容同时反映Skai自己的产品定位，不只是复述公告标题。"
+      ],
+      "materialNote": "现场解读中的作者推断与官方已公布的功能，需要分开看。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-039",
+      "title": "中小预算品牌怎样判断是否要尝试Amazon DSP",
+      "sourceName": "SellerApp",
+      "sourceId": "source-053",
+      "url": "https://www.sellerapp.com/blog/amazon-dsp-for-brands-under-20k-a-month-a-2026-starter-guide/",
+      "publishedAt": "2026-10-21",
+      "updatedAt": "2026-10-22",
+      "format": "教程",
+      "summary": "SellerApp讨论预算相对有限的品牌，在什么条件下考虑Amazon DSP。",
+      "points": [
+        "先检查商品、库存和已有商品推广广告是否稳定，而不是用DSP修补所有经营问题。",
+        "给出优先尝试的受众、预算分配与逐步扩展的思路。",
+        "金额和策略主要来自机构经验，不是所有账户适用的统一平台门槛。"
+      ],
+      "materialNote": "文章首发10月21日、更新10月22日，保留两个时间，不把更新当首发。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-040",
+      "title": "用Helium 10的关键词MCP工具查询买家意图",
+      "sourceName": "Helium 10",
+      "sourceId": "source-006",
+      "url": "https://www.helium10.com/blog/how-to-use-the-helium-10-search-amazon-keywords-mcp-tool-to-surface-buyer-intent-keywords-in-2026/",
+      "publishedAt": "2026-10-27",
+      "updatedAt": null,
+      "format": "工具教程",
+      "summary": "Helium 10演示通过其关键词MCP工具，以自然语言查询Amazon相关关键词。",
+      "points": [
+        "把搜索量、竞争和买家意图等信息带入AI工作环境。",
+        "示例围绕如何提出查询、理解返回内容，再形成商品与关键词判断。",
+        "需要相应工具权限；文章同时介绍自家软件。"
+      ],
+      "materialNote": "产品教程，并非证明每个关键词都会带来流量或销售。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-041",
+      "title": "Amazon供应商品牌面临的问题和处理建议",
+      "sourceName": "Ecommerce Nurse",
+      "sourceId": "source-133",
+      "url": "https://ecommercenurse.com/the-biggest-challenges-facing-amazon-vendors-and-how-to-fix-them/",
+      "publishedAt": "2026-09-15",
+      "updatedAt": null,
+      "format": "从业文章",
+      "summary": "Ecommerce Nurse讨论Amazon Vendor经营者常见的利润、议价、扣款、价格与支持问题。",
+      "points": [
+        "解释卖给Amazon与第三方自行零售在控制权上的差异。",
+        "讨论促销、其它零售商价格和Amazon价格匹配可能带来的影响。",
+        "给出管理与沟通建议，广告只是整体Vendor经营的一部分。"
+      ],
+      "materialNote": "主体是供应商品牌经营，和商品推广存在交叉但不完全相同。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-042",
+      "title": "怎样判断自己的Amazon商品转化率是否正常",
+      "sourceName": "Canopy Management",
+      "sourceId": "source-035",
+      "url": "https://canopymanagement.com/amazon-conversion-rate/",
+      "publishedAt": "2026-10-20",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "Canopy讨论怎样判断Amazon转化率，而不是把一个跨品类平均数直接当成目标。",
+      "points": [
+        "比较商品自身历史、搜索词中的点击与购买份额、周围竞争商品。",
+        "引用外部基准，说明不同品类的差异。",
+        "将购物车、流量、价格、图片、评论和配送等因素放在一起检查。"
+      ],
+      "materialNote": "外部基准与机构经验均有出处；不是Amazon给每个卖家的统一合格线。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-043",
+      "title": "美妆品牌怎样准备Amazon第四季度营销",
+      "sourceName": "Front Row",
+      "sourceId": "source-127",
+      "url": "https://www.frontrowgroup.com/en/insights/holiday-season-on-amazon-a-beauty-brand-s-guide-to-winning-the-q4-shopper",
+      "publishedAt": "2026-10-26",
+      "updatedAt": null,
+      "format": "教程",
+      "summary": "Front Row讨论美妆品牌在Amazon第四季度怎样处理礼赠需求、商品组合和内容。",
+      "points": [
+        "把平常按单品搜索与节日按收礼人、场合和预算搜索作比较。",
+        "讨论套装、礼赠词、库存和商品资料的一致性。",
+        "按提前规划、黑五比价和最后时刻购物等情境安排创意。"
+      ],
+      "materialNote": "建议针对美妆与礼赠场景，不能直接套用到所有品类。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-044",
+      "title": "一场卖家AI活动里分享了哪些实际工作流",
+      "sourceName": "Scale Insights",
+      "sourceId": "source-111",
+      "url": "https://blog.scaleinsights.com/ai-scaling-live-singapore-recap",
+      "publishedAt": "2026-09-16",
+      "updatedAt": null,
+      "format": "活动复盘",
+      "summary": "Scale Insights复盘一场卖家AI活动，记录参与者展示的几个工作流。",
+      "points": [
+        "包括发现被暂停的盈利广告词、联系供应商、比较报价，以及把评论和商品资料用于Listing工作。",
+        "也涉及税务、经营待办和工作流维护。",
+        "文中有参与者展示的数据和作者观察，并提供后续活动入口。"
+      ],
+      "materialNote": "是多场景活动复盘，不全是营销；案例结果来自演讲者。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-045",
+      "title": "用Claude询问Amazon利润的产品说明",
+      "sourceName": "Seller Labs",
+      "sourceId": "source-056",
+      "url": "https://www.sellerlabs.com/blog/amazon-mcp-profit-how-it-works/",
+      "publishedAt": "2026-10-21",
+      "updatedAt": null,
+      "format": "工具介绍",
+      "summary": "Seller Labs沿着一个利润提问，解释AI连接Amazon数据后怎样生成答案。",
+      "points": [
+        "拆解销售、退款、费用、广告花费与商品成本来自哪些系统和时间范围。",
+        "给出核对缺失输入、报告口径和日期的检查方法。",
+        "文中以自家MCP工作方式为例，重点是判断利润数字是否完整。"
+      ],
+      "materialNote": "偏AI经营分析与工具使用，不直接讲获客或营销内容制作。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-046",
+      "title": "零售企业怎样把AI目标与高管薪酬挂钩",
+      "sourceName": "Modern Retail",
+      "sourceId": "source-142",
+      "url": "https://www.modernretail.co/operations/why-retailers-are-having-a-hard-time-tying-increased-ai-usage-to-executive-compensation/",
+      "publishedAt": "2026-10-27",
+      "updatedAt": null,
+      "format": "行业报道",
+      "summary": "Modern Retail报道零售企业尝试把AI相关目标纳入高管激励，讨论怎样衡量AI带来的业务变化。",
+      "points": [
+        "从Ralph Lauren等企业的做法展开，引用报道、披露和受访者说法。",
+        "讨论用AI次数、使用范围和实际经营结果之间的区别。",
+        "重点是组织管理与激励，没有提供Amazon营销方法。"
+      ],
+      "materialNote": "新闻与管理话题，涉及AI不意味着直接面向卖家营销。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-047",
+      "title": "Amazon工程团队谈AI时代的软件开发工作",
+      "sourceName": "About Amazon 零售消息",
+      "sourceId": "source-018",
+      "url": "https://www.aboutamazon.com/news/company-news/amazon-software-engineer-role-guideline-ai?utm_source=rss",
+      "publishedAt": "2026-10-27",
+      "updatedAt": null,
+      "format": "官方文章",
+      "summary": "Amazon工程负责人介绍软件开发岗位指引怎样回应AI工具的普及。",
+      "points": [
+        "强调交付结果和工程判断，而不把代码量、模型使用量等输入直接当绩效。",
+        "讨论开发人员使用AI时的责任、协作与工作方式。",
+        "文章面向软件工程团队，没有讲商品广告或营销运营。"
+      ],
+      "materialNote": "本次直连超时，使用2026-10-28已保存的官方正文快照；不把读取失败当文章不值得选。",
+      "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false
+    },
+    {
+      "id": "article-048",
+      "title": "Amazon促销应该选择哪些商品",
+      "sourceName": "Front Row",
+      "sourceId": "source-127",
+      "url": "https://www.frontrowgroup.com/en/insights/stop-guessing-which-products-belong-on-your-amazon-deal-list",
+      "publishedAt": "2026-10-27",
+      "updatedAt": null,
+      "format": "方法文章",
+      "summary": "Front Row讨论Amazon促销选品，质疑沿用上次畅销清单和统一折扣的做法。",
+      "points": [
+        "结合商品所处位置、价格层级、促销反应和利润，分析哪些商品值得参加活动。",
+        "用不同品类和价格层级举例，讨论相同折扣不一定带来相同排名或销售变化。",
+        "从代理机构与品牌所有者两个角度解释促销投入。"
+      ],
+      "materialNote": "文中观察和建议来自机构经营经验，不是每个商品都适用的折扣公式。",
       "collectionApproved": true,
       "featuredDecision": null,
       "editorialTextReviewed": false
