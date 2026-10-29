@@ -1,0 +1,139 @@
+{
+  "checkedAt": "2026-10-29T08:10:11.729Z",
+  "scope": "本地MVP，不是原AIHOT生产模型与数据库全链路",
+  "sources": [
+    {
+      "id": "source-001",
+      "name": "Amazon Ads",
+      "attemptedAt": "2026-10-29T08:05:38.657Z",
+      "successAt": "2026-10-29T08:05:40.955Z",
+      "candidates": 423,
+      "error": null
+    },
+    {
+      "id": "source-007",
+      "name": "Marketplace Pulse",
+      "attemptedAt": "2026-10-29T08:05:38.657Z",
+      "successAt": "2026-10-29T08:05:40.540Z",
+      "candidates": 20,
+      "error": null
+    },
+    {
+      "id": "source-056",
+      "name": "Seller Labs",
+      "attemptedAt": "2026-10-29T08:05:38.657Z",
+      "successAt": "2026-10-29T08:05:39.857Z",
+      "candidates": 10,
+      "error": null
+    },
+    {
+      "id": "source-111",
+      "name": "Scale Insights",
+      "attemptedAt": "2026-10-29T08:05:38.657Z",
+      "successAt": "2026-10-29T08:05:39.950Z",
+      "candidates": 10,
+      "error": null
+    },
+    {
+      "id": "source-120",
+      "name": "BellaVix",
+      "attemptedAt": "2026-10-29T08:05:38.657Z",
+      "successAt": "2026-10-29T08:05:39.956Z",
+      "candidates": 9,
+      "error": null
+    },
+    {
+      "id": "source-127",
+      "name": "Front Row",
+      "attemptedAt": "2026-10-29T08:05:38.657Z",
+      "successAt": "2026-10-29T08:05:40.482Z",
+      "candidates": 73,
+      "error": null
+    },
+    {
+      "id": "source-144",
+      "name": "AdExchanger",
+      "attemptedAt": "2026-10-29T08:05:38.657Z",
+      "successAt": "2026-10-29T08:05:41.469Z",
+      "candidates": 10,
+      "error": null
+    }
+  ],
+  "total": 77,
+  "groupedRows": 76,
+  "origins": {
+    "user-reviewed": 48,
+    "agent-reviewed": 18,
+    "publisher-summary": 11
+  },
+  "bodyHashesVerified": 68,
+  "repeatRuns": [
+    {
+      "startedAt": "2026-10-29T07:48:05.074Z",
+      "discovered": 555,
+      "newEntries": 548,
+      "duplicateEntries": 7,
+      "bodies": 22,
+      "published": 6,
+      "materialFailures": 0
+    },
+    {
+      "startedAt": "2026-10-29T07:53:38.999Z",
+      "discovered": 555,
+      "newEntries": 10,
+      "duplicateEntries": 545,
+      "bodies": 19,
+      "published": 6,
+      "materialFailures": 0
+    },
+    {
+      "startedAt": "2026-10-29T07:58:47.681Z",
+      "discovered": 555,
+      "newEntries": 0,
+      "duplicateEntries": 555,
+      "bodies": 15,
+      "published": 2,
+      "materialFailures": 1
+    },
+    {
+      "startedAt": "2026-10-29T08:00:54.335Z",
+      "discovered": 555,
+      "newEntries": 0,
+      "duplicateEntries": 555,
+      "bodies": 7,
+      "published": 0,
+      "materialFailures": 1
+    },
+    {
+      "startedAt": "2026-10-29T08:05:38.657Z",
+      "discovered": 555,
+      "newEntries": 0,
+      "duplicateEntries": 555,
+      "bodies": 5,
+      "published": 0,
+      "materialFailures": 1
+    }
+  ],
+  "counts": {
+    "baseline": 48,
+    "published": 29,
+    "old": 480,
+    "pending": 43,
+    "future": 1,
+    "excluded": 4,
+    "material_error": 1
+  },
+  "independentModelCalls": 0,
+  "checks": {
+    "behaviorTests": 11,
+    "typecheck": "passed",
+    "webBuild": "passed",
+    "fullBrowserRegression": "not passed: previous missing Playwright Chromium/WebKit",
+    "databaseIntegration": "not applicable to file-backed module"
+  },
+  "notes": [
+    "Agent新增判断没有改写48篇用户标签",
+    "1条官方短公告材料不足，不因列表成功就展示",
+    "英文文章不是无人值守模型自动翻译"
+  ]
+}

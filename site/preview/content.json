@@ -1,6 +1,8 @@
 {
   "reviewedAt": "2026-10-29",
-  "total": 48,
+  "updatedAt": "2026-10-29T08:05:49.266Z",
+  "total": 77,
+  "reviewedTotal": 48,
   "sections": [
     "行业动态",
     "教程（新人入门与进阶）",
@@ -8,6 +10,90 @@
     "工具",
     "AI营销"
   ],
+  "revision": "4e00779ece0911984d9696b4a0e7a72a662232d18ad53c473a72a1754649f366",
+  "collection": {
+    "enabled": true,
+    "intervalMinutes": 120,
+    "lastRun": {
+      "startedAt": "2026-10-29T08:05:38.657Z",
+      "finishedAt": "2026-10-29T08:05:49.266Z",
+      "discovered": 555,
+      "newEntries": 0,
+      "duplicateEntries": 555,
+      "bodies": 5,
+      "published": 0,
+      "failures": 1,
+      "sources": [
+        {
+          "id": "source-001",
+          "name": "Amazon Ads",
+          "attemptedAt": "2026-10-29T08:05:38.657Z",
+          "successAt": "2026-10-29T08:05:40.955Z",
+          "candidates": 423,
+          "error": null
+        },
+        {
+          "id": "source-007",
+          "name": "Marketplace Pulse",
+          "attemptedAt": "2026-10-29T08:05:38.657Z",
+          "successAt": "2026-10-29T08:05:40.540Z",
+          "candidates": 20,
+          "error": null
+        },
+        {
+          "id": "source-056",
+          "name": "Seller Labs",
+          "attemptedAt": "2026-10-29T08:05:38.657Z",
+          "successAt": "2026-10-29T08:05:39.857Z",
+          "candidates": 10,
+          "error": null
+        },
+        {
+          "id": "source-111",
+          "name": "Scale Insights",
+          "attemptedAt": "2026-10-29T08:05:38.657Z",
+          "successAt": "2026-10-29T08:05:39.950Z",
+          "candidates": 10,
+          "error": null
+        },
+        {
+          "id": "source-120",
+          "name": "BellaVix",
+          "attemptedAt": "2026-10-29T08:05:38.657Z",
+          "successAt": "2026-10-29T08:05:39.956Z",
+          "candidates": 9,
+          "error": null
+        },
+        {
+          "id": "source-127",
+          "name": "Front Row",
+          "attemptedAt": "2026-10-29T08:05:38.657Z",
+          "successAt": "2026-10-29T08:05:40.482Z",
+          "candidates": 73,
+          "error": null
+        },
+        {
+          "id": "source-144",
+          "name": "AdExchanger",
+          "attemptedAt": "2026-10-29T08:05:38.657Z",
+          "successAt": "2026-10-29T08:05:41.469Z",
+          "candidates": 10,
+          "error": null
+        }
+      ]
+    },
+    "counts": {
+      "baseline": 48,
+      "published": 29,
+      "old": 480,
+      "pending": 43,
+      "future": 1,
+      "excluded": 4,
+      "material_error": 1
+    },
+    "modelCalls": 0,
+    "explanation": "官方现成中文摘要在正文与日期通过后收录；英文文章等待Agent整理。没有调用独立模型API。"
+  },
   "items": [
     {
       "id": "article-001",
@@ -26,6 +112,8 @@
       ],
       "materialNote": "文章带制作前后图片；下述摘要不能代替查看图片细节。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
@@ -33,7 +121,8 @@
           "AI营销"
         ],
         "productCategory": "食品"
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-002",
@@ -52,12 +141,15 @@
       ],
       "materialNote": "是一篇基础概念加操作建议的长文；举例数值不代表所有账户。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ],
         "adPractice": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-003",
@@ -76,12 +168,15 @@
       ],
       "materialNote": "工具厂商写的工具清单，包含自家产品。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "工具",
           "AI营销"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-004",
@@ -100,11 +195,14 @@
       ],
       "materialNote": "包含新闻事实和记者分析，功能范围应以官方公告及账户实际开放为准。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "行业动态"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-005",
@@ -123,13 +221,16 @@
       ],
       "materialNote": "比较来自竞争产品的一方；文内报价是文章当时的口径。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "工具",
           "AI营销"
         ],
         "promotionLed": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-006",
@@ -148,13 +249,16 @@
       ],
       "materialNote": "目前可读材料是约4000英文字符的节目介绍和要点，不是完整逐字稿；做法来自嘉宾自述。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "案例",
           "AI营销"
         ],
         "productCategory": "食品"
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-007",
@@ -173,11 +277,14 @@
       ],
       "materialNote": "文章很长，同时包含官方功能解释与作者设计建议。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-008",
@@ -196,13 +303,16 @@
       ],
       "materialNote": "有账户数据和做法，但不是控制其它变量的实验；不能据此认定普遍因果关系。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
           "案例"
         ],
         "adPractice": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-009",
@@ -221,12 +331,15 @@
       ],
       "materialNote": "属于经营方法教学，包含数据解读和自家服务介绍。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ],
         "adPractice": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-010",
@@ -245,11 +358,14 @@
       ],
       "materialNote": "研究结果与作者解释应分开看，文章讨论的是更广泛的品牌购买行为。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "行业动态"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-011",
@@ -268,12 +384,15 @@
       ],
       "materialNote": "本次返回官方中文版，页面首发日期为2025-10-08；不把它包装成今日新功能。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
           "工具"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-012",
@@ -292,11 +411,14 @@
       ],
       "materialNote": "可读材料为节目文字讲义；不是音频完整转录。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-013",
@@ -315,12 +437,15 @@
       ],
       "materialNote": "是写作流程教学；并不证明使用某个提示词后就不会出错。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
           "AI营销"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-014",
@@ -339,12 +464,15 @@
       ],
       "materialNote": "资格、地区与功能开放范围不能从标题推断为所有账户都可用。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ],
         "adPractice": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-015",
@@ -363,13 +491,16 @@
       ],
       "materialNote": "作者给出的经验和建议，不是平台强制规范或效果试验。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
           "AI营销"
         ],
         "aiAdsWorkflow": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-016",
@@ -388,11 +519,14 @@
       ],
       "materialNote": "季节营销清单，没有围绕一个具体品牌披露完整实施过程。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-017",
@@ -411,12 +545,15 @@
       ],
       "materialNote": "产品方的一手介绍，并非第三方评测。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "工具",
           "AI营销"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-018",
@@ -435,11 +572,14 @@
       ],
       "materialNote": "包含费用口径；这里评选文章价值，不采用文内金额替代当前官方费用表。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-019",
@@ -458,12 +598,15 @@
       ],
       "materialNote": "研究由ReFiBuy相关作者开展，观察结果和建议均保留作者口径。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
           "AI营销"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-020",
@@ -482,13 +625,16 @@
       ],
       "materialNote": "数据来自其管理的品牌，不代表Amazon全站。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "行业动态",
           "案例"
         ],
         "adPractice": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-021",
@@ -507,11 +653,14 @@
       ],
       "materialNote": "文章发布日期为2026-08-31，属于知识教程而非最新功能公告。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-022",
@@ -530,11 +679,14 @@
       ],
       "materialNote": "品牌经营的综合教程，部分内容涉及后台与目录维护。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-023",
@@ -553,11 +705,14 @@
       ],
       "materialNote": "机构从业观点，不能当作任何大品牌或私牌必然成功的规律。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "行业动态"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-024",
@@ -576,12 +731,15 @@
       ],
       "materialNote": "首发为2026-02-27；名单和介绍来自参与竞争的机构。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "行业动态"
         ],
         "promotionLed": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-025",
@@ -600,12 +758,15 @@
       ],
       "materialNote": "页面有约5万英文字符的公开逐字稿；本站没有复验其销量归因。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
           "AI营销"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-026",
@@ -624,13 +785,16 @@
       ],
       "materialNote": "厂商自己的技术说明，不是独立测试或可复现的开源教程。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "工具",
           "AI营销"
         ],
         "promotionLed": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-027",
@@ -649,12 +813,15 @@
       ],
       "materialNote": "作者观点、厂商统计与Amazon官方说法需要分别识别。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
           "AI营销"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-028",
@@ -673,12 +840,15 @@
       ],
       "materialNote": "品牌电商的跨平台方法文章；讨论中的参会人数表述也需要核对，摘要不替作者修正。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
           "AI营销"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-029",
@@ -697,6 +867,8 @@
       ],
       "materialNote": "工具方自己做的演示；文章结构化数据首发为10月23日、更新为27日，图片自己的时间不作为文章首发。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
@@ -705,7 +877,8 @@
         ],
         "aiAdsWorkflow": true,
         "productCategory": "宠物"
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-030",
@@ -724,6 +897,8 @@
       ],
       "materialNote": "耗时、效果与合规能力来自作者口径，本站没有复验，也不替作者删掉这一承诺。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
@@ -731,7 +906,8 @@
           "AI营销"
         ],
         "promotionLed": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-031",
@@ -750,12 +926,15 @@
       ],
       "materialNote": "约4万英文字符的综合教程，不是一条单独的新消息。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ],
         "adPractice": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-032",
@@ -774,11 +953,14 @@
       ],
       "materialNote": "内容跨越营销、设计和供应链，不能只按一个主题词判断。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-033",
@@ -797,12 +979,15 @@
       ],
       "materialNote": "确实涉及Amazon和AI，但文章主任务是采购订单管理。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
           "工具"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-034",
@@ -821,12 +1006,15 @@
       ],
       "materialNote": "当前可读内容是约2300英文字符的节目讲义，不能等同于完整演示或逐字稿。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
           "AI营销"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-035",
@@ -845,11 +1033,14 @@
       ],
       "materialNote": "主要场景是零售商如何经营广告位，并非付费获客渠道选择指南。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "行业动态"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-036",
@@ -868,11 +1059,14 @@
       ],
       "materialNote": "首发为2025-09-24，属于较早发布的教程；这里评文章是否值得推荐，不把它当新公告。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-037",
@@ -891,6 +1085,8 @@
       ],
       "materialNote": "本轮取得中文版正文；是平台自己的产品发布，不是第三方效果验证。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "行业动态",
@@ -898,7 +1094,8 @@
           "AI营销"
         ],
         "eventGroup": "unboxed-2026-agent"
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-038",
@@ -917,13 +1114,16 @@
       ],
       "materialNote": "现场解读中的作者推断与官方已公布的功能，需要分开看。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "行业动态",
           "AI营销"
         ],
         "eventGroup": "unboxed-2026-agent"
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-039",
@@ -942,12 +1142,15 @@
       ],
       "materialNote": "文章首发10月21日、更新10月22日，保留两个时间，不把更新当首发。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ],
         "adPractice": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-040",
@@ -966,6 +1169,8 @@
       ],
       "materialNote": "产品教程，并非证明每个关键词都会带来流量或销售。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
@@ -973,7 +1178,8 @@
           "AI营销"
         ],
         "aiAdsWorkflow": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-041",
@@ -992,11 +1198,14 @@
       ],
       "materialNote": "主体是供应商品牌经营，和商品推广存在交叉但不完全相同。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-042",
@@ -1015,12 +1224,15 @@
       ],
       "materialNote": "外部基准与机构经验均有出处；不是Amazon给每个卖家的统一合格线。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ],
         "adPractice": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-043",
@@ -1039,12 +1251,15 @@
       ],
       "materialNote": "建议针对美妆与礼赠场景，不能直接套用到所有品类。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ],
         "productCategory": "美妆"
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-044",
@@ -1063,6 +1278,8 @@
       ],
       "materialNote": "是多场景活动复盘，不全是营销；案例结果来自演讲者。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
@@ -1070,7 +1287,8 @@
           "AI营销"
         ],
         "aiAdsWorkflow": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-045",
@@ -1089,12 +1307,15 @@
       ],
       "materialNote": "偏AI经营分析与工具使用，不直接讲获客或营销内容制作。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）",
           "工具"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-046",
@@ -1113,11 +1334,14 @@
       ],
       "materialNote": "新闻与管理话题，涉及AI不意味着直接面向卖家营销。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "行业动态"
         ]
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-047",
@@ -1136,12 +1360,15 @@
       ],
       "materialNote": "本次直连超时，使用2026-10-28已保存的官方正文快照；不把读取失败当文章不值得选。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "行业动态"
         ],
         "softwareOnly": true
-      }
+      },
+      "origin": "user-reviewed"
     },
     {
       "id": "article-048",
@@ -1160,12 +1387,750 @@
       ],
       "materialNote": "文中观察和建议来自机构经营经验，不是每个商品都适用的折扣公式。",
       "collectionApproved": true,
+      "featuredDecision": null,
+      "editorialTextReviewed": false,
       "features": {
         "sections": [
           "教程（新人入门与进阶）"
         ],
         "adPractice": true
-      }
+      },
+      "origin": "user-reviewed"
+    },
+    {
+      "id": "live-4403f4f1b656339f",
+      "title": "卖家怎样把MCP工具放进日常工作",
+      "summary": "Scale Insights分析自家活跃账户的使用习惯，发现经常回访的卖家会连续检查销售、库存、搜索词和关键词。",
+      "points": [
+        "常用者往往在工作日反复使用，而不是只问一次问题。",
+        "作者区分了第一次看整体概况与之后处理具体工作的不同用途。",
+        "工具数据的刷新节奏比规定一个固定使用时间更值得关注。"
+      ],
+      "sourceName": "Scale Insights",
+      "url": "https://blog.scaleinsights.com/how-our-busiest-sellers-use-the-mcp",
+      "publishedAt": "2026-08-31",
+      "updatedAt": null,
+      "materialNote": "数据来自厂商自家用户，使用频率不代表经营效果；文章没有证明工具能带来普遍增长，也没有给出固定刷新时刻。",
+      "features": {
+        "sections": [
+          "工具",
+          "AI营销"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "d1f60c58610d3fc3471fb3af52d4af633b1029f4e5cc4eee6816e767f6a76ec4",
+      "reviewedAt": "2026-10-29T07:57:30.596Z",
+      "sourceId": "source-111",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-5833c8058781d1e0",
+      "title": "旺季经营提醒：企业买家折扣、费用与广告利润",
+      "summary": "BellaVix本期更新涉及Amazon企业买家折扣展示、旺季履约费用，以及跨平台促销与达人内容，建议把投放放回商品利润中判断。",
+      "points": [
+        "企业买家价格的展示条件与数量折扣不是一回事，文章附官方讨论入口。",
+        "旺季费用可能改变同一售价和ACOS下的利润，需要重新核算。",
+        "跨平台部分讨论内容重复投放与达人合作，但机构样本不能当统一行业基准。"
+      ],
+      "sourceName": "BellaVix",
+      "url": "https://www.bellavix.com/black-friday-prep-amazon-peak-fees-walmart-ai-agents-record-shipping-costs/",
+      "publishedAt": "2026-10-28",
+      "updatedAt": null,
+      "materialNote": "多主题机构汇总，保留原文引用；本文未逐条独立核实折扣门槛、费率和统计数字，执行前以对应平台官方信息为准。",
+      "features": {
+        "sections": [
+          "行业动态",
+          "教程（新人入门与进阶）"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "0a298477f7b8701bf8ab9b7b7c4b679f2519ada74304ecd69f6c9ccd833e6f29",
+      "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "sourceId": "source-120",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-3f6b514a62e1f419",
+      "title": "新品发往FBA之前，订单、运费和包装要确认什么",
+      "summary": "BellaVix按新品发货的先后顺序，介绍采购订单、运输责任、到岸成本与包装标签需要确认的内容。",
+      "points": [
+        "在下单前明确数量、交期、包装和运输责任，减少供应商与物流之间的遗漏。",
+        "首次订货还要考虑库存容量、保质期与过量备货成本。",
+        "运费、保险和进口费用需要纳入成本，再判断商品能承受的推广投入。"
+      ],
+      "sourceName": "BellaVix",
+      "url": "https://www.bellavix.com/how-to-start-on-amazon-fba-shipping-requirements-purchase-orders-incoterms-duties-packaging/",
+      "publishedAt": "2026-10-27",
+      "updatedAt": null,
+      "materialNote": "经营基础教程；贸易条款、税费和包装细则不是本页提供的法律或合规结论，应按商品与目的地查官方要求。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "4de8c6a71d64f40dde97c705cecedc1a5c803b5da493df4686277ee94e7d27fb",
+      "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "sourceId": "source-120",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-9a3bf556cea49c94",
+      "title": "商品怎样被搜到：关键词、页面信息与购物意图",
+      "summary": "BellaVix从买家搜索意图出发，讨论标题、要点、后台属性与商品图片怎样共同影响商品被找到和理解。",
+      "points": [
+        "用具体尺寸、材质、用途和兼容范围回答买家的问题，减少泛泛的宣传。",
+        "补齐适用的结构化属性，把关键词放到相关位置。",
+        "文章进一步讨论AI购物助手，但对算法原理与效果的说法需要保留作者归属。"
+      ],
+      "sourceName": "BellaVix",
+      "url": "https://www.bellavix.com/amazon-search-algorithm-all-we-know-about-amazon-search-bar/",
+      "publishedAt": "2026-10-22",
+      "updatedAt": null,
+      "materialNote": "从业者的搜索优化教程，不是Amazon公开的完整排名公式；文中模型、用户规模及提升数字未由本站独立验证。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）",
+          "AI营销"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "a75c023e4c5781fc7b8cf11a3f93c8ce88c6a32d4087960c9ccbe2a0fa415127",
+      "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "sourceId": "source-120",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-605b983ad27e66de",
+      "title": "品类增长，不等于你的品牌也能增长",
+      "summary": "Front Row以德国保温杯为例，说明怎样结合搜索词表现报告和商机探测器，区分品类需求变化与少数热门品牌带来的增长。",
+      "points": [
+        "先把品牌词和通用词分开，比较同一季节的数据，避免把八个月的结果直接外推全年。",
+        "用搜索词表现报告看自己出现过的搜索词，用商机探测器观察更广的需求。",
+        "作者提醒：季节波动、未结束的一周和工具估算都可能影响判断。"
+      ],
+      "sourceName": "Front Row",
+      "url": "https://www.frontrowgroup.com/en/insights/amazon-planning-for-2027-read-your-category-growth-before-you-adopt-it",
+      "publishedAt": "2026-10-28",
+      "updatedAt": null,
+      "materialNote": "机构的方法文章，案例是德国保温杯；工具口径和品牌自身情况会影响结论，不是统一增长目标。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）"
+        ],
+        "adPractice": true,
+        "productCategory": "家居杯具"
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "e9841b5f93cc474aa78d3afad0ca3d6edec74420609bec835091581aec0056d2",
+      "reviewedAt": "2026-10-29T07:57:30.595Z",
+      "sourceId": "source-127",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-98013f11332ee19b",
+      "title": "黑五前后，广告、促销和商品页面怎样配合",
+      "summary": "Front Row整理了从黑五准备到活动复盘的一组检查项，强调广告预算、促销状态、库存和商品页面需要一起看。",
+      "points": [
+        "检查商品是否可售、促销标识是否生效，再按活动阶段安排预算。",
+        "围绕礼赠对象和购物阶段调整品牌旗舰店，A+内容保留长期有效的信息。",
+        "活动结束后与日常基线比较，复盘广告、退款和库存，而不只看销售峰值。"
+      ],
+      "sourceName": "Front Row",
+      "url": "https://www.frontrowgroup.com/en/insights/the-turkey-12-amazon-checklist-from-thanksgiving-to-cyber-monday-and-beyond",
+      "publishedAt": "2026-10-27",
+      "updatedAt": null,
+      "materialNote": "针对2026年美国假日季；文中的截止日、收费和效果数字来自作者或引用资料，执行前应核对账户通知，不当作本站核验的统一规定。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）"
+        ],
+        "adPractice": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "217a556f7a2052f2191a768ce612f819098da1c68cee2473293c48f2b486b07c",
+      "reviewedAt": "2026-10-29T07:57:30.596Z",
+      "sourceId": "source-127",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-c119566773485e5f",
+      "title": "跨平台黑五准备：Amazon、TikTok Shop与独立站怎么配合",
+      "summary": "Front Row从跨平台品牌的角度，讨论促销核对、礼赠页面、达人内容与Amazon品牌搜索之间的配合。",
+      "points": [
+        "Amazon部分重在已提交促销的健康状态、库存和不同购物阶段的页面安排。",
+        "TikTok部分提醒达人内容需要准备时间，不能把寄样当成马上见效。",
+        "作者建议观察Amazon品牌搜索与独立站注册，了解站外内容可能带来的影响。"
+      ],
+      "sourceName": "Front Row",
+      "url": "https://www.frontrowgroup.com/en/insights/holiday-marketplace-checklist-amazon-tiktok-shop-and-your-d2c-site",
+      "publishedAt": "2026-10-21",
+      "updatedAt": null,
+      "materialNote": "2026年假日季机构清单，含自家服务介绍；各平台日期与资格应重新核对，跨平台启发不等于扩大本站的平台范围。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "52aadd61151c445d9ab09337f988a739aa0ab1c8118cac866e2137d5a57aa25c",
+      "reviewedAt": "2026-10-29T07:57:30.596Z",
+      "sourceId": "source-127",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-0df55782d1d4c190",
+      "title": "制定Amazon增长目标前，先看收入从哪里来",
+      "summary": "Front Row建议先区分品牌搜索、非品牌自然流量和非品牌广告带来的收入，再讨论增长目标与预算。",
+      "points": [
+        "品牌搜索需求可能来自站外营销，不能全算成账户运营创造的增长。",
+        "把搜索量、点击份额、转化率和售价连起来，检查增长到底需要哪个环节改变。",
+        "非品牌词订单不等于品牌新客，广告与自然订单也存在归因重叠。"
+      ],
+      "sourceName": "Front Row",
+      "url": "https://www.frontrowgroup.com/en/insights/amazon-planning-for-2027-where-your-revenue-actually-comes-from",
+      "publishedAt": "2026-10-21",
+      "updatedAt": null,
+      "materialNote": "这是用于年度规划的简化方法，作者主动省略了部分无需搜索的购买路径；不应当作完整归因模型。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）"
+        ],
+        "adPractice": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "cd3b65b6817985c347c7ef2e64f765eaa0c919e8565ca054b434a8adff0fe7c1",
+      "reviewedAt": "2026-10-29T07:57:30.595Z",
+      "sourceId": "source-127",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-5a0b68db1287c9e7",
+      "title": "借助 GIA 激活预构建的品牌渗透率指数",
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/geographic-insights-activation-pre-built-indices/",
+      "summary": "在展示、视频和音频广告活动中激活预构建的品牌指数，无需设置 AMC。即刻了解如何按地区进行优化。",
+      "publishedAt": "2026-10-02",
+      "updatedAt": null,
+      "points": [],
+      "materialNote": "摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "publisher-summary",
+      "evidenceHash": "b8651a590b81df0e086a03d770c47d4e2cfbab3e3f2abef4a075e295e7228840",
+      "reviewedAt": "2026-10-29T07:48:05.074Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-1861c9bce0d799b8",
+      "title": "用AI助手生成AMC查询：Amazon推出专家工具测试版",
+      "summary": "Amazon Ads宣布在MCP服务器推出专家工具的封闭测试版，首批包括把自然语言需求转成AMC查询语句的功能。",
+      "points": [
+        "官方示例是为过去30天浏览过但未购买的人群生成查询。",
+        "功能使用AMC的数据结构与受众能力处理专业任务。",
+        "在广告平台内操作的广告主，也可通过相关对话体验使用查询生成功能。"
+      ],
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/expert-tools-bring-amc-sql-generation-to-agent/",
+      "publishedAt": "2026-09-30",
+      "updatedAt": null,
+      "materialNote": "官方发布，MCP专家工具为封闭测试版；不是所有账户都已可用，生成的语句与实际受众仍应检查，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态",
+          "工具",
+          "AI营销"
+        ],
+        "aiAdsWorkflow": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "6f49a6475f6421578e61a98fe790f2114faf5ef0c84bf98b57627a9444e836f6",
+      "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-9ad9f06c2e447506",
+      "title": "Alexa+ 全屏自动播放广告",
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/full-screen-autoplay-ads-on-alexa-plus/",
+      "summary": "在 Alexa+ Echo Show 设备上，采用全屏静音自动循环播放，让视频更具感染力。",
+      "publishedAt": "2026-09-30",
+      "updatedAt": null,
+      "points": [],
+      "materialNote": "摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "publisher-summary",
+      "evidenceHash": "5ddef5fe8faa9c6656f9d7cc9919b607f905854bf2f57f6844d63483a0d18992",
+      "reviewedAt": "2026-10-29T07:48:05.074Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-5d567c766ee42eda",
+      "title": "使用自适应电子商务创意扩展优质展示广告",
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/unboxed-2026-responsive-ecommerce-creative/",
+      "summary": "自适应电子商务创意现在具有全新的广告格式、品牌标识控件和富媒体布局，可帮助您轻松扩展优质展示广告。",
+      "publishedAt": "2026-09-30",
+      "updatedAt": null,
+      "points": [],
+      "materialNote": "摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "publisher-summary",
+      "evidenceHash": "559f4b8d1b70f471f17393928fd23cde4472ad900eef4a1cb47921d5413482f2",
+      "reviewedAt": "2026-10-29T07:48:05.074Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-d25401ddaa733d8f",
+      "title": "Amazon扩展广告AI对话：从规划到效果分析",
+      "summary": "Amazon Ads扩展广告平台的对话式体验，让已接入测试版的广告主用自然语言规划媒体、管理活动并询问效果。",
+      "points": [
+        "可咨询受众规模、触达预判和预算建议。",
+        "官方列出商品推广中的受众、竞价与预算建议。",
+        "效果趋势与基准可以通过提问和可视化分析查看。"
+      ],
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/conversational-experience-amazon-ads-agent/",
+      "publishedAt": "2026-09-29",
+      "updatedAt": null,
+      "materialNote": "官方说明面向已接入测试版的广告主，能力会继续变化；可得到建议不代表应跳过检查直接执行。",
+      "features": {
+        "sections": [
+          "行业动态",
+          "工具",
+          "AI营销"
+        ],
+        "aiAdsWorkflow": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "4094acbcf617f64155d50b1a48999e55ae8cd206d8af3db19241c937267e90bd",
+      "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-cf64b381d14a36b7",
+      "title": "Amazon全流域广告活动测试版，想把不同广告连起来",
+      "summary": "Amazon Ads介绍将激发需求与承接购买连接起来的测试版广告活动，并公布早期广告主的平均结果。",
+      "points": [
+        "不同广告共享信号，官方希望减少各类广告分开管理的割裂。",
+        "介绍同时考虑即时转化与预估未来价值的长期销售指标。",
+        "可通过对话体验获得活动、创意和分析方面的帮助。"
+      ],
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/full-funnel-campaigns-from-discovery-to-sales/",
+      "publishedAt": "2026-09-29",
+      "updatedAt": null,
+      "materialNote": "结果来自Amazon对2026年6—8月早期测试广告主的研究，个体结果可能不同；长期指标含预估未来价值，不能把平均提升当保证。",
+      "features": {
+        "sections": [
+          "行业动态",
+          "工具",
+          "AI营销"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "011c9859e4b104db8ec1e12bed97beb542af63148b7915c280e98ee8a3d3db6a",
+      "reviewedAt": "2026-10-29T07:57:30.598Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-d8158cd7b4229858",
+      "title": "Sponsored Services： 立即抓住需求",
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/sponsored-services-capture-demand-now/",
+      "summary": "与准备购买您服务的顾客建立连接。",
+      "publishedAt": "2026-09-29",
+      "updatedAt": null,
+      "points": [],
+      "materialNote": "摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "publisher-summary",
+      "evidenceHash": "e3502a9c507951cefa875c19c9c00f0dc798f2c16e15161ccb0f98b555917d12",
+      "reviewedAt": "2026-10-29T07:53:38.999Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-1206a83527293800",
+      "title": "通过品牌导购找到合适的商品",
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/unboxed-2026-branded-conversations/",
+      "summary": "品牌导购将品牌推广提示词升级为融入品牌信息的购物体验。借助您的品牌专业能力，帮助顾客对比并找到合适的商品。",
+      "publishedAt": "2026-09-29",
+      "updatedAt": null,
+      "points": [],
+      "materialNote": "摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "publisher-summary",
+      "evidenceHash": "149ef74e5b4959c467656f6d7013e0fe9de8d381e5a49c623957dc928e220a89",
+      "reviewedAt": "2026-10-29T07:53:38.999Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-0fe8f7103affeb18",
+      "title": "通过评论邀请加速获取真实评论",
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/get-product-reviews-faster-with-review-requests/",
+      "summary": "邀请最近购买您商品的顾客一键评论。",
+      "publishedAt": "2026-09-29",
+      "updatedAt": null,
+      "points": [],
+      "materialNote": "摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "publisher-summary",
+      "evidenceHash": "9a5a1b111f35a0df4effeba6300ff7cbb6290fb7713e97593b90aa5e7219ae06",
+      "reviewedAt": "2026-10-29T07:53:38.999Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-edfe4c927123dfd5",
+      "title": "使用 DVA+ 触达新受众",
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/dva-plus-display-video-audio-campaigns/",
+      "summary": "DVA+ 简化了在亚马逊 AI 广告平台中创建展示、视频和音频广告活动的过程。目前，该解决方案已在美国站点推出封闭测试版。",
+      "publishedAt": "2026-09-29",
+      "updatedAt": null,
+      "points": [],
+      "materialNote": "摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "publisher-summary",
+      "evidenceHash": "c042cb8cb02171c5379f1ef3256324e75cc087ff85e1ecc9a035bdbc73f27188",
+      "reviewedAt": "2026-10-29T07:53:38.999Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-f25ff1b916e71a46",
+      "title": "借助智能体式媒体策划确定受众规模并预测触达量",
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/agentic-media-planning/",
+      "summary": "通过亚马逊 AI 广告平台中的对话式提示词，评估受众规模、预测触达量并获取预算建议。深入了解智能体式媒体策划。",
+      "publishedAt": "2026-09-28",
+      "updatedAt": null,
+      "points": [],
+      "materialNote": "摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "publisher-summary",
+      "evidenceHash": "97ca03639b417916da66854a63260d23f0d3c32751d9b7f00ff15161807c8717",
+      "reviewedAt": "2026-10-29T07:53:38.999Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-720c9a249c18754c",
+      "title": "通过亚马逊广告中的对话式体验进行分析",
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/analytics/",
+      "summary": "在亚马逊广告中使用自然语言分析广告活动效果，以识别趋势、将结果与基准进行对比，并发现洞察。",
+      "publishedAt": "2026-09-28",
+      "updatedAt": null,
+      "points": [],
+      "materialNote": "摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "publisher-summary",
+      "evidenceHash": "544a0c816c703cb54c2a927f4468911aaceae46f03d3470acd574e4cfe6e4093",
+      "reviewedAt": "2026-10-29T07:53:38.999Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-c955c023f02a383b",
+      "title": "借助全新的广告数据管理器，充分利用您的第一方数据",
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/new-ads-data-manager-experience/",
+      "summary": "全新的广告数据管理器简化了亚马逊广告中第一方数据的连接、管理和激活工作。了解新变化并立即开始使用。",
+      "publishedAt": "2026-09-28",
+      "updatedAt": null,
+      "points": [],
+      "materialNote": "摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "publisher-summary",
+      "evidenceHash": "d5841ae06ea2dc7988e1c2bbe9d948b1762a9f9c6cb32e0e1d024e93d428abc5",
+      "reviewedAt": "2026-10-29T07:58:47.681Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-cc5721f18f8595e6",
+      "title": "在第三方供应方使用 VAST 4 投放视频广告",
+      "sourceName": "Amazon Ads",
+      "url": "https://advertising.amazon.com/resources/whats-new/serve-video-ads-with-vast-4-on-third-party-supply/",
+      "summary": "亚马逊 DSP 现已在第三方广告库存上支持最新的 IAB 视频广告标准，无需任何操作。",
+      "publishedAt": "2026-09-02",
+      "updatedAt": null,
+      "points": [],
+      "materialNote": "摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "publisher-summary",
+      "evidenceHash": "58a90b834a968778e9485bc9009d8ab81721c1d65064abd9e1699bc1b214a10b",
+      "reviewedAt": "2026-10-29T07:58:47.681Z",
+      "sourceId": "source-001",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-45efb52867116f16",
+      "title": "TikTok Shop的畅销商品，为什么和Amazon不一样",
+      "summary": "Marketplace Pulse用其卖家和商品样本介绍TikTok Shop的内容、品类与商家特点，为Amazon品牌理解站外需求提供参考。",
+      "points": [
+        "作者认为内容展示方式会影响哪些商品更容易被发现。",
+        "排名和短期走红不是一回事，持续内容与达人关系可能更关键。",
+        "当前文章是报告介绍，不能把未取得的完整报告当成已经读过。"
+      ],
+      "sourceName": "Marketplace Pulse",
+      "url": "http://www.marketplacepulse.com/articles/what-45-million-products-say-about-tiktok-shop",
+      "publishedAt": "2026-10-09",
+      "updatedAt": null,
+      "materialNote": "媒体自有研究的介绍页，统计属于其样本；跨平台观察仅作营销启发，不把TikTok规则套给Amazon。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "14ba6de94ba51adcb89acfce1cad3f711ab91424e465ebe24f1ed8b7595eaa41",
+      "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "sourceId": "source-007",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-e23130f45757aff1",
+      "title": "Amazon卖得好，不代表在TikTok也能复制",
+      "summary": "Marketplace Pulse比较两平台头部卖家的交集，并讨论TikTok创造需求、Amazon承接品牌搜索的不同路径。",
+      "points": [
+        "作者按商家名称匹配两平台名单，指出排名并不会简单迁移。",
+        "对适合视频展示的商品，建议同时观察Amazon品牌搜索。",
+        "能否通过内容展示使用效果，比直接复制Amazon投放方法更值得先判断。"
+      ],
+      "sourceName": "Marketplace Pulse",
+      "url": "http://www.marketplacepulse.com/articles/amazons-top-sellers-arent-tiktok-shops",
+      "publishedAt": "2026-09-10",
+      "updatedAt": null,
+      "materialNote": "媒体样本与作者解释，不是站外内容带来Amazon订单的因果实验；商家名称匹配和品类差异会影响比较。",
+      "features": {
+        "sections": [
+          "行业动态"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "19ee9d81214a0432ba2637694dd1bf4bee79d71568e5bff1ff2005717ea0d850",
+      "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "sourceId": "source-007",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-7088615698926f55",
+      "title": "AI曾经答错过，还值得重新试吗",
+      "summary": "Seller Labs面向卖家和代理机构，讨论怎样重新测试AI能力，并用真实业务资料与可核对的来源减少错误。",
+      "points": [
+        "作者认为旧版本的使用体验需要注明时间，不能替代对当前工具的实际测试。",
+        "重要数字要求提供报告、时间范围和商品依据；缺数据时不应让AI猜测。",
+        "文末介绍自家MCP产品，相关能力属于厂商自述。"
+      ],
+      "sourceName": "Seller Labs",
+      "url": "https://www.sellerlabs.com/blog/your-ai-verdict-has-an-expiration-date/",
+      "publishedAt": "2026-10-28",
+      "updatedAt": null,
+      "materialNote": "文章含作者观点、外部研究与自家产品介绍；较新模型不等于自动更准确，双模型检查也不保证无错。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）",
+          "AI营销"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "00fe126516dbb65d24e64ad06249cc3d31506ddaf2b138b8fd842631642a403d",
+      "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "sourceId": "source-056",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-fe2ff68048b476fe",
+      "title": "把广告SOP写成文件，让不同AI都能接着用",
+      "summary": "Seller Labs作者建议把关键词研究、广告结构和客户报告等重复流程写成自己保管的文件，让AI按文件执行并持续修订。",
+      "points": [
+        "步骤之外还要写清规则和理由，帮助下一次执行处理未列出的情况。",
+        "先挑一个每周重复的小任务，用文件作为执行依据。",
+        "出错后修改流程文件，而不只是在聊天里纠正一次。"
+      ],
+      "sourceName": "Seller Labs",
+      "url": "https://www.sellerlabs.com/blog/the-model-is-rented-the-playbook-is-yours/",
+      "publishedAt": "2026-10-27",
+      "updatedAt": null,
+      "materialNote": "这是作者的实际使用经验和建议；能否迁移到另一种模型仍需验证，文件存在不代表任务已正确自动化。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）",
+          "AI营销"
+        ],
+        "aiAdsWorkflow": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "ea8875182e9c4c166e55b8d17bc6af94029364f1b1dc915278ab8fcca3759ea7",
+      "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "sourceId": "source-056",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-71f3f310c53e89a7",
+      "title": "从一个重复任务开始，把AI逐步接进卖家工作",
+      "summary": "Seller Labs作者分享把重复工作交给AI的四步做法：先看着完成一次，再记录流程、安排执行，最后补上需要的网页操作。",
+      "points": [
+        "文中把周广告报告、库存检查与财务核对作为可能的应用场景。",
+        "先保留人工观察和最终确认，再逐步增加自动化。",
+        "作者关于工作中80%与20%的划分是解释方式，并非测量结果。"
+      ],
+      "sourceName": "Seller Labs",
+      "url": "https://www.sellerlabs.com/blog/biggest-reorganization-of-work-since-industrial-revolution/",
+      "publishedAt": "2026-10-26",
+      "updatedAt": null,
+      "materialNote": "作者的经营与技术经验，含宏观观点；不能据此承诺AI能替代固定比例的人力或保证成本下降。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）",
+          "AI营销"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "2e005e01c61ee23ecdd2e47c8d67f10f258419e72ed7955e0af241676db28baf",
+      "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "sourceId": "source-056",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-4ded4df4c0eb2ab2",
+      "title": "AI给出广告预测之后，怎样用真实结果检查它",
+      "summary": "AdExchanger采访Amazon Ads测量负责人，讨论广告测量怎样帮助广告主监督AI，而不是把预测直接当成已经实现的销售。",
+      "points": [
+        "区分平台给出的模型洞察与可导出的明细数据。",
+        "长期销售指标包含对未来购买的估计，后续累计销售用来观察实际购买。",
+        "记者提醒：模型给出的确定数字仍可能是预测，需要保留透明度与控制。"
+      ],
+      "sourceName": "AdExchanger",
+      "url": "https://www.adexchanger.com/commerce/instead-of-ai-insights-replacing-ad-measurement-think-of-attribution-as-running-your-ai/",
+      "publishedAt": "2026-10-01",
+      "updatedAt": null,
+      "materialNote": "记者采访与分析，功能描述来自受访者；预测指标不是已经发生的收入，也不证明某个账户未来一定实现对应销售。",
+      "features": {
+        "sections": [
+          "行业动态",
+          "教程（新人入门与进阶）",
+          "AI营销"
+        ],
+        "adPractice": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "46546d58239c40c57f8ea66952acae945e38415dee44f5a7df5031bc9930b044",
+      "reviewedAt": "2026-10-29T07:57:30.598Z",
+      "sourceId": "source-144",
+      "addedAt": "2026-10-29T07:53:38.999Z"
+    },
+    {
+      "id": "live-136bb6f7135aa3f8",
+      "title": "Amazon对话式广告里，品牌能控制哪些内容",
+      "summary": "AdExchanger报道Amazon在unBoxed介绍的对话式广告和品牌输入方式，重点解释品牌可以提供什么、不能控制什么。",
+      "points": [
+        "品牌可以提供商品描述、用途和搭配信息，帮助对话式购物呈现内容。",
+        "受访者说明，品牌不能挑选让AI优先展示的评论。",
+        "文中还介绍请求评论的广告，并提醒点击不保证得到评论或好评。"
+      ],
+      "sourceName": "AdExchanger",
+      "url": "https://www.adexchanger.com/platforms/amazon-gets-conversational-with-new-agentic-ad-formats-and-brand-controls/",
+      "publishedAt": "2026-09-29",
+      "updatedAt": null,
+      "materialNote": "会议报道中的演示与产品描述，不代表所有账户已开放；评价请求等功能资格与规则应以官方文档及账户实际可用范围为准。",
+      "features": {
+        "sections": [
+          "行业动态",
+          "工具",
+          "AI营销"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "7db218a7d4730efa79f33c2043733d1b3677905fde6f7e3e3bfa853030339a2b",
+      "reviewedAt": "2026-10-29T07:57:30.598Z",
+      "sourceId": "source-144",
+      "addedAt": "2026-10-29T07:53:38.999Z"
     }
-  ]
+  ],
+  "groupedRows": 76
 }

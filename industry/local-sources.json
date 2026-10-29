@@ -1,0 +1,9 @@
+[
+  {"id":"source-001","name":"Amazon Ads","kind":"amazon_updates","url":"https://advertising.amazon.com/a20m-api/v1/pages?subpageType=Whats%20new&locale=en_US","host":"advertising.amazon.com","language":"zh","bodyLimit":6},
+  {"id":"source-007","name":"Marketplace Pulse","kind":"rss","url":"https://www.marketplacepulse.com/articles/recent.atom","host":"marketplacepulse.com","language":"en","bodyLimit":3},
+  {"id":"source-056","name":"Seller Labs","kind":"rss","url":"https://www.sellerlabs.com/feed/","host":"sellerlabs.com","language":"en","bodyLimit":3},
+  {"id":"source-111","name":"Scale Insights","kind":"rss","url":"https://blog.scaleinsights.com/rss.xml","host":"blog.scaleinsights.com","language":"en","bodyLimit":3},
+  {"id":"source-120","name":"BellaVix","kind":"rss","url":"https://www.bellavix.com/feed/","host":"bellavix.com","language":"en","bodyLimit":3},
+  {"id":"source-127","name":"Front Row","kind":"rss","url":"https://www.frontrowgroup.com/en/insights/feed","host":"frontrowgroup.com","language":"en","bodyLimit":4},
+  {"id":"source-144","name":"AdExchanger","kind":"rss","url":"https://www.adexchanger.com/tag/amazon/feed/","host":"adexchanger.com","language":"en","bodyLimit":3}
+]

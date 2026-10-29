@@ -40,9 +40,10 @@ test('合并同事件，仍能搜索解读文、在交叉栏目找到内容', ()
 test('实际48篇全部保留，明确偏好生效，043不伪造用户加分', () => {
   const data = JSON.parse(fs.readFileSync('site/preview/content.json', 'utf8'));
   const labels = JSON.parse(fs.readFileSync('docs/精选校准/标记.json', 'utf8'));
-  assert.equal(data.items.length, 48);
-  assert.equal(new Set(data.items.map((a: Article) => a.id)).size, 48);
-  assert.equal(feed(data.items).groups.length, 47);
+  const baseline = data.items.filter((a: Article) => a.id.startsWith('article-'));
+  assert.equal(baseline.length, 48);
+  assert.equal(new Set(data.items.map((a: Article) => a.id)).size, data.items.length);
+  assert.equal(feed(baseline).groups.length, 47);
   for (const n of ['042', '044']) assert.equal(priority(data.items.find((a: Article) => a.id === `article-${n}`)).tier, 2);
   assert.equal(priority(data.items.find((a: Article) => a.id === 'article-047')).tier, 0);
   assert.equal(labels.labels.find((l: { number: string }) => l.number === '043').priorityPreference.direction, 'diversify');
