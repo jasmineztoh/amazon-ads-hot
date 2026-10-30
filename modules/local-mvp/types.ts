@@ -9,7 +9,7 @@ export type Entry = {
   bodyVia?: 'rss' | 'page';
   publication?: Article & { origin: 'publisher-summary' | 'agent-reviewed'; evidenceHash: string; reviewedAt: string };
 };
-export type SourceHealth = { id: string; name: string; attemptedAt: string; successAt: string | null; candidates: number; error: string | null };
+export type SourceHealth = { id: string; name: string; attemptedAt: string; successAt: string | null; candidates: number; error: string | null; latestPublishedAt?: string | null; earliestListedAt?: string | null; recentCandidates?: number };
 export type Run = { startedAt: string; finishedAt: string; discovered: number; newEntries: number; duplicateEntries: number; bodies: number; published: number; failures: number; sources: SourceHealth[] };
 export type Store = { version: 1; entries: Record<string, Entry>; sources: Record<string, SourceHealth>; runs: Run[] };
 export type Edit = { id: string; evidenceHash: string; decision: 'publish' | 'exclude'; title?: string; summary?: string; points?: string[]; materialNote: string; features?: Features; reviewedAt: string; reviewedBy: 'Agent' };

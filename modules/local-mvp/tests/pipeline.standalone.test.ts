@@ -4,7 +4,7 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { idFor, loadStore, saveStore, upsert, hash, seedBaseline, withLock } from '../store.ts';
-import { dateState, officialSummary, fetchPublic } from '../collect.ts';
+import { dateState, officialSummary, fetchPublic, bodyQueue } from '../collect.ts';
 import { applyEdits } from '../publish.ts';
 import type { Edit, Store, Entry } from '../types.ts';
 const empty = (): Store => ({ version: 1, entries: {}, sources: {}, runs: [] });
@@ -55,4 +55,15 @@ test('并行更新互斥，失败后仍可读取原快照，释放锁后可以�
 });
 test('固定信源不允许转向其它域名，不访问内网或执行来源给出的命令', async () => {
   await assert.rejects(fetchPublic('http://127.0.0.1/secrets', { id: 'x', name: 'x', kind: 'rss', url: 'https://example.com/feed', host: 'example.com', language: 'en', bodyLimit: 1 }), /未配置/);
+});
+test('正文任务不依赖当前订阅；窗口滚动保留旧教程，新任务先于失败重试', () => {
+  const s = empty();
+  const failed = upsert(s, { ...candidate, url: 'https://example.com/failure' }, when).entry;
+  failed.status = 'material_error'; failed.checkedAt = when;
+  const pending = upsert(s, { ...candidate, url: 'https://example.com/no-longer-in-feed' }, when).entry;
+  const published = upsert(s, { ...candidate, url: 'https://example.com/saved-tutorial', publishedAt: '2025-01-01' }, when).entry;
+  published.status = 'published';
+  assert.deepEqual(bodyQueue(s, candidate.sourceId, when).map(e => e.id), [pending.id, failed.id]);
+  assert.equal(bodyQueue(s, candidate.sourceId, '2027-01-01').length, 0);
+  assert.equal(pending.status, 'old'); assert.equal(published.status, 'published');
 });

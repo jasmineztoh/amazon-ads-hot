@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url';
-import { collectOnce } from './collect.ts';
+import { collectOnce, CHECK_INTERVAL_MINUTES } from './collect.ts';
 import { publishSnapshot, buildContent } from './publish.ts';
 import { atomicJson } from './store.ts';
 export async function startUpdates() {
@@ -16,7 +16,7 @@ export async function startUpdates() {
     })().finally(() => { running = null; });
     return running;
   };
-  const timer = setInterval(update, 120 * 60_000);
+  const timer = setInterval(update, CHECK_INTERVAL_MINUTES * 60_000);
   void update();
   return { stop: async () => { stopped = true; clearInterval(timer); await running; } };
 }

@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-10-29",
-  "updatedAt": "2026-10-29T08:05:49.266Z",
-  "total": 77,
+  "updatedAt": "2026-10-30T03:55:59.921Z",
+  "total": 89,
   "reviewedTotal": 48,
   "sections": [
     "行业动态",
@@ -10,83 +10,148 @@
     "工具",
     "AI营销"
   ],
-  "revision": "4e00779ece0911984d9696b4a0e7a72a662232d18ad53c473a72a1754649f366",
+  "revision": "9e89e2ec1d1320829ca0d8df19b0708a06ba1e8089960882343df26f4b11ddfb",
   "collection": {
     "enabled": true,
     "intervalMinutes": 120,
     "lastRun": {
-      "startedAt": "2026-10-29T08:05:38.657Z",
-      "finishedAt": "2026-10-29T08:05:49.266Z",
-      "discovered": 555,
+      "startedAt": "2026-10-30T03:55:49.419Z",
+      "finishedAt": "2026-10-30T03:55:59.921Z",
+      "discovered": 606,
       "newEntries": 0,
-      "duplicateEntries": 555,
-      "bodies": 5,
+      "duplicateEntries": 606,
+      "bodies": 15,
       "published": 0,
       "failures": 1,
       "sources": [
         {
           "id": "source-001",
           "name": "Amazon Ads",
-          "attemptedAt": "2026-10-29T08:05:38.657Z",
-          "successAt": "2026-10-29T08:05:40.955Z",
+          "attemptedAt": "2026-10-30T03:55:49.419Z",
+          "successAt": "2026-10-30T03:55:50.745Z",
           "candidates": 423,
-          "error": null
+          "error": null,
+          "latestPublishedAt": "2026-10-02",
+          "earliestListedAt": "2020-10-30",
+          "recentCandidates": 15
+        },
+        {
+          "id": "source-003",
+          "name": "Ad Badger / PPC Den",
+          "attemptedAt": "2026-10-30T03:55:49.419Z",
+          "successAt": "2026-10-30T03:55:51.155Z",
+          "candidates": 6,
+          "error": null,
+          "latestPublishedAt": "2026-10-23T14:00:00.000Z",
+          "earliestListedAt": "2026-09-25T17:07:32.000Z",
+          "recentCandidates": 6
         },
         {
           "id": "source-007",
           "name": "Marketplace Pulse",
-          "attemptedAt": "2026-10-29T08:05:38.657Z",
-          "successAt": "2026-10-29T08:05:40.540Z",
+          "attemptedAt": "2026-10-30T03:55:49.419Z",
+          "successAt": "2026-10-30T03:55:50.850Z",
           "candidates": 20,
-          "error": null
+          "error": null,
+          "latestPublishedAt": "2026-10-09T13:45:00.000Z",
+          "earliestListedAt": "2026-03-05T16:30:00.000Z",
+          "recentCandidates": 3
+        },
+        {
+          "id": "source-028",
+          "name": "Acadia",
+          "attemptedAt": "2026-10-30T03:55:49.419Z",
+          "successAt": "2026-10-30T03:55:50.318Z",
+          "candidates": 10,
+          "error": null,
+          "latestPublishedAt": "2026-10-29T13:54:10.000Z",
+          "earliestListedAt": "2026-09-10T13:04:29.000Z",
+          "recentCandidates": 10
         },
         {
           "id": "source-056",
           "name": "Seller Labs",
-          "attemptedAt": "2026-10-29T08:05:38.657Z",
-          "successAt": "2026-10-29T08:05:39.857Z",
+          "attemptedAt": "2026-10-30T03:55:49.419Z",
+          "successAt": "2026-10-30T03:55:50.466Z",
           "candidates": 10,
-          "error": null
+          "error": null,
+          "latestPublishedAt": "2026-10-29T13:30:00.000Z",
+          "earliestListedAt": "2026-10-20T15:00:00.000Z",
+          "recentCandidates": 10
+        },
+        {
+          "id": "source-092",
+          "name": "Kiri Masters / Retail Media Breakfast Club",
+          "attemptedAt": "2026-10-30T03:55:49.419Z",
+          "successAt": "2026-10-30T03:55:50.437Z",
+          "candidates": 15,
+          "error": null,
+          "latestPublishedAt": "2026-10-29T10:00:00.000Z",
+          "earliestListedAt": "2026-10-05T10:23:47.000Z",
+          "recentCandidates": 15
         },
         {
           "id": "source-111",
           "name": "Scale Insights",
-          "attemptedAt": "2026-10-29T08:05:38.657Z",
-          "successAt": "2026-10-29T08:05:39.950Z",
+          "attemptedAt": "2026-10-30T03:55:49.419Z",
+          "successAt": "2026-10-30T03:55:50.364Z",
           "candidates": 10,
-          "error": null
+          "error": null,
+          "latestPublishedAt": "2026-09-16T09:58:08.000Z",
+          "earliestListedAt": "2026-08-04T04:47:54.000Z",
+          "recentCandidates": 3
         },
         {
           "id": "source-120",
           "name": "BellaVix",
-          "attemptedAt": "2026-10-29T08:05:38.657Z",
-          "successAt": "2026-10-29T08:05:39.956Z",
+          "attemptedAt": "2026-10-30T03:55:49.419Z",
+          "successAt": "2026-10-30T03:55:50.650Z",
           "candidates": 9,
-          "error": null
+          "error": null,
+          "latestPublishedAt": "2026-10-29T15:20:20.000Z",
+          "earliestListedAt": "2026-10-13T13:28:33.000Z",
+          "recentCandidates": 9
         },
         {
           "id": "source-127",
           "name": "Front Row",
-          "attemptedAt": "2026-10-29T08:05:38.657Z",
-          "successAt": "2026-10-29T08:05:40.482Z",
+          "attemptedAt": "2026-10-30T03:55:49.419Z",
+          "successAt": "2026-10-30T03:55:50.978Z",
           "candidates": 73,
-          "error": null
+          "error": null,
+          "latestPublishedAt": "2026-10-28T14:00:00.000Z",
+          "earliestListedAt": "2025-05-20T16:00:00.000Z",
+          "recentCandidates": 23
         },
         {
           "id": "source-144",
           "name": "AdExchanger",
-          "attemptedAt": "2026-10-29T08:05:38.657Z",
-          "successAt": "2026-10-29T08:05:41.469Z",
+          "attemptedAt": "2026-10-30T03:55:49.419Z",
+          "successAt": "2026-10-30T03:55:50.265Z",
           "candidates": 10,
-          "error": null
+          "error": null,
+          "latestPublishedAt": "2026-10-30T00:09:43.000Z",
+          "earliestListedAt": "2026-09-11T09:00:05.000Z",
+          "recentCandidates": 10
+        },
+        {
+          "id": "source-160",
+          "name": "RetailPlaybook / Andrew Bell",
+          "attemptedAt": "2026-10-30T03:55:49.419Z",
+          "successAt": "2026-10-30T03:55:50.026Z",
+          "candidates": 20,
+          "error": null,
+          "latestPublishedAt": "2026-10-29T13:02:04.000Z",
+          "earliestListedAt": "2026-07-15T14:30:47.000Z",
+          "recentCandidates": 10
         }
       ]
     },
     "counts": {
       "baseline": 48,
-      "published": 29,
-      "old": 480,
-      "pending": 43,
+      "published": 41,
+      "old": 490,
+      "pending": 72,
       "future": 1,
       "excluded": 4,
       "material_error": 1
@@ -130,7 +195,7 @@
       "sourceName": "Adbrew",
       "sourceId": "source-008",
       "url": "https://adbrew.io/blog/reduce-acos-on-amazon",
-      "publishedAt": "2026-10-27",
+      "publishedAt": "2025-06-09",
       "updatedAt": null,
       "format": "教程",
       "summary": "Adbrew从ACOS的含义和计算开始，解释广告投入、商品利润与投放目标之间的关系。",
@@ -139,7 +204,7 @@
         "讨论成熟商品、新品、品牌词和清库存时，目标为何可能不同。",
         "给出关键词、广告位和页面方面的调整思路，并链接到其它教程及自家产品。"
       ],
-      "materialNote": "是一篇基础概念加操作建议的长文；举例数值不代表所有账户。",
+      "materialNote": "Adbrew厂商教程。2026-10-30复核原文显示发布日期2025-06-09；保留ACOS概念学习价值。文中部分动态竞价参数已与当前Amazon官方说明不同，操作前请核对官方动态竞价指南。",
       "collectionApproved": true,
       "featuredDecision": null,
       "editorialTextReviewed": false,
@@ -1505,6 +1570,33 @@
       "addedAt": "2026-10-29T07:48:05.074Z"
     },
     {
+      "id": "live-8b042ea743b6538d",
+      "title": "月度账户检查：把流量、转化、库存和退货一起看",
+      "summary": "BellaVix整理卖家月度检查流程，从商品层面的流量与转化，延伸到购买按钮、库存、退货及广告表现。",
+      "points": [
+        "结合环比与去年同期观察商品，避免把季节性变化直接归因于广告。",
+        "先判断变化发生在访问还是购买环节，再检查对应的商品与流量。",
+        "不同报告的会话、件数和广告归因订单口径不同，比较前先对齐。"
+      ],
+      "sourceName": "BellaVix",
+      "url": "https://www.bellavix.com/amazon-seller-account-audit-a-step-by-step-monthly-checklist/",
+      "publishedAt": "2026-10-14",
+      "updatedAt": null,
+      "materialNote": "机构操作教程。文中报表路径和费用规则可能变化；Unit Session Percentage是件数/会话口径，不能直接等同于广告订单/点击转化率。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）"
+        ],
+        "adPractice": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "7726b01b8db35f69a60ae891233e66f5fec1a1fce34fd5e32e0058c94f38916f",
+      "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "sourceId": "source-120",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
       "id": "live-605b983ad27e66de",
       "title": "品类增长，不等于你的品牌也能增长",
       "summary": "Front Row以德国保温杯为例，说明怎样结合搜索词表现报告和商机探测器，区分品类需求变化与少数热门品牌带来的增长。",
@@ -1609,6 +1701,143 @@
       "origin": "agent-reviewed",
       "evidenceHash": "cd3b65b6817985c347c7ef2e64f765eaa0c919e8565ca054b434a8adff0fe7c1",
       "reviewedAt": "2026-10-29T07:57:30.595Z",
+      "sourceId": "source-127",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-1f53dd1681c0551a",
+      "title": "自然感短视频为什么值得放进素材测试",
+      "summary": "Front Row结合TikTok和Meta等资料，讨论生活化视频、创作者内容与精致品牌素材的不同作用，强调自然感也需要产品事实和品牌识别。",
+      "points": [
+        "低制作感和用户生成内容并非同一种素材，来源与控制方式不同。",
+        "吸引注意后，还要让人记住品牌和商品；不能只看互动。",
+        "将不同开头、人物和格式放进实际测试，再判断适用场景。"
+      ],
+      "sourceName": "Front Row",
+      "url": "https://www.frontrowgroup.com/en/insights/why-lo-fi-ugc-style-content-is-outperforming-polished-ads-right-now",
+      "publishedAt": "2026-10-07",
+      "updatedAt": null,
+      "materialNote": "跨平台创意经验，引用平台和研究机构数据并推广自家服务；相关效果不能直接外推到Amazon广告，也不证明粗糙素材普遍更好。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "ed3074b96388ca6ce0b55f6e76d57fbd0e3f945d8a2dec2ae6b47e2a74a55211",
+      "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "sourceId": "source-127",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-ec68a1e5103b2903",
+      "title": "进入新市场前，怎样判断机会是否真的属于你",
+      "summary": "Front Row用玩具等品类讲解市场进入分析：先统一细分类目和价格带，再比较市场规模、品牌集中度、新品机会与产品属性。",
+      "points": [
+        "在目的市场重新分析需求，不直接把本国畅销榜当作出海清单。",
+        "集中度与低评论商品的收入占比要一起看；频繁推出新品的强势品牌也可能制造低评论占比高的假象。",
+        "市场估算和产品属性分析只能支持假设，还需结合合规、物流及其它销售渠道验证。"
+      ],
+      "sourceName": "Front Row",
+      "url": "https://www.frontrowgroup.com/en/insights/test-the-market-before-you-sign-the-distributor",
+      "publishedAt": "2026-10-06",
+      "updatedAt": null,
+      "materialNote": "机构分析方法与自有案例，收入估算有不确定性；品类开放不等于容易进入，文中没有保证销售结果。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）",
+          "案例"
+        ],
+        "productCategory": "玩具"
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "f3216b0ed2e5a9c86395d72e9af8e16d31de07367c58e48877cf416757a1603c",
+      "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "sourceId": "source-127",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-f953908f68753bf1",
+      "title": "AI购物时代，商品信息为什么更需要一致",
+      "summary": "Front Row认为，结构化数据让机器更容易读取内容，而清楚、具体且相互一致的商品信息仍然决定内容是否有参考价值。",
+      "points": [
+        "核对商品页、文章与其它资料中的规格和品牌信息是否一致。",
+        "技术标记能帮助机器识别页面，但不能替代对买家问题的具体回答。",
+        "把内容质量与技术整理一起改进，随后观察真实可见度变化。"
+      ],
+      "sourceName": "Front Row",
+      "url": "https://www.frontrowgroup.com/en/insights/content-is-still-king-for-agentic-search",
+      "publishedAt": "2026-09-29",
+      "updatedAt": null,
+      "materialNote": "机构观点文章，包含服务推广。对AI选择内容的机制是作者解释，不是已验证的Amazon排名规则。",
+      "features": {
+        "sections": [
+          "AI营销",
+          "教程（新人入门与进阶）"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "b8b8d89a24e94768148ab4d9b7a9e3f6338e4ad8a47e4a820c546acf4cda05b2",
+      "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "sourceId": "source-127",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-21f81401ff74b858",
+      "title": "德国DIY与园艺市场报告：先看增长来自哪里",
+      "summary": "Front Row与Aybee的报告介绍页提供了德国Amazon DIY和园艺市场的研究线索，关注细分类目、新品牌、渠道迁移及大件商品成本。",
+      "points": [
+        "报告把整体增长进一步拆到子类目，提示整体规模不能代替具体机会。",
+        "第三方卖家增长可能包含渠道转移，需要区别于品牌整体增长。",
+        "大件商品的物流成本也应进入营销和经营判断。"
+      ],
+      "sourceName": "Front Row",
+      "url": "https://www.frontrowgroup.com/en/insights/gc-category-report-dyi-house-garden-on-amazon-de",
+      "publishedAt": "2026-09-28",
+      "updatedAt": null,
+      "materialNote": "仅依据公开报告介绍页，未将下载报告中的细节补写成已阅读结论；市场规模与增长数据为机构口径，未独立核验。",
+      "features": {
+        "sections": [
+          "行业动态",
+          "案例"
+        ],
+        "productCategory": "家居园艺"
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "72d0d2b8bd111daa4dd6393ac4f8b4b04b036d6812f8c06a21564beb7f8f5ced",
+      "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "sourceId": "source-127",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-0054b26231e4141e",
+      "title": "美妆品牌怎样一起看TikTok与Amazon",
+      "summary": "Front Row讨论美妆消费者跨平台发现、确认与复购的路径，建议把内容、达人、广告、商品页面和库存放在同一经营视角下观察。",
+      "points": [
+        "作者用发现与补货等场景解释两个平台可能承担的不同作用。",
+        "品牌搜索增长等信号可以提供线索，但跨渠道归因仍难以证明。",
+        "关注团队之间共享的信息与目标，而不是假设两个渠道适用同一套打法。"
+      ],
+      "sourceName": "Front Row",
+      "url": "https://www.frontrowgroup.com/en/insights/the-connections-between-tiktok-shop-and-amazon-in-beauty",
+      "publishedAt": "2026-09-24",
+      "updatedAt": null,
+      "materialNote": "机构观点与行业资料，包含服务推广。平台角色是作者概括，不适用于所有消费者；所谓外溢效果并未在本文获得独立因果验证。",
+      "features": {
+        "sections": [
+          "案例",
+          "教程（新人入门与进阶）"
+        ],
+        "productCategory": "美妆"
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "ca5a88dad38acde0d27b0e4f1a3c1faf0dd91ee6102e334c635d186fecf2e338",
+      "reviewedAt": "2026-10-30T03:42:43.538Z",
       "sourceId": "source-127",
       "addedAt": "2026-10-29T07:48:05.074Z"
     },
@@ -2075,6 +2304,91 @@
       "addedAt": "2026-10-29T07:48:05.074Z"
     },
     {
+      "id": "live-82dee77a391130ed",
+      "title": "广告和运营为什么要放在一起看",
+      "summary": "Seller Labs节目介绍中，Drew Hart把广告表现与购买按钮、库存、页面状态和转化联系起来，提醒团队先检查能否正常承接流量。",
+      "points": [
+        "广告诊断需要同时检查商品是否可购买、页面是否被限制，以及库存是否稳定。",
+        "节目提出用买家的购买动机梳理页面信息，具体效果数字属于嘉宾经验。",
+        "这期节目录制于2026年4月，文中明确提醒库存费用规则后来有变化。"
+      ],
+      "sourceName": "Seller Labs",
+      "url": "https://www.sellerlabs.com/blog/stop-running-amazon-ads-in-a-silo-drew-hart/",
+      "publishedAt": "2026-10-24",
+      "updatedAt": null,
+      "materialNote": "依据节目页现有文字与时间轴整理，未听完整音频。费用、保修和跟卖处理需回查当前官方规则；嘉宾的收益推算不是普遍保证。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）"
+        ],
+        "adPractice": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "4072d6a30695626c85675e3cf421247cd9f854aa471673182f5b1a3e07d8d22b",
+      "reviewedAt": "2026-10-30T03:42:43.537Z",
+      "sourceId": "source-056",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-477d6cd8ecc13bed",
+      "title": "用AI查利润前，先检查成本、报表和数据缺口",
+      "summary": "Seller Labs在自家MCP评测中拆解商品利润核算，同时披露数据延迟、成本默认值、历史重算和缺失数据等限制。",
+      "points": [
+        "先把销售、费用、退款、仓储、广告与到岸成本按相同日期和站点对齐，避免广告费用重复计入。",
+        "更新成本可能追溯改变历史利润；销售历史与广告历史覆盖长度也可能不同。",
+        "先用已手工核对的商品和月份比对AI结果，再决定是否替换现有工作方式。"
+      ],
+      "sourceName": "Seller Labs",
+      "url": "https://www.sellerlabs.com/blog/seller-labs-amazon-mcp-review-true-profit/",
+      "publishedAt": "2026-10-22",
+      "updatedAt": null,
+      "materialNote": "厂商自评，包含产品推广。文中算例为假设数据；功能、历史范围与数据延迟按作者描述，未做独立产品测试。SKU贡献不等于企业净利润。",
+      "features": {
+        "sections": [
+          "工具",
+          "AI营销",
+          "教程（新人入门与进阶）"
+        ],
+        "aiAdsWorkflow": true,
+        "promotionLed": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "dbf8a454579ad459ce5ce387006bf6dd23d11a788b39002c6a22c1d4bc4eff73",
+      "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "sourceId": "source-056",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
+      "id": "live-aefc1af6a33d7682",
+      "title": "把库存数据接给AI：先检查数据，再比较连接成本",
+      "summary": "Seller Labs比较上传报表、自建SP-API连接和MCP三种方式，提出先确认能拿到所需报表，再计算重复操作、搭建和维护成本。",
+      "points": [
+        "一种连接是否方便，要先看它能否回答你的库存问题。",
+        "把每月检查频次、每次用时、搭建和维护一起纳入比较。",
+        "连接成功后仍需抽查结果，并核对数据的更新时间与字段含义。"
+      ],
+      "sourceName": "Seller Labs",
+      "url": "https://www.sellerlabs.com/blog/connect-amazon-inventory-data-to-ai/",
+      "publishedAt": "2026-10-20",
+      "updatedAt": null,
+      "materialNote": "厂商方法文章，介绍自家工具；成本算例为作者编写的示例，不代表实际报价或节省承诺。",
+      "features": {
+        "sections": [
+          "AI营销",
+          "工具"
+        ],
+        "promotionLed": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "5b7b3083ae2a0a959cccece53b5a369f1c480b412468070b8230492cd3f1e320",
+      "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "sourceId": "source-056",
+      "addedAt": "2026-10-29T07:48:05.074Z"
+    },
+    {
       "id": "live-4ded4df4c0eb2ab2",
       "title": "AI给出广告预测之后，怎样用真实结果检查它",
       "summary": "AdExchanger采访Amazon Ads测量负责人，讨论广告测量怎样帮助广告主监督AI，而不是把预测直接当成已经实现的销售。",
@@ -2130,7 +2444,93 @@
       "reviewedAt": "2026-10-29T07:57:30.598Z",
       "sourceId": "source-144",
       "addedAt": "2026-10-29T07:53:38.999Z"
+    },
+    {
+      "id": "live-f154d45e4ccb957e",
+      "title": "Kiri Masters：个人AI助手为什么可能走向广告变现？",
+      "summary": "Kiri Masters从订阅、交易抽成与广告三种收入方式出发，讨论个人AI助手未来怎样商业化。文章最值得思考的问题，是明确标注的广告与暗中影响推荐的付费排序之间的区别。",
+      "points": [
+        "作者认为，仅靠消费者订阅难以覆盖大众市场，而交易抽成也可能产生推动购买的激励；这是她的商业判断。",
+        "她设想赞助推荐、激励广告和等待界面广告等形态。这些设想不能统一当作已经开放的投放产品。",
+        "对品牌有用的是提前思考推荐透明度、用户意图和衡量方式，而不是把未来预测直接写成当前操作教程。"
+      ],
+      "sourceName": "Kiri Masters / Retail Media Breakfast Club",
+      "url": "https://retailmediabreakfastclub.com/why-ai-agents-will-be-monetized-with-ads/",
+      "publishedAt": "2026-10-28",
+      "updatedAt": null,
+      "materialNote": "作者观点与情景推演，含赞助内容；本文只整理其分析框架，未把文中所有平台动态、财务数据和研究数字作为本站已核实事实。作者频道与RetailPlaybook同属ReFiBuy媒体网络，不当作独立交叉印证。",
+      "features": {
+        "sections": [
+          "行业动态",
+          "AI营销"
+        ]
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "9b440c1f8b099b2d24370c67834b9baeed234e0746e07992e2826b3ed3277c0f",
+      "reviewedAt": "2026-10-30T03:55:48.720Z",
+      "sourceId": "source-092",
+      "addedAt": "2026-10-30T03:53:58.782Z"
+    },
+    {
+      "id": "live-207c00a4362bf1dc",
+      "title": "Acadia大促复盘：销售增长，为什么广告回报却下降？",
+      "summary": "Acadia复盘其跟踪的美国卖家品牌：2026年Prime Big Deal Days销售同比增长32%，同时广告CPC上涨15%、ROAS下降15%。报告把品类、促销方式、广告位置与运营问题放在一起看。",
+      "points": [
+        "这些数字来自Acadia管理和跟踪的品牌样本，不代表亚马逊全站；不同品类表现差别明显。",
+        "该样本第二天销售约为第一天的95%；作者还观察到事后回补的数据，不宜过早用首日或即时数下结论。",
+        "全目录促销与更高增长存在关联，但不是随机对照实验；不能据此推导所有商品都应降价。",
+        "报告列出优惠券展示、促销标识等实际问题，复盘应同时检查买家看到的页面与广告效率。"
+      ],
+      "sourceName": "Acadia",
+      "url": "https://acadia.io/prime-big-deal-days-2026-results",
+      "publishedAt": "2026-10-14",
+      "updatedAt": null,
+      "materialNote": "代理机构自有客户样本与观察，未独立核验原始数据；促销、预算及品类差异可能共同影响结果，相关性不等于因果。",
+      "features": {
+        "sections": [
+          "案例",
+          "行业动态"
+        ],
+        "adPractice": true,
+        "productCategory": "多品类"
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "a0ef48825c71a205f2e52c4364fa64de2c1322ae4439e39b01dfee4050f8a905",
+      "reviewedAt": "2026-10-30T03:55:48.720Z",
+      "sourceId": "source-028",
+      "addedAt": "2026-10-30T03:53:58.782Z"
+    },
+    {
+      "id": "live-f8fc5c2255bf6684",
+      "title": "预算花不出去，先别急着加预算：Ad Badger的月度节奏诊断",
+      "summary": "Ad Badger用一个158个活动的匿名演示账户，说明日预算相加不等于实际花费。先看月度花费进度，再区分预算不足、竞价不足和流量覆盖不足，才能选对调整动作。",
+      "points": [
+        "作者展示的账户日预算合计约4,424美元，实际日均花费约423美元，多数活动远未触及预算。",
+        "每周核对已花金额、近期花费速度和月底预测；判断是否有表现合格但确实受预算限制的活动。",
+        "文章给出AI生成预算报告与人工复核的工作流。示例阈值及56个自愿参与账户的统计不能作为所有卖家的统一标准。"
+      ],
+      "sourceName": "Ad Badger / PPC Den",
+      "url": "https://www.adbadger.com/blog/amazon-ppc-education/amazon-ppc-budgets-the-how-to-guide/",
+      "publishedAt": "2026-10-20",
+      "updatedAt": null,
+      "materialNote": "从业团队的方法与匿名演示，含自家工具推广；未独立复现。日预算的具体超额规则需以平台说明为准，文中的预算比例、ACoS和调整幅度不是通用建议。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）",
+          "AI营销"
+        ],
+        "adPractice": true,
+        "aiAdsWorkflow": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "99a4c1dc87ae5c1d0145d7b45e1e2b9e0db512b1f36fcae6421607667742f682",
+      "reviewedAt": "2026-10-30T03:55:48.719Z",
+      "sourceId": "source-003",
+      "addedAt": "2026-10-30T03:53:58.782Z"
     }
   ],
-  "groupedRows": 76
+  "groupedRows": 88
 }

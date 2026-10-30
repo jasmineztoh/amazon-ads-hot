@@ -8,6 +8,8 @@ import type { SourceRow } from '../../packages/backend/src/sources/types.ts';
 import { DATA_DIR, hash, keyFor, loadStore, saveStore, seedBaseline, upsert, withLock } from './store.ts';
 import type { Entry, Source, SourceHealth, Run } from './types.ts';
 export const SOURCES_FILE = new URL('../../industry/local-sources.json', import.meta.url);
+export const WINDOW_DAYS = 60;
+export const CHECK_INTERVAL_MINUTES = 120;
 const HOST = (u: string) => new URL(u).hostname.toLowerCase().replace(/^www\./, '');
 
 // 官方站在原HTTP通道中返回过只有1024字节的残缺响应。此处使用本机已实测的原生通道，保留公开地址与固定域名检查。
@@ -49,7 +51,17 @@ export function dateState(date: string | null, now: string): 'pending' | 'future
   const t = Date.parse(date), at = Date.parse(now);
   if (!Number.isFinite(t)) return 'pending';
   if (t > at + 5 * 60_000) return 'future';
-  return t < at - 60 * 86_400_000 ? 'old' : 'pending';
+  return t < at - WINDOW_DAYS * 86_400_000 ? 'old' : 'pending';
+}
+// 订阅只保留最近若干篇；已发现的正文任务不能随条目滑出订阅而消失。
+export function bodyQueue(store: import('./types.ts').Store, sourceId: string, now: string): Entry[] {
+  return Object.values(store.entries).filter(entry => {
+    if (entry.sourceId !== sourceId || ['baseline', 'published', 'excluded'].includes(entry.status)) return false;
+    const state = dateState(entry.publishedAt, now);
+    if (state !== 'pending') { entry.status = state; return false; }
+    if (entry.status === 'future' || entry.status === 'old') entry.status = 'pending';
+    return !entry.bodyHash;
+  }).sort((a, b) => (a.checkedAt || '').localeCompare(b.checkedAt || '') || (b.publishedAt || '').localeCompare(a.publishedAt || ''));
 }
 export function officialSummary(entry: Entry, now: string) {
   if (!entry.bodyHash || entry.error || !entry.publishedAt || dateState(entry.publishedAt, now) !== 'pending') return;
@@ -59,6 +71,7 @@ export function officialSummary(entry: Entry, now: string) {
     materialNote: '摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。',
     features: { sections: ['行业动态'] }, collectionApproved: true, origin: 'publisher-summary', evidenceHash: entry.bodyHash, reviewedAt: now };
   entry.status = 'published';
+  return true;
 }
 export async function collectOnce(dir = DATA_DIR): Promise<Run> {
   return withLock(async () => {
@@ -86,18 +99,24 @@ export async function collectOnce(dir = DATA_DIR): Promise<Run> {
         const candidates = await listing(source);
         if (!candidates.length) throw Error('列表为空，需检查入口而不是当作采集成功');
         health.candidates = candidates.length; health.successAt = new Date().toISOString();
-        const queue: { entry: Entry; feedBody: string | null }[] = [];
+        const feedBodies = new Map<string, string>();
         for (const c of candidates) {
           if (HOST(c.url) !== source.host) continue;
           run.discovered++;
           const { entry, inserted } = upsert(store, { url: c.url, sourceId: source.id, sourceName: source.name, originalTitle: c.title, excerpt: c.excerpt, publishedAt: c.publishedAt }, startedAt);
           if (inserted) run.newEntries++; else run.duplicateEntries++;
           if (['baseline', 'published', 'excluded'].includes(entry.status)) continue;
-          entry.status = dateState(entry.publishedAt, startedAt);
-          if (entry.status === 'pending' && !entry.bodyHash) queue.push({ entry, feedBody: c.feedBody || null });
+          const state = dateState(entry.publishedAt, startedAt);
+          entry.status = state === 'pending' && entry.error ? 'material_error' : state;
+          if (c.feedBody) feedBodies.set(entry.id, c.feedBody);
         }
-        queue.sort((a, b) => (b.entry.publishedAt || '').localeCompare(a.entry.publishedAt || ''));
-        for (const { entry, feedBody } of queue.slice(0, source.bodyLimit)) {
+        const dates = candidates.map(c => c.publishedAt).filter((d): d is string => !!d && Number.isFinite(Date.parse(d))).sort();
+        health.latestPublishedAt = dates.filter(d => dateState(d, startedAt) !== 'future').at(-1) || null;
+        health.earliestListedAt = dates[0] || null;
+        health.recentCandidates = candidates.filter(c => !!c.publishedAt && dateState(c.publishedAt, startedAt) === 'pending').length;
+        for (const entry of bodyQueue(store, source.id, startedAt).slice(0, source.bodyLimit)) {
+          const feedBody = feedBodies.get(entry.id);
+          entry.checkedAt = new Date().toISOString();
           try {
             let text: string;
             if (feedBody) { text = feedBody; entry.bodyVia = 'rss'; }
@@ -111,11 +130,10 @@ export async function collectOnce(dir = DATA_DIR): Promise<Run> {
             entry.bodyHash = hash(text); entry.bodyChars = text.length; entry.bodyFile = `bodies/${entry.bodyHash}.txt`;
             await fs.writeFile(path.join(dir, entry.bodyFile), text);
             if (entry.pageDate && entry.publishedAt && entry.pageDate !== entry.publishedAt.slice(0, 10)) throw Error(`列表与原文日期不一致：${entry.publishedAt.slice(0, 10)} / ${entry.pageDate}`);
-            entry.checkedAt = new Date().toISOString(); entry.error = null;
+            entry.checkedAt = new Date().toISOString(); entry.error = null; entry.status = 'pending';
             if (!entry.publishedAt && entry.pageDate) entry.publishedAt = `${entry.pageDate}T00:00:00.000Z`;
             run.bodies++;
-            officialSummary(entry, startedAt);
-            if (entry.status === 'published') run.published++;
+            if (officialSummary(entry, startedAt)) run.published++;
           } catch (e) { entry.status = 'material_error'; entry.error = String((e as Error).message).slice(0, 250); run.failures++; }
         }
       } catch (e) { health.error = String((e as Error).message).slice(0, 250); run.failures++; }

@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { SECTIONS, feed } from '../../industry/curation.ts';
 import type { Article } from '../../industry/curation.ts';
 import { atomicJson, DATA_DIR, hash, keyFor, loadStore, saveStore, withLock } from './store.ts';
-import { dateState } from './collect.ts';
+import { dateState, CHECK_INTERVAL_MINUTES } from './collect.ts';
 import type { Edit, Store } from './types.ts';
 export const SNAPSHOT = new URL('../../site/collected-content.json', import.meta.url);
 export const EDITS = new URL('../../site/editorial.json', import.meta.url);
@@ -34,8 +34,9 @@ export async function publishSnapshot(dir = DATA_DIR) {
     const items = Object.values(store.entries).filter(e => e.status === 'published' && e.publication).map(e => ({ ...e.publication!, sourceId: e.sourceId, addedAt: e.firstSeenAt }));
     const counts = Object.values(store.entries).reduce<Record<string, number>>((out, e) => { out[e.status] = (out[e.status] || 0) + 1; return out; }, {});
     const last = store.runs.at(-1);
-    const snapshot = { updatedAt: last?.finishedAt || null, items,
-      collection: { enabled: true, intervalMinutes: 120, lastRun: last || null, counts, modelCalls: 0,
+    const contentTime = items.reduce((latest, a) => a.reviewedAt > latest ? a.reviewedAt : latest, last?.finishedAt || '');
+    const snapshot = { updatedAt: contentTime || null, items,
+      collection: { enabled: true, intervalMinutes: CHECK_INTERVAL_MINUTES, lastRun: last || null, counts, modelCalls: 0,
         explanation: '官方现成中文摘要在正文与日期通过后收录；英文文章等待Agent整理。没有调用独立模型API。' } };
     await atomicJson(fileURLToPath(SNAPSHOT), snapshot); return snapshot;
   }, dir);
@@ -53,7 +54,11 @@ export async function buildContent() {
   try { snapshot = JSON.parse(await fs.readFile(SNAPSHOT, 'utf8')); } catch (e) { if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e; }
   const seen = new Set(baseline.map((a: Article) => keyFor(a.url)));
   const additions = snapshot.items.filter(a => { const key = keyFor(a.url); if (seen.has(key)) return false; seen.add(key); return true; });
-  const items: Article[] = [...baseline, ...additions];
+  const corrections = JSON.parse(await fs.readFile(new URL('../../site/corrections.json', import.meta.url), 'utf8'));
+  const items: Article[] = [...baseline, ...additions].map(a => {
+    const c = corrections[a.id];
+    return c ? { ...a, publishedAt: c.publishedAt || a.publishedAt, materialNote: c.materialNote || a.materialNote } : a;
+  });
   for (const a of items) {
     if (!a.collectionApproved || !a.features.sections.length || a.features.sections.some(s => !SECTIONS.includes(s))) throw Error(`文章缺少有效栏目 ${a.id}`);
     if (!/^https?:\/\//.test(a.url) || !a.publishedAt) throw Error(`无效链接或日期 ${a.id}`);

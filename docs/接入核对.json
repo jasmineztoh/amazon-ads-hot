@@ -1,0 +1,432 @@
+{
+  "checkedAt": "2026-10-30T03:52:14.857Z",
+  "windowDays": 60,
+  "sources": [
+    {
+      "id": "source-001",
+      "name": "Amazon Ads",
+      "url": "https://advertising.amazon.com/a20m-api/v1/pages?subpageType=Whats%20new&locale=en_US",
+      "host": "advertising.amazon.com",
+      "active": true,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://advertising.amazon.com/resources/whats-new/geographic-insights-activation-pre-built-indices/",
+          "title": "借助 GIA 激活预构建的品牌渗透率指数",
+          "publishedAt": "2026-10-02",
+          "via": "page",
+          "pageDate": "2026-10-02",
+          "bodyChars": 462
+        },
+        {
+          "url": "https://advertising.amazon.com/resources/whats-new/expert-tools-bring-amc-sql-generation-to-agent/",
+          "title": "专家工具为您的智能体引入亚马逊营销云 SQL",
+          "publishedAt": "2026-09-30",
+          "via": "page",
+          "pageDate": "2026-09-30",
+          "bodyChars": 401
+        }
+      ],
+      "listed": 423,
+      "recent": 15,
+      "latest": "2026-10-02",
+      "old": 407,
+      "future": 0,
+      "undated": 1,
+      "earliest": "2020-10-30",
+      "decision": "保留现有接入"
+    },
+    {
+      "id": "source-003",
+      "name": "Ad Badger / PPC Den",
+      "url": "https://www.adbadger.com/feed/",
+      "host": "adbadger.com",
+      "active": false,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://www.adbadger.com/blog/free-ai-skills-find-your-amazon-ppc-wasted-spend-n-grams-the-ppc-den-podcast/",
+          "title": "Free AI Skills Find Your Amazon PPC Wasted Spend & N-Grams [The PPC Den Podcast]",
+          "publishedAt": "2026-10-23T14:00:00.000Z",
+          "via": "page",
+          "pageDate": "2026-10-23T14:00:00.000Z",
+          "bodyChars": 840
+        },
+        {
+          "url": "https://www.adbadger.com/blog/amazon-ppc-education/amazon-ppc-budgets-the-how-to-guide/",
+          "title": "Amazon PPC Budgets: How to Set, Pace & Optimize Them (2026)",
+          "publishedAt": "2026-10-20T16:35:25.000Z",
+          "via": "page",
+          "pageDate": "2026-10-20T16:35:25.000Z",
+          "bodyChars": 12823
+        }
+      ],
+      "listed": 6,
+      "recent": 6,
+      "latest": "2026-10-23T14:00:00.000Z",
+      "old": 0,
+      "future": 0,
+      "undated": 0,
+      "earliest": "2026-09-25T17:07:32.000Z",
+      "decision": "接入：广告预算与搜索词实操；播客简介只能按可读文字整理。"
+    },
+    {
+      "id": "source-007",
+      "name": "Marketplace Pulse",
+      "url": "https://www.marketplacepulse.com/articles/recent.atom",
+      "host": "marketplacepulse.com",
+      "active": true,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "http://www.marketplacepulse.com/articles/what-45-million-products-say-about-tiktok-shop",
+          "title": "What 4.5 Million Products Say About TikTok Shop",
+          "publishedAt": "2026-10-09T13:45:00.000Z",
+          "via": "rss",
+          "bodyChars": 1697
+        },
+        {
+          "url": "http://www.marketplacepulse.com/articles/amazon-opens-seller-central-to-rival-marketplaces",
+          "title": "Amazon Opens Seller Central to Rival Marketplaces",
+          "publishedAt": "2026-09-24T15:10:00.000Z",
+          "via": "rss",
+          "bodyChars": 2958
+        }
+      ],
+      "listed": 20,
+      "recent": 3,
+      "latest": "2026-10-09T13:45:00.000Z",
+      "old": 17,
+      "future": 0,
+      "undated": 0,
+      "earliest": "2026-03-05T16:30:00.000Z",
+      "decision": "保留现有接入"
+    },
+    {
+      "id": "source-027",
+      "name": "Clear Ads",
+      "url": "https://clearadsagency.com/feed/",
+      "host": "clearadsagency.com",
+      "active": false,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://clearadsagency.com/chatgpt-ads-amazon-dsp/",
+          "title": "Can You Buy ChatGPT Ads Through Amazon DSP? What Amazon Advertisers Need to Know",
+          "publishedAt": "2026-10-29T09:27:03.000Z",
+          "via": "rss",
+          "bodyChars": 14399
+        },
+        {
+          "url": "https://clearadsagency.com/what-is-amazon-dva-and-what-changes-for-amazon-dsp-advertisers/",
+          "title": "What Is Amazon DVA+, and What Changes for Amazon DSP Advertisers?",
+          "publishedAt": "2026-10-29T09:26:53.000Z",
+          "via": "rss",
+          "bodyChars": 15877
+        }
+      ],
+      "listed": 10,
+      "recent": 5,
+      "latest": "2026-10-29T09:27:03.000Z",
+      "old": 5,
+      "future": 0,
+      "undated": 0,
+      "earliest": "2026-05-18T09:02:48.000Z",
+      "decision": "订阅与正文通过，暂缓接入：本轮先补独立分析与样本研究，保留为下一批广告进阶来源。"
+    },
+    {
+      "id": "source-028",
+      "name": "Acadia",
+      "url": "https://acadia.io/feed/",
+      "host": "acadia.io",
+      "active": false,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://acadia.io/retail-roundup-october-2026-unboxed-and-accelerate-announcements",
+          "title": "The Retail Roundup: Inside Amazon unBoxed & Accelerate 2026",
+          "publishedAt": "2026-10-29T13:54:10.000Z",
+          "via": "rss",
+          "bodyChars": 16965
+        },
+        {
+          "url": "https://acadia.io/prime-big-deal-days-2026-results",
+          "title": "Prime Big Deal Days 2026 – The Results",
+          "publishedAt": "2026-10-14T18:16:57.000Z",
+          "via": "rss",
+          "bodyChars": 21465
+        }
+      ],
+      "listed": 10,
+      "recent": 10,
+      "latest": "2026-10-29T13:54:10.000Z",
+      "old": 0,
+      "future": 0,
+      "undated": 0,
+      "earliest": "2026-09-10T13:04:29.000Z",
+      "decision": "接入：自有客户数据与大促复盘；保留样本范围，不外推全站。"
+    },
+    {
+      "id": "source-053",
+      "name": "SellerApp",
+      "url": "https://www.sellerapp.com/blog/feed/",
+      "host": "sellerapp.com",
+      "active": false,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://www.sellerapp.com/blog/amazon-ai-shopping-assistant/",
+          "title": "Amazon’s AI Shopping Assistant Is Now Alexa for Shopping. Here’s What Enterprise Sellers Should Change",
+          "publishedAt": "2026-10-28T11:30:00.000Z",
+          "via": "rss",
+          "bodyChars": 17670
+        },
+        {
+          "url": "https://www.sellerapp.com/blog/amazon-marketing-agency-tools/",
+          "title": "Best Amazon Marketing Agency Tools in 2026: The Stack Top Agencies Use to Manage Clients",
+          "publishedAt": "2026-10-26T11:30:00.000Z",
+          "via": "rss",
+          "bodyChars": 19791
+        }
+      ],
+      "listed": 12,
+      "recent": 12,
+      "latest": "2026-10-28T11:30:00.000Z",
+      "old": 0,
+      "future": 0,
+      "undated": 0,
+      "earliest": "2026-10-01T06:49:50.000Z",
+      "decision": "订阅与正文通过，暂缓接入：与已有厂商入门教程重叠，保留扩展候选。"
+    },
+    {
+      "id": "source-056",
+      "name": "Seller Labs",
+      "url": "https://www.sellerlabs.com/feed/",
+      "host": "sellerlabs.com",
+      "active": true,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://www.sellerlabs.com/blog/my-ai-made-me-prove-my-own-claim/",
+          "title": "My AI Made Me Prove My Own Claim",
+          "publishedAt": "2026-10-29T13:30:00.000Z",
+          "via": "rss",
+          "bodyChars": 5251
+        },
+        {
+          "url": "https://www.sellerlabs.com/blog/your-ai-verdict-has-an-expiration-date/",
+          "title": "Your AI Verdict Has an Expiration Date",
+          "publishedAt": "2026-10-28T13:30:00.000Z",
+          "via": "rss",
+          "bodyChars": 6968
+        }
+      ],
+      "listed": 10,
+      "recent": 10,
+      "latest": "2026-10-29T13:30:00.000Z",
+      "old": 0,
+      "future": 0,
+      "undated": 0,
+      "earliest": "2026-10-20T15:00:00.000Z",
+      "decision": "保留现有接入"
+    },
+    {
+      "id": "source-092",
+      "name": "Kiri Masters / Retail Media Breakfast Club",
+      "url": "https://retailmediabreakfastclub.com/rss/",
+      "host": "retailmediabreakfastclub.com",
+      "active": false,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://retailmediabreakfastclub.com/if-doordash-buys-instacart-who-wins-in-retail-media/",
+          "title": "If DoorDash Buys Instacart, Who Wins in Retail Media?",
+          "publishedAt": "2026-10-29T10:00:00.000Z",
+          "via": "rss",
+          "bodyChars": 6351
+        },
+        {
+          "url": "https://retailmediabreakfastclub.com/why-ai-agents-will-be-monetized-with-ads/",
+          "title": "Why AI Agents Will Be Monetized With Ads",
+          "publishedAt": "2026-10-28T10:00:00.000Z",
+          "via": "rss",
+          "bodyChars": 11879
+        }
+      ],
+      "listed": 15,
+      "recent": 15,
+      "latest": "2026-10-29T10:00:00.000Z",
+      "old": 0,
+      "future": 0,
+      "undated": 0,
+      "earliest": "2026-10-05T10:23:47.000Z",
+      "decision": "接入：署名作者的行业分析；与RetailPlaybook有媒体网络关联，不视为独立交叉印证。"
+    },
+    {
+      "id": "source-111",
+      "name": "Scale Insights",
+      "url": "https://blog.scaleinsights.com/rss.xml",
+      "host": "blog.scaleinsights.com",
+      "active": true,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://blog.scaleinsights.com/ai-scaling-live-singapore-recap",
+          "title": "AI Scaling Live Singapore: What Worked, What Broke and What Operators Are Building Next",
+          "publishedAt": "2026-09-16T09:58:08.000Z",
+          "via": "rss",
+          "bodyChars": 10032
+        },
+        {
+          "url": "https://blog.scaleinsights.com/100m-brand-amc-targeting-to-grow-organic-sales",
+          "title": "How a $100M Amazon Brand Uses AMC Targeting to Grow Organic Sales",
+          "publishedAt": "2026-09-01T02:13:45.000Z",
+          "via": "rss",
+          "bodyChars": 4064
+        }
+      ],
+      "listed": 10,
+      "recent": 3,
+      "latest": "2026-09-16T09:58:08.000Z",
+      "old": 7,
+      "future": 0,
+      "undated": 0,
+      "earliest": "2026-08-04T04:47:54.000Z",
+      "decision": "保留现有接入"
+    },
+    {
+      "id": "source-120",
+      "name": "BellaVix",
+      "url": "https://www.bellavix.com/feed/",
+      "host": "bellavix.com",
+      "active": true,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://www.bellavix.com/amazon-backend-fields-optimization-in-2026/",
+          "title": "Amazon Backend Fields Optimization in 2026: Balance Between Precision & Keyword Stuffing",
+          "publishedAt": "2026-10-29T15:20:20.000Z",
+          "via": "page",
+          "pageDate": "2026-10-29T15:20:20.000Z",
+          "bodyChars": 8151
+        },
+        {
+          "url": "https://www.bellavix.com/black-friday-prep-amazon-peak-fees-walmart-ai-agents-record-shipping-costs/",
+          "title": "Black Friday Prep: Amazon Peak Fees, Walmart AI Agents & Record Shipping Costs",
+          "publishedAt": "2026-10-28T14:00:53.000Z",
+          "via": "page",
+          "pageDate": "2026-10-28T14:00:53.000Z",
+          "bodyChars": 9872
+        }
+      ],
+      "listed": 9,
+      "recent": 9,
+      "latest": "2026-10-29T15:20:20.000Z",
+      "old": 0,
+      "future": 0,
+      "undated": 0,
+      "earliest": "2026-10-13T13:28:33.000Z",
+      "decision": "保留现有接入"
+    },
+    {
+      "id": "source-127",
+      "name": "Front Row",
+      "url": "https://www.frontrowgroup.com/en/insights/feed",
+      "host": "frontrowgroup.com",
+      "active": true,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://www.frontrowgroup.com/en/insights/amazon-planning-for-2027-read-your-category-growth-before-you-adopt-it",
+          "title": "Amazon Planning for 2027, Part 2: Read Your Category's Growth Before You Adopt It",
+          "publishedAt": "2026-10-28T14:00:00.000Z",
+          "via": "page",
+          "pageDate": "2026-10-28T14:00:00.442Z",
+          "bodyChars": 5623
+        },
+        {
+          "url": "https://www.frontrowgroup.com/en/insights/stop-guessing-which-products-belong-on-your-amazon-deal-list",
+          "title": "Stop Guessing Which Products Belong on Your Amazon Deal List",
+          "publishedAt": "2026-10-27T16:05:00.000Z",
+          "via": "page",
+          "pageDate": "2026-10-27T16:05:00.290Z",
+          "bodyChars": 6209
+        }
+      ],
+      "listed": 73,
+      "recent": 23,
+      "latest": "2026-10-28T14:00:00.000Z",
+      "old": 49,
+      "future": 1,
+      "undated": 0,
+      "earliest": "2025-05-20T16:00:00.000Z",
+      "decision": "保留现有接入"
+    },
+    {
+      "id": "source-144",
+      "name": "AdExchanger",
+      "url": "https://www.adexchanger.com/tag/amazon/feed/",
+      "host": "adexchanger.com",
+      "active": true,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://www.adexchanger.com/platforms/unrealized-ai-investments-drag-amazons-income-but-aws-and-ads-are-still-growing/",
+          "title": "Unrealized AI Investments Drag Amazon’s Income, But AWS And Ads Are Still Growing",
+          "publishedAt": "2026-10-30T00:09:43.000Z",
+          "via": "page",
+          "pageDate": "2026-10-30T00:09:43.000Z",
+          "bodyChars": 3180
+        },
+        {
+          "url": "https://www.adexchanger.com/commerce/instead-of-ai-insights-replacing-ad-measurement-think-of-attribution-as-running-your-ai/",
+          "title": "Instead Of AI Insights Replacing Ad Measurement, Think Of Attribution As Running Your AI",
+          "publishedAt": "2026-10-01T15:41:53.000Z",
+          "via": "page",
+          "pageDate": "2026-10-01T15:41:53.000Z",
+          "bodyChars": 4760
+        }
+      ],
+      "listed": 10,
+      "recent": 10,
+      "latest": "2026-10-30T00:09:43.000Z",
+      "old": 0,
+      "future": 0,
+      "undated": 0,
+      "earliest": "2026-09-11T09:00:05.000Z",
+      "decision": "保留现有接入"
+    },
+    {
+      "id": "source-160",
+      "name": "RetailPlaybook / Andrew Bell",
+      "url": "https://www.retailplaybook.ai/feed",
+      "host": "retailplaybook.ai",
+      "active": false,
+      "checkedAt": "2026-10-30T03:52:14.857Z",
+      "samples": [
+        {
+          "url": "https://www.retailplaybook.ai/p/amazon-walmart-and-the-lifelong-shopping",
+          "title": "Amazon, Walmart, and the Lifelong Shopping Agent",
+          "publishedAt": "2026-10-29T13:02:04.000Z",
+          "via": "rss",
+          "bodyChars": 74601
+        },
+        {
+          "url": "https://www.retailplaybook.ai/p/dont-generate-images-just-because",
+          "title": "Don't Generate Images Just Because You Can: AMZ One Step Founder Kamaljit Singh on AI Images for Amazon",
+          "publishedAt": "2026-10-21T14:30:46.000Z",
+          "via": "rss",
+          "bodyChars": 2493
+        }
+      ],
+      "listed": 20,
+      "recent": 10,
+      "latest": "2026-10-29T13:02:04.000Z",
+      "old": 10,
+      "future": 0,
+      "undated": 0,
+      "earliest": "2026-07-15T14:30:47.000Z",
+      "decision": "接入：AI购物研究与从业访谈；正文与节目简介分开，作者关联保留。"
+    }
+  ]
+}
