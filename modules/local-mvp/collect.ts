@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fetchRss } from '../../packages/backend/src/sources/rss.ts';
+import { fromHtml } from '../../packages/backend/src/sources/web-list.ts';
 import { readable } from '../../packages/backend/src/content/extract.ts';
 import { assertPublicUrl } from '../../packages/backend/src/lib/url.ts';
 import { readPublicationDate } from '../../packages/backend/src/sources/dates.ts';
@@ -30,12 +31,25 @@ export async function fetchPublic(url: string, source: Source): Promise<{ text: 
   throw Error('跳转次数过多');
 }
 export async function listing(source: Source) {
+  if (source.kind === 'web_list') {
+    if (!source.list?.itemSelector || !source.list.allowUrlPrefixes?.length) throw Error('网页列表缺少条目选择器或文章地址范围');
+    const row: SourceRow = { id: source.id, name: source.name, kind: 'web_list', config: { url: source.url, parseMode: 'html', ...source.list, acceptLanguage: 'en-US,en;q=0.9' },
+      tier: 'T2', participation_mode: 'editorial', first_party: false, interval_minutes: 120, enabled: true, cursor: null, fail_count: 0 };
+    const page = await fetchPublic(source.url, source);
+    const result = fromHtml(page.text, page.url, row);
+    if (!result.length) throw Error('网页列表没有匹配文章');
+    return result.map(c => ({ url: c.url!, title: c.title, excerpt: c.excerpt || '',
+      publishedAt: c.publicationTime || c.publishedAt?.toISOString() || null, feedBody: null as string | null }));
+  }
   if (source.kind === 'rss') {
     const row: SourceRow = { id: source.id, name: source.name, kind: 'rss', config: { feedUrl: source.url, acceptLanguage: 'en-US,en;q=0.9' },
       tier: 'T2', participation_mode: 'editorial', first_party: false, interval_minutes: 120, enabled: true, cursor: null, fail_count: 0 };
     const result = await fetchRss(row);
-    return result.candidates.map(c => ({ url: c.url!, title: c.title, excerpt: c.excerpt || '',
-      publishedAt: c.publicationTime || c.publishedAt?.toISOString() || null, feedBody: c.bodyStatus === 'ok' ? c.bodyText : null }));
+    return result.candidates.filter(c => !source.audioDescriptionOnly ||
+      (!!c.url && c.url.toLowerCase().endsWith('.mp3') && (c.excerpt || '').trim().length >= 200))
+      .map(c => ({ url: c.url!, title: c.title, excerpt: c.excerpt || '',
+        publishedAt: c.publicationTime || c.publishedAt?.toISOString() || null,
+        feedBody: source.audioDescriptionOnly ? c.excerpt || null : c.bodyStatus === 'ok' ? c.bodyText : null }));
   }
   const r = await fetchPublic(source.url, source), data = JSON.parse(r.text);
   if (!Array.isArray(data) || !data.length) throw Error('官方接口未返回文章列表');
@@ -92,8 +106,8 @@ export async function collectOnce(dir = DATA_DIR): Promise<Run> {
     const sources: Source[] = JSON.parse(await fs.readFile(SOURCES_FILE, 'utf8'));
     const run: Run = { startedAt, finishedAt: startedAt, discovered: 0, newEntries: 0, duplicateEntries: 0, bodies: 0, published: 0, failures: 0, sources: [] };
     await fs.mkdir(path.join(dir, 'bodies'), { recursive: true });
-    // 每个来源内顺序读取，来源之间并行，避免向同一站点同时打很多请求。
-    await Promise.all(sources.map(async source => {
+    // 每个来源内顺序读取，每批最多六个来源，避免扩源后同时发出过多请求。
+    for (let i = 0; i < sources.length; i += 6) await Promise.all(sources.slice(i, i + 6).map(async source => {
       const health: SourceHealth = { id: source.id, name: source.name, attemptedAt: startedAt, successAt: store.sources[source.id]?.successAt || null, candidates: 0, error: null };
       try {
         const candidates = await listing(source);
@@ -101,7 +115,7 @@ export async function collectOnce(dir = DATA_DIR): Promise<Run> {
         health.candidates = candidates.length; health.successAt = new Date().toISOString();
         const feedBodies = new Map<string, string>();
         for (const c of candidates) {
-          if (HOST(c.url) !== source.host) continue;
+          if (HOST(c.url) !== (source.articleHost || source.host)) continue;
           run.discovered++;
           const { entry, inserted } = upsert(store, { url: c.url, sourceId: source.id, sourceName: source.name, originalTitle: c.title, excerpt: c.excerpt, publishedAt: c.publishedAt }, startedAt);
           if (inserted) run.newEntries++; else run.duplicateEntries++;

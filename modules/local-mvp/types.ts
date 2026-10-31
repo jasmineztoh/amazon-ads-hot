@@ -1,5 +1,5 @@
 import type { Features, Article } from '../../industry/curation.ts';
-export type Source = { id: string; name: string; kind: 'rss' | 'amazon_updates'; url: string; host: string; language: string; bodyLimit: number };
+export type Source = { id: string; name: string; kind: 'rss' | 'web_list' | 'amazon_updates'; url: string; host: string; articleHost?: string; audioDescriptionOnly?: boolean; language: string; bodyLimit: number; list?: { itemSelector: string; linkSelector?: string; titleSelector?: string; publishedAtSelector?: string; publishedAtRegex?: string; allowUrlPrefixes?: string[] } };
 export type Entry = {
   id: string; key: string; url: string; sourceId: string; sourceName: string; originalTitle: string;
   excerpt: string; publishedAt: string | null; firstSeenAt: string; lastSeenAt: string;
