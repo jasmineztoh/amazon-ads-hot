@@ -9,56 +9,20 @@
     "bodyLimit": 6
   },
   {
-    "id": "source-007",
-    "name": "Marketplace Pulse",
-    "kind": "rss",
-    "url": "https://www.marketplacepulse.com/articles/recent.atom",
-    "host": "marketplacepulse.com",
-    "language": "en",
-    "bodyLimit": 3
-  },
-  {
-    "id": "source-056",
-    "name": "Seller Labs",
-    "kind": "rss",
-    "url": "https://www.sellerlabs.com/feed/",
-    "host": "sellerlabs.com",
-    "language": "en",
-    "bodyLimit": 3
-  },
-  {
-    "id": "source-111",
-    "name": "Scale Insights",
-    "kind": "rss",
-    "url": "https://blog.scaleinsights.com/rss.xml",
-    "host": "blog.scaleinsights.com",
-    "language": "en",
-    "bodyLimit": 3
-  },
-  {
-    "id": "source-120",
-    "name": "BellaVix",
-    "kind": "rss",
-    "url": "https://www.bellavix.com/feed/",
-    "host": "bellavix.com",
-    "language": "en",
-    "bodyLimit": 3
-  },
-  {
-    "id": "source-127",
-    "name": "Front Row",
-    "kind": "rss",
-    "url": "https://www.frontrowgroup.com/en/insights/feed",
-    "host": "frontrowgroup.com",
-    "language": "en",
-    "bodyLimit": 4
-  },
-  {
-    "id": "source-144",
-    "name": "AdExchanger",
-    "kind": "rss",
-    "url": "https://www.adexchanger.com/tag/amazon/feed/",
-    "host": "adexchanger.com",
+    "id": "source-002",
+    "name": "Amazon 卖家博客",
+    "url": "https://sell.amazon.com/blog",
+    "list": {
+      "itemSelector": ".PagePromoC-wrapper",
+      "linkSelector": ".PagePromo-title a",
+      "titleSelector": ".PagePromo-title a",
+      "publishedAtSelector": ".PagePromo-date",
+      "allowUrlPrefixes": [
+        "https://sell.amazon.com/blog/"
+      ]
+    },
+    "kind": "web_list",
+    "host": "sell.amazon.com",
     "language": "en",
     "bodyLimit": 3
   },
@@ -72,11 +36,198 @@
     "bodyLimit": 3
   },
   {
+    "id": "source-004",
+    "name": "My Amazon Guy",
+    "kind": "rss",
+    "url": "https://myamazonguy.com/feed/",
+    "host": "myamazonguy.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-005",
+    "name": "Intentwise",
+    "url": "https://www.intentwise.com/blog",
+    "list": {
+      "itemSelector": ".n-article_wrap",
+      "linkSelector": "a.n-article_link",
+      "titleSelector": ".blog-card-title",
+      "publishedAtSelector": "[og-date]",
+      "allowUrlPrefixes": [
+        "https://www.intentwise.com/blog/"
+      ]
+    },
+    "kind": "web_list",
+    "host": "intentwise.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-006",
+    "name": "Helium 10",
+    "url": "https://www.helium10.com/blog/",
+    "list": {
+      "itemSelector": "a.grid-item.blog[href*=\"/blog/\"]",
+      "titleSelector": "h3",
+      "publishedAtSelector": "p.published",
+      "allowUrlPrefixes": [
+        "https://www.helium10.com/blog/"
+      ]
+    },
+    "kind": "web_list",
+    "host": "helium10.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-007",
+    "name": "Marketplace Pulse",
+    "kind": "rss",
+    "url": "https://www.marketplacepulse.com/articles/recent.atom",
+    "host": "marketplacepulse.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-015",
+    "name": "Perpetua",
+    "kind": "web_list",
+    "url": "https://perpetua.io/blog/",
+    "host": "perpetua.io",
+    "language": "en",
+    "bodyLimit": 2,
+    "list": {
+      "itemSelector": "a.relative[href^=\"/blog-\"]",
+      "titleSelector": "p.text-xl",
+      "publishedAtSelector": "p.bottom-0",
+      "allowUrlPrefixes": [
+        "https://perpetua.io/blog-"
+      ]
+    }
+  },
+  {
+    "id": "source-023",
+    "name": "BTR Media / Destaney Wishon",
+    "kind": "rss",
+    "url": "https://api.riverside.fm/hosting/Xu0fApI9.rss",
+    "host": "api.riverside.fm",
+    "articleHost": "api.riverside.com",
+    "audioDescriptionOnly": true,
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-024",
+    "name": "Ecommerce Braintrust",
+    "kind": "rss",
+    "url": "https://www.ecommercebraintrust.com/episodes?format=rss",
+    "host": "ecommercebraintrust.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-027",
+    "name": "Clear Ads",
+    "kind": "rss",
+    "url": "https://clearadsagency.com/feed/",
+    "host": "clearadsagency.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
     "id": "source-028",
     "name": "Acadia",
     "kind": "rss",
     "url": "https://acadia.io/feed/",
     "host": "acadia.io",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-032",
+    "name": "Intero Digital",
+    "kind": "rss",
+    "url": "https://www.interodigital.com/feed/",
+    "host": "interodigital.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-035",
+    "name": "Canopy Management",
+    "kind": "rss",
+    "url": "https://canopymanagement.com/feed/",
+    "host": "canopymanagement.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-039",
+    "name": "Tinuiti",
+    "kind": "rss",
+    "url": "https://tinuiti.com/feed/",
+    "host": "tinuiti.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-052",
+    "name": "AM/PM Podcast",
+    "url": "https://www.ampmpodcast.com/",
+    "list": {
+      "itemSelector": "article",
+      "linkSelector": "h2 a",
+      "titleSelector": "h2 a",
+      "allowUrlPrefixes": [
+        "https://www.ampmpodcast.com/"
+      ]
+    },
+    "kind": "web_list",
+    "host": "ampmpodcast.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-053",
+    "name": "SellerApp",
+    "kind": "rss",
+    "url": "https://www.sellerapp.com/blog/feed/",
+    "host": "sellerapp.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-056",
+    "name": "Seller Labs",
+    "kind": "rss",
+    "url": "https://www.sellerlabs.com/feed/",
+    "host": "sellerlabs.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-063",
+    "name": "m19",
+    "kind": "web_list",
+    "url": "https://www.m19.com/blog",
+    "host": "m19.com",
+    "language": "en",
+    "bodyLimit": 2,
+    "list": {
+      "itemSelector": ".w-dyn-item:has(a[href*=\"/blog/\"])",
+      "linkSelector": "a[href*=\"/blog/\"]:not(.blog-featured-image)",
+      "titleSelector": ".h4-heading",
+      "allowUrlPrefixes": [
+        "https://www.m19.com/blog/"
+      ]
+    }
+  },
+  {
+    "id": "source-067",
+    "name": "AMZ One Step",
+    "kind": "rss",
+    "url": "https://amzonestep.com/blog/feed/",
+    "host": "amzonestep.com",
     "language": "en",
     "bodyLimit": 3
   },
@@ -90,11 +241,187 @@
     "bodyLimit": 3
   },
   {
+    "id": "source-094",
+    "name": "Retailgentic / Scot Wingo",
+    "kind": "rss",
+    "url": "https://www.retailgentic.com/feed",
+    "host": "retailgentic.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-108",
+    "name": "Skai",
+    "url": "https://skai.io/blog/",
+    "list": {
+      "itemSelector": "a.archive-post-card[href*=\"/blog/\"]",
+      "titleSelector": "h3",
+      "allowUrlPrefixes": [
+        "https://skai.io/blog/"
+      ]
+    },
+    "kind": "web_list",
+    "host": "skai.io",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-109",
+    "name": "Teikametrics",
+    "kind": "rss",
+    "url": "https://www.teikametrics.com/feed/",
+    "host": "teikametrics.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-111",
+    "name": "Scale Insights",
+    "kind": "rss",
+    "url": "https://blog.scaleinsights.com/rss.xml",
+    "host": "blog.scaleinsights.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-112",
+    "name": "CommerceIQ",
+    "url": "https://www.commerceiq.ai/blog",
+    "list": {
+      "itemSelector": "a[href*=\"/blog/\"]",
+      "allowUrlPrefixes": [
+        "https://www.commerceiq.ai/blog/"
+      ]
+    },
+    "kind": "web_list",
+    "host": "commerceiq.ai",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-115",
+    "name": "Stackline",
+    "url": "https://www.stackline.com/news",
+    "list": {
+      "itemSelector": ".w-dyn-item:has(a[href*=\"/news/\"])",
+      "linkSelector": "a[href*=\"/news/\"]:not(.hover-image-link):not(.button)",
+      "titleSelector": "a[href*=\"/news/\"]:not(.hover-image-link):not(.button)",
+      "publishedAtSelector": ".article-meta .muted-text",
+      "publishedAtRegex": "([A-Z][a-z]+\\s+\\d{1,2},\\s+20\\d{2})",
+      "allowUrlPrefixes": [
+        "https://www.stackline.com/news/"
+      ]
+    },
+    "kind": "web_list",
+    "host": "stackline.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-120",
+    "name": "BellaVix",
+    "kind": "rss",
+    "url": "https://www.bellavix.com/feed/",
+    "host": "bellavix.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-122",
+    "name": "Incrementum Digital",
+    "kind": "rss",
+    "url": "https://incrementumdigital.com/feed/",
+    "host": "incrementumdigital.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-126",
+    "name": "Channel Key",
+    "kind": "rss",
+    "url": "https://www.channelkey.com/blog-feed.xml",
+    "host": "channelkey.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-127",
+    "name": "Front Row",
+    "kind": "rss",
+    "url": "https://www.frontrowgroup.com/en/insights/feed",
+    "host": "frontrowgroup.com",
+    "language": "en",
+    "bodyLimit": 4
+  },
+  {
+    "id": "source-133",
+    "name": "Ecommerce Nurse",
+    "kind": "rss",
+    "url": "https://ecommercenurse.com/feed/",
+    "host": "ecommercenurse.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-138",
+    "name": "Practical Ecommerce",
+    "kind": "rss",
+    "url": "https://www.practicalecommerce.com/feed",
+    "host": "practicalecommerce.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-140",
+    "name": "Retail Dive",
+    "kind": "rss",
+    "url": "https://www.retaildive.com/feeds/news/",
+    "host": "retaildive.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-142",
+    "name": "Modern Retail",
+    "kind": "rss",
+    "url": "https://www.modernretail.co/topic/the-amazon-effect/feed/",
+    "host": "modernretail.co",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-143",
+    "name": "Digiday",
+    "kind": "rss",
+    "url": "https://digiday.com/feed/",
+    "host": "digiday.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-144",
+    "name": "AdExchanger",
+    "kind": "rss",
+    "url": "https://www.adexchanger.com/tag/amazon/feed/",
+    "host": "adexchanger.com",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
     "id": "source-160",
     "name": "RetailPlaybook / Andrew Bell",
     "kind": "rss",
     "url": "https://www.retailplaybook.ai/feed",
     "host": "retailplaybook.ai",
+    "language": "en",
+    "bodyLimit": 3
+  },
+  {
+    "id": "source-161",
+    "name": "PPC Land",
+    "kind": "rss",
+    "url": "https://ppc.land/rss/",
+    "host": "ppc.land",
     "language": "en",
     "bodyLimit": 3
   }
