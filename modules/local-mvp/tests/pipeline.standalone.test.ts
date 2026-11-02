@@ -26,6 +26,9 @@ test('日历日期保持10月2日，未来文章延后，过期日期不伪装�
   const store = empty(), { entry } = upsert(store, candidate, when);
   entry.bodyHash = hash('真实正文'); officialSummary(entry, when);
   assert.equal(entry.publication?.publishedAt, '2026-10-02');
+  assert.equal(entry.publication?.collectedAt, when);
+  officialSummary(entry, '2026-10-30T08:00:00.000Z');
+  assert.equal(entry.publication?.collectedAt, when);
   assert.equal(dateState('2026-11-03T15:39:00Z', when), 'future');
   assert.equal(dateState('2025-10-02', when), 'old');
 });
@@ -41,6 +44,11 @@ test('整理绑定正文版本，不能伪造用户标签或覆盖原48篇', () 
     features: { sections: ['教程（新人入门与进阶）'] }, materialNote: '机构经验，非效果保证', reviewedAt: when, reviewedBy: 'Agent' };
   assert.throws(() => applyEdits(s, [edit]), /正文版本/);
   edit.evidenceHash = entry.bodyHash; applyEdits(s, [edit]); assert.equal(entry.publication?.origin, 'agent-reviewed');
+  assert.equal(entry.publication?.collectedAt, when);
+  applyEdits(s, [{ ...edit, reviewedAt: '2026-10-30T08:00:00.000Z' }]);
+  assert.equal(entry.publication?.collectedAt, when);
+  assert.equal(entry.publication?.reviewedAt, '2026-10-30T08:00:00.000Z');
+  assert.equal(entry.publication?.publishedAt, '2026-10-02');
   const original = empty(); seedBaseline(original, [{ ...candidate, id: 'article-001', title: '用户保留' }], when);
   const base = Object.values(original.entries)[0]; base.bodyHash = entry.bodyHash;
   assert.throws(() => applyEdits(original, [{ ...edit, id: base.id }]), /不能覆盖/);

@@ -21,7 +21,8 @@ export function applyEdits(store: Store, edits: Edit[]) {
     entry.publication = { id: entry.id, title: edit.title, summary: edit.summary, points: edit.points,
       sourceName: entry.sourceName, url: entry.url, publishedAt: entry.publishedAt.slice(0, 10), updatedAt: null,
       materialNote: edit.materialNote, features: edit.features, collectionApproved: true,
-      origin: 'agent-reviewed', evidenceHash: entry.bodyHash, reviewedAt: edit.reviewedAt };
+      origin: 'agent-reviewed', evidenceHash: entry.bodyHash, reviewedAt: edit.reviewedAt,
+      collectedAt: entry.publication?.collectedAt || entry.publication?.reviewedAt || edit.reviewedAt };
     entry.status = 'published';
   }
 }
@@ -48,22 +49,33 @@ export async function buildContent() {
   const baseline = pool.items.map((a: Article) => {
     const found = annotations.items.filter((x: { number: string }) => `article-${x.number}` === a.id);
     if (found.length !== 1 || !a.collectionApproved) throw Error(`缺少唯一标注/许可 ${a.id}`);
-    const { number, ...features } = found[0]; return { ...a, features, origin: 'user-reviewed' };
+    const { number, ...features } = found[0]; return { ...a, features, collectedAt: pool.approvedAt, origin: 'user-reviewed' };
   });
-  let snapshot = { items: [] as Article[], updatedAt: null, collection: null };
+  let snapshot: {items: Article[]; updatedAt: string | null; collection: {lastRun?: {finishedAt?: string}} | null} = { items: [], updatedAt: null, collection: null };
   try { snapshot = JSON.parse(await fs.readFile(SNAPSHOT, 'utf8')); } catch (e) { if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e; }
   const seen = new Set(baseline.map((a: Article) => keyFor(a.url)));
   const additions = snapshot.items.filter(a => { const key = keyFor(a.url); if (seen.has(key)) return false; seen.add(key); return true; });
   const corrections = JSON.parse(await fs.readFile(new URL('../../site/corrections.json', import.meta.url), 'utf8'));
+  const reading = JSON.parse(await fs.readFile(new URL('../../site/reading-guide.json', import.meta.url), 'utf8'));
   const items: Article[] = [...baseline, ...additions].map(a => {
     const c = corrections[a.id];
-    return c ? { ...a, publishedAt: c.publishedAt || a.publishedAt, materialNote: c.materialNote || a.materialNote } : a;
+    const notes = reading.articles[a.id] || {};
+    const { eventGroup, ...fields } = notes;
+    return { ...a, ...c, ...fields, collectedAt: a.collectedAt || a.reviewedAt,
+      reason: fields.reason || a.reason || a.points[0] || a.summary,
+      features: eventGroup ? { ...a.features, eventGroup } : a.features };
   });
   for (const a of items) {
     if (!a.collectionApproved || !a.features.sections.length || a.features.sections.some(s => !SECTIONS.includes(s))) throw Error(`文章缺少有效栏目 ${a.id}`);
     if (!/^https?:\/\//.test(a.url) || !a.publishedAt) throw Error(`无效链接或日期 ${a.id}`);
   }
-  return { reviewedAt: '2026-10-29', updatedAt: snapshot.updatedAt, total: items.length, reviewedTotal: pool.total,
-    sections: SECTIONS, revision: hash(JSON.stringify(items)), collection: snapshot.collection, items,
+  const ids = new Set(items.map(a => a.id));
+  for (const id of [...items.flatMap(a => a.relatedIds || []), ...reading.guides.flatMap((g: {steps: {articleId:string}[]}) => g.steps.map(s => s.articleId))]) {
+    if (!ids.has(id)) throw Error(`阅读链接目标不存在 ${id}`);
+  }
+  return { reviewedAt: pool.approvedAt, updatedAt: snapshot.updatedAt, total: items.length, reviewedTotal: pool.total,
+    guides: reading.guides, featuredUpdatedAt: items.map(a => a.collectedAt).filter(Boolean).sort().at(-1),
+    sourceCheckedAt: snapshot.collection?.lastRun?.finishedAt || null,
+    sections: SECTIONS, revision: hash(JSON.stringify([items, reading.guides])), collection: snapshot.collection, items,
     groupedRows: feed(items).groups.length };
 }

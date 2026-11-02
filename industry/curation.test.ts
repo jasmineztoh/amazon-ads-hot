@@ -48,5 +48,82 @@ test('实际48篇全部保留，明确偏好生效，043不伪造用户加分', 
   assert.equal(priority(data.items.find((a: Article) => a.id === 'article-047')).tier, 0);
   assert.equal(labels.labels.find((l: { number: string }) => l.number === '043').priorityPreference.direction, 'diversify');
   assert.equal(labels.labels.find((l: { number: string }) => l.number === '001').reason, null);
-  assert.equal(feed(data.items, { query: 'Skai' }).matchingArticles, 1);
+  assert.ok(feed(data.items, { query: 'Skai' }).matchingArticles >= 1);
+});
+
+test('五份同稿只算一个事件，官方公告与独立解读仍可分别阅读', () => {
+  const bodyHash = 'a'.repeat(64);
+  const official = { ...item('official', { eventGroup: 'launch' }), evidenceHash: bodyHash, sourceRole: 'official' };
+  const copies = Array.from({ length: 4 }, (_, n) => ({
+    ...item(`copy-${n}`), url: `https://publisher-${n}.example/release`, evidenceHash: bodyHash, sourceRole: 'reprint',
+  }));
+  const analysis = { ...item('独立解读', { eventGroup: 'launch' }), evidenceHash: 'b'.repeat(64), sourceRole: 'analysis' };
+  const different = { ...item('another-event'), evidenceHash: 'c'.repeat(64) };
+  const articles = [official, ...copies, analysis, different];
+  const result = feed(articles);
+  assert.equal(result.groups.length, 2);
+  const event = result.groups.find(g => [g.article, ...g.related].some(a => a.id === official.id))!;
+  assert.equal(event.related.length, 5);
+  assert.deepEqual(new Set([event.article, ...event.related].map(a => a.sourceRole)), new Set(['official', 'reprint', 'analysis']));
+  const search = feed(articles, { query: '独立解读' });
+  assert.equal(search.groups.length, 1);
+  assert.equal(search.groups[0].article.id, analysis.id);
+  assert.ok(search.groups[0].related.some(a => a.id === official.id));
+  assert.equal(feed([official, ...copies]).groups.length, 1);
+});
+
+test('收录时间线把今天补收的旧教程放在前面，保留原文日期', () => {
+  const old = { ...item('old-tutorial', {}, '2025-01-02'), collectedAt: '2026-11-02T08:00:00.000Z' };
+  const recent = { ...item('recent-news', {}, '2026-11-01'), collectedAt: '2026-11-01T08:00:00.000Z' };
+  assert.deepEqual(feed([recent, old], { sort: 'collected' }).groups.map(g => g.article.id), ['old-tutorial', 'recent-news']);
+  assert.deepEqual(feed([recent, old], { sort: 'date' }).groups.map(g => g.article.id), ['recent-news', 'old-tutorial']);
+  assert.equal(old.publishedAt, '2025-01-02');
+});
+
+test('发布内容有推荐理由、原文与收录日期，更新标识分别来自精选和信源检查', () => {
+  const data = JSON.parse(fs.readFileSync('site/preview/content.json', 'utf8'));
+  for (const a of data.items as Article[]) {
+    assert.ok(a.reason?.trim(), `${a.id} 缺少推荐理由`);
+    assert.ok(a.summary.trim(), `${a.id} 缺少中文摘要`);
+    assert.ok(a.materialNote.trim(), `${a.id} 缺少材料与适用条件`);
+    assert.ok(Array.isArray(a.points), `${a.id} 要点格式不正确`);
+    assert.ok(Number.isFinite(Date.parse(a.publishedAt)), `${a.id} 原文日期无效`);
+    assert.ok(a.collectedAt && Number.isFinite(Date.parse(a.collectedAt)), `${a.id} 收录日期无效`);
+    assert.match(a.url, /^https?:\/\//);
+  }
+  assert.equal(data.featuredUpdatedAt, data.items.map((a: Article) => a.collectedAt).sort().at(-1));
+  assert.equal(data.sourceCheckedAt, data.collection?.lastRun?.finishedAt || null);
+  const oldTutorial = data.items.find((a: Article) => a.id === 'live-5d40e6689d6498ae');
+  assert.equal(oldTutorial.publishedAt, '2026-09-25');
+  assert.equal(oldTutorial.collectedAt.slice(0, 10), '2026-11-02');
+});
+
+test('新人路线与关联文章都有目标，预算问题能从方法走到案例', () => {
+  const data = JSON.parse(fs.readFileSync('site/preview/content.json', 'utf8'));
+  const articles: Article[] = data.items;
+  const byId = new Map(articles.map(a => [a.id, a]));
+  for (const a of articles) for (const id of a.relatedIds || []) assert.ok(byId.has(id), `${a.id} 关联目标不存在 ${id}`);
+  const guide = data.guides.find((g: { title: string }) => g.title === '第一次做商品推广');
+  assert.ok(guide && guide.steps.length >= 2);
+  assert.equal(new Set(guide.steps.map((s: { articleId: string }) => s.articleId)).size, guide.steps.length);
+  for (const step of guide.steps) {
+    assert.ok(byId.has(step.articleId), `路线目标不存在 ${step.articleId}`);
+    assert.ok(step.note.trim(), `路线缺少阅读提示 ${step.articleId}`);
+  }
+  const matches = feed(articles, { query: '预算花不出去' }).groups.flatMap(g => [g.article, ...g.related]);
+  const methods = matches.filter(a => a.features.sections.includes('教程（新人入门与进阶）'));
+  assert.ok(methods.length > 0, '搜索应找到方法');
+  const reached = new Set<string>();
+  const pending = [...methods];
+  while (pending.length) {
+    const a = pending.shift()!;
+    if (reached.has(a.id)) continue;
+    reached.add(a.id);
+    for (const id of a.relatedIds || []) pending.push(byId.get(id)!);
+  }
+  assert.ok([...reached].some(id => byId.get(id)!.features.sections.includes('案例')), '方法关联链应通向案例');
+  const cases = [byId.get('article-020')!, byId.get('live-207c00a4362bf1dc')!];
+  assert.ok(cases[0].relatedIds?.includes(cases[1].id));
+  assert.ok(cases[1].relatedIds?.includes(cases[0].id));
+  assert.equal(feed(cases).groups.length, 2, '不同样本的大促复盘互链，但不合并为同稿');
 });

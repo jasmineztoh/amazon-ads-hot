@@ -14,6 +14,8 @@ export type Article = {
   id: string; title: string; sourceName: string; summary: string; points: string[];
   url: string; publishedAt: string; updatedAt: string | null; materialNote: string;
   collectionApproved: boolean; features: Features;
+  collectedAt?: string; reviewedAt?: string; evidenceHash?: string; reason?: string;
+  relatedIds?: string[]; sourceRole?: string; searchTerms?: string[];
 };
 export function priority(a: Article): { tier: number; label: string; reason: string } {
   if (a.features.softwareOnly) return { tier: 0, label: '稍后看', reason: '侧重纯软件技术，保留收录，降低推荐顺序。' };
@@ -26,20 +28,26 @@ export function feed(articles: Article[], options: { section?: string; query?: s
   const query = (options.query || '').trim().toLocaleLowerCase();
   const approved = articles.filter(a => a.collectionApproved);
   const eligible = approved.filter(a => (!options.section || a.features.sections.includes(options.section as Section)) &&
-    (!query || [a.title, a.summary, a.sourceName, ...a.points].join(' ').toLocaleLowerCase().includes(query)));
+    (!query || [a.title, a.summary, a.sourceName, a.reason, ...(a.searchTerms || []), ...a.points].join(' ').toLocaleLowerCase().includes(query)));
   const byDate = (a: Article, b: Article) => b.publishedAt.localeCompare(a.publishedAt) || a.id.localeCompare(b.id);
-  const compare = (a: Article, b: Article) => options.sort === 'date' ? byDate(a, b) : priority(b).tier - priority(a).tier || byDate(a, b);
+  const compare = (a: Article, b: Article) => {
+    if (options.sort === 'collected') return (b.collectedAt || '').localeCompare(a.collectedAt || '') || byDate(a, b);
+    return options.sort === 'date' ? byDate(a, b) : priority(b).tier - priority(a).tier || byDate(a, b);
+  };
   eligible.sort(compare);
   const used = new Set<string>();
+  // Identical verified source bodies can have different syndication URLs.
+  const named = new Map(approved.filter(a => a.evidenceHash && a.features.eventGroup).map(a => [a.evidenceHash, a.features.eventGroup]));
+  const keyFor = (a: Article) => a.features.eventGroup || named.get(a.evidenceHash) || a.evidenceHash || a.id;
   const groups: { article: Article; related: Article[] }[] = [];
   for (const a of eligible) {
-    const key = a.features.eventGroup || a.id;
+    const key = keyFor(a);
     if (used.has(key)) continue;
     used.add(key);
-    groups.push({ article: a, related: approved.filter(b => b.id !== a.id && a.features.eventGroup && b.features.eventGroup === a.features.eventGroup).sort(compare) });
+    groups.push({ article: a, related: approved.filter(b => b.id !== a.id && keyFor(b) === key).sort(compare) });
   }
   // 仅在同一优先档内错开相邻的相同品类；未知/综合品类不视为同一品类。
-  if (options.sort !== 'date') for (let i = 1; i < groups.length; i++) {
+  if (options.sort !== 'date' && options.sort !== 'collected') for (let i = 1; i < groups.length; i++) {
     const previous = groups[i - 1].article, current = groups[i].article;
     if (!previous.features.productCategory || previous.features.productCategory !== current.features.productCategory) continue;
     const j = groups.findIndex((g, index) => index > i && priority(g.article).tier === priority(current).tier &&

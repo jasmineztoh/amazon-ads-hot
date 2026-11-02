@@ -1,8 +1,38 @@
 {
   "reviewedAt": "2026-10-29",
-  "updatedAt": "2026-10-30T03:55:59.921Z",
-  "total": 89,
+  "updatedAt": "2026-11-02T06:53:11.810Z",
+  "total": 92,
   "reviewedTotal": 48,
+  "guides": [
+    {
+      "title": "第一次做商品推广",
+      "description": "先准备商品与页面，再理解广告和利润，最后用真实演示排查预算与效果。",
+      "steps": [
+        {
+          "articleId": "article-031",
+          "note": "先认识商品推广与其它广告形式，读活动搭建、投放和预算部分。"
+        },
+        {
+          "articleId": "article-036",
+          "note": "确认页面能回答买家问题，并核对A+资格与创建步骤。"
+        },
+        {
+          "articleId": "article-002",
+          "note": "用售价、成本与投放目标理解ACOS，给第一次投放设置可解释的目标。"
+        },
+        {
+          "articleId": "live-f8fc5c2255bf6684",
+          "note": "遇到预算花不出去，用158个活动的演示区分预算、竞价与流量覆盖。"
+        },
+        {
+          "articleId": "live-207c00a4362bf1dc",
+          "note": "再看大促实际样本中的销售、CPC与ROAS，理解规模增长和广告效率需要一起复盘。"
+        }
+      ]
+    }
+  ],
+  "featuredUpdatedAt": "2026-11-02T06:53:11.810Z",
+  "sourceCheckedAt": "2026-10-30T03:55:59.921Z",
   "sections": [
     "行业动态",
     "教程（新人入门与进阶）",
@@ -10,7 +40,7 @@
     "工具",
     "AI营销"
   ],
-  "revision": "9e89e2ec1d1320829ca0d8df19b0708a06ba1e8089960882343df26f4b11ddfb",
+  "revision": "dc4a16cfb9a66575b91c76e960da82f8e10d3770d6df720231c248eca5dba4b2",
   "collection": {
     "enabled": true,
     "intervalMinutes": 120,
@@ -149,9 +179,9 @@
     },
     "counts": {
       "baseline": 48,
-      "published": 41,
+      "published": 44,
       "old": 490,
-      "pending": 72,
+      "pending": 69,
       "future": 1,
       "excluded": 4,
       "material_error": 1
@@ -187,7 +217,10 @@
         ],
         "productCategory": "食品"
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "用芥末酱商品图的失败稿和修改稿，学会检查标签、净含量与画面留白。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-002",
@@ -214,7 +247,16 @@
         ],
         "adPractice": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "evidenceUrl": "https://adbrew.io/blog/reduce-acos-on-amazon",
+      "checkedAt": "2026-10-30",
+      "reason": "把ACOS算式放回利润、新品与清库存目标，帮助解释同一个数值为何不能通用。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "live-f8fc5c2255bf6684",
+        "article-042"
+      ]
     },
     {
       "id": "article-003",
@@ -241,7 +283,10 @@
           "AI营销"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "按文案、图片、关键词与广告工作拆解工具用途，适合先确定要解决什么再选软件。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-004",
@@ -267,7 +312,10 @@
           "行业动态"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "从Seller Central多渠道工作区的变化，观察Amazon如何扩大卖家的日常经营入口。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-005",
@@ -295,7 +343,10 @@
         ],
         "promotionLed": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把图片生成额度换成每个商品可修改的次数，便于判断真实制作成本。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-006",
@@ -323,7 +374,10 @@
         ],
         "productCategory": "食品"
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "Wilde的邮编口味分析与AI创意示例，提供把地域销售资料用于素材的具体思路。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-007",
@@ -349,7 +403,10 @@
           "教程（新人入门与进阶）"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把A+模块对应到买家疑问，适合检查页面是否真正回答了购买顾虑。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-008",
@@ -377,7 +434,10 @@
         ],
         "adPractice": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "匿名大型品牌的AMC受众案例，把人群策略、执行方式与自然销售观察放在一起讲。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-009",
@@ -404,7 +464,14 @@
         ],
         "adPractice": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "沿曝光、点击、加购到购买逐层找份额损失，适合已有排名但销量不理想的商品。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "article-011",
+        "article-042"
+      ]
     },
     {
       "id": "article-010",
@@ -430,7 +497,10 @@
           "行业动态"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "从熟悉品牌的反复购买切入，提醒我们在解释转化时同时考虑信任和习惯。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-011",
@@ -457,7 +527,10 @@
           "工具"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "用官方说明先确认品牌分析资格与报表用途，再决定用哪张表回答经营问题。",
+      "sourceRole": "official"
     },
     {
       "id": "article-012",
@@ -483,7 +556,10 @@
           "教程（新人入门与进阶）"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "列出自动化失效、遗忘配置和重复执行的具体情境，适合给现有工作流补检查环节。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-013",
@@ -510,7 +586,10 @@
           "AI营销"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把商品事实、缺失资料和人工复核放进AI写作流程，便于减少Listing虚构信息。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-014",
@@ -537,7 +616,10 @@
         ],
         "adPractice": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "区分企业买家触达、加价与专门广告，帮助判断是否值得单独拆分投放。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-015",
@@ -565,7 +647,10 @@
         ],
         "aiAdsWorkflow": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "让AI先展示出价旧值、新值和理由，再决定执行，适合设计广告调整的确认环节。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-016",
@@ -591,7 +676,10 @@
           "教程（新人入门与进阶）"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把万圣节关键词、页面、库存与预算排到同一准备顺序，适合季节商品查漏。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-017",
@@ -618,7 +706,10 @@
           "AI营销"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "展示消费者测试怎样嵌入生成流程，适合评估团队是否需要减少跨工具操作。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-018",
@@ -644,7 +735,10 @@
           "教程（新人入门与进阶）"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把账户、佣金、配送等成本拆开，便于在讨论广告目标前先整理利润输入。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-019",
@@ -671,7 +765,10 @@
           "AI营销"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "10万条Alexa提示词的研究框架，能启发我们检查商品事实怎样进入AI推荐理由。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-020",
@@ -688,7 +785,7 @@
         "拆分品牌、品类、两天活动以及广告和自然销售，而不只报总销售增长。",
         "文中说明样本与统计限制，并提供机构服务入口。"
       ],
-      "materialNote": "数据来自其管理的品牌，不代表Amazon全站。",
+      "materialNote": "样本来自Incrementum管理的品牌组合；现有材料未列出完整品牌名单或可下载的逐品牌原始数据。可借鉴与日常基线比较的方法，数字请回到原文核对，不能外推为全站结果。",
       "collectionApproved": true,
       "featuredDecision": null,
       "editorialTextReviewed": false,
@@ -699,7 +796,16 @@
         ],
         "adPractice": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把大促增长与日常基线一起比较，适合复盘活动究竟带来了多少额外需求。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "live-207c00a4362bf1dc",
+        "article-048",
+        "live-98013f11332ee19b",
+        "live-5d40e6689d6498ae"
+      ]
     },
     {
       "id": "article-021",
@@ -725,7 +831,10 @@
           "教程（新人入门与进阶）"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "区分页面可见信息与后台搜索词的职责，适合补同义表达并清理无关关键词。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-022",
@@ -751,7 +860,10 @@
           "教程（新人入门与进阶）"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把变体、重复条目与商品资料问题连到广告承接，适合排查增长停滞的目录原因。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-023",
@@ -777,7 +889,10 @@
           "行业动态"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "比较大品牌的既有需求与私牌的试验空间，帮助结合自身资源选择增长方式。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-024",
@@ -804,7 +919,10 @@
         ],
         "promotionLed": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "列出机构各自提供的服务，适合先梳理需要外包的工作，再逐项核对候选。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-025",
@@ -831,7 +949,10 @@
           "AI营销"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "公开逐字稿串起受众研究、人物设计、脚本与视频生成，适合拆解站外素材制作流程。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-026",
@@ -859,7 +980,10 @@
         ],
         "promotionLed": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "从模型调整、计算效率和数据隔离理解广告工具的设计取舍，方便向厂商追问实现。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-027",
@@ -886,7 +1010,10 @@
           "AI营销"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把库存、购买按钮、价格和内容一起检查，适合在扩大流量前确认商品能正常成交。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-028",
@@ -913,7 +1040,10 @@
           "AI营销"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "列出商品资料的责任人与属性缺口，适合借鉴到跨渠道商品信息管理。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-029",
@@ -943,7 +1073,10 @@
         "aiAdsWorkflow": true,
         "productCategory": "宠物"
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "以宠物饮水器演示实时数据提示词，同时保留商品功能边界，适合学习如何审查AI选词。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-030",
@@ -972,7 +1105,10 @@
         ],
         "promotionLed": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把商品资料、评论疑虑与逐张改图串成流程，适合比较手动制作和工具生成的工作量。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-031",
@@ -999,7 +1135,15 @@
         ],
         "adPractice": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "用一篇长指南串起广告形式、活动组织与优化，适合作为第一次做商品推广的路线入口。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "article-036",
+        "article-002",
+        "live-f8fc5c2255bf6684"
+      ]
     },
     {
       "id": "article-032",
@@ -1025,7 +1169,10 @@
           "教程（新人入门与进阶）"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把包装的手机端辨识度与破损、退货和费用一起看，适合补充单纯改广告的诊断视角。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-033",
@@ -1052,7 +1199,10 @@
           "工具"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "演示采购订单的状态查询与跟进整理，适合判断重复查单工作能否交给助手。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-034",
@@ -1079,7 +1229,10 @@
           "AI营销"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "先明确画面目标，再做策略、文案与测试，适合纠正只有生成提示词却没有验证的做图流程。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-035",
@@ -1105,7 +1258,10 @@
           "行业动态"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "从广告位挤占商品位置切入，适合思考零售媒体收入与购物体验之间的经营取舍。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-036",
@@ -1131,7 +1287,14 @@
           "教程（新人入门与进阶）"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "官方中文指南把A+资格、模块和创建步骤放在一起，新人可以据此检查页面准备。",
+      "sourceRole": "official",
+      "relatedIds": [
+        "article-031",
+        "article-007"
+      ]
     },
     {
       "id": "article-037",
@@ -1160,7 +1323,14 @@
         ],
         "eventGroup": "unboxed-2026-agent"
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "从Amazon原公告核对Ads Agent的能力、购买方式与测试范围，便于读懂后续媒体解读。",
+      "sourceRole": "official",
+      "relatedIds": [
+        "article-038",
+        "live-1861c9bce0d799b8"
+      ]
     },
     {
       "id": "article-038",
@@ -1188,7 +1358,13 @@
         ],
         "eventGroup": "unboxed-2026-agent"
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "Skai把现场发布延伸到跨平台数据和控制能力，可与官方公告对照阅读。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "article-037"
+      ]
     },
     {
       "id": "article-039",
@@ -1215,7 +1391,10 @@
         ],
         "adPractice": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "先检查商品推广与库存基础，再讨论DSP受众和试验预算，适合避免过早扩展广告形式。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-040",
@@ -1244,7 +1423,10 @@
         ],
         "aiAdsWorkflow": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "用自然语言查询关键词数据的具体演示，适合学习如何把买家意图问题问得更清楚。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-041",
@@ -1270,7 +1452,10 @@
           "教程（新人入门与进阶）"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "解释Vendor在议价、扣款与价格控制上的约束，适合供应商品牌补齐广告之外的背景。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-042",
@@ -1297,7 +1482,10 @@
         ],
         "adPractice": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把自身历史、搜索份额与竞争环境一起比较，适合判断转化率下降从哪里查起。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-043",
@@ -1324,7 +1512,10 @@
         ],
         "productCategory": "美妆"
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "围绕收礼人、场合和预算组织美妆内容，适合提前准备礼赠词、套装与节日素材。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-044",
@@ -1353,7 +1544,10 @@
         ],
         "aiAdsWorkflow": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "从发现盈利暂停词到整理供应商报价，提供几种可以缩小范围实际试跑的AI任务。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-045",
@@ -1380,7 +1574,10 @@
           "工具"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "沿利润问题拆开数据来源、日期与缺失输入，适合检查AI返回的经营数字是否完整。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-046",
@@ -1406,7 +1603,10 @@
           "行业动态"
         ]
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把AI使用次数和实际经营结果分开衡量，适合思考团队应怎样定义自动化成果。",
+      "sourceRole": "analysis"
     },
     {
       "id": "article-047",
@@ -1433,7 +1633,10 @@
         ],
         "softwareOnly": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "官方工程岗位指引强调交付结果与判断责任，可启发我们检查AI工作流的责任分配。",
+      "sourceRole": "official"
     },
     {
       "id": "article-048",
@@ -1460,7 +1663,14 @@
         ],
         "adPractice": true
       },
-      "origin": "user-reviewed"
+      "collectedAt": "2026-10-29",
+      "origin": "user-reviewed",
+      "reason": "把促销清单与价格带、利润及商品阶段联系起来，适合在大促前重新判断哪些商品值得投入。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "article-020",
+        "live-207c00a4362bf1dc"
+      ]
     },
     {
       "id": "live-4403f4f1b656339f",
@@ -1486,8 +1696,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "d1f60c58610d3fc3471fb3af52d4af633b1029f4e5cc4eee6816e767f6a76ec4",
       "reviewedAt": "2026-10-29T07:57:30.596Z",
+      "collectedAt": "2026-10-29T07:57:30.596Z",
       "sourceId": "source-111",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "从活跃卖家的连续查询习惯，观察MCP怎样进入每天的销售、库存与关键词工作。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-5833c8058781d1e0",
@@ -1513,8 +1726,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "0a298477f7b8701bf8ab9b7b7c4b679f2519ada74304ecd69f6c9ccd833e6f29",
       "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "collectedAt": "2026-10-29T07:57:30.597Z",
       "sourceId": "source-120",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "把企业买家折扣、旺季费用与广告利润一起核对，适合黑五前更新成本假设。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-3f6b514a62e1f419",
@@ -1539,8 +1755,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "4de8c6a71d64f40dde97c705cecedc1a5c803b5da493df4686277ee94e7d27fb",
       "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "collectedAt": "2026-10-29T07:57:30.597Z",
       "sourceId": "source-120",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "按发货顺序检查订单、到岸成本与包装，让新品投放预算先有可靠的成本基础。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-9a3bf556cea49c94",
@@ -1566,8 +1785,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "a75c023e4c5781fc7b8cf11a3f93c8ce88c6a32d4087960c9ccbe2a0fa415127",
       "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "collectedAt": "2026-10-29T07:57:30.597Z",
       "sourceId": "source-120",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "把搜索意图落实到尺寸、材质和兼容信息，适合检查页面是否表达了真实商品能力。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-8b042ea743b6538d",
@@ -1593,8 +1815,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "7726b01b8db35f69a60ae891233e66f5fec1a1fce34fd5e32e0058c94f38916f",
       "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "collectedAt": "2026-10-30T03:42:43.538Z",
       "sourceId": "source-120",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "沿流量、转化、购买按钮到退货逐层检查，适合给月度广告复盘补上运营背景。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-605b983ad27e66de",
@@ -1621,8 +1846,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "e9841b5f93cc474aa78d3afad0ca3d6edec74420609bec835091581aec0056d2",
       "reviewedAt": "2026-10-29T07:57:30.595Z",
+      "collectedAt": "2026-10-29T07:57:30.595Z",
       "sourceId": "source-127",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "德国保温杯示例区分品牌词、通用词和季节性，适合检查增长目标是否来自真实需求。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-98013f11332ee19b",
@@ -1648,8 +1876,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "217a556f7a2052f2191a768ce612f819098da1c68cee2473293c48f2b486b07c",
       "reviewedAt": "2026-10-29T07:57:30.596Z",
+      "collectedAt": "2026-10-29T07:57:30.596Z",
       "sourceId": "source-127",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "把黑五前后的预算、促销标识和商品页面连起来，适合按活动阶段安排检查。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-c119566773485e5f",
@@ -1674,8 +1905,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "52aadd61151c445d9ab09337f988a739aa0ab1c8118cac866e2137d5a57aa25c",
       "reviewedAt": "2026-10-29T07:57:30.596Z",
+      "collectedAt": "2026-10-29T07:57:30.596Z",
       "sourceId": "source-127",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "把达人准备周期与Amazon促销健康状态放在一起，适合跨平台团队对齐黑五节奏。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-0df55782d1d4c190",
@@ -1701,8 +1935,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "cd3b65b6817985c347c7ef2e64f765eaa0c919e8565ca054b434a8adff0fe7c1",
       "reviewedAt": "2026-10-29T07:57:30.595Z",
+      "collectedAt": "2026-10-29T07:57:30.595Z",
       "sourceId": "source-127",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "先拆品牌搜索与非品牌收入，再讨论预算，适合审视增长目标究竟依靠哪一段需求。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-1f53dd1681c0551a",
@@ -1727,8 +1964,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "ed3074b96388ca6ce0b55f6e76d57fbd0e3f945d8a2dec2ae6b47e2a74a55211",
       "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "collectedAt": "2026-10-30T03:42:43.538Z",
       "sourceId": "source-127",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "区分低制作感和用户生成素材，并把品牌识别纳入测试，适合扩充视频试验思路。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-ec68a1e5103b2903",
@@ -1755,8 +1995,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "f3216b0ed2e5a9c86395d72e9af8e16d31de07367c58e48877cf416757a1603c",
       "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "collectedAt": "2026-10-30T03:42:43.538Z",
       "sourceId": "source-127",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "用玩具市场说明怎样同时看细分类目、价格带与品牌集中度，适合筛选新市场假设。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-f953908f68753bf1",
@@ -1782,8 +2025,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "b8b8d89a24e94768148ab4d9b7a9e3f6338e4ad8a47e4a820c546acf4cda05b2",
       "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "collectedAt": "2026-10-30T03:42:43.538Z",
       "sourceId": "source-127",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "把结构化资料与具体商品事实一起检查，适合整理面向AI搜索的跨渠道内容。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-21f81401ff74b858",
@@ -1810,8 +2056,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "72d0d2b8bd111daa4dd6393ac4f8b4b04b036d6812f8c06a21564beb7f8f5ced",
       "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "collectedAt": "2026-10-30T03:42:43.538Z",
       "sourceId": "source-127",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "德国DIY与园艺的报告介绍提示从细分类目和大件成本找问题，方便决定是否继续读完整报告。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-0054b26231e4141e",
@@ -1838,8 +2087,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "ca5a88dad38acde0d27b0e4f1a3c1faf0dd91ee6102e334c635d186fecf2e338",
       "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "collectedAt": "2026-10-30T03:42:43.538Z",
       "sourceId": "source-127",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "把美妆发现、确认与复购分开观察，适合寻找TikTok内容与Amazon经营之间可检查的线索。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-5a0b68db1287c9e7",
@@ -1861,7 +2113,10 @@
       "evidenceHash": "b8651a590b81df0e086a03d770c47d4e2cfbab3e3f2abef4a075e295e7228840",
       "reviewedAt": "2026-10-29T07:48:05.074Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "官方入口介绍无需先搭AMC即可激活地区品牌指数的能力，适合核对区域投放的新选择。",
+      "sourceRole": "official",
+      "collectedAt": "2026-10-29T07:48:05.074Z"
     },
     {
       "id": "live-1861c9bce0d799b8",
@@ -1889,8 +2144,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "6f49a6475f6421578e61a98fe790f2114faf5ef0c84bf98b57627a9444e836f6",
       "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "collectedAt": "2026-10-29T07:57:30.597Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "浏览未购买人群的AMC查询示例，能帮助判断自然语言工具可接手哪一段查询工作。",
+      "sourceRole": "official"
     },
     {
       "id": "live-9ad9f06c2e447506",
@@ -1912,7 +2170,10 @@
       "evidenceHash": "5ddef5fe8faa9c6656f9d7cc9919b607f905854bf2f57f6844d63483a0d18992",
       "reviewedAt": "2026-10-29T07:48:05.074Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "官方说明Alexa+ Echo Show的全屏静音循环视频形式，适合先判断现有素材是否匹配。",
+      "sourceRole": "official",
+      "collectedAt": "2026-10-29T07:48:05.074Z"
     },
     {
       "id": "live-5d567c766ee42eda",
@@ -1934,7 +2195,10 @@
       "evidenceHash": "559f4b8d1b70f471f17393928fd23cde4472ad900eef4a1cb47921d5413482f2",
       "reviewedAt": "2026-10-29T07:48:05.074Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "从广告格式、品牌控件与富媒体布局了解自适应创意变化，便于检查现有展示素材需求。",
+      "sourceRole": "official",
+      "collectedAt": "2026-10-29T07:48:05.074Z"
     },
     {
       "id": "live-d25401ddaa733d8f",
@@ -1962,8 +2226,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "4094acbcf617f64155d50b1a48999e55ae8cd206d8af3db19241c937267e90bd",
       "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "collectedAt": "2026-10-29T07:57:30.597Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "把规划、活动管理和效果分析中的对话能力放到一起，适合核对自己的账户可尝试什么。",
+      "sourceRole": "official"
     },
     {
       "id": "live-cf64b381d14a36b7",
@@ -1990,8 +2257,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "011c9859e4b104db8ec1e12bed97beb542af63148b7915c280e98ee8a3d3db6a",
       "reviewedAt": "2026-10-29T07:57:30.598Z",
+      "collectedAt": "2026-10-29T07:57:30.598Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "解释连接不同广告与长期销售指标的测试思路，适合先理解指标再阅读平均效果数字。",
+      "sourceRole": "official"
     },
     {
       "id": "live-d8158cd7b4229858",
@@ -2013,7 +2283,10 @@
       "evidenceHash": "e3502a9c507951cefa875c19c9c00f0dc798f2c16e15161ccb0f98b555917d12",
       "reviewedAt": "2026-10-29T07:53:38.999Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "官方Sponsored Services介绍提供服务类需求广告的核对入口，适合服务商查看适用范围。",
+      "sourceRole": "official",
+      "collectedAt": "2026-10-29T07:53:38.999Z"
     },
     {
       "id": "live-1206a83527293800",
@@ -2035,7 +2308,10 @@
       "evidenceHash": "149ef74e5b4959c467656f6d7013e0fe9de8d381e5a49c623957dc928e220a89",
       "reviewedAt": "2026-10-29T07:53:38.999Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "展示品牌信息如何进入购物对话，适合品牌提前整理商品用途与比较资料。",
+      "sourceRole": "official",
+      "collectedAt": "2026-10-29T07:53:38.999Z"
     },
     {
       "id": "live-0fe8f7103affeb18",
@@ -2057,7 +2333,10 @@
       "evidenceHash": "9a5a1b111f35a0df4effeba6300ff7cbb6290fb7713e97593b90aa5e7219ae06",
       "reviewedAt": "2026-10-29T07:53:38.999Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "官方入口介绍面向近期购买者的评论邀请方式，适合核对可用资格和邀请规则。",
+      "sourceRole": "official",
+      "collectedAt": "2026-10-29T07:53:38.999Z"
     },
     {
       "id": "live-edfe4c927123dfd5",
@@ -2079,7 +2358,10 @@
       "evidenceHash": "c042cb8cb02171c5379f1ef3256324e75cc087ff85e1ecc9a035bdbc73f27188",
       "reviewedAt": "2026-10-29T07:53:38.999Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "把展示、视频和音频创建放在一起看，适合了解美国封闭测试版DVA+的产品边界。",
+      "sourceRole": "official",
+      "collectedAt": "2026-10-29T07:53:38.999Z"
     },
     {
       "id": "live-f25ff1b916e71a46",
@@ -2101,7 +2383,10 @@
       "evidenceHash": "97ca03639b417916da66854a63260d23f0d3c32751d9b7f00ff15161807c8717",
       "reviewedAt": "2026-10-29T07:53:38.999Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "官方介绍用对话评估受众和预测触达，适合核对媒介规划中的预算建议来自什么能力。",
+      "sourceRole": "official",
+      "collectedAt": "2026-10-29T07:53:38.999Z"
     },
     {
       "id": "live-720c9a249c18754c",
@@ -2123,7 +2408,10 @@
       "evidenceHash": "544a0c816c703cb54c2a927f4468911aaceae46f03d3470acd574e4cfe6e4093",
       "reviewedAt": "2026-10-29T07:53:38.999Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "从自然语言提问到趋势与基准比较，提供核对广告分析对话功能的官方入口。",
+      "sourceRole": "official",
+      "collectedAt": "2026-10-29T07:53:38.999Z"
     },
     {
       "id": "live-c955c023f02a383b",
@@ -2145,7 +2433,10 @@
       "evidenceHash": "d5841ae06ea2dc7988e1c2bbe9d948b1762a9f9c6cb32e0e1d024e93d428abc5",
       "reviewedAt": "2026-10-29T07:58:47.681Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "官方数据管理器介绍连接、管理与激活第一方数据的变化，适合规划广告数据准备。",
+      "sourceRole": "official",
+      "collectedAt": "2026-10-29T07:58:47.681Z"
     },
     {
       "id": "live-cc5721f18f8595e6",
@@ -2167,7 +2458,10 @@
       "evidenceHash": "58a90b834a968778e9485bc9009d8ab81721c1d65064abd9e1699bc1b214a10b",
       "reviewedAt": "2026-10-29T07:58:47.681Z",
       "sourceId": "source-001",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "官方说明DSP第三方库存对VAST 4的支持，适合视频投放团队核对供应端格式变化。",
+      "sourceRole": "official",
+      "collectedAt": "2026-10-29T07:58:47.681Z"
     },
     {
       "id": "live-45efb52867116f16",
@@ -2192,8 +2486,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "14ba6de94ba51adcb89acfce1cad3f711ab91424e465ebe24f1ed8b7595eaa41",
       "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "collectedAt": "2026-10-29T07:57:30.597Z",
       "sourceId": "source-007",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "把TikTok的内容形态与畅销商品放在一起看，适合寻找站外需求线索并判断商品是否适合展示。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-e23130f45757aff1",
@@ -2218,8 +2515,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "19ee9d81214a0432ba2637694dd1bf4bee79d71568e5bff1ff2005717ea0d850",
       "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "collectedAt": "2026-10-29T07:57:30.597Z",
       "sourceId": "source-007",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "用两平台头部商家的交集提醒我们验证渠道适配，适合检视复制Amazon打法的假设。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-7088615698926f55",
@@ -2245,8 +2545,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "00fe126516dbb65d24e64ad06249cc3d31506ddaf2b138b8fd842631642a403d",
       "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "collectedAt": "2026-10-29T07:57:30.597Z",
       "sourceId": "source-056",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "要求AI答案带报告、日期与商品依据，适合重新测试工具时设置能核对的验收条件。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-fe2ff68048b476fe",
@@ -2273,8 +2576,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "ea8875182e9c4c166e55b8d17bc6af94029364f1b1dc915278ab8fcca3759ea7",
       "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "collectedAt": "2026-10-29T07:57:30.597Z",
       "sourceId": "source-056",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "把关键词研究和广告报告的规则、理由写进文件，适合从一个重复任务开始积累可复用流程。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-71f3f310c53e89a7",
@@ -2300,8 +2606,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "2e005e01c61ee23ecdd2e47c8d67f10f258419e72ed7955e0af241676db28baf",
       "reviewedAt": "2026-10-29T07:57:30.597Z",
+      "collectedAt": "2026-10-29T07:57:30.597Z",
       "sourceId": "source-056",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "按观察、记录、安排执行到网页操作逐步增加自动化，适合第一次把AI接进卖家工作。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-82dee77a391130ed",
@@ -2327,8 +2636,20 @@
       "origin": "agent-reviewed",
       "evidenceHash": "4072d6a30695626c85675e3cf421247cd9f854aa471673182f5b1a3e07d8d22b",
       "reviewedAt": "2026-10-30T03:42:43.537Z",
+      "collectedAt": "2026-10-30T03:42:43.537Z",
       "sourceId": "source-056",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "先查购买按钮、库存与页面状态，再解释广告表现，适合预算花不出去时排查商品承接。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "live-f8fc5c2255bf6684",
+        "live-8b042ea743b6538d"
+      ],
+      "searchTerms": [
+        "预算花不出去",
+        "预算不足",
+        "花费进度"
+      ]
     },
     {
       "id": "live-477d6cd8ecc13bed",
@@ -2357,8 +2678,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "dbf8a454579ad459ce5ce387006bf6dd23d11a788b39002c6a22c1d4bc4eff73",
       "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "collectedAt": "2026-10-30T03:42:43.538Z",
       "sourceId": "source-056",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "把成本默认值、数据延迟和历史重算讲清楚，适合用已核对的月份检验AI利润结果。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-aefc1af6a33d7682",
@@ -2385,8 +2709,46 @@
       "origin": "agent-reviewed",
       "evidenceHash": "5b7b3083ae2a0a959cccece53b5a369f1c480b412468070b8230492cd3f1e320",
       "reviewedAt": "2026-10-30T03:42:43.538Z",
+      "collectedAt": "2026-10-30T03:42:43.538Z",
       "sourceId": "source-056",
-      "addedAt": "2026-10-29T07:48:05.074Z"
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "按报表可得性、重复用时和维护成本比较三种连接方式，适合决定库存数据怎样交给AI。",
+      "sourceRole": "analysis"
+    },
+    {
+      "id": "live-1d00701d9baedc0c",
+      "title": "Brushee口袋牙刷：先讲清使用场景，再做差异化",
+      "summary": "Seller Labs采访Brushee创始人Ian Rollin Berry，讨论便携口腔护理产品怎样找到差异点，以及原计划线下销售的库存为何转向Amazon。",
+      "points": [
+        "从随身使用场景出发，把产品差异转成顾客能理解的利益。",
+        "交给工厂完整规格，而不只给一个概念，减少产品落地时的信息缺口。",
+        "节目文字说明给出03:36创业故事、17:40品类差异化、31:32利益表达等收听位置。"
+      ],
+      "sourceName": "Seller Labs",
+      "url": "https://www.sellerlabs.com/blog/pocket-toothbrush-1m-13-months-ian-berry/",
+      "publishedAt": "2026-10-19",
+      "updatedAt": null,
+      "materialNote": "材料为2026年10月19日节目页与文字说明，节目称录于2026年8月；本次未收听完整音频。样本仅Brushee这一品牌，13个月约100万美元销售额为嘉宾自述，无审计报表、利润或广告增量数据，适合借鉴定位思路。",
+      "features": {
+        "sections": [
+          "案例"
+        ],
+        "adPractice": false,
+        "productCategory": "口腔护理"
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "1b3f22b787aa5070c0153292a661dd3f8ce5a6ecd287995d8fd39b1d4b038451",
+      "reviewedAt": "2026-11-02T06:53:11.810Z",
+      "collectedAt": "2026-11-02T06:53:11.810Z",
+      "sourceId": "source-056",
+      "addedAt": "2026-10-29T07:48:05.074Z",
+      "reason": "Brushee用口袋牙刷的使用场景寻找差异，适合在加投广告前重新检查商品卖点与目标人群。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "article-007",
+        "article-042"
+      ]
     },
     {
       "id": "live-4ded4df4c0eb2ab2",
@@ -2414,8 +2776,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "46546d58239c40c57f8ea66952acae945e38415dee44f5a7df5031bc9930b044",
       "reviewedAt": "2026-10-29T07:57:30.598Z",
+      "collectedAt": "2026-10-29T07:57:30.598Z",
       "sourceId": "source-144",
-      "addedAt": "2026-10-29T07:53:38.999Z"
+      "addedAt": "2026-10-29T07:53:38.999Z",
+      "reason": "把预测未来购买与已发生销售分开，适合审查AI广告报告里看似确定的效果数字。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-136bb6f7135aa3f8",
@@ -2442,8 +2807,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "7db218a7d4730efa79f33c2043733d1b3677905fde6f7e3e3bfa853030339a2b",
       "reviewedAt": "2026-10-29T07:57:30.598Z",
+      "collectedAt": "2026-10-29T07:57:30.598Z",
       "sourceId": "source-144",
-      "addedAt": "2026-10-29T07:53:38.999Z"
+      "addedAt": "2026-10-29T07:53:38.999Z",
+      "reason": "解释品牌能提供的商品信息与不能选择的评论，适合给对话式广告准备真实内容。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-f154d45e4ccb957e",
@@ -2469,8 +2837,11 @@
       "origin": "agent-reviewed",
       "evidenceHash": "9b440c1f8b099b2d24370c67834b9baeed234e0746e07992e2826b3ed3277c0f",
       "reviewedAt": "2026-10-30T03:55:48.720Z",
+      "collectedAt": "2026-10-30T03:55:48.720Z",
       "sourceId": "source-092",
-      "addedAt": "2026-10-30T03:53:58.782Z"
+      "addedAt": "2026-10-30T03:53:58.782Z",
+      "reason": "比较订阅、抽成与广告的激励差异，适合思考AI购物推荐的透明度与品牌参与方式。",
+      "sourceRole": "analysis"
     },
     {
       "id": "live-207c00a4362bf1dc",
@@ -2486,7 +2857,7 @@
       "url": "https://acadia.io/prime-big-deal-days-2026-results",
       "publishedAt": "2026-10-14",
       "updatedAt": null,
-      "materialNote": "代理机构自有客户样本与观察，未独立核验原始数据；促销、预算及品类差异可能共同影响结果，相关性不等于因果。",
+      "materialNote": "样本为Acadia跟踪的可同比美国Seller Central品牌，覆盖16个品类组；文中未披露完整品牌名单或逐品牌原始数据。可到原文查看分类图表与统计口径，不能据此推定全站效果或促销因果。",
       "features": {
         "sections": [
           "案例",
@@ -2499,8 +2870,22 @@
       "origin": "agent-reviewed",
       "evidenceHash": "a0ef48825c71a205f2e52c4364fa64de2c1322ae4439e39b01dfee4050f8a905",
       "reviewedAt": "2026-10-30T03:55:48.720Z",
+      "collectedAt": "2026-10-30T03:55:48.720Z",
       "sourceId": "source-028",
-      "addedAt": "2026-10-30T03:53:58.782Z"
+      "addedAt": "2026-10-30T03:53:58.782Z",
+      "reason": "同看销售增长、CPC上涨和ROAS下降，适合复盘大促规模扩大时利润与效率发生了什么。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "article-020",
+        "article-048",
+        "live-f8fc5c2255bf6684",
+        "live-5d40e6689d6498ae"
+      ],
+      "searchTerms": [
+        "预算花不出去",
+        "预算不足",
+        "花费进度"
+      ]
     },
     {
       "id": "live-f8fc5c2255bf6684",
@@ -2528,9 +2913,105 @@
       "origin": "agent-reviewed",
       "evidenceHash": "99a4c1dc87ae5c1d0145d7b45e1e2b9e0db512b1f36fcae6421607667742f682",
       "reviewedAt": "2026-10-30T03:55:48.719Z",
+      "collectedAt": "2026-10-30T03:55:48.719Z",
       "sourceId": "source-003",
-      "addedAt": "2026-10-30T03:53:58.782Z"
+      "addedAt": "2026-10-30T03:53:58.782Z",
+      "reason": "158个活动的匿名演示把预算上限与实际花费分开，适合先判断预算花不出去卡在竞价还是覆盖。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "live-5d40e6689d6498ae",
+        "live-4b889688be11a433",
+        "live-82dee77a391130ed",
+        "live-207c00a4362bf1dc",
+        "article-002"
+      ],
+      "searchTerms": [
+        "预算花不出去",
+        "预算不足",
+        "花费进度"
+      ]
+    },
+    {
+      "id": "live-4b889688be11a433",
+      "title": "PPC账户审计：从搜索词浪费追到商品总ACoS",
+      "summary": "Ad Badger用批量文件和业务报表展示账户审计顺序，从无订单搜索词支出，追到预算、广告位和商品整体表现。",
+      "points": [
+        "在搜索词层面定位有花费无订单的流量，再检查已转化但尚未独立投放的词。",
+        "把广告报表与业务报表放在一起看，避免只用账户广告ACoS评价商品。",
+        "节目页列出03:00搜索词与关键词、04:47预算与广告位、09:22词组分析等章节，可按问题回看。"
+      ],
+      "sourceName": "Ad Badger / PPC Den",
+      "url": "https://www.adbadger.com/blog/amazon-ppc-education/free-amazon-ppc-audit-hand-me-your-bulk-file-the-ppc-den-podcast/",
+      "publishedAt": "2026-10-09",
+      "updatedAt": null,
+      "materialNote": "2026年10月9日的厂商节目说明及章节，材料不是完整音频逐字稿。免费、浏览器内处理和账户评分均为工具方介绍；本站未上传真实广告账户文件验证工具效果，100分制不能当作Amazon官方质量评分。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）",
+          "工具"
+        ],
+        "adPractice": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "fb2960e05ab445b9bd8f791c3e208c83fe907064ed73e90e98d1b20be9b0803b",
+      "reviewedAt": "2026-11-02T06:53:11.810Z",
+      "collectedAt": "2026-11-02T06:53:11.810Z",
+      "sourceId": "source-003",
+      "addedAt": "2026-10-30T03:53:58.782Z",
+      "reason": "从搜索词浪费追到商品总ACoS，适合在预算诊断后继续检查花出去的钱是否对应整体商品表现。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "live-f8fc5c2255bf6684",
+        "article-009",
+        "article-002"
+      ],
+      "searchTerms": [
+        "预算花不出去",
+        "预算不足",
+        "花费进度"
+      ]
+    },
+    {
+      "id": "live-5d40e6689d6498ae",
+      "title": "大促预算怎么分阶段调，先算折后盈亏线",
+      "summary": "Ad Badger把2026年秋季Prime大促拆成准备、预热、活动和回落四段。值得借鉴的是先算促销后的广告盈亏线，再把预算和出价分别安排。",
+      "points": [
+        "先保存平日CPC基线，检查库存和折后毛利，再决定活动能承受的广告成本。",
+        "把已验证的转化目标单独列出，按阶段安排预算，并提前设置活动后回调。",
+        "复盘同时观察广告与全店表现，等待对应报表的归因数据成熟后再判断。"
+      ],
+      "sourceName": "Ad Badger / PPC Den",
+      "url": "https://www.adbadger.com/blog/prime-big-deal-days-ppc-strategy/",
+      "publishedAt": "2026-09-25",
+      "updatedAt": null,
+      "materialNote": "2026年9月25日发布的活动前教程，2026年11月2日补收录。建议来自Ad Badger自家工具样本，文中并列使用往年Prime Day与2025年Numerator资料，未披露品牌清单，不能当作2026年秋促已发生的效果。预算倍数需按利润与库存重算；原文将SP和SB归因窗口一概写为14天，本站不沿用该概括，复盘应核对账户类型和报表口径。",
+      "features": {
+        "sections": [
+          "教程（新人入门与进阶）"
+        ],
+        "adPractice": true
+      },
+      "collectionApproved": true,
+      "origin": "agent-reviewed",
+      "evidenceHash": "e2c12d89703e443a7ee6f5623254e7dc3e228eac2574b63a5359a1d7884d2823",
+      "reviewedAt": "2026-11-02T06:53:11.810Z",
+      "collectedAt": "2026-11-02T06:53:11.810Z",
+      "sourceId": "source-003",
+      "addedAt": "2026-10-30T03:53:58.782Z",
+      "reason": "把折后盈亏线、预热和活动期预算放到同一节奏里，适合对照两份秋季大促复盘安排下一场投入。",
+      "sourceRole": "analysis",
+      "relatedIds": [
+        "live-f8fc5c2255bf6684",
+        "article-020",
+        "live-207c00a4362bf1dc"
+      ],
+      "searchTerms": [
+        "预算花不出去",
+        "预算不足",
+        "花费进度"
+      ]
     }
   ],
-  "groupedRows": 88
+  "groupedRows": 91
 }

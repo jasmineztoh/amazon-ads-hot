@@ -83,7 +83,8 @@ export function officialSummary(entry: Entry, now: string) {
   entry.publication = { id: entry.id, title: entry.originalTitle, sourceName: entry.sourceName, url: entry.url,
     summary: entry.excerpt, publishedAt: entry.publishedAt.slice(0, 10), updatedAt: null, points: [],
     materialNote: '摘要来自Amazon Ads官方列表，已取得正文；开放地区、账户资格和使用条件请以原文为准，未独立验证效果。',
-    features: { sections: ['行业动态'] }, collectionApproved: true, origin: 'publisher-summary', evidenceHash: entry.bodyHash, reviewedAt: now };
+    features: { sections: ['行业动态'] }, collectionApproved: true, origin: 'publisher-summary', evidenceHash: entry.bodyHash, reviewedAt: now,
+    sourceRole: 'official', collectedAt: entry.publication?.collectedAt || entry.publication?.reviewedAt || now };
   entry.status = 'published';
   return true;
 }

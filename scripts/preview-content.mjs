@@ -8,7 +8,7 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(200, {'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});
     res.end(req.method === 'HEAD' ? undefined : JSON.stringify({live:Boolean(updates),intervalMinutes:120})); return;
   }
-  const entry = files[route];
+  const entry = /^\/items\/[\w-]+\/?$/.test(route) ? files['/'] : files[route];
   if (!entry || !['GET', 'HEAD'].includes(req.method)) { res.writeHead(404); res.end('Not found'); return; }
   try {
     const body = await fs.readFile(new URL(`../site/preview/${entry[0]}`, import.meta.url));
