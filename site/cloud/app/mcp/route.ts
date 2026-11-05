@@ -1,4 +1,5 @@
 import { refreshBatch, sources } from '@/lib/collector';
+import { isOwner } from '@/lib/owner';
 import { digestKey, loadDigestVersion, saveDigestVersion, readBatches, readJson, recentCandidates, type Digest, type DigestItem } from '@/lib/daily-store';
 
 export const dynamic = 'force-dynamic';
@@ -85,6 +86,7 @@ export async function POST(request: Request) {
     if (message.method === 'server/discover') return Response.json({ jsonrpc: '2.0', id, result: { supportedVersions: [version], capabilities: { tools: {} } } });
     if (message.method === 'tools/list') return Response.json({ jsonrpc: '2.0', id, result: { tools } });
     if (message.method === 'tools/call') {
+      if (!isOwner(request)) return Response.json({ jsonrpc: '2.0', id, error: { code: -32001, message: 'Owner access required' } }, { status: 403 });
       const result = await call(String(message.params?.name || ''), message.params?.arguments || {});
       return Response.json({ jsonrpc: '2.0', id, result: { content: [{ type: 'text', text: JSON.stringify(result) }] } });
     }

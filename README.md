@@ -1,4 +1,4 @@
-> [Amazon 营销与 AI](https://amazon-marketing-digest.jasmineztoh.chatgpt.site) 是仅所有者可读的阅读站。39 个信源提供最新线索，整理后的精选按收录日浏览。教程、案例和原文均有独立入口。实际部署记录和维护方法见[网站](docs/网站.md)，采集窗口见[自动更新](docs/自动更新.md)。下方保留原框架说明。
+> [Amazon 营销与 AI](https://amazon-marketing-digest.jasmineztoh.chatgpt.site) 是公开可读的阅读站。39 个信源提供最新线索，整理后的精选按收录日浏览。教程、案例和原文均有独立入口。实际部署记录和维护方法见[网站](docs/网站.md)，采集窗口见[自动更新](docs/自动更新.md)。下方保留原框架说明。
 
 <p align="center">
   <picture>

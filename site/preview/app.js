@@ -34,7 +34,7 @@ try {
 
 let data, section = '', limit = 12, runtimeLive = false, hosted = false, savedOnly = false;
 let eventMembers = new Map();
-let latestCheckedAt = null, refreshing = false, lastRefreshAttempt = 0;
+let latestCheckedAt = null, refreshing = false, lastRefreshAttempt = 0, canUpdate = false;
 const dateText = value => {
   if (!value) return '未知';
   if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
@@ -219,7 +219,7 @@ async function renderLatest() {
   } catch { $('latest-status').textContent = '最新线索暂时无法读取，已收录内容仍可查看。'; }
 }
 async function refreshCloud() {
-  if (refreshing) return;
+  if (!canUpdate || refreshing) return;
   refreshing = true; lastRefreshAttempt = Date.now();
   const button = $('refresh-latest'); button.disabled = true;
   let checked = 0, failed = 0;
@@ -237,7 +237,7 @@ async function refreshCloud() {
   } finally { refreshing = false; button.disabled = false; }
 }
 function refreshIfStale() {
-  if (!hosted || refreshing || Date.now() - lastRefreshAttempt < 20 * 60_000) return;
+  if (!hosted || !canUpdate || refreshing || Date.now() - lastRefreshAttempt < 20 * 60_000) return;
   if (!latestCheckedAt || Date.now() - Date.parse(latestCheckedAt) > 2 * 60 * 60_000) void refreshCloud();
 }
 async function readContent() {
@@ -248,6 +248,14 @@ async function readContent() {
 }
 try {
   try { await readRuntime(); } catch { /* 使用本地快照。 */ }
+  if (hosted) {
+    try {
+      const response = await fetch('/api/access', { cache: 'no-store' });
+      if (response.ok) canUpdate = (await response.json()).canUpdate === true;
+    } catch { /* 阅读不依赖管理权限接口。 */ }
+  }
+  $('refresh-latest').hidden = !canUpdate;
+  $('manage-signin').hidden = !hosted || canUpdate;
   data = await readContent();
   indexEvents();
   const isDetail = Boolean(currentId());

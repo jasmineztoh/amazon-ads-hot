@@ -1,8 +1,10 @@
 import { refreshBatch } from '@/lib/collector';
+import { isOwner } from '@/lib/owner';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
+  if (!isOwner(request)) return Response.json({ error: 'owner-required' }, { status: 403 });
   const origin = request.headers.get('origin');
   if (origin && origin !== new URL(request.url).origin) {
     return Response.json({ error: 'origin-not-allowed' }, { status: 403 });
