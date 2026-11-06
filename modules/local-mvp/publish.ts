@@ -57,11 +57,14 @@ export async function buildContent() {
   const additions = snapshot.items.filter(a => { const key = keyFor(a.url); if (seen.has(key)) return false; seen.add(key); return true; });
   const corrections = JSON.parse(await fs.readFile(new URL('../../site/corrections.json', import.meta.url), 'utf8'));
   const reading = JSON.parse(await fs.readFile(new URL('../../site/reading-guide.json', import.meta.url), 'utf8'));
+  const tutorial = JSON.parse(await fs.readFile(new URL('../../site/tutorial-tags.json', import.meta.url), 'utf8'));
   const items: Article[] = [...baseline, ...additions].map(a => {
     const c = corrections[a.id];
     const notes = reading.articles[a.id] || {};
     const { eventGroup, ...fields } = notes;
-    return { ...a, ...c, ...fields, collectedAt: a.collectedAt || a.reviewedAt,
+    return { ...a, ...c, ...fields,
+      tutorialTags: tutorial.articles[a.id] || (a.features.sections.some((s: string) => s.startsWith('教程')) ? ['待分类'] : []),
+      collectedAt: a.collectedAt || a.reviewedAt,
       reason: fields.reason || a.reason || a.points[0] || a.summary,
       features: eventGroup ? { ...a.features, eventGroup } : a.features };
   });
@@ -70,12 +73,18 @@ export async function buildContent() {
     if (!/^https?:\/\//.test(a.url) || !a.publishedAt) throw Error(`无效链接或日期 ${a.id}`);
   }
   const ids = new Set(items.map(a => a.id));
+  const categories = new Set<string>(tutorial.tags);
+  for (const a of items) {
+    if (a.features.sections.some(s => s.startsWith('教程')) && !a.tutorialTags?.length) throw Error(`教程缺少标签 ${a.id}`);
+    if (a.tutorialTags?.some(s => !categories.has(s))) throw Error(`教程标签不存在 ${a.id}`);
+  }
+  for (const id of Object.keys(tutorial.articles)) if (!ids.has(id)) throw Error(`教程标签文章不存在 ${id}`);
   for (const id of [...items.flatMap(a => a.relatedIds || []), ...reading.guides.flatMap((g: {steps: {articleId:string}[]}) => g.steps.map(s => s.articleId))]) {
     if (!ids.has(id)) throw Error(`阅读链接目标不存在 ${id}`);
   }
   return { reviewedAt: pool.approvedAt, updatedAt: snapshot.updatedAt, total: items.length, reviewedTotal: pool.total,
-    guides: reading.guides, featuredUpdatedAt: items.map(a => a.collectedAt).filter(Boolean).sort().at(-1),
+    guides: reading.guides, tutorialTags: tutorial.tags, featuredUpdatedAt: items.map(a => a.collectedAt).filter(Boolean).sort().at(-1),
     sourceCheckedAt: snapshot.collection?.lastRun?.finishedAt || null,
-    sections: SECTIONS, revision: hash(JSON.stringify([items, reading.guides])), collection: snapshot.collection, items,
+    sections: SECTIONS, revision: hash(JSON.stringify([items, reading.guides, tutorial.tags])), collection: snapshot.collection, items,
     groupedRows: feed(items).groups.length };
 }

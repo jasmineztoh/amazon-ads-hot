@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Amazon 营销与 AI',
-  description: '聚焦 Amazon 广告、营销、流量与 AI 的知识阅读站。',
+  title: '亚马逊广告投放',
+  description: '给正在做和准备做亚马逊广告投放的人。追踪变化，学习方法，读懂案例。',
   robots: { index: false, follow: false },
 };
 

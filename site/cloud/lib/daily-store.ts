@@ -22,6 +22,7 @@ export type DigestItem = {
   collectedAt?: string;
   reason?: string;
   sourceRole?: string;
+  tutorialTags?: string[];
   updatedAt: null;
   summary: string;
   points: string[];

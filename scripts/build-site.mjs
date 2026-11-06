@@ -10,9 +10,9 @@ const expected = JSON.parse(await fs.readFile(path.join(source, '.openai/hosting
 if (manifest.project_id !== expected.project_id || manifest.r2 !== 'BUCKET') throw Error('站点或云存储绑定不匹配');
 const preview = path.join(root, 'site/preview');
 const content = await buildContent();
-const fields = ['id','title','sourceName','url','publishedAt','updatedAt','collectedAt','summary','points','materialNote','collectionApproved','features','evidenceHash','reason','relatedIds','searchTerms','sourceRole'];
+const fields = ['id','title','sourceName','url','publishedAt','updatedAt','collectedAt','summary','points','materialNote','collectionApproved','features','evidenceHash','reason','relatedIds','searchTerms','sourceRole','tutorialTags'];
 const baseline = { total: content.total, sections: content.sections, featuredUpdatedAt: content.featuredUpdatedAt,
-  updatedAt: content.updatedAt, guides: content.guides, revision: content.revision,
+  updatedAt: content.updatedAt, guides: content.guides, tutorialTags: content.tutorialTags, revision: content.revision,
   items: content.items.map(a => Object.fromEntries(fields.filter(k => k in a).map(k => [k, a[k]]))) };
 await fs.cp(source, checkout, {recursive:true});
 await fs.copyFile(path.join(root, 'industry/local-sources.json'), path.join(checkout, 'data/sources.json'));

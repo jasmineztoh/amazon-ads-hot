@@ -15,7 +15,7 @@ export type Article = {
   url: string; publishedAt: string; updatedAt: string | null; materialNote: string;
   collectionApproved: boolean; features: Features;
   collectedAt?: string; reviewedAt?: string; evidenceHash?: string; reason?: string;
-  relatedIds?: string[]; sourceRole?: string; searchTerms?: string[];
+  relatedIds?: string[]; sourceRole?: string; searchTerms?: string[]; tutorialTags?: string[];
 };
 export function priority(a: Article): { tier: number; label: string; reason: string } {
   if (a.features.softwareOnly) return { tier: 0, label: '稍后看', reason: '侧重纯软件技术，保留收录，降低推荐顺序。' };

@@ -3,18 +3,18 @@
   "projectId": "appgprj_6ae3019c6b588191b973803a2593165f",
   "url": "https://amazon-marketing-digest.jasmineztoh.chatgpt.site",
   "audience": "public",
-  "contentMode": "private-cloud-updates",
-  "deploymentId": "appgdep_6aec68fb9e3c81919676d09da9418499",
-  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_c7b1a7e4eae08191ae163d74e9da183e",
-  "sourceCommit": "089b9d1b2650a7c20037197e5d440ff43aada9b2",
-  "deployedAt": "2026-11-05T11:31:14.993211+00:00",
+  "contentMode": "cloud-candidates-and-curated-digest",
+  "deploymentId": "appgdep_6aed3a753f248191a126befbc32f0ad8",
+  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_188d534173c88191af6affc5f8448d3b",
+  "sourceCommit": "e08dfddf85126cb3f915727789c81214a5562874",
+  "deployedAt": "2026-11-06T02:24:53.324743Z",
   "verified": {
     "anonymousStatus": 200,
-    "articles": 92,
-    "detailStatus": 200,
-    "noindex": true,
-    "anonymousUpdateStatus": 403,
-    "anonymousMcpStatus": 401,
-    "checkedAt": "2026-11-05T11:32:07.960Z"
+    "articles": 93,
+    "featuredUpdatedAt": "2026-11-06T02:19:44.736Z",
+    "sourceCheckedAt": "2026-11-06T02:27:39.692Z",
+    "dailySchedule": "Automation_66846bb2f74c8191b931297be7c5ca4b",
+    "firstScheduledRun": "2026-11-07 08:30 Asia/Shanghai",
+    "scheduledExecutionVerified": false
   }
 }

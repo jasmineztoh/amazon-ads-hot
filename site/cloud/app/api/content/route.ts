@@ -21,6 +21,7 @@ export async function GET() {
     total: items.length,
     sections: baseline.sections,
     guides: baseline.guides,
+    tutorialTags: baseline.tutorialTags,
     featuredUpdatedAt: items.map(item => item.collectedAt || '').sort().at(-1) || null,
     updatedAt: digest.updatedAt || baseline.updatedAt,
     revision: `${baseline.revision}:${digest.updatedAt || 'baseline'}`,
