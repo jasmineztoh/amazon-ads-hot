@@ -1,4 +1,4 @@
-import { feed } from '/curation.js';
+import { feed, hotStories } from '/curation.js';
 
 const $ = id => document.getElementById(id);
 const el = (tag, text, className) => {
@@ -32,10 +32,10 @@ try {
   if (Array.isArray(stored)) saved = new Set(stored.filter(x => typeof x === 'string'));
 } catch { /* 本地存储不可用时仍可阅读。 */ }
 
-let data, section = '', limit = 12, runtimeLive = false, hosted = false, savedOnly = false;
+let data, section = '', limit = 12, hosted = false, savedOnly = false;
 let tutorialTag = '';
 let eventMembers = new Map();
-let latestCheckedAt = null, refreshing = false, lastRefreshAttempt = 0, canUpdate = false;
+let canUpdate = false, guidePage = 0;
 const dateText = value => {
   if (!value) return '未知';
   if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
@@ -43,15 +43,10 @@ const dateText = value => {
   if (Number.isNaN(parsed.valueOf())) return '未知';
   return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(parsed);
 };
-const checkText = value => {
-  if (!value || Number.isNaN(Date.parse(value))) return '暂无记录';
-  return new Date(value).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
-};
 function updateNote() {
   const featured = data.featuredUpdatedAt || null;
-  const checked = latestCheckedAt || data.sourceCheckedAt || data.collection?.lastRun?.finishedAt;
-  $('collection-note').textContent = `${data.total} 篇已收录 · 精选更新至 ${dateText(featured)} · 信源最近检查 ${checkText(checked)}`;
-  $('update-note').textContent = hosted ? '精选与最新线索分开展示，请以原文核对适用条件。' : runtimeLive ? '本机服务运行中，信源会定期检查。' : '当前显示已保存的内容。';
+  $('collection-note').textContent = `${data.total} 篇已收录 · 精选更新至 ${dateText(featured)}`;
+  $('update-note').textContent = '公开内容已整理；具体适用条件请结合原文核对。';
 }
 function bookmark(article) {
   const button = el('button', saved.has(article.id) ? '已收藏' : '收藏', 'bookmark');
@@ -100,9 +95,14 @@ function sourcesBlock(article) {
 }
 function renderGuides() {
   $('guides').replaceChildren();
-  if (!section.startsWith('教程') || $('search').value.trim() || savedOnly) return;
-  if (tutorialTag) return;
-  for (const guide of data.guides || []) {
+  const visible = section === '教程' && !$('search').value.trim() && !savedOnly && !tutorialTag;
+  $('guide-heading').hidden = !visible;
+  if (!visible) return;
+  const guides = (data.guides || []).filter(guide => (guide.steps || []).some(step => data.items.some(item => item.id === step.articleId)));
+  $('next-guides').hidden = guides.length <= 4;
+  const pages = Math.ceil(guides.length / 4);
+  const start = (guidePage % Math.max(1, pages)) * 4;
+  for (const guide of guides.slice(start, start + 4)) {
     const panel = el('details', '', 'guide');
     panel.append(el('summary', guide.title), el('p', guide.description));
     const list = el('ol');
@@ -119,7 +119,7 @@ function renderGuides() {
 }
 function renderTutorialFilters() {
   const nav = $('tutorial-filters');
-  nav.hidden = !section.startsWith('教程');
+  nav.hidden = section !== '教程';
   nav.replaceChildren();
   if (nav.hidden) return;
   const tutorials = data.items.filter(item => item.features?.sections?.includes(section));
@@ -136,11 +136,47 @@ function renderTutorialFilters() {
     nav.append(button);
   }
 }
+function renderHot() {
+  const block = $('hot-section');
+  block.hidden = !!section || !!$('search').value.trim() || savedOnly;
+  if (block.hidden) return;
+  const hot = hotStories(data.items);
+  $('hot-items').replaceChildren();
+  if (!hot.length) {
+    $('hot-note').textContent = '近 7 天暂无已核实的新精选';
+    $('hot-items').append(el('p', '新内容核实并整理后，会出现在这里。', 'hot-empty'));
+    return;
+  }
+  $('hot-note').textContent = '按近 7 天已核实内容的不同信源数、原文日期排列；暂无热度评分';
+  for (const [index, item] of hot.entries()) {
+    const card = el('article', '', 'hot-card');
+    const art = el('div', '', 'hot-art');
+    art.setAttribute('aria-hidden', 'true');
+    art.append(el('span', item.article.features?.sections?.[0] || '精选'), el('strong', String(index + 1).padStart(2, '0')));
+    const body = el('div', '', 'hot-body');
+    const meta = el('div', '', 'hot-meta');
+    try {
+      const icon = document.createElement('img');
+      icon.src = `${new URL(item.article.url).origin}/favicon.ico`;
+      icon.alt = '';
+      icon.loading = 'lazy';
+      icon.addEventListener('error', () => icon.remove(), { once: true });
+      meta.append(icon);
+    } catch { /* 来源图标不可用时保留文字。 */ }
+    meta.append(el('span', item.article.sourceName), el('span', dateText(item.article.publishedAt)));
+    const title = el('h4'); title.append(internalLink(item.article.title, item.article.id));
+    body.append(meta, title);
+    if (item.sourceCount >= 2) body.append(el('span', `${item.sourceCount} 个信源`, 'hot-heat'));
+    else body.append(el('span', '近期关注', 'hot-pending'));
+    card.append(art, body); $('hot-items').append(card);
+  }
+}
 function render() {
   renderTutorialFilters();
   renderGuides();
   const sort = $('sort').value;
-  const items = data.items.filter(a => (!savedOnly || saved.has(a.id)) && (!tutorialTag || !section.startsWith('教程') || a.tutorialTags?.includes(tutorialTag)));
+  renderHot();
+  const items = data.items.filter(a => (!savedOnly || saved.has(a.id)) && (!tutorialTag || section !== '教程' || a.tutorialTags?.includes(tutorialTag)));
   const result = feed(items, { section, query: $('search').value, sort });
   const visible = result.groups.slice(0, limit);
   $('result-count').textContent = `${result.groups.length} 条${visible.length < result.groups.length ? ` · 当前展示 ${visible.length} 条` : ''}`;
@@ -229,51 +265,7 @@ async function readRuntime() {
   const response = await fetch('/runtime.json');
   if (!response.ok) return;
   const runtime = await response.json();
-  runtimeLive = runtime.live === true; hosted = runtime.mode === 'hosted';
-}
-async function renderLatest() {
-  if (!hosted) return;
-  try {
-    const response = await fetch('/api/latest', { cache: 'no-store' });
-    if (!response.ok) throw Error('最新线索读取失败');
-    const latest = await response.json();
-    latestCheckedAt = latest.checkedAt;
-    updateNote();
-    $('latest-status').textContent = latest.checkedAt ? `最近检查 ${checkText(latest.checkedAt)} · ${latest.items.length} 条线索` : '等待首次云端检查';
-    $('latest-articles').replaceChildren();
-    if (!latest.items.length) $('latest-articles').append(el('p', '目前没有新的公开条目。', 'empty'));
-    for (const a of latest.items) {
-      const item = el('article', '', 'article'), meta = el('div', '', 'meta');
-      meta.append(el('span', a.sourceName, 'source'), el('span', `原文 ${dateText(a.publishedAt)}`), el('span', '待逐篇核实'));
-      const h = el('h3'); h.append(externalLink(a.title, a.url));
-      item.append(meta, h);
-      if (a.excerpt) item.append(el('p', a.excerpt, 'summary'));
-      item.append(externalLink('读原文 ↗', a.url));
-      $('latest-articles').append(item);
-    }
-  } catch { $('latest-status').textContent = '最新线索暂时无法读取，已收录内容仍可查看。'; }
-}
-async function refreshCloud() {
-  if (!canUpdate || refreshing) return;
-  refreshing = true; lastRefreshAttempt = Date.now();
-  const button = $('refresh-latest'); button.disabled = true;
-  let checked = 0, failed = 0;
-  try {
-    for (let batch = 0; batch < 7; batch++) {
-      $('latest-status').textContent = `云端检查中 ${batch + 1}/7…`;
-      const response = await fetch('/api/refresh', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ batch }) });
-      if (!response.ok) throw Error(`第 ${batch + 1} 组检查失败`);
-      const result = await response.json(); checked += result.checkedSources; failed += result.errors.length;
-      await renderLatest();
-    }
-    if (failed) $('latest-status').textContent += ` · ${failed} 个来源暂时不可用`;
-  } catch (error) {
-    $('latest-status').textContent = `${error.message}；已完成 ${checked} 个来源，稍后可重试。`;
-  } finally { refreshing = false; button.disabled = false; }
-}
-function refreshIfStale() {
-  if (!hosted || !canUpdate || refreshing || Date.now() - lastRefreshAttempt < 20 * 60_000) return;
-  if (!latestCheckedAt || Date.now() - Date.parse(latestCheckedAt) > 2 * 60 * 60_000) void refreshCloud();
+  hosted = runtime.mode === 'hosted';
 }
 async function readContent() {
   let response = await fetch('/api/content', { cache: 'no-store' });
@@ -289,7 +281,6 @@ try {
       if (response.ok) canUpdate = (await response.json()).canUpdate === true;
     } catch { /* 阅读不依赖管理权限接口。 */ }
   }
-  $('refresh-latest').hidden = !canUpdate;
   $('manage-signin').hidden = !hosted || canUpdate;
   data = await readContent();
   indexEvents();
@@ -311,7 +302,6 @@ try {
   document.querySelector('.intro').hidden = isDetail;
   document.querySelector('[aria-labelledby="feed-title"]').hidden = isDetail;
   $('detail').hidden = !isDetail;
-  $('latest-section').hidden = !hosted || isDetail;
   for (const s of ['', ...data.sections]) {
     const button = el('button', s || '全部'); button.type = 'button'; button.setAttribute('aria-pressed', String(s === section));
     button.addEventListener('click', () => { section = s; tutorialTag = ''; limit = 12; for (const x of $('filters').children) x.setAttribute('aria-pressed', String(x === button)); render(); });
@@ -321,14 +311,12 @@ try {
   $('sort').addEventListener('change', () => { limit = 12; render(); });
   $('more').addEventListener('click', () => { limit += 12; render(); });
   $('saved-filter').addEventListener('click', () => { savedOnly = !savedOnly; limit = 12; $('saved-filter').setAttribute('aria-pressed', String(savedOnly)); render(); });
-  $('refresh-latest').addEventListener('click', () => void refreshCloud());
+  $('next-guides').addEventListener('click', () => { guidePage++; renderGuides(); });
   updateNote(); if (isDetail) renderDetail(); else render();
-  void renderLatest().then(refreshIfStale);
   setInterval(async () => {
     try {
       const next = await readContent(), changed = next.revision !== data.revision;
       data = next; if (changed) indexEvents(); updateNote(); if (changed) { if (isDetail) renderDetail(); else render(); }
-      await renderLatest(); refreshIfStale();
     } catch { /* 暂时读取失败时保留当前内容。 */ }
   }, 60_000);
 } catch {

@@ -41,7 +41,7 @@ test('缺正文、英文摘要、材料报错都不能自动发布；官方摘�
 test('整理绑定正文版本，不能伪造用户标签或覆盖原48篇', () => {
   const s = empty(), { entry } = upsert(s, candidate, when); entry.bodyHash = hash('body');
   const edit: Edit = { id: entry.id, evidenceHash: 'wrong', decision: 'publish', title: '教程', summary: '有用内容', points: ['有原文依据'],
-    features: { sections: ['教程（新人入门与进阶）'] }, materialNote: '机构经验，非效果保证', reviewedAt: when, reviewedBy: 'Agent' };
+    features: { sections: ['教程'] }, materialNote: '机构经验，非效果保证', reviewedAt: when, reviewedBy: 'Agent' };
   assert.throws(() => applyEdits(s, [edit]), /正文版本/);
   edit.evidenceHash = entry.bodyHash; applyEdits(s, [edit]); assert.equal(entry.publication?.origin, 'agent-reviewed');
   assert.equal(entry.publication?.collectedAt, when);

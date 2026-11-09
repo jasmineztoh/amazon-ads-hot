@@ -32,6 +32,15 @@ export type DigestItem = {
 };
 export type Digest = { updatedAt: string | null; items: DigestItem[] };
 
+export type RunStage = 'source_check' | 'original_verification' | 'publication';
+export type RunEvent = {
+  at: string;
+  runId: string;
+  stage: RunStage;
+  status: 'started' | 'succeeded' | 'partial' | 'failed';
+  evidence: Record<string, unknown>;
+};
+
 function bucket(): R2Bucket {
   if (!env.BUCKET) throw new Error('Site R2 binding BUCKET is unavailable');
   return env.BUCKET;
@@ -48,6 +57,16 @@ export async function writeJson(key: string, value: unknown): Promise<void> {
 
 export const batchKey = (n: number) => `daily/batch-${n}.json`;
 export const digestKey = 'daily/digest.json';
+export async function saveRunEvent(event: RunEvent): Promise<void> {
+  const key = `daily/runs/${event.runId}/${event.at.replace(/[:.]/g, '-')}-${crypto.randomUUID()}.json`;
+  await writeJson(key, event);
+}
+
+export async function readRunEvents(runId: string): Promise<RunEvent[]> {
+  const result = await bucket().list({ prefix: `daily/runs/${runId}/`, limit: 1000 });
+  const events = await Promise.all(result.objects.map(object => readJson<RunEvent | null>(object.key, null)));
+  return events.filter((event): event is RunEvent => event !== null).sort((a, b) => a.at.localeCompare(b.at));
+}
 export async function loadDigestVersion() {
   const object = await bucket().get(digestKey);
   const digest: Digest = object ? JSON.parse(await object.text()) : { updatedAt: null, items: [] };

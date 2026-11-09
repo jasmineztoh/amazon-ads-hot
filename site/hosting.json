@@ -3,18 +3,21 @@
   "projectId": "appgprj_6ae3019c6b588191b973803a2593165f",
   "url": "https://amazon-marketing-digest.jasmineztoh.chatgpt.site",
   "audience": "public",
-  "contentMode": "cloud-candidates-and-curated-digest",
-  "deploymentId": "appgdep_6aed3a753f248191a126befbc32f0ad8",
-  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_188d534173c88191af6affc5f8448d3b",
-  "sourceCommit": "e08dfddf85126cb3f915727789c81214a5562874",
-  "deployedAt": "2026-11-06T02:24:53.324743Z",
+  "contentMode": "curated-public-and-owner-candidates",
+  "deploymentId": "appgdep_6af14bbb2fdc819180e138d1d42c74b9",
+  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_ad52b5fb70748191b150feac7ef6216b",
+  "sourceCommit": "322a9a5f7c23a6ede9c9581c7cddaefefe4e7c88",
+  "deployedAt": "2026-11-09T04:27:45.964874Z",
   "verified": {
-    "anonymousStatus": 200,
-    "articles": 93,
-    "featuredUpdatedAt": "2026-11-06T02:19:44.736Z",
-    "sourceCheckedAt": "2026-11-06T02:27:39.692Z",
+    "deploymentStatus": "succeeded",
+    "localBaselineArticles": 92,
+    "localGuideCount": 8,
+    "liveContentChecked": false,
+    "liveCheckIssue": "本机请求返回403，浏览器打开线上页面超时；仅Sites部署结果已确认",
     "dailySchedule": "Automation_66846bb2f74c8191b931297be7c5ca4b",
     "firstScheduledRun": "2026-11-07 08:30 Asia/Shanghai",
-    "scheduledExecutionVerified": false
+    "scheduledExecutionVerified": false,
+    "firstScheduledRunReportedAt": "2026-11-07 08:40 Asia/Shanghai",
+    "scheduledExecutionEvidence": "任务会话报告了执行；部署时没有逐阶段运行日志，故仍不标为独立验证"
   }
 }

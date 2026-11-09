@@ -1,5 +1,5 @@
 // 本地试读规则；偏好来自用户，特征判定与同档排序是Agent提出的试行方案。
-export const SECTIONS = ['行业动态', '教程（新人入门与进阶）', '案例', '工具', 'AI营销'] as const;
+export const SECTIONS = ['行业动态', '教程', '案例', '工具', 'AI营销'] as const;
 export type Section = typeof SECTIONS[number];
 export type Features = {
   sections: Section[];
@@ -55,4 +55,13 @@ export function feed(articles: Article[], options: { section?: string; query?: s
     if (j >= 0) groups.splice(i, 0, groups.splice(j, 1)[0]);
   }
   return { matchingArticles: eligible.length, groups };
+}
+
+export function hotStories(articles: Article[], now = Date.now(), limit = 5) {
+  const recent = articles.filter(a => a.collectionApproved && Number.isFinite(Date.parse(a.publishedAt)) &&
+    now >= Date.parse(a.publishedAt) && now - Date.parse(a.publishedAt) <= 7 * 86_400_000);
+  return feed(recent, { sort: 'date' }).groups.map(group => ({
+    article: group.article,
+    sourceCount: new Set([group.article, ...group.related].map(a => a.sourceName)).size,
+  })).sort((a, b) => b.sourceCount - a.sourceCount || b.article.publishedAt.localeCompare(a.article.publishedAt)).slice(0, limit);
 }

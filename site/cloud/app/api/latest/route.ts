@@ -1,8 +1,10 @@
 import { readBatches, recentCandidates } from '@/lib/daily-store';
+import { isOwner } from '@/lib/owner';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET() {
+export async function GET(request: Request) {
+  if (!isOwner(request)) return Response.json({ error: 'owner-required' }, { status: 403 });
   try {
     const batches = await readBatches();
     return Response.json({

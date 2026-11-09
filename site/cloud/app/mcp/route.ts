@@ -1,19 +1,46 @@
 import { refreshBatch, sources } from '@/lib/collector';
 import baseline from '@/data/baseline.json';
 import { isOwner } from '@/lib/owner';
-import { digestKey, loadDigestVersion, saveDigestVersion, readBatches, readJson, recentCandidates, type Digest, type DigestItem } from '@/lib/daily-store';
+import { digestKey, loadDigestVersion, saveDigestVersion, readBatches, readJson, recentCandidates, readRunEvents, saveRunEvent, type Digest, type DigestItem, type RunEvent, type RunStage } from '@/lib/daily-store';
 
 export const dynamic = 'force-dynamic';
 const version = '2026-07-28';
-const validSections = new Set(['行业动态', '教程（新人入门与进阶）', '案例', '工具', 'AI营销']);
+const validSections = new Set(['行业动态', '教程', '案例', '工具', 'AI营销']);
 const allowedTutorialTags = new Set((baseline.items as { tutorialTags?: string[] }[]).flatMap(item => item.tutorialTags || []));
 
 const tools = [
-  { name: 'refresh_batch', description: '联网检查已配置的6个左右公开信源，保存最新线索和来源状态。批次为0至6。', inputSchema: { type: 'object', properties: { batch: { type: 'integer', minimum: 0, maximum: 6 } }, required: ['batch'] } },
+  { name: 'refresh_batch', description: '联网检查已配置的6个左右公开信源，保存最新线索和来源状态。批次为0至6。每日任务传同一个runId以记录运行结果。', inputSchema: { type: 'object', properties: { batch: { type: 'integer', minimum: 0, maximum: 6 }, runId: { type: 'string' } }, required: ['batch'] } },
   { name: 'get_recent', description: '读取近期已采集线索及各来源检查状态，日期缺失的线索须核对原文后再选材。', inputSchema: { type: 'object', properties: { limit: { type: 'integer', minimum: 1, maximum: 80 } } } },
-  { name: 'publish_digest', description: '发布当前已采集并逐篇核实的中文精选。每次最多15条；重试按网址去重。', inputSchema: { type: 'object', properties: { items: { type: 'array', maxItems: 15, items: { type: 'object', properties: { url: { type: 'string' }, title: { type: 'string' }, summary: { type: 'string' }, points: { type: 'array', items: { type: 'string' } }, section: { type: 'string' }, reason: { type: 'string' }, materialNote: { type: 'string' }, sourceRole: { enum: ['official','analysis','reprint'] }, eventGroup: { type: 'string', description: '同一事件或通稿共用的稳定标识' }, publishedAt: { type: 'string', description: '原文核实的当地发布日期，最多与信源列表日期相差一天' }, tutorialTags: { type: 'array', items: { type: 'string' }, maxItems: 5 } }, required: ['url', 'title', 'summary', 'points', 'reason', 'materialNote'] } } }, required: ['items'] } },
+  { name: 'record_verification', description: '记录逐篇原文核实结果与失败原因。每日任务传与信源检查相同的runId。', inputSchema: { type: 'object', properties: { runId: { type: 'string' }, items: { type: 'array', minItems: 1, maxItems: 15, items: { type: 'object', properties: { url: { type: 'string' }, status: { enum: ['verified', 'failed'] }, evidence: { type: 'string' }, error: { type: 'string' } }, required: ['url', 'status'] } } }, required: ['items'] } },
+  { name: 'publish_digest', description: '发布当前已采集并逐篇核实的中文精选。每次最多15条；重试按网址去重。每日任务传相同runId。', inputSchema: { type: 'object', properties: { runId: { type: 'string' }, items: { type: 'array', maxItems: 15, items: { type: 'object', properties: { url: { type: 'string' }, title: { type: 'string' }, summary: { type: 'string' }, points: { type: 'array', items: { type: 'string' } }, section: { type: 'string' }, reason: { type: 'string' }, materialNote: { type: 'string' }, sourceRole: { enum: ['official','analysis','reprint'] }, eventGroup: { type: 'string', description: '同一事件或通稿共用的稳定标识' }, publishedAt: { type: 'string', description: '原文核实的当地发布日期，最多与信源列表日期相差一天' }, tutorialTags: { type: 'array', items: { type: 'string' }, maxItems: 5 } }, required: ['url', 'title', 'summary', 'points', 'reason', 'materialNote'] } } }, required: ['items'] } },
   { name: 'get_status', description: '读取站点云端采集时间、39个来源状态和已发布的增量条数。', inputSchema: { type: 'object', properties: {} } },
+  { name: 'get_run_log', description: '按runId读取信源检查、原文核实、精选发布的运行事件与失败记录。', inputSchema: { type: 'object', properties: { runId: { type: 'string' } }, required: ['runId'] } },
 ];
+
+function runId(args: Record<string, unknown>): string {
+  const value = args.runId === undefined
+    ? `unattributed-${new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date())}`
+    : String(args.runId);
+  if (!/^[a-z0-9][a-z0-9_-]{0,79}$/.test(value)) throw Error('runId只能包含小写字母、数字、短横线和下划线，最多80字');
+  return value;
+}
+
+async function record(run: string, stage: RunStage, status: RunEvent['status'], evidence: Record<string, unknown>) {
+  await saveRunEvent({ at: new Date().toISOString(), runId: run, stage, status, evidence });
+}
+
+async function tracked<T>(run: string, stage: RunStage, attempt: Record<string, unknown>, action: () => Promise<{ result: T; status: RunEvent['status']; evidence: Record<string, unknown> }>): Promise<T> {
+  await record(run, stage, 'started', attempt);
+  let outcome: { result: T; status: RunEvent['status']; evidence: Record<string, unknown> };
+  try {
+    outcome = await action();
+  } catch (error) {
+    await record(run, stage, 'failed', { ...attempt, error: String((error as Error).message).slice(0, 500) });
+    throw error;
+  }
+  await record(run, stage, outcome.status, outcome.evidence);
+  return outcome.result;
+}
 
 async function idFor(url: string) {
   const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(url));
@@ -50,7 +77,7 @@ async function publish(args: Record<string, unknown>) {
     const tutorialTags = x.tutorialTags === undefined ? [] : x.tutorialTags;
     if (!Array.isArray(tutorialTags) || tutorialTags.length > 5 ||
       tutorialTags.some(tag => typeof tag !== 'string' || !allowedTutorialTags.has(tag)) ||
-      (tutorialTags.length && section !== '教程（新人入门与进阶）')) throw Error('教程标签无效');
+      (tutorialTags.length && section !== '教程')) throw Error('教程标签无效');
     const item: DigestItem = { id: await idFor(candidate.url), title, sourceName: candidate.sourceName, url: candidate.url,
       publishedAt, updatedAt: null, summary, points,
       reason, materialNote, collectedAt: byUrl.get(candidate.url)?.collectedAt || now,
@@ -69,15 +96,78 @@ async function publish(args: Record<string, unknown>) {
 
 async function call(name: string, args: Record<string, unknown>) {
   if (name === 'refresh_batch') {
-    const batch = await refreshBatch(Number(args.batch));
-    return { checkedAt: batch.checkedAt, sources: batch.sources, items: batch.items };
+    const run = runId(args), batchNumber = Number(args.batch);
+    return tracked(run, 'source_check', { batch: batchNumber }, async () => {
+      const batch = await refreshBatch(batchNumber);
+      return { result: { checkedAt: batch.checkedAt, sources: batch.sources, items: batch.items },
+        status: batch.sources.some(source => source.error) ? 'partial' as const : 'succeeded' as const,
+        evidence: { batch: batchNumber, checkedAt: batch.checkedAt, sources: batch.sources, candidates: batch.items.length } };
+    });
   }
   if (name === 'get_recent') {
     const batches = await readBatches();
     return { configuredSources: sources.length, checkedAt: batches.map(x => x.checkedAt).sort().at(-1) || null,
       sourceChecks: batches.flatMap(x => x.sources), items: recentCandidates(batches, Math.min(80, Number(args.limit) || 40)) };
   }
-  if (name === 'publish_digest') return publish(args);
+  if (name === 'record_verification') {
+    const run = runId(args);
+    const urls = Array.isArray(args.items) ? args.items.map(item => String((item as Record<string, unknown>)?.url || '')) : [];
+    return tracked(run, 'original_verification', { urls }, async () => {
+      const items = args.items;
+      if (!Array.isArray(items) || !items.length || items.length > 15) throw Error('核实记录必须包含1至15篇');
+      const checked = items.map(raw => {
+        if (!raw || typeof raw !== 'object') throw Error('核实记录格式错误');
+        const item = raw as Record<string, unknown>;
+        const url = String(item.url || '');
+        const status = String(item.status || '');
+        const evidence = String(item.evidence || '').trim();
+        const error = String(item.error || '').trim();
+        if (!/^https:\/\//.test(url) || !['verified', 'failed'].includes(status)) throw Error('核实网址或状态无效');
+        if (status === 'verified' && evidence.length < 12) throw Error('已核实条目需要原文证据');
+        if (status === 'failed' && !error) throw Error('核实失败需要原因');
+        return { url, status, evidence, error };
+      });
+      const failed = checked.filter(item => item.status === 'failed').length;
+      return { result: { recorded: checked.length, failed },
+        status: failed === checked.length ? 'failed' as const : failed ? 'partial' as const : 'succeeded' as const,
+        evidence: { items: checked } };
+    });
+  }
+  if (name === 'publish_digest') {
+    const run = runId(args);
+    const urls = Array.isArray(args.items) ? args.items.map(item => String((item as Record<string, unknown>)?.url || '')) : [];
+    return tracked(run, 'publication', { urls }, async () => {
+      const result = await publish(args);
+      return { result, status: 'succeeded' as const, evidence: { ...result, urls } };
+    });
+  }
+  if (name === 'get_run_log') {
+    const run = runId(args);
+    const events = await readRunEvents(run);
+    const stages: Record<RunStage, string> = { source_check: 'not_recorded', original_verification: 'not_recorded', publication: 'not_recorded' };
+    for (const event of events.filter(event => event.stage !== 'source_check')) stages[event.stage] = event.status === 'started' ? 'incomplete' : event.status;
+    const batches = new Map<number, RunEvent>();
+    for (const event of events.filter(event => event.stage === 'source_check')) {
+      const batch = Number(event.evidence.batch);
+      if (Number.isInteger(batch) && batch >= 0 && batch <= 6) batches.set(batch, event);
+    }
+    const batchStatuses = [...batches.values()].map(event => event.status);
+    if (batchStatuses.includes('failed')) stages.source_check = 'failed';
+    else if (batchStatuses.includes('partial')) stages.source_check = 'partial';
+    else if (batches.size === 7 && batchStatuses.every(status => status === 'succeeded')) stages.source_check = 'succeeded';
+    else if (batches.size) stages.source_check = 'incomplete';
+    const verified = new Map<string, string>();
+    for (const event of events.filter(event => event.stage === 'original_verification' && event.status !== 'started')) {
+      if (!Array.isArray(event.evidence.items)) continue;
+      for (const item of event.evidence.items as { url: string; status: string }[]) verified.set(item.url, item.status);
+    }
+    const verificationFailures = [...verified.values()].filter(status => status === 'failed').length;
+    if (verified.size && !['incomplete', 'failed'].includes(stages.original_verification)) stages.original_verification = verificationFailures === verified.size ? 'failed' : verificationFailures ? 'partial' : 'succeeded';
+    const sourceFailures = [...batches.values()].flatMap(event => Array.isArray(event.evidence.sources)
+      ? (event.evidence.sources as { id: string; name: string; error: string | null }[]).filter(source => source.error) : []);
+    return { runId: run, stages, completedBatches: [...batches].filter(([, event]) => event.status === 'succeeded' || event.status === 'partial').map(([batch]) => batch).sort(),
+      sourceFailures, verifiedItems: verified.size - verificationFailures, verificationFailures, events };
+  }
   if (name === 'get_status') {
     const batches = await readBatches();
     const digest = await readJson<Digest>(digestKey, { updatedAt: null, items: [] });

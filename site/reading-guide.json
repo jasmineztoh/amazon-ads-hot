@@ -25,6 +25,69 @@
           "note": "再看大促实际样本中的销售、CPC与ROAS，理解规模增长和广告效率需要一起复盘。"
         }
       ]
+    },
+    {
+      "title": "预算花不出去，先查什么",
+      "description": "把商品状态、竞价和流量覆盖分开排查。",
+      "steps": [
+        { "articleId": "live-82dee77a391130ed", "note": "先看购买按钮、库存和页面能否承接流量。" },
+        { "articleId": "live-f8fc5c2255bf6684", "note": "再区分预算上限、实际花费和竞价问题。" },
+        { "articleId": "live-4b889688be11a433", "note": "最后检查花费是否去了不合适的搜索词。" }
+      ]
+    },
+    {
+      "title": "广告效果差，先看哪里",
+      "description": "先定位流量与转化，再看成本和商品整体表现。",
+      "steps": [
+        { "articleId": "live-8b042ea743b6538d", "note": "一起看流量、转化、库存和退货。" },
+        { "articleId": "article-042", "note": "核对转化率与对比口径。" },
+        { "articleId": "article-002", "note": "回到利润和投放目标解释ACOS。" }
+      ]
+    },
+    {
+      "title": "关键词怎么选、怎么查漏",
+      "description": "从购物意图、商品资料到搜索词报表逐步检查。",
+      "steps": [
+        { "articleId": "live-9a3bf556cea49c94", "note": "先区分买家怎么找和商品能提供什么。" },
+        { "articleId": "article-021", "note": "补充后台搜索词，清理无关表达。" },
+        { "articleId": "article-009", "note": "用份额数据找曝光到购买的损失环节。" }
+      ]
+    },
+    {
+      "title": "品牌推广从哪里入手",
+      "description": "先认识广告形式，再补商品页面和品牌数据。",
+      "steps": [
+        { "articleId": "article-031", "note": "先读品牌推广与其它广告形式的区别。" },
+        { "articleId": "article-036", "note": "检查A+内容的资格和页面表达。" },
+        { "articleId": "article-011", "note": "再看品牌分析能回答哪些问题。" }
+      ]
+    },
+    {
+      "title": "大促预算怎么安排",
+      "description": "用盈亏线确定投入边界，按阶段调整并复盘。",
+      "steps": [
+        { "articleId": "live-5d40e6689d6498ae", "note": "先算折后盈亏线，安排预热和活动期预算。" },
+        { "articleId": "article-048", "note": "确定哪些商品适合参加促销。" },
+        { "articleId": "live-207c00a4362bf1dc", "note": "复盘销售、CPC和ROAS的共同变化。" }
+      ]
+    },
+    {
+      "title": "商品页怎么改才有用",
+      "description": "从买家疑问和商品事实出发，再决定图片与文案。",
+      "steps": [
+        { "articleId": "article-027", "note": "先确认价格、库存和购买按钮。" },
+        { "articleId": "article-007", "note": "用买家疑问检查A+页面。" },
+        { "articleId": "article-001", "note": "对照失败稿和修改稿检查图片细节。" }
+      ]
+    },
+    {
+      "title": "AI能帮我做哪些广告工作",
+      "description": "从单个重复任务开始，核对资料和结果，再考虑自动执行。",
+      "steps": [
+        { "articleId": "live-71f3f310c53e89a7", "note": "先选一个重复任务试用。" },
+        { "articleId": "live-fe2ff68048b476fe", "note": "把规则与判断依据写进SOP。" },
+        { "articleId": "article-015", "note": "出价建议先保留旧值、新值和理由。" }
+      ]
     }
   ],
   "articles": {

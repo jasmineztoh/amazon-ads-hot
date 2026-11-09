@@ -1,12 +1,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { feed, priority } from './curation.ts';
+import { feed, hotStories, priority } from './curation.ts';
 import type { Article, Features } from './curation.ts';
 const item = (id: string, features: Partial<Features> = {}, date = '2026-10-29'): Article => ({
   id, title: id, summary: '', points: [], url: 'https://example.com/', sourceName: 'source',
   publishedAt: date, updatedAt: null, materialNote: '', collectionApproved: true,
-  features: { sections: ['教程（新人入门与进阶）'], ...features },
+  features: { sections: ['教程'], ...features },
 });
 test('降优先级仍保留收录；有推广入口不自动等于以推广为主', () => {
   const a = item('vendor'), b = item('promotion', { promotionLed: true }), c = item('tech', { softwareOnly: true });
@@ -36,6 +36,16 @@ test('合并同事件，仍能搜索解读文、在交叉栏目找到内容', ()
   assert.equal(result.groups[0].article.id, '解读');
   assert.equal(result.groups[0].related[0].id, 'official');
   assert.equal(feed([{ ...a, collectionApproved: false }]).matchingArticles, 0);
+});
+test('热点只取近期已核实内容，同事件按不同信源计数', () => {
+  const one = { ...item('one', { eventGroup: 'launch' }, '2026-11-08'), sourceName: '官方' };
+  const two = { ...item('two', { eventGroup: 'launch' }, '2026-11-08'), sourceName: '媒体' };
+  const repeat = { ...item('repeat', { eventGroup: 'launch' }, '2026-11-08'), sourceName: '媒体' };
+  const recent = item('recent', {}, '2026-11-09');
+  const old = item('old', {}, '2026-10-20');
+  const draft = { ...item('draft', {}, '2026-11-09'), collectionApproved: false };
+  const ranked = hotStories([recent, old, draft, one, two, repeat], Date.parse('2026-11-09T12:00:00Z'));
+  assert.deepEqual(ranked.map(x => [x.article.id, x.sourceCount]), [['one', 2], ['recent', 1]]);
 });
 test('实际48篇全部保留，明确偏好生效，043不伪造用户加分', () => {
   const data = JSON.parse(fs.readFileSync('site/preview/content.json', 'utf8'));
@@ -111,7 +121,7 @@ test('新人路线与关联文章都有目标，预算问题能从方法走到�
     assert.ok(step.note.trim(), `路线缺少阅读提示 ${step.articleId}`);
   }
   const matches = feed(articles, { query: '预算花不出去' }).groups.flatMap(g => [g.article, ...g.related]);
-  const methods = matches.filter(a => a.features.sections.includes('教程（新人入门与进阶）'));
+  const methods = matches.filter(a => a.features.sections.includes('教程'));
   assert.ok(methods.length > 0, '搜索应找到方法');
   const reached = new Set<string>();
   const pending = [...methods];
