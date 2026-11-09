@@ -26,7 +26,10 @@ const server=http.createServer(async(req,res)=>{
     const key=new URLSearchParams(body).get('key')?.trim();
     if(!key||key.length<16||key.length>512||/\s/.test(key)){page('密钥不完整，请重新粘贴。',true,400);return;}
     await new Promise((resolve,reject)=>{
-      const ps=spawn('powershell.exe',['-NoProfile','-NonInteractive','-Command',"$ErrorActionPreference='Stop'; [Console]::In.ReadToEnd() | ConvertTo-SecureString -AsPlainText -Force | Export-Clixml -LiteralPath $env:DEEPSEEK_LOCAL_DEST"],{windowsHide:true,stdio:['pipe','ignore','ignore'],env:{...process.env,DEEPSEEK_LOCAL_DEST:path.join(folder,'deepseek-key.xml')}});
+      // PowerShell 7's inherited module path prevents Windows PowerShell loading its security module.
+      const childEnv={...process.env,DEEPSEEK_LOCAL_DEST:path.join(folder,'deepseek-key.xml')};
+      for(const name of Object.keys(childEnv))if(name.toLowerCase()==='psmodulepath')delete childEnv[name];
+      const ps=spawn('powershell.exe',['-NoProfile','-NonInteractive','-Command',"$ErrorActionPreference='Stop'; [Console]::In.ReadToEnd() | ConvertTo-SecureString -AsPlainText -Force | Export-Clixml -LiteralPath $env:DEEPSEEK_LOCAL_DEST"],{windowsHide:true,stdio:['pipe','ignore','ignore'],env:childEnv});
       const timer=setTimeout(()=>{ps.kill();reject(Error('timeout'));},15000);
       ps.on('error',()=>{clearTimeout(timer);reject(Error('save'));});
       ps.on('exit',code=>{clearTimeout(timer);code===0?resolve():reject(Error('save'));});
@@ -34,7 +37,7 @@ const server=http.createServer(async(req,res)=>{
     });
     saved=true;page('密钥已保存。请回到聊天告诉 Codex“已保存”。');
     console.log('DeepSeek key saved with Windows user encryption.');
-  }catch{page('保存未成功，请回到聊天告诉 Codex。',false,500);}
+  }catch{page('保存未成功，请回到聊天告诉 Codex。');}
   finally{saving=false;}
 });
 server.listen(0,'127.0.0.1',()=>console.log(`Local setup: http://127.0.0.1:${server.address().port}/${token}`));
