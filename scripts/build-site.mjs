@@ -14,7 +14,7 @@ const fields = ['id','title','sourceName','url','publishedAt','updatedAt','colle
 const baseline = { total: content.total, sections: content.sections, featuredUpdatedAt: content.featuredUpdatedAt,
   updatedAt: content.updatedAt, guides: content.guides, tutorialTags: content.tutorialTags, revision: content.revision,
   items: content.items.map(a => Object.fromEntries(fields.filter(k => k in a).map(k => [k, a[k]]))) };
-await fs.cp(source, checkout, {recursive:true});
+await fs.cp(source, checkout, {recursive:true, filter: file => !file.endsWith('.test.ts')});
 await fs.copyFile(path.join(root, 'industry/local-sources.json'), path.join(checkout, 'data/sources.json'));
 for (const file of ['app.js','style.css','curation.js']) await fs.copyFile(path.join(preview, file), path.join(checkout, 'public', file));
 const html = await fs.readFile(path.join(preview, 'index.html'), 'utf8');

@@ -1,4 +1,4 @@
-import { feed, hotStories } from '/curation.js';
+import { feed } from '/curation.js';
 
 const $ = id => document.getElementById(id);
 const el = (tag, text, className) => {
@@ -35,7 +35,7 @@ try {
 let data, section = '', limit = 12, hosted = false, savedOnly = false;
 let tutorialTag = '';
 let eventMembers = new Map();
-let canUpdate = false, guidePage = 0;
+let canUpdate = false, guidePage = 0, hotExpanded = false;
 const dateText = value => {
   if (!value) return '未知';
   if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
@@ -140,35 +140,36 @@ function renderHot() {
   const block = $('hot-section');
   block.hidden = !!section || !!$('search').value.trim() || savedOnly;
   if (block.hidden) return;
-  const hot = hotStories(data.items);
+  const hot = data.hot?.entries || [];
   $('hot-items').replaceChildren();
   if (!hot.length) {
-    $('hot-note').textContent = '近 7 天暂无已核实的新精选';
-    $('hot-items').append(el('p', '新内容核实并整理后，会出现在这里。', 'hot-empty'));
+    block.hidden = true;
     return;
   }
-  $('hot-note').textContent = '按近 7 天已核实内容的不同信源数、原文日期排列；暂无热度评分';
-  for (const [index, item] of hot.entries()) {
-    const card = el('article', '', 'hot-card');
-    const art = el('div', '', 'hot-art');
-    art.setAttribute('aria-hidden', 'true');
-    art.append(el('span', item.article.features?.sections?.[0] || '精选'), el('strong', String(index + 1).padStart(2, '0')));
-    const body = el('div', '', 'hot-body');
-    const meta = el('div', '', 'hot-meta');
-    try {
-      const icon = document.createElement('img');
-      icon.src = `${new URL(item.article.url).origin}/favicon.ico`;
-      icon.alt = '';
-      icon.loading = 'lazy';
-      icon.addEventListener('error', () => icon.remove(), { once: true });
-      meta.append(icon);
-    } catch { /* 来源图标不可用时保留文字。 */ }
-    meta.append(el('span', item.article.sourceName), el('span', dateText(item.article.publishedAt)));
-    const title = el('h4'); title.append(internalLink(item.article.title, item.article.id));
-    body.append(meta, title);
-    if (item.sourceCount >= 2) body.append(el('span', `${item.sourceCount} 个信源`, 'hot-heat'));
-    else body.append(el('span', '近期关注', 'hot-pending'));
-    card.append(art, body); $('hot-items').append(card);
+  $('hot-note').textContent = '近 48 小时';
+  block.classList.toggle('expanded',hotExpanded);
+  $('hot-more').hidden = hot.length<=3;
+  $('hot-more').textContent = hotExpanded ? '收起 ↑' : '完整榜单 →';
+  $('hot-more').setAttribute('aria-expanded', String(hotExpanded));
+  $('hot-more').onclick = () => { hotExpanded=!hotExpanded; renderHot(); };
+  for (const [index, item] of (hotExpanded ? hot : hot.slice(0,5)).entries()) {
+    const row = el('li', '', 'hot-row');
+    const title = internalLink(item.title, item.itemId); title.className = 'hot-title';
+    const faces = el('span', '', 'hot-faces');
+    faces.title = item.participants.map(p=>p.name).join('、');
+    for (const p of item.participants.slice(0,4)) {
+      const avatar = el('span', p.name.slice(0,1), 'hot-avatar');
+      const icon = document.createElement('img'); icon.alt = p.name; icon.loading='lazy';
+      icon.src = `${new URL(p.url).origin}/favicon.ico`;
+      icon.addEventListener('error',()=>icon.remove(),{once:true}); avatar.append(icon); faces.append(avatar);
+    }
+    if (item.participants.length>4) faces.append(el('span',`+${item.participants.length-4}`,'hot-extra'));
+    const value = el('span', `${item.score} AI价值`, 'hot-value');
+    value.title='DeepSeek独立评分两次的平均分，满分100';
+    const heat = el('span', `${Math.round(item.heat)} 热度`, 'hot-heat');
+    heat.title='48小时内每个参与方计一次，24小时半衰期';
+    row.append(el('span',String(index+1),'hot-rank'),title,faces,value,heat);
+    $('hot-items').append(row);
   }
 }
 function render() {
@@ -193,6 +194,7 @@ function render() {
     }
     const item = el('article', '', sort === 'collected' ? 'article timeline-entry' : 'article'); item.dataset.id = a.id;
     const meta = el('div', '', 'meta');
+    if (a.assessment) meta.append(el('span', `${a.assessment.score} AI价值`, 'score'));
     meta.append(el('span', a.sourceName, 'source'), el('span', `原文 ${dateText(a.publishedAt)}`));
     if (eventSources(a).length && a.sourceRole && roleLabels[a.sourceRole]) meta.append(el('span', roleLabels[a.sourceRole]));
     if (sort !== 'collected') meta.append(el('span', `收录 ${day}`));
@@ -227,6 +229,10 @@ function renderDetail() {
   meta.append(el('span', article.sourceName, 'source'), el('span', `原文 ${dateText(article.publishedAt)}`), el('span', `收录 ${dateText(article.collectedAt)}`));
   if (eventSources(article).length && article.sourceRole && roleLabels[article.sourceRole]) meta.append(el('span', roleLabels[article.sourceRole]));
   detail.append(meta, el('h1', article.title), el('p', article.summary, 'detail-summary'));
+  if (article.assessment) {
+    const a = article.assessment;
+    detail.append(el('p', `AI价值 ${a.score}/100 · ${a.model} · 两次评分 ${a.scores.join('、')}`, 'reason'));
+  }
   if (article.tutorialTags?.length) {
     const labels = el('div', '', 'detail-tutorial-tags');
     for (const name of article.tutorialTags) labels.append(el('span', name, 'tutorial-badge'));
@@ -317,6 +323,7 @@ try {
     try {
       const next = await readContent(), changed = next.revision !== data.revision;
       data = next; if (changed) indexEvents(); updateNote(); if (changed) { if (isDetail) renderDetail(); else render(); }
+      if (!isDetail && !changed) renderHot();
     } catch { /* 暂时读取失败时保留当前内容。 */ }
   }, 60_000);
 } catch {

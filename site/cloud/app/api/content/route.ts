@@ -1,4 +1,5 @@
 import baseline from '@/data/baseline.json';
+import { rankHot, type HotArticle } from '@/lib/hot-ranking';
 import { digestKey, readJson, type Digest, type DigestItem } from '@/lib/daily-store';
 
 export const dynamic = 'force-dynamic';
@@ -15,10 +16,12 @@ export async function GET() {
 
   const byUrl = new Map<string, Content['items'][number] | DigestItem>();
   for (const item of baseline.items) byUrl.set(item.url, item);
-  for (const item of digest.items) if (!byUrl.has(item.url)) byUrl.set(item.url, item);
-  const items = [...byUrl.values()];
+  for (const item of digest.items) byUrl.set(item.url, item);
+  const items = [...byUrl.values()].map(item => ({...item, features: {...item.features,
+    sections: item.features.sections.map(s => s.startsWith('教程') ? '教程' : s)}}));
   return Response.json({
     total: items.length,
+    hot: { computedAt: new Date().toISOString(), entries: rankHot(items as HotArticle[]) },
     sections: baseline.sections,
     guides: baseline.guides,
     tutorialTags: baseline.tutorialTags,

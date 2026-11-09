@@ -4,20 +4,24 @@
   "url": "https://amazon-marketing-digest.jasmineztoh.chatgpt.site",
   "audience": "public",
   "contentMode": "curated-public-and-owner-candidates",
-  "deploymentId": "appgdep_6af14bbb2fdc819180e138d1d42c74b9",
-  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_ad52b5fb70748191b150feac7ef6216b",
-  "sourceCommit": "322a9a5f7c23a6ede9c9581c7cddaefefe4e7c88",
-  "deployedAt": "2026-11-09T04:27:45.964874Z",
+  "deploymentId": "appgdep_6af16f204d5c8191bee60d3168a09cb2",
+  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_23974b680d088191bb919c304fae05e3",
+  "sourceCommit": "47b7674efb6805bf298baf3b894c20830041281f",
+  "deployedAt": "2026-11-09T06:58:48.342434+00:00",
   "verified": {
     "deploymentStatus": "succeeded",
     "localBaselineArticles": 92,
     "localGuideCount": 8,
     "liveContentChecked": false,
-    "liveCheckIssue": "本机请求返回403，浏览器打开线上页面超时；仅Sites部署结果已确认",
+    "liveCheckIssue": "MCP get_status已回读新代码，DeepSeek未配置；线上页面渲染尚未验证",
     "dailySchedule": "Automation_66846bb2f74c8191b931297be7c5ca4b",
     "firstScheduledRun": "2026-11-07 08:30 Asia/Shanghai",
     "scheduledExecutionVerified": false,
     "firstScheduledRunReportedAt": "2026-11-07 08:40 Asia/Shanghai",
-    "scheduledExecutionEvidence": "任务会话报告了执行；部署时没有逐阶段运行日志，故仍不标为独立验证"
+    "scheduledExecutionEvidence": "任务会话报告了执行；部署时没有逐阶段运行日志，故仍不标为独立验证",
+    "liveStatusChecked": true,
+    "modelReady": false,
+    "localHotUiChecked": true,
+    "localHotUiData": "synthetic-preview-only"
   }
 }

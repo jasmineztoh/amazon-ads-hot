@@ -2,6 +2,7 @@
 .env.*
 !.env.example
 node_modules/
+/.local/
 dist/
 .cache/
 .DS_Store

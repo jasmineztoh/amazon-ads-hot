@@ -56,12 +56,3 @@ export function feed(articles: Article[], options: { section?: string; query?: s
   }
   return { matchingArticles: eligible.length, groups };
 }
-
-export function hotStories(articles: Article[], now = Date.now(), limit = 5) {
-  const recent = articles.filter(a => a.collectionApproved && Number.isFinite(Date.parse(a.publishedAt)) &&
-    now >= Date.parse(a.publishedAt) && now - Date.parse(a.publishedAt) <= 7 * 86_400_000);
-  return feed(recent, { sort: 'date' }).groups.map(group => ({
-    article: group.article,
-    sourceCount: new Set([group.article, ...group.related].map(a => a.sourceName)).size,
-  })).sort((a, b) => b.sourceCount - a.sourceCount || b.article.publishedAt.localeCompare(a.article.publishedAt)).slice(0, limit);
-}

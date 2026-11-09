@@ -1,6 +1,8 @@
 import { refreshBatch, sources } from '@/lib/collector';
 import baseline from '@/data/baseline.json';
 import { isOwner } from '@/lib/owner';
+import { assess, assessmentKey, modelReady, recentAssessments } from '@/lib/deepseek';
+import type { Assessment } from '@/lib/hot-ranking';
 import { digestKey, loadDigestVersion, saveDigestVersion, readBatches, readJson, recentCandidates, readRunEvents, saveRunEvent, type Digest, type DigestItem, type RunEvent, type RunStage } from '@/lib/daily-store';
 
 export const dynamic = 'force-dynamic';
@@ -9,6 +11,7 @@ const validSections = new Set(['行业动态', '教程', '案例', '工具', 'AI
 const allowedTutorialTags = new Set((baseline.items as { tutorialTags?: string[] }[]).flatMap(item => item.tutorialTags || []));
 
 const tools = [
+  { name: 'analyze_article', description: '在原文核实后、publish_digest之前调用。使用DeepSeek按AIHOT标准独立评分两次并归组事件，保存回执和AI价值分。body必须是实际取得的原文材料，不能用自写摘要代替；sourceTime仅在核实精确时间及时区时填写，否则省略。每篇最多三次模型请求，失败不发布评分。', inputSchema: {type:'object',properties:{runId:{type:'string'},url:{type:'string'},body:{type:'string',minLength:200,maxLength:60000},sourceTime:{type:'string'}},required:['url','body']} },
   { name: 'refresh_batch', description: '联网检查已配置的6个左右公开信源，保存最新线索和来源状态。批次为0至6。每日任务传同一个runId以记录运行结果。', inputSchema: { type: 'object', properties: { batch: { type: 'integer', minimum: 0, maximum: 6 }, runId: { type: 'string' } }, required: ['batch'] } },
   { name: 'get_recent', description: '读取近期已采集线索及各来源检查状态，日期缺失的线索须核对原文后再选材。', inputSchema: { type: 'object', properties: { limit: { type: 'integer', minimum: 1, maximum: 80 } } } },
   { name: 'record_verification', description: '记录逐篇原文核实结果与失败原因。每日任务传与信源检查相同的runId。', inputSchema: { type: 'object', properties: { runId: { type: 'string' }, items: { type: 'array', minItems: 1, maxItems: 15, items: { type: 'object', properties: { url: { type: 'string' }, status: { enum: ['verified', 'failed'] }, evidence: { type: 'string' }, error: { type: 'string' } }, required: ['url', 'status'] } } }, required: ['items'] } },
@@ -84,6 +87,9 @@ async function publish(args: Record<string, unknown>) {
       tutorialTags,
       sourceRole: ['official','analysis','reprint'].includes(String(x.sourceRole)) ? String(x.sourceRole) : undefined,
       collectionApproved: true, features: { sections: [section], eventGroup: String(x.eventGroup || '').trim() || undefined } };
+    const assessment = await readJson<Assessment | null>(await assessmentKey(item.url),null);
+    if (modelReady() && !assessment) throw Error('请先调用analyze_article完成DeepSeek评分与归组');
+    if (assessment) item.assessment = assessment;
     byUrl.set(item.url, item);
     accepted++;
   }
@@ -95,6 +101,32 @@ async function publish(args: Record<string, unknown>) {
 }
 
 async function call(name: string, args: Record<string, unknown>) {
+  if (name === 'analyze_article') {
+    const url = String(args.url || '');
+    return tracked(runId(args),'ai_analysis',{url},async()=>{
+    const batches = await readBatches();
+    const {digest,etag} = await loadDigestVersion();
+    const candidate = batches.flatMap(b=>b.items).find(x=>x.url===url);
+    const baselineItem = baseline.items.find(x=>x.url===url);
+    const published = digest.items.find(x=>x.url===url) || (baselineItem ? structuredClone(baselineItem) as DigestItem : undefined);
+    if (!candidate && !published) throw Error('只能评分已采集或已发布的文章');
+    const source = sources.find(s=>s.id===candidate?.sourceId || s.name===published?.sourceName);
+    if (!source) throw Error('来源身份尚未配置');
+    const rawTime = args.sourceTime ? String(args.sourceTime) : null;
+    if (rawTime && (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(rawTime) || !Number.isFinite(Date.parse(rawTime)) || Date.parse(rawTime)>Date.now())) throw Error('原文精确时间必须带时区且不能晚于现在');
+    const listed = candidate?.publishedAt || published?.publishedAt;
+    if (rawTime && listed && Math.abs(Date.parse(rawTime)-Date.parse(listed))>86400_000) throw Error('核实时间与信源日期不一致');
+    const result = await assess({url,title:candidate?.title || published!.title,body:String(args.body || ''),sourceTime:rawTime,
+      participant: /(^|\.)amazon\.com$/.test(source.host) ? 'amazon' : source.host.replace(/^www\./,''),sourceName:source.name},
+      await recentAssessments());
+    if (published) {
+      published.assessment=result;
+      if (!digest.items.some(x=>x.url===url)) digest.items.push(published);
+      digest.updatedAt=new Date().toISOString(); await saveDigestVersion(digest,etag);
+    }
+    return {result,status:'succeeded' as const,evidence:{url,score:result.score,kind:result.kind,eventId:result.eventId,receipts:result.receipts}};
+    });
+  }
   if (name === 'refresh_batch') {
     const run = runId(args), batchNumber = Number(args.batch);
     return tracked(run, 'source_check', { batch: batchNumber }, async () => {
@@ -144,7 +176,7 @@ async function call(name: string, args: Record<string, unknown>) {
   if (name === 'get_run_log') {
     const run = runId(args);
     const events = await readRunEvents(run);
-    const stages: Record<RunStage, string> = { source_check: 'not_recorded', original_verification: 'not_recorded', publication: 'not_recorded' };
+    const stages: Record<RunStage, string> = { source_check: 'not_recorded', original_verification: 'not_recorded', ai_analysis:'not_recorded', publication: 'not_recorded' };
     for (const event of events.filter(event => event.stage !== 'source_check')) stages[event.stage] = event.status === 'started' ? 'incomplete' : event.status;
     const batches = new Map<number, RunEvent>();
     for (const event of events.filter(event => event.stage === 'source_check')) {
@@ -171,7 +203,7 @@ async function call(name: string, args: Record<string, unknown>) {
   if (name === 'get_status') {
     const batches = await readBatches();
     const digest = await readJson<Digest>(digestKey, { updatedAt: null, items: [] });
-    return { configuredSources: sources.length, checkedAt: batches.map(x => x.checkedAt).sort().at(-1) || null,
+    return { modelReady: modelReady(), configuredSources: sources.length, checkedAt: batches.map(x => x.checkedAt).sort().at(-1) || null,
       checkedSources: batches.flatMap(x => x.sources).length, errors: batches.flatMap(x => x.sources).filter(x => x.error),
       latestCandidates: recentCandidates(batches, 80).length, publishedItems: digest.items.length, publishedAt: digest.updatedAt };
   }

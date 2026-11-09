@@ -13,8 +13,8 @@
       <div class="section-heading"><h2 id="feed-title">精选</h2><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜关键词、来源" aria-label="搜索内容"></label></div>
       <nav id="filters" aria-label="内容栏目"></nav>
       <section id="hot-section" class="hot-section" aria-labelledby="hot-title" hidden>
-        <div class="hot-heading"><div><p class="hot-eyebrow">正在关注</p><h3 id="hot-title">热点</h3></div><p id="hot-note">根据已核实的精选内容更新</p></div>
-        <div id="hot-items" class="hot-items"></div>
+        <div class="hot-heading"><h3 id="hot-title"><span aria-hidden="true">●</span> 当前热点</h3><div class="hot-actions"><span id="hot-note"></span><button id="hot-more" type="button" aria-expanded="false" aria-controls="hot-items">完整榜单 →</button></div></div>
+        <ol id="hot-items" class="hot-items"></ol>
       </section>
       <nav id="tutorial-filters" aria-label="教程主题" hidden></nav>
       <div class="list-toolbar"><p id="result-count" role="status" aria-live="polite">正在读取内容…</p><div class="list-controls"><button type="button" id="saved-filter" aria-pressed="false">只看收藏</button><label>排序 <select id="sort" aria-label="排序"><option value="collected">收录时间</option><option value="recommended">推荐顺序</option><option value="date">原文时间</option></select></label></div></div>

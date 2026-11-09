@@ -1,4 +1,5 @@
 import { env } from 'cloudflare:workers';
+import type { Assessment } from './hot-ranking';
 
 export type Candidate = {
   sourceId: string;
@@ -14,6 +15,7 @@ export type SourceCheck = { id: string; name: string; count: number; error: stri
 export type Batch = { checkedAt: string; sources: SourceCheck[]; items: Candidate[] };
 
 export type DigestItem = {
+  assessment?: Assessment;
   id: string;
   title: string;
   sourceName: string;
@@ -32,7 +34,7 @@ export type DigestItem = {
 };
 export type Digest = { updatedAt: string | null; items: DigestItem[] };
 
-export type RunStage = 'source_check' | 'original_verification' | 'publication';
+export type RunStage = 'source_check' | 'original_verification' | 'ai_analysis' | 'publication';
 export type RunEvent = {
   at: string;
   runId: string;
