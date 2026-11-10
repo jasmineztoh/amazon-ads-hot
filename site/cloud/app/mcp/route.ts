@@ -1,3 +1,4 @@
+import { GET as readPublicContent } from '@/app/api/content/route';
 import { refreshBatch, sources } from '@/lib/collector';
 import baseline from '@/data/baseline.json';
 import { isOwner } from '@/lib/owner';
@@ -116,8 +117,10 @@ async function call(name: string, args: Record<string, unknown>) {
     if (rawTime && (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(rawTime) || !Number.isFinite(Date.parse(rawTime)) || Date.parse(rawTime)>Date.now())) throw Error('原文精确时间必须带时区且不能晚于现在');
     const listed = candidate?.publishedAt || published?.publishedAt;
     if (rawTime && listed && Math.abs(Date.parse(rawTime)-Date.parse(listed))>86400_000) throw Error('核实时间与信源日期不一致');
-    const result = await assess({url,title:candidate?.title || published!.title,body:String(args.body || ''),sourceTime:rawTime,
-      participant: /(^|\.)amazon\.com$/.test(source.host) ? 'amazon' : source.host.replace(/^www\./,''),sourceName:source.name},
+    const previous = published?.assessment ?? await readJson<Assessment | null>(await assessmentKey(url), null);
+    const sourceTime = rawTime ?? previous?.sourceTime ?? null;
+    const result = await assess({url,title:candidate?.title || published!.title,body:String(args.body || ''),sourceTime,
+      participant: /(^|\.)(?:amazon|aboutamazon)\.com$/.test(source.host) ? 'amazon' : source.host.replace(/^www\./,''),sourceName:source.name},
       await recentAssessments());
     if (published) {
       published.assessment=result;
@@ -203,7 +206,9 @@ async function call(name: string, args: Record<string, unknown>) {
   if (name === 'get_status') {
     const batches = await readBatches();
     const digest = await readJson<Digest>(digestKey, { updatedAt: null, items: [] });
-    return { modelReady: modelReady(), configuredSources: sources.length, checkedAt: batches.map(x => x.checkedAt).sort().at(-1) || null,
+    const publicContent = await (await readPublicContent()).json() as { total: number; hot: unknown; items: DigestItem[] };
+    const scored = publicContent.items.flatMap(item => item.assessment ? [{ id: item.id, url: item.url, score: item.assessment.score, scores: item.assessment.scores }] : []);
+    return { reader: { total: publicContent.total, hot: publicContent.hot, scoredCount: scored.length, scored: scored.slice(0, 20) }, modelReady: modelReady(), configuredSources: sources.length, checkedAt: batches.map(x => x.checkedAt).sort().at(-1) || null,
       checkedSources: batches.flatMap(x => x.sources).length, errors: batches.flatMap(x => x.sources).filter(x => x.error),
       latestCandidates: recentCandidates(batches, 80).length, publishedItems: digest.items.length, publishedAt: digest.updatedAt };
   }

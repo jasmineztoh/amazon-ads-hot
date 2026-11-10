@@ -424,5 +424,18 @@
     "host": "ppc.land",
     "language": "en",
     "bodyLimit": 3
+  },
+  {
+    "id": "source-amazon-retail",
+    "name": "About Amazon · Retail",
+    "kind": "web_list",
+    "url": "https://www.aboutamazon.com/news",
+    "host": "aboutamazon.com",
+    "list": {
+      "itemSelector": "a[href^=\"https://www.aboutamazon.com/news/retail/\"]",
+      "allowUrlPrefixes": [
+        "https://www.aboutamazon.com/news/retail/"
+      ]
+    }
   }
 ]
