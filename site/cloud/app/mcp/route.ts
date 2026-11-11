@@ -1,3 +1,4 @@
+import aiMarketing from '@/data/ai-marketing.json';
 import { GET as readPublicContent } from '@/app/api/content/route';
 import { refreshBatch, sources } from '@/lib/collector';
 import baseline from '@/data/baseline.json';
@@ -16,7 +17,7 @@ const tools = [
   { name: 'refresh_batch', description: '联网检查已配置的6个左右公开信源，保存最新线索和来源状态。批次为0至6。每日任务传同一个runId以记录运行结果。', inputSchema: { type: 'object', properties: { batch: { type: 'integer', minimum: 0, maximum: 6 }, runId: { type: 'string' } }, required: ['batch'] } },
   { name: 'get_recent', description: '读取近期已采集线索及各来源检查状态，日期缺失的线索须核对原文后再选材。', inputSchema: { type: 'object', properties: { limit: { type: 'integer', minimum: 1, maximum: 80 } } } },
   { name: 'record_verification', description: '记录逐篇原文核实结果与失败原因。每日任务传与信源检查相同的runId。', inputSchema: { type: 'object', properties: { runId: { type: 'string' }, items: { type: 'array', minItems: 1, maxItems: 15, items: { type: 'object', properties: { url: { type: 'string' }, status: { enum: ['verified', 'failed'] }, evidence: { type: 'string' }, error: { type: 'string' } }, required: ['url', 'status'] } } }, required: ['items'] } },
-  { name: 'publish_digest', description: '发布当前已采集并逐篇核实的中文精选。每次最多15条；重试按网址去重。每日任务传相同runId。', inputSchema: { type: 'object', properties: { runId: { type: 'string' }, items: { type: 'array', maxItems: 15, items: { type: 'object', properties: { url: { type: 'string' }, title: { type: 'string' }, summary: { type: 'string' }, points: { type: 'array', items: { type: 'string' } }, section: { type: 'string' }, reason: { type: 'string' }, materialNote: { type: 'string' }, sourceRole: { enum: ['official','analysis','reprint'] }, eventGroup: { type: 'string', description: '同一事件或通稿共用的稳定标识' }, publishedAt: { type: 'string', description: '原文核实的当地发布日期，最多与信源列表日期相差一天' }, tutorialTags: { type: 'array', items: { type: 'string' }, maxItems: 5 } }, required: ['url', 'title', 'summary', 'points', 'reason', 'materialNote'] } } }, required: ['items'] } },
+  { name: 'publish_digest', description: '发布当前已采集并逐篇核实的中文精选。每次最多15条；重试按网址去重。每日任务传相同runId。', inputSchema: { type: 'object', properties: { runId: { type: 'string' }, items: { type: 'array', maxItems: 15, items: { type: 'object', properties: { url: { type: 'string' }, title: { type: 'string' }, summary: { type: 'string' }, points: { type: 'array', items: { type: 'string' } }, section: { type: 'string' }, reason: { type: 'string' }, materialNote: { type: 'string' }, sourceRole: { enum: ['official','analysis','reprint'] }, eventGroup: { type: 'string', description: '同一事件或通稿共用的稳定标识' }, publishedAt: { type: 'string', description: '原文核实的当地发布日期，最多与信源列表日期相差一天' }, aiTags: { type: 'array', items: { type: 'string', enum: aiMarketing.tags }, maxItems: 4, description: '仅实际使用AI完成亚马逊广告业务任务的文章可进入AI营销，需选择已确认标签。' }, tutorialTags: { type: 'array', items: { type: 'string' }, maxItems: 5 } }, required: ['url', 'title', 'summary', 'points', 'reason', 'materialNote'] } } }, required: ['items'] } },
   { name: 'get_status', description: '读取站点云端采集时间、39个来源状态和已发布的增量条数。', inputSchema: { type: 'object', properties: {} } },
   { name: 'get_run_log', description: '按runId读取信源检查、原文核实、精选发布的运行事件与失败记录。', inputSchema: { type: 'object', properties: { runId: { type: 'string' } }, required: ['runId'] } },
 ];
@@ -82,10 +83,12 @@ async function publish(args: Record<string, unknown>) {
     if (!Array.isArray(tutorialTags) || tutorialTags.length > 5 ||
       tutorialTags.some(tag => typeof tag !== 'string' || !allowedTutorialTags.has(tag)) ||
       (tutorialTags.length && section !== '教程')) throw Error('教程标签无效');
+    const aiTags = x.aiTags ?? [];
+    if (!Array.isArray(aiTags) || aiTags.length > 4 || aiTags.some(tag => typeof tag !== 'string' || !aiMarketing.tags.includes(tag)) || (section === 'AI营销' && !aiTags.length)) throw Error('AI营销文章须实际涉及AI业务应用，并提供有效aiTags');
     const item: DigestItem = { id: await idFor(candidate.url), title, sourceName: candidate.sourceName, url: candidate.url,
       publishedAt, updatedAt: null, summary, points,
       reason, materialNote, collectedAt: byUrl.get(candidate.url)?.collectedAt || now,
-      tutorialTags,
+      tutorialTags, aiTags,
       sourceRole: ['official','analysis','reprint'].includes(String(x.sourceRole)) ? String(x.sourceRole) : undefined,
       collectionApproved: true, features: { sections: [section], eventGroup: String(x.eventGroup || '').trim() || undefined } };
     const assessment = await readJson<Assessment | null>(await assessmentKey(item.url),null);
@@ -208,7 +211,7 @@ async function call(name: string, args: Record<string, unknown>) {
     const digest = await readJson<Digest>(digestKey, { updatedAt: null, items: [] });
     const publicContent = await (await readPublicContent()).json() as { total: number; hot: unknown; items: DigestItem[] };
     const scored = publicContent.items.flatMap(item => item.assessment ? [{ id: item.id, url: item.url, score: item.assessment.score, scores: item.assessment.scores }] : []);
-    return { reader: { total: publicContent.total, hot: publicContent.hot, scoredCount: scored.length, scored: scored.slice(0, 20) }, modelReady: modelReady(), configuredSources: sources.length, checkedAt: batches.map(x => x.checkedAt).sort().at(-1) || null,
+    return { reader: { aiMarketing: { tags: aiMarketing.tags, counts: Object.fromEntries(aiMarketing.tags.map(tag => [tag, publicContent.items.filter(item => item.aiTags?.includes(tag)).length])), questions: aiMarketing.guides.length }, total: publicContent.total, hot: publicContent.hot, scoredCount: scored.length, scored: scored.slice(0, 20) }, modelReady: modelReady(), configuredSources: sources.length, checkedAt: batches.map(x => x.checkedAt).sort().at(-1) || null,
       checkedSources: batches.flatMap(x => x.sources).length, errors: batches.flatMap(x => x.sources).filter(x => x.error),
       latestCandidates: recentCandidates(batches, 80).length, publishedItems: digest.items.length, publishedAt: digest.updatedAt };
   }

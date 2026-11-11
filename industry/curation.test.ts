@@ -1,3 +1,4 @@
+import { applyAiMarketing } from '../site/cloud/lib/ai-marketing.ts';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -126,4 +127,13 @@ test('新人路线与关联文章都有目标，预算问题能从方法走到�
   assert.ok(cases[0].relatedIds?.includes(cases[1].id));
   assert.ok(cases[1].relatedIds?.includes(cases[0].id));
   assert.equal(feed(cases).groups.length, 2, '不同样本的大促复盘互链，但不合并为同稿');
+});
+
+test('AI营销按已确认标签准入，常规文章保留其他栏目', () => {
+  const config = { tags: ['AI数据分析'], articles: { approved: ['AI数据分析'] } };
+  const result = applyAiMarketing([item('approved'), item('ordinary', {sections:['AI营销','教程']}), {...item('new'),aiTags:['AI数据分析','未知标签']}],config);
+  assert.deepEqual(result[0].aiTags,['AI数据分析']);
+  assert.ok(result[0].features.sections.includes('AI营销'));
+  assert.deepEqual(result[1].features.sections,['教程']);
+  assert.deepEqual(result[2].aiTags,['AI数据分析']);
 });

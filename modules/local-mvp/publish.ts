@@ -1,3 +1,4 @@
+import { applyAiMarketing } from '../../site/cloud/lib/ai-marketing.ts';
 import fs from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { SECTIONS, feed } from '../../industry/curation.ts';
@@ -58,7 +59,8 @@ export async function buildContent() {
   const corrections = JSON.parse(await fs.readFile(new URL('../../site/corrections.json', import.meta.url), 'utf8'));
   const reading = JSON.parse(await fs.readFile(new URL('../../site/reading-guide.json', import.meta.url), 'utf8'));
   const tutorial = JSON.parse(await fs.readFile(new URL('../../site/tutorial-tags.json', import.meta.url), 'utf8'));
-  const items: Article[] = [...baseline, ...additions].map(a => {
+  const aiMarketing = JSON.parse(await fs.readFile(new URL('../../site/cloud/data/ai-marketing.json', import.meta.url), 'utf8'));
+  const items: (Article & { aiTags: string[] })[] = applyAiMarketing([...baseline, ...additions].map(a => {
     const c = corrections[a.id];
     const notes = reading.articles[a.id] || {};
     const { eventGroup, ...fields } = notes;
@@ -67,7 +69,7 @@ export async function buildContent() {
       collectedAt: a.collectedAt || a.reviewedAt,
       reason: fields.reason || a.reason || a.points[0] || a.summary,
       features: eventGroup ? { ...a.features, eventGroup } : a.features };
-  });
+  }), aiMarketing);
   for (const a of items) {
     if (!a.collectionApproved || !a.features.sections.length || a.features.sections.some(s => !SECTIONS.includes(s))) throw Error(`文章缺少有效栏目 ${a.id}`);
     if (!/^https?:\/\//.test(a.url) || !a.publishedAt) throw Error(`无效链接或日期 ${a.id}`);
@@ -83,8 +85,8 @@ export async function buildContent() {
     if (!ids.has(id)) throw Error(`阅读链接目标不存在 ${id}`);
   }
   return { reviewedAt: pool.approvedAt, updatedAt: snapshot.updatedAt, total: items.length, reviewedTotal: pool.total,
-    guides: reading.guides, tutorialTags: tutorial.tags, featuredUpdatedAt: items.map(a => a.collectedAt).filter(Boolean).sort().at(-1),
+    guides: reading.guides, tutorialTags: tutorial.tags, aiMarketing, featuredUpdatedAt: items.map(a => a.collectedAt).filter(Boolean).sort().at(-1),
     sourceCheckedAt: snapshot.collection?.lastRun?.finishedAt || null,
-    sections: SECTIONS, revision: hash(JSON.stringify([items, reading.guides, tutorial.tags])), collection: snapshot.collection, items,
+    sections: SECTIONS, revision: hash(JSON.stringify([items, reading.guides, tutorial.tags, aiMarketing])), collection: snapshot.collection, items,
     groupedRows: feed(items).groups.length };
 }

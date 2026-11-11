@@ -1,3 +1,5 @@
+import aiMarketing from '@/data/ai-marketing.json';
+import { applyAiMarketing } from '@/lib/ai-marketing';
 import baseline from '@/data/baseline.json';
 import { rankHot, type HotArticle } from '@/lib/hot-ranking';
 import { digestKey, readJson, type Digest, type DigestItem } from '@/lib/daily-store';
@@ -17,9 +19,10 @@ export async function GET() {
   const byUrl = new Map<string, Content['items'][number] | DigestItem>();
   for (const item of baseline.items) byUrl.set(item.url, item);
   for (const item of digest.items) byUrl.set(item.url, item);
-  const items = [...byUrl.values()].map(item => ({...item, features: {...item.features,
-    sections: item.features.sections.map(s => s.startsWith('教程') ? '教程' : s)}}));
+  const items = applyAiMarketing([...byUrl.values()].map(item => ({...item, features: {...item.features,
+    sections: item.features.sections.map(s => s.startsWith('教程') ? '教程' : s)}})), aiMarketing);
   return Response.json({
+    aiMarketing,
     total: items.length,
     hot: { computedAt: new Date().toISOString(), entries: rankHot(items as HotArticle[]) },
     sections: baseline.sections,

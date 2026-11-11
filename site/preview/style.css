@@ -32,3 +32,5 @@
 @media(max-width:640px){.hot-section{padding:12px 14px}.hot-row{grid-template-columns:18px minmax(0,1fr) 62px;gap:8px;min-height:40px}.hot-faces,.hot-value{display:none}.hot-section:not(.expanded) .hot-row:nth-child(n+4){display:none}.hot-title{font-size:13px}.hot-heading{flex-direction:row}.hot-items{display:block}}
 
 .hot-actions{display:flex;align-items:center;gap:18px}#hot-more{border:0;padding:0;background:none;color:#788480;font:inherit;font-size:12px;cursor:pointer}#hot-more:hover{color:var(--accent)}
+
+.topic-button:disabled{opacity:.5;cursor:default}.tutorial-badge{white-space:nowrap}

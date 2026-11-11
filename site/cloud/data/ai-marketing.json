@@ -1,0 +1,324 @@
+{
+  "tags": [
+    "工作流与自动化",
+    "AI购物与搜索",
+    "AI工具选择",
+    "AI数据分析",
+    "AI广告投放",
+    "AI素材制作",
+    "AI竞品分析",
+    "AI关键词调研"
+  ],
+  "articles": {
+    "article-001": [
+      "AI素材制作"
+    ],
+    "article-003": [
+      "AI工具选择"
+    ],
+    "article-005": [
+      "AI工具选择",
+      "AI素材制作"
+    ],
+    "article-006": [
+      "AI广告投放"
+    ],
+    "article-013": [
+      "AI素材制作"
+    ],
+    "article-015": [
+      "工作流与自动化",
+      "AI广告投放"
+    ],
+    "article-017": [
+      "AI工具选择",
+      "AI素材制作"
+    ],
+    "article-019": [
+      "AI购物与搜索"
+    ],
+    "article-025": [
+      "AI素材制作"
+    ],
+    "article-026": [
+      "AI工具选择",
+      "AI广告投放"
+    ],
+    "article-027": [
+      "AI购物与搜索"
+    ],
+    "article-030": [
+      "工作流与自动化",
+      "AI素材制作"
+    ],
+    "article-034": [
+      "AI素材制作"
+    ],
+    "article-037": [
+      "工作流与自动化",
+      "AI广告投放"
+    ],
+    "article-038": [
+      "AI广告投放"
+    ],
+    "article-040": [
+      "AI关键词调研"
+    ],
+    "article-044": [
+      "工作流与自动化"
+    ],
+    "live-4403f4f1b656339f": [
+      "工作流与自动化",
+      "AI数据分析"
+    ],
+    "live-f953908f68753bf1": [
+      "AI购物与搜索"
+    ],
+    "live-1861c9bce0d799b8": [
+      "工作流与自动化",
+      "AI数据分析"
+    ],
+    "live-d25401ddaa733d8f": [
+      "AI数据分析",
+      "AI广告投放"
+    ],
+    "live-cf64b381d14a36b7": [
+      "AI广告投放"
+    ],
+    "live-7088615698926f55": [
+      "AI工具选择",
+      "AI数据分析"
+    ],
+    "live-fe2ff68048b476fe": [
+      "工作流与自动化",
+      "AI关键词调研"
+    ],
+    "live-71f3f310c53e89a7": [
+      "工作流与自动化"
+    ],
+    "live-477d6cd8ecc13bed": [
+      "AI数据分析"
+    ],
+    "live-4ded4df4c0eb2ab2": [
+      "AI数据分析"
+    ],
+    "live-136bb6f7135aa3f8": [
+      "AI购物与搜索",
+      "AI广告投放"
+    ],
+    "live-f154d45e4ccb957e": [
+      "AI购物与搜索"
+    ],
+    "daily-192475db25e74128": [
+      "AI购物与搜索",
+      "AI广告投放"
+    ],
+    "daily-364088b2fa61d419": [
+      "AI广告投放",
+      "AI数据分析"
+    ],
+    "daily-6a0b28b955a31763": [
+      "AI购物与搜索"
+    ],
+    "daily-318d0d4af5bb60ae": [
+      "AI购物与搜索"
+    ]
+  },
+  "guides": [
+    {
+      "title": "怎样把每周广告复盘连成自动工作流？",
+      "tags": [
+        "工作流与自动化"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "live-fe2ff68048b476fe"
+        },
+        {
+          "articleId": "live-1861c9bce0d799b8"
+        },
+        {
+          "articleId": "live-4ded4df4c0eb2ab2"
+        }
+      ]
+    },
+    {
+      "title": "AI购物助手怎样理解和推荐我的商品？",
+      "tags": [
+        "AI购物与搜索"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "article-019"
+        },
+        {
+          "articleId": "live-f953908f68753bf1"
+        }
+      ]
+    },
+    {
+      "title": "选择AI工具时，先比较哪些能力和费用？",
+      "tags": [
+        "AI工具选择"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "article-003"
+        },
+        {
+          "articleId": "article-005"
+        },
+        {
+          "articleId": "live-7088615698926f55"
+        }
+      ]
+    },
+    {
+      "title": "怎样让AI帮我读报表，并核对分析结果？",
+      "tags": [
+        "AI数据分析"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "live-4403f4f1b656339f"
+        },
+        {
+          "articleId": "live-1861c9bce0d799b8"
+        },
+        {
+          "articleId": "live-4ded4df4c0eb2ab2"
+        }
+      ]
+    },
+    {
+      "title": "让AI调整竞价前，哪些操作需要审核？",
+      "tags": [
+        "AI广告投放",
+        "工作流与自动化"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "article-015"
+        },
+        {
+          "articleId": "live-d25401ddaa733d8f"
+        }
+      ]
+    },
+    {
+      "title": "怎样用AI制作商品场景图和视频？",
+      "tags": [
+        "AI素材制作"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "article-001"
+        },
+        {
+          "articleId": "article-030"
+        },
+        {
+          "articleId": "article-025"
+        }
+      ]
+    },
+    {
+      "title": "怎样用AI整理关键词和购物意图？",
+      "tags": [
+        "AI关键词调研"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "article-040"
+        },
+        {
+          "articleId": "live-fe2ff68048b476fe"
+        }
+      ]
+    },
+    {
+      "title": "怎样把好用的广告操作沉淀成SOP和Skills？",
+      "tags": [
+        "工作流与自动化"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "live-fe2ff68048b476fe"
+        },
+        {
+          "articleId": "live-71f3f310c53e89a7"
+        }
+      ]
+    },
+    {
+      "title": "AI写商品文案时，怎样避免编造卖点？",
+      "tags": [
+        "AI素材制作"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "article-013"
+        },
+        {
+          "articleId": "article-034"
+        }
+      ]
+    },
+    {
+      "title": "怎样从一个重复任务开始用Agent？",
+      "tags": [
+        "工作流与自动化",
+        "AI工具选择"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "live-71f3f310c53e89a7"
+        },
+        {
+          "articleId": "article-044"
+        }
+      ]
+    },
+    {
+      "title": "用AI分析利润前，要检查哪些数据缺口？",
+      "tags": [
+        "AI数据分析"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "live-477d6cd8ecc13bed"
+        },
+        {
+          "articleId": "live-4ded4df4c0eb2ab2"
+        }
+      ]
+    },
+    {
+      "title": "AI进入广告平台后，我能控制哪些内容？",
+      "tags": [
+        "AI广告投放",
+        "AI购物与搜索"
+      ],
+      "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+      "steps": [
+        {
+          "articleId": "article-037"
+        },
+        {
+          "articleId": "live-136bb6f7135aa3f8"
+        }
+      ]
+    }
+  ]
+}

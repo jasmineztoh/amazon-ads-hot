@@ -4,10 +4,10 @@
   "url": "https://amazon-marketing-digest.jasmineztoh.chatgpt.site",
   "audience": "public",
   "contentMode": "curated-public-and-owner-candidates",
-  "deploymentId": "appgdep_6af2e7d6659c81919b77ab7ab16b82ca",
-  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_d5a36d6b56488191821b1537517856ac",
-  "sourceCommit": "4496941782cb2fd1155220fdd559bbf84a995349",
-  "deployedAt": "2026-11-10T09:46:05.709844+00:00",
+  "deploymentId": "appgdep_6af414c291ac81918980f3b933c2266f",
+  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_03dcff5fa3408191a48f37829c8406bb",
+  "sourceCommit": "66d5f3a48d4014dba065c07c73939a7447f286ab",
+  "deployedAt": "2026-11-11T07:10:01.421803+00:00",
   "verified": {
     "deploymentStatus": "succeeded",
     "localBaselineArticles": 92,
@@ -26,6 +26,30 @@
     "liveReaderDataChecked": true,
     "hotSchedule": "Automation_a1996b90f48481918f24ae5b89758e09",
     "hotFirstObservedRun": "hot-2026-11-10-1742",
-    "hotScheduledExecutionVerified": true
+    "hotScheduledExecutionVerified": true,
+    "aiMarketing": {
+      "tags": [
+        "工作流与自动化",
+        "AI购物与搜索",
+        "AI工具选择",
+        "AI数据分析",
+        "AI广告投放",
+        "AI素材制作",
+        "AI竞品分析",
+        "AI关键词调研"
+      ],
+      "counts": {
+        "工作流与自动化": 8,
+        "AI购物与搜索": 8,
+        "AI工具选择": 5,
+        "AI数据分析": 7,
+        "AI广告投放": 10,
+        "AI素材制作": 7,
+        "AI竞品分析": 0,
+        "AI关键词调研": 2
+      },
+      "questions": 12
+    },
+    "aiMarketingBrowserChecked": false
   }
 }

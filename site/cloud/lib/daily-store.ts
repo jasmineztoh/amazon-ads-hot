@@ -16,6 +16,7 @@ export type Batch = { checkedAt: string; sources: SourceCheck[]; items: Candidat
 
 export type DigestItem = {
   assessment?: Assessment;
+  aiTags?: string[];
   id: string;
   title: string;
   sourceName: string;

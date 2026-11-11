@@ -170,6 +170,330 @@
     "经营基础",
     "待分类"
   ],
+  "aiMarketing": {
+    "tags": [
+      "工作流与自动化",
+      "AI购物与搜索",
+      "AI工具选择",
+      "AI数据分析",
+      "AI广告投放",
+      "AI素材制作",
+      "AI竞品分析",
+      "AI关键词调研"
+    ],
+    "articles": {
+      "article-001": [
+        "AI素材制作"
+      ],
+      "article-003": [
+        "AI工具选择"
+      ],
+      "article-005": [
+        "AI工具选择",
+        "AI素材制作"
+      ],
+      "article-006": [
+        "AI广告投放"
+      ],
+      "article-013": [
+        "AI素材制作"
+      ],
+      "article-015": [
+        "工作流与自动化",
+        "AI广告投放"
+      ],
+      "article-017": [
+        "AI工具选择",
+        "AI素材制作"
+      ],
+      "article-019": [
+        "AI购物与搜索"
+      ],
+      "article-025": [
+        "AI素材制作"
+      ],
+      "article-026": [
+        "AI工具选择",
+        "AI广告投放"
+      ],
+      "article-027": [
+        "AI购物与搜索"
+      ],
+      "article-030": [
+        "工作流与自动化",
+        "AI素材制作"
+      ],
+      "article-034": [
+        "AI素材制作"
+      ],
+      "article-037": [
+        "工作流与自动化",
+        "AI广告投放"
+      ],
+      "article-038": [
+        "AI广告投放"
+      ],
+      "article-040": [
+        "AI关键词调研"
+      ],
+      "article-044": [
+        "工作流与自动化"
+      ],
+      "live-4403f4f1b656339f": [
+        "工作流与自动化",
+        "AI数据分析"
+      ],
+      "live-f953908f68753bf1": [
+        "AI购物与搜索"
+      ],
+      "live-1861c9bce0d799b8": [
+        "工作流与自动化",
+        "AI数据分析"
+      ],
+      "live-d25401ddaa733d8f": [
+        "AI数据分析",
+        "AI广告投放"
+      ],
+      "live-cf64b381d14a36b7": [
+        "AI广告投放"
+      ],
+      "live-7088615698926f55": [
+        "AI工具选择",
+        "AI数据分析"
+      ],
+      "live-fe2ff68048b476fe": [
+        "工作流与自动化",
+        "AI关键词调研"
+      ],
+      "live-71f3f310c53e89a7": [
+        "工作流与自动化"
+      ],
+      "live-477d6cd8ecc13bed": [
+        "AI数据分析"
+      ],
+      "live-4ded4df4c0eb2ab2": [
+        "AI数据分析"
+      ],
+      "live-136bb6f7135aa3f8": [
+        "AI购物与搜索",
+        "AI广告投放"
+      ],
+      "live-f154d45e4ccb957e": [
+        "AI购物与搜索"
+      ],
+      "daily-192475db25e74128": [
+        "AI购物与搜索",
+        "AI广告投放"
+      ],
+      "daily-364088b2fa61d419": [
+        "AI广告投放",
+        "AI数据分析"
+      ],
+      "daily-6a0b28b955a31763": [
+        "AI购物与搜索"
+      ],
+      "daily-318d0d4af5bb60ae": [
+        "AI购物与搜索"
+      ]
+    },
+    "guides": [
+      {
+        "title": "怎样把每周广告复盘连成自动工作流？",
+        "tags": [
+          "工作流与自动化"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "live-fe2ff68048b476fe"
+          },
+          {
+            "articleId": "live-1861c9bce0d799b8"
+          },
+          {
+            "articleId": "live-4ded4df4c0eb2ab2"
+          }
+        ]
+      },
+      {
+        "title": "AI购物助手怎样理解和推荐我的商品？",
+        "tags": [
+          "AI购物与搜索"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "article-019"
+          },
+          {
+            "articleId": "live-f953908f68753bf1"
+          }
+        ]
+      },
+      {
+        "title": "选择AI工具时，先比较哪些能力和费用？",
+        "tags": [
+          "AI工具选择"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "article-003"
+          },
+          {
+            "articleId": "article-005"
+          },
+          {
+            "articleId": "live-7088615698926f55"
+          }
+        ]
+      },
+      {
+        "title": "怎样让AI帮我读报表，并核对分析结果？",
+        "tags": [
+          "AI数据分析"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "live-4403f4f1b656339f"
+          },
+          {
+            "articleId": "live-1861c9bce0d799b8"
+          },
+          {
+            "articleId": "live-4ded4df4c0eb2ab2"
+          }
+        ]
+      },
+      {
+        "title": "让AI调整竞价前，哪些操作需要审核？",
+        "tags": [
+          "AI广告投放",
+          "工作流与自动化"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "article-015"
+          },
+          {
+            "articleId": "live-d25401ddaa733d8f"
+          }
+        ]
+      },
+      {
+        "title": "怎样用AI制作商品场景图和视频？",
+        "tags": [
+          "AI素材制作"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "article-001"
+          },
+          {
+            "articleId": "article-030"
+          },
+          {
+            "articleId": "article-025"
+          }
+        ]
+      },
+      {
+        "title": "怎样用AI整理关键词和购物意图？",
+        "tags": [
+          "AI关键词调研"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "article-040"
+          },
+          {
+            "articleId": "live-fe2ff68048b476fe"
+          }
+        ]
+      },
+      {
+        "title": "怎样把好用的广告操作沉淀成SOP和Skills？",
+        "tags": [
+          "工作流与自动化"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "live-fe2ff68048b476fe"
+          },
+          {
+            "articleId": "live-71f3f310c53e89a7"
+          }
+        ]
+      },
+      {
+        "title": "AI写商品文案时，怎样避免编造卖点？",
+        "tags": [
+          "AI素材制作"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "article-013"
+          },
+          {
+            "articleId": "article-034"
+          }
+        ]
+      },
+      {
+        "title": "怎样从一个重复任务开始用Agent？",
+        "tags": [
+          "工作流与自动化",
+          "AI工具选择"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "live-71f3f310c53e89a7"
+          },
+          {
+            "articleId": "article-044"
+          }
+        ]
+      },
+      {
+        "title": "用AI分析利润前，要检查哪些数据缺口？",
+        "tags": [
+          "AI数据分析"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "live-477d6cd8ecc13bed"
+          },
+          {
+            "articleId": "live-4ded4df4c0eb2ab2"
+          }
+        ]
+      },
+      {
+        "title": "AI进入广告平台后，我能控制哪些内容？",
+        "tags": [
+          "AI广告投放",
+          "AI购物与搜索"
+        ],
+        "description": "结合现有文章，了解做法、适用条件与需要核对的结果。",
+        "steps": [
+          {
+            "articleId": "article-037"
+          },
+          {
+            "articleId": "live-136bb6f7135aa3f8"
+          }
+        ]
+      }
+    ]
+  },
   "featuredUpdatedAt": "2026-11-02T06:53:11.810Z",
   "sourceCheckedAt": "2026-10-30T03:55:59.921Z",
   "sections": [
@@ -179,7 +503,7 @@
     "工具",
     "AI营销"
   ],
-  "revision": "ee278209d90a0445091c50d2a512d34eeda332b706c1ca35a45139ab87209890",
+  "revision": "b248bac2a0104a066b5a0350776c8b994d26581c8d9e46e4033e4be6b4a64924",
   "collection": {
     "enabled": true,
     "intervalMinutes": 120,
@@ -363,6 +687,9 @@
       "tutorialTags": [
         "商品页与素材",
         "AI工作流"
+      ],
+      "aiTags": [
+        "AI素材制作"
       ]
     },
     {
@@ -404,7 +731,8 @@
         "商品推广",
         "预算与竞价",
         "数据与复盘"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-003",
@@ -435,7 +763,10 @@
       "origin": "user-reviewed",
       "reason": "按文案、图片、关键词与广告工作拆解工具用途，适合先确定要解决什么再选软件。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "AI工具选择"
+      ]
     },
     {
       "id": "article-004",
@@ -465,7 +796,8 @@
       "origin": "user-reviewed",
       "reason": "从Seller Central多渠道工作区的变化，观察Amazon如何扩大卖家的日常经营入口。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "article-005",
@@ -497,7 +829,11 @@
       "origin": "user-reviewed",
       "reason": "把图片生成额度换成每个商品可修改的次数，便于判断真实制作成本。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "AI工具选择",
+        "AI素材制作"
+      ]
     },
     {
       "id": "article-006",
@@ -529,7 +865,10 @@
       "origin": "user-reviewed",
       "reason": "Wilde的邮编口味分析与AI创意示例，提供把地域销售资料用于素材的具体思路。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "AI广告投放"
+      ]
     },
     {
       "id": "article-007",
@@ -561,7 +900,8 @@
       "sourceRole": "analysis",
       "tutorialTags": [
         "商品页与素材"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-008",
@@ -596,7 +936,8 @@
       "tutorialTags": [
         "展示广告",
         "数据与复盘"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-009",
@@ -634,7 +975,8 @@
       "tutorialTags": [
         "关键词与定向",
         "数据与复盘"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-010",
@@ -664,7 +1006,8 @@
       "origin": "user-reviewed",
       "reason": "从熟悉品牌的反复购买切入，提醒我们在解释转化时同时考虑信任和习惯。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "article-011",
@@ -698,7 +1041,8 @@
       "tutorialTags": [
         "关键词与定向",
         "数据与复盘"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-012",
@@ -731,7 +1075,8 @@
       "tutorialTags": [
         "AI工作流",
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-013",
@@ -765,6 +1110,9 @@
       "tutorialTags": [
         "商品页与素材",
         "AI工作流"
+      ],
+      "aiTags": [
+        "AI素材制作"
       ]
     },
     {
@@ -799,7 +1147,8 @@
       "tutorialTags": [
         "商品推广",
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-015",
@@ -835,6 +1184,10 @@
         "商品推广",
         "预算与竞价",
         "AI工作流"
+      ],
+      "aiTags": [
+        "工作流与自动化",
+        "AI广告投放"
       ]
     },
     {
@@ -868,7 +1221,8 @@
       "tutorialTags": [
         "大促投放",
         "商品页与素材"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-017",
@@ -899,7 +1253,11 @@
       "origin": "user-reviewed",
       "reason": "展示消费者测试怎样嵌入生成流程，适合评估团队是否需要减少跨工具操作。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "AI工具选择",
+        "AI素材制作"
+      ]
     },
     {
       "id": "article-018",
@@ -931,7 +1289,8 @@
       "sourceRole": "analysis",
       "tutorialTags": [
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-019",
@@ -965,6 +1324,9 @@
       "tutorialTags": [
         "商品页与素材",
         "AI工作流"
+      ],
+      "aiTags": [
+        "AI购物与搜索"
       ]
     },
     {
@@ -1003,7 +1365,8 @@
         "live-98013f11332ee19b",
         "live-5d40e6689d6498ae"
       ],
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "article-021",
@@ -1036,7 +1399,8 @@
       "tutorialTags": [
         "关键词与定向",
         "商品页与素材"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-022",
@@ -1069,7 +1433,8 @@
       "tutorialTags": [
         "商品页与素材",
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-023",
@@ -1099,7 +1464,8 @@
       "origin": "user-reviewed",
       "reason": "比较大品牌的既有需求与私牌的试验空间，帮助结合自身资源选择增长方式。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "article-024",
@@ -1130,7 +1496,8 @@
       "origin": "user-reviewed",
       "reason": "列出机构各自提供的服务，适合先梳理需要外包的工作，再逐项核对候选。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "article-025",
@@ -1164,6 +1531,9 @@
       "tutorialTags": [
         "商品页与素材",
         "AI工作流"
+      ],
+      "aiTags": [
+        "AI素材制作"
       ]
     },
     {
@@ -1196,7 +1566,11 @@
       "origin": "user-reviewed",
       "reason": "从模型调整、计算效率和数据隔离理解广告工具的设计取舍，方便向厂商追问实现。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "AI工具选择",
+        "AI广告投放"
+      ]
     },
     {
       "id": "article-027",
@@ -1230,6 +1604,9 @@
       "tutorialTags": [
         "商品页与素材",
         "经营基础"
+      ],
+      "aiTags": [
+        "AI购物与搜索"
       ]
     },
     {
@@ -1253,8 +1630,7 @@
       "editorialTextReviewed": false,
       "features": {
         "sections": [
-          "教程",
-          "AI营销"
+          "教程"
         ]
       },
       "collectedAt": "2026-10-29",
@@ -1263,7 +1639,8 @@
       "sourceRole": "analysis",
       "tutorialTags": [
         "商品页与素材"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-029",
@@ -1287,8 +1664,7 @@
       "features": {
         "sections": [
           "教程",
-          "工具",
-          "AI营销"
+          "工具"
         ],
         "aiAdsWorkflow": true,
         "productCategory": "宠物"
@@ -1300,7 +1676,8 @@
       "tutorialTags": [
         "关键词与定向",
         "AI工作流"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-030",
@@ -1336,6 +1713,10 @@
       "tutorialTags": [
         "商品页与素材",
         "AI工作流"
+      ],
+      "aiTags": [
+        "工作流与自动化",
+        "AI素材制作"
       ]
     },
     {
@@ -1377,7 +1758,8 @@
         "品牌推广",
         "展示广告",
         "预算与竞价"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-032",
@@ -1410,7 +1792,8 @@
       "tutorialTags": [
         "商品页与素材",
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-033",
@@ -1444,7 +1827,8 @@
       "tutorialTags": [
         "AI工作流",
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-034",
@@ -1478,6 +1862,9 @@
       "tutorialTags": [
         "商品页与素材",
         "AI工作流"
+      ],
+      "aiTags": [
+        "AI素材制作"
       ]
     },
     {
@@ -1508,7 +1895,8 @@
       "origin": "user-reviewed",
       "reason": "从广告位挤占商品位置切入，适合思考零售媒体收入与购物体验之间的经营取舍。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "article-036",
@@ -1544,7 +1932,8 @@
       ],
       "tutorialTags": [
         "商品页与素材"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-037",
@@ -1581,7 +1970,11 @@
         "article-038",
         "live-1861c9bce0d799b8"
       ],
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "工作流与自动化",
+        "AI广告投放"
+      ]
     },
     {
       "id": "article-038",
@@ -1616,7 +2009,10 @@
       "relatedIds": [
         "article-037"
       ],
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "AI广告投放"
+      ]
     },
     {
       "id": "article-039",
@@ -1651,7 +2047,8 @@
         "商品推广",
         "展示广告",
         "预算与竞价"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-040",
@@ -1687,6 +2084,9 @@
       "tutorialTags": [
         "关键词与定向",
         "AI工作流"
+      ],
+      "aiTags": [
+        "AI关键词调研"
       ]
     },
     {
@@ -1719,7 +2119,8 @@
       "sourceRole": "analysis",
       "tutorialTags": [
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-042",
@@ -1753,7 +2154,8 @@
       "tutorialTags": [
         "商品推广",
         "数据与复盘"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-043",
@@ -1787,7 +2189,8 @@
       "tutorialTags": [
         "大促投放",
         "商品页与素材"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-044",
@@ -1822,6 +2225,9 @@
       "sourceRole": "analysis",
       "tutorialTags": [
         "AI工作流"
+      ],
+      "aiTags": [
+        "工作流与自动化"
       ]
     },
     {
@@ -1856,7 +2262,8 @@
       "tutorialTags": [
         "AI工作流",
         "数据与复盘"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "article-046",
@@ -1886,7 +2293,8 @@
       "origin": "user-reviewed",
       "reason": "把AI使用次数和实际经营结果分开衡量，适合思考团队应怎样定义自动化成果。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "article-047",
@@ -1917,7 +2325,8 @@
       "origin": "user-reviewed",
       "reason": "官方工程岗位指引强调交付结果与判断责任，可启发我们检查AI工作流的责任分配。",
       "sourceRole": "official",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "article-048",
@@ -1955,7 +2364,8 @@
       "tutorialTags": [
         "大促投放",
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-4403f4f1b656339f",
@@ -1986,7 +2396,11 @@
       "addedAt": "2026-10-29T07:48:05.074Z",
       "reason": "从活跃卖家的连续查询习惯，观察MCP怎样进入每天的销售、库存与关键词工作。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "工作流与自动化",
+        "AI数据分析"
+      ]
     },
     {
       "id": "live-5833c8058781d1e0",
@@ -2021,7 +2435,8 @@
         "大促投放",
         "预算与竞价",
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-3f6b514a62e1f419",
@@ -2053,7 +2468,8 @@
       "sourceRole": "analysis",
       "tutorialTags": [
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-9a3bf556cea49c94",
@@ -2071,8 +2487,7 @@
       "materialNote": "从业者的搜索优化教程，不是Amazon公开的完整排名公式；文中模型、用户规模及提升数字未由本站独立验证。",
       "features": {
         "sections": [
-          "教程",
-          "AI营销"
+          "教程"
         ]
       },
       "collectionApproved": true,
@@ -2087,7 +2502,8 @@
       "tutorialTags": [
         "关键词与定向",
         "商品页与素材"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-8b042ea743b6538d",
@@ -2121,7 +2537,8 @@
       "tutorialTags": [
         "数据与复盘",
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-605b983ad27e66de",
@@ -2156,7 +2573,8 @@
       "tutorialTags": [
         "关键词与定向",
         "数据与复盘"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-98013f11332ee19b",
@@ -2191,7 +2609,8 @@
         "大促投放",
         "商品页与素材",
         "预算与竞价"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-c119566773485e5f",
@@ -2224,7 +2643,8 @@
       "tutorialTags": [
         "大促投放",
         "商品页与素材"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-0df55782d1d4c190",
@@ -2258,7 +2678,8 @@
       "tutorialTags": [
         "数据与复盘",
         "预算与竞价"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-1f53dd1681c0551a",
@@ -2290,7 +2711,8 @@
       "sourceRole": "analysis",
       "tutorialTags": [
         "商品页与素材"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-ec68a1e5103b2903",
@@ -2325,7 +2747,8 @@
       "tutorialTags": [
         "经营基础",
         "数据与复盘"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-f953908f68753bf1",
@@ -2343,8 +2766,8 @@
       "materialNote": "机构观点文章，包含服务推广。对AI选择内容的机制是作者解释，不是已验证的Amazon排名规则。",
       "features": {
         "sections": [
-          "AI营销",
-          "教程"
+          "教程",
+          "AI营销"
         ]
       },
       "collectionApproved": true,
@@ -2359,6 +2782,9 @@
       "tutorialTags": [
         "商品页与素材",
         "AI工作流"
+      ],
+      "aiTags": [
+        "AI购物与搜索"
       ]
     },
     {
@@ -2391,7 +2817,8 @@
       "addedAt": "2026-10-29T07:48:05.074Z",
       "reason": "德国DIY与园艺的报告介绍提示从细分类目和大件成本找问题，方便决定是否继续读完整报告。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "live-0054b26231e4141e",
@@ -2426,7 +2853,8 @@
       "tutorialTags": [
         "商品页与素材",
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-5a0b68db1287c9e7",
@@ -2452,7 +2880,8 @@
       "reason": "官方入口介绍无需先搭AMC即可激活地区品牌指数的能力，适合核对区域投放的新选择。",
       "sourceRole": "official",
       "tutorialTags": [],
-      "collectedAt": "2026-10-29T07:48:05.074Z"
+      "collectedAt": "2026-10-29T07:48:05.074Z",
+      "aiTags": []
     },
     {
       "id": "live-1861c9bce0d799b8",
@@ -2485,7 +2914,11 @@
       "addedAt": "2026-10-29T07:48:05.074Z",
       "reason": "浏览未购买人群的AMC查询示例，能帮助判断自然语言工具可接手哪一段查询工作。",
       "sourceRole": "official",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "工作流与自动化",
+        "AI数据分析"
+      ]
     },
     {
       "id": "live-9ad9f06c2e447506",
@@ -2511,7 +2944,8 @@
       "reason": "官方说明Alexa+ Echo Show的全屏静音循环视频形式，适合先判断现有素材是否匹配。",
       "sourceRole": "official",
       "tutorialTags": [],
-      "collectedAt": "2026-10-29T07:48:05.074Z"
+      "collectedAt": "2026-10-29T07:48:05.074Z",
+      "aiTags": []
     },
     {
       "id": "live-5d567c766ee42eda",
@@ -2537,7 +2971,8 @@
       "reason": "从广告格式、品牌控件与富媒体布局了解自适应创意变化，便于检查现有展示素材需求。",
       "sourceRole": "official",
       "tutorialTags": [],
-      "collectedAt": "2026-10-29T07:48:05.074Z"
+      "collectedAt": "2026-10-29T07:48:05.074Z",
+      "aiTags": []
     },
     {
       "id": "live-d25401ddaa733d8f",
@@ -2570,7 +3005,11 @@
       "addedAt": "2026-10-29T07:48:05.074Z",
       "reason": "把规划、活动管理和效果分析中的对话能力放到一起，适合核对自己的账户可尝试什么。",
       "sourceRole": "official",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "AI数据分析",
+        "AI广告投放"
+      ]
     },
     {
       "id": "live-cf64b381d14a36b7",
@@ -2602,7 +3041,10 @@
       "addedAt": "2026-10-29T07:48:05.074Z",
       "reason": "解释连接不同广告与长期销售指标的测试思路，适合先理解指标再阅读平均效果数字。",
       "sourceRole": "official",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "AI广告投放"
+      ]
     },
     {
       "id": "live-d8158cd7b4229858",
@@ -2628,7 +3070,8 @@
       "reason": "官方Sponsored Services介绍提供服务类需求广告的核对入口，适合服务商查看适用范围。",
       "sourceRole": "official",
       "tutorialTags": [],
-      "collectedAt": "2026-10-29T07:53:38.999Z"
+      "collectedAt": "2026-10-29T07:53:38.999Z",
+      "aiTags": []
     },
     {
       "id": "live-1206a83527293800",
@@ -2654,7 +3097,8 @@
       "reason": "展示品牌信息如何进入购物对话，适合品牌提前整理商品用途与比较资料。",
       "sourceRole": "official",
       "tutorialTags": [],
-      "collectedAt": "2026-10-29T07:53:38.999Z"
+      "collectedAt": "2026-10-29T07:53:38.999Z",
+      "aiTags": []
     },
     {
       "id": "live-0fe8f7103affeb18",
@@ -2680,7 +3124,8 @@
       "reason": "官方入口介绍面向近期购买者的评论邀请方式，适合核对可用资格和邀请规则。",
       "sourceRole": "official",
       "tutorialTags": [],
-      "collectedAt": "2026-10-29T07:53:38.999Z"
+      "collectedAt": "2026-10-29T07:53:38.999Z",
+      "aiTags": []
     },
     {
       "id": "live-edfe4c927123dfd5",
@@ -2706,7 +3151,8 @@
       "reason": "把展示、视频和音频创建放在一起看，适合了解美国封闭测试版DVA+的产品边界。",
       "sourceRole": "official",
       "tutorialTags": [],
-      "collectedAt": "2026-10-29T07:53:38.999Z"
+      "collectedAt": "2026-10-29T07:53:38.999Z",
+      "aiTags": []
     },
     {
       "id": "live-f25ff1b916e71a46",
@@ -2732,7 +3178,8 @@
       "reason": "官方介绍用对话评估受众和预测触达，适合核对媒介规划中的预算建议来自什么能力。",
       "sourceRole": "official",
       "tutorialTags": [],
-      "collectedAt": "2026-10-29T07:53:38.999Z"
+      "collectedAt": "2026-10-29T07:53:38.999Z",
+      "aiTags": []
     },
     {
       "id": "live-720c9a249c18754c",
@@ -2758,7 +3205,8 @@
       "reason": "从自然语言提问到趋势与基准比较，提供核对广告分析对话功能的官方入口。",
       "sourceRole": "official",
       "tutorialTags": [],
-      "collectedAt": "2026-10-29T07:53:38.999Z"
+      "collectedAt": "2026-10-29T07:53:38.999Z",
+      "aiTags": []
     },
     {
       "id": "live-c955c023f02a383b",
@@ -2784,7 +3232,8 @@
       "reason": "官方数据管理器介绍连接、管理与激活第一方数据的变化，适合规划广告数据准备。",
       "sourceRole": "official",
       "tutorialTags": [],
-      "collectedAt": "2026-10-29T07:58:47.681Z"
+      "collectedAt": "2026-10-29T07:58:47.681Z",
+      "aiTags": []
     },
     {
       "id": "live-cc5721f18f8595e6",
@@ -2810,7 +3259,8 @@
       "reason": "官方说明DSP第三方库存对VAST 4的支持，适合视频投放团队核对供应端格式变化。",
       "sourceRole": "official",
       "tutorialTags": [],
-      "collectedAt": "2026-10-29T07:58:47.681Z"
+      "collectedAt": "2026-10-29T07:58:47.681Z",
+      "aiTags": []
     },
     {
       "id": "live-45efb52867116f16",
@@ -2840,7 +3290,8 @@
       "addedAt": "2026-10-29T07:48:05.074Z",
       "reason": "把TikTok的内容形态与畅销商品放在一起看，适合寻找站外需求线索并判断商品是否适合展示。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "live-e23130f45757aff1",
@@ -2870,7 +3321,8 @@
       "addedAt": "2026-10-29T07:48:05.074Z",
       "reason": "用两平台头部商家的交集提醒我们验证渠道适配，适合检视复制Amazon打法的假设。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "live-7088615698926f55",
@@ -2904,6 +3356,10 @@
       "tutorialTags": [
         "AI工作流",
         "经营基础"
+      ],
+      "aiTags": [
+        "AI工具选择",
+        "AI数据分析"
       ]
     },
     {
@@ -2939,6 +3395,10 @@
       "tutorialTags": [
         "AI工作流",
         "关键词与定向"
+      ],
+      "aiTags": [
+        "工作流与自动化",
+        "AI关键词调研"
       ]
     },
     {
@@ -2973,6 +3433,9 @@
       "tutorialTags": [
         "AI工作流",
         "经营基础"
+      ],
+      "aiTags": [
+        "工作流与自动化"
       ]
     },
     {
@@ -3017,7 +3480,8 @@
         "商品推广",
         "商品页与素材",
         "经营基础"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-477d6cd8ecc13bed",
@@ -3036,8 +3500,8 @@
       "features": {
         "sections": [
           "工具",
-          "AI营销",
-          "教程"
+          "教程",
+          "AI营销"
         ],
         "aiAdsWorkflow": true,
         "promotionLed": true
@@ -3054,6 +3518,9 @@
       "tutorialTags": [
         "数据与复盘",
         "AI工作流"
+      ],
+      "aiTags": [
+        "AI数据分析"
       ]
     },
     {
@@ -3072,7 +3539,6 @@
       "materialNote": "厂商方法文章，介绍自家工具；成本算例为作者编写的示例，不代表实际报价或节省承诺。",
       "features": {
         "sections": [
-          "AI营销",
           "工具"
         ],
         "promotionLed": true
@@ -3086,7 +3552,8 @@
       "addedAt": "2026-10-29T07:48:05.074Z",
       "reason": "按报表可得性、重复用时和维护成本比较三种连接方式，适合决定库存数据怎样交给AI。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "live-1d00701d9baedc0c",
@@ -3122,7 +3589,8 @@
         "article-007",
         "article-042"
       ],
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "live-4ded4df4c0eb2ab2",
@@ -3158,6 +3626,9 @@
       "tutorialTags": [
         "数据与复盘",
         "AI工作流"
+      ],
+      "aiTags": [
+        "AI数据分析"
       ]
     },
     {
@@ -3190,7 +3661,11 @@
       "addedAt": "2026-10-29T07:53:38.999Z",
       "reason": "解释品牌能提供的商品信息与不能选择的评论，适合给对话式广告准备真实内容。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "AI购物与搜索",
+        "AI广告投放"
+      ]
     },
     {
       "id": "live-f154d45e4ccb957e",
@@ -3221,7 +3696,10 @@
       "addedAt": "2026-10-30T03:53:58.782Z",
       "reason": "比较订阅、抽成与广告的激励差异，适合思考AI购物推荐的透明度与品牌参与方式。",
       "sourceRole": "analysis",
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": [
+        "AI购物与搜索"
+      ]
     },
     {
       "id": "live-207c00a4362bf1dc",
@@ -3266,7 +3744,8 @@
         "预算不足",
         "花费进度"
       ],
-      "tutorialTags": []
+      "tutorialTags": [],
+      "aiTags": []
     },
     {
       "id": "live-f8fc5c2255bf6684",
@@ -3284,8 +3763,7 @@
       "materialNote": "从业团队的方法与匿名演示，含自家工具推广；未独立复现。日预算的具体超额规则需以平台说明为准，文中的预算比例、ACoS和调整幅度不是通用建议。",
       "features": {
         "sections": [
-          "教程",
-          "AI营销"
+          "教程"
         ],
         "adPractice": true,
         "aiAdsWorkflow": true
@@ -3315,7 +3793,8 @@
         "商品推广",
         "预算与竞价",
         "数据与复盘"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-4b889688be11a433",
@@ -3361,7 +3840,8 @@
         "商品推广",
         "关键词与定向",
         "数据与复盘"
-      ]
+      ],
+      "aiTags": []
     },
     {
       "id": "live-5d40e6689d6498ae",
@@ -3406,7 +3886,8 @@
         "商品推广",
         "预算与竞价",
         "大促投放"
-      ]
+      ],
+      "aiTags": []
     }
   ],
   "groupedRows": 91

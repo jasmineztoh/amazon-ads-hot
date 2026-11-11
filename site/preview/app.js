@@ -95,14 +95,14 @@ function sourcesBlock(article) {
 }
 function renderGuides() {
   $('guides').replaceChildren();
-  const visible = section === '教程' && !$('search').value.trim() && !savedOnly && !tutorialTag;
+  const visible = ['教程','AI营销'].includes(section) && !$('search').value.trim() && !savedOnly && (section === 'AI营销' || !tutorialTag);
   $('guide-heading').hidden = !visible;
   if (!visible) return;
-  const guides = (data.guides || []).filter(guide => (guide.steps || []).some(step => data.items.some(item => item.id === step.articleId)));
+  const guides = (section === 'AI营销' ? data.aiMarketing?.guides || [] : data.guides || []).filter(guide => !tutorialTag || section !== 'AI营销' || guide.tags?.includes(tutorialTag)).filter(guide => (guide.steps || []).some(step => data.items.some(item => item.id === step.articleId)));
   $('next-guides').hidden = guides.length <= 4;
-  const pages = Math.ceil(guides.length / 4);
-  const start = (guidePage % Math.max(1, pages)) * 4;
-  for (const guide of guides.slice(start, start + 4)) {
+  const start = (guidePage * 4) % Math.max(1, guides.length);
+  const recommendations = Array.from({length: Math.min(4, guides.length)}, (_, i) => guides[(start + i) % guides.length]);
+  for (const guide of recommendations) {
     const panel = el('details', '', 'guide');
     panel.append(el('summary', guide.title), el('p', guide.description));
     const list = el('ol');
@@ -119,20 +119,24 @@ function renderGuides() {
 }
 function renderTutorialFilters() {
   const nav = $('tutorial-filters');
-  nav.hidden = section !== '教程';
+  nav.hidden = !['教程','AI营销'].includes(section);
+  nav.setAttribute('aria-label', section === 'AI营销' ? 'AI营销分类' : '教程主题');
   nav.replaceChildren();
   if (nav.hidden) return;
   const tutorials = data.items.filter(item => item.features?.sections?.includes(section));
-  const names = data.tutorialTags || [...new Set(tutorials.flatMap(item => item.tutorialTags || []))];
-  for (const name of ['全部教程', ...names]) {
-    const count = name === '全部教程' ? tutorials.length : tutorials.filter(item => item.tutorialTags?.includes(name)).length;
-    if (!count) continue;
-    const active = name === '全部教程' ? !tutorialTag : tutorialTag === name;
+  const tagField = section === 'AI营销' ? 'aiTags' : 'tutorialTags';
+  const allLabel = section === 'AI营销' ? '全部应用' : '全部教程';
+  const names = (section === 'AI营销' ? data.aiMarketing?.tags : data.tutorialTags) || [...new Set(tutorials.flatMap(item => item.tutorialTags || []))];
+  for (const name of [allLabel, ...names]) {
+    const count = name === allLabel ? tutorials.length : tutorials.filter(item => item[tagField]?.includes(name)).length;
+    if (!count && section !== 'AI营销') continue;
+    const active = name === allLabel ? !tutorialTag : tutorialTag === name;
     const button = el('button', name, 'topic-button');
     button.type = 'button';
+    button.disabled = count === 0;
     button.setAttribute('aria-pressed', String(active));
     button.append(el('span', String(count), 'topic-count'));
-    button.addEventListener('click', () => { tutorialTag = name === '全部教程' ? '' : name; limit = 12; render(); });
+    button.addEventListener('click', () => { tutorialTag = name === allLabel ? '' : name; guidePage = 0; limit = 12; render(); });
     nav.append(button);
   }
 }
@@ -177,7 +181,7 @@ function render() {
   renderGuides();
   const sort = $('sort').value;
   renderHot();
-  const items = data.items.filter(a => (!savedOnly || saved.has(a.id)) && (!tutorialTag || section !== '教程' || a.tutorialTags?.includes(tutorialTag)));
+  const items = data.items.filter(a => (!savedOnly || saved.has(a.id)) && (!tutorialTag || !['教程','AI营销'].includes(section) || a[section === 'AI营销' ? 'aiTags' : 'tutorialTags']?.includes(tutorialTag)));
   const result = feed(items, { section, query: $('search').value, sort });
   const visible = result.groups.slice(0, limit);
   $('result-count').textContent = `${result.groups.length} 条${visible.length < result.groups.length ? ` · 当前展示 ${visible.length} 条` : ''}`;
@@ -199,6 +203,12 @@ function render() {
     if (eventSources(a).length && a.sourceRole && roleLabels[a.sourceRole]) meta.append(el('span', roleLabels[a.sourceRole]));
     if (sort !== 'collected') meta.append(el('span', `收录 ${day}`));
     const heading = el('h3'); heading.append(internalLink(a.title, a.id));
+    if (section === 'AI营销') for (const tag of a.aiTags || []) {
+      const badge = el('button', tag, 'tutorial-badge');
+      badge.type = 'button';
+      badge.addEventListener('click', () => { tutorialTag = tag; guidePage = 0; limit = 12; render(); });
+      heading.append(badge);
+    }
     if (a.features?.sections?.some(value => value.startsWith('教程'))) for (const tag of a.tutorialTags || []) {
       const badge = el('button', tag, 'tutorial-badge');
       badge.type = 'button'; badge.title = `查看${tag}教程`;
@@ -310,7 +320,7 @@ try {
   $('detail').hidden = !isDetail;
   for (const s of ['', ...data.sections]) {
     const button = el('button', s || '全部'); button.type = 'button'; button.setAttribute('aria-pressed', String(s === section));
-    button.addEventListener('click', () => { section = s; tutorialTag = ''; limit = 12; for (const x of $('filters').children) x.setAttribute('aria-pressed', String(x === button)); render(); });
+    button.addEventListener('click', () => { section = s; tutorialTag = ''; guidePage = 0; limit = 12; for (const x of $('filters').children) x.setAttribute('aria-pressed', String(x === button)); render(); });
     $('filters').append(button);
   }
   $('search').addEventListener('input', () => { limit = 12; render(); });
