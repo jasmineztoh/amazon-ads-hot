@@ -17,6 +17,7 @@ const baseline = { total: content.total, sections: content.sections, featuredUpd
 await fs.cp(source, checkout, {recursive:true, filter: file => !file.endsWith('.test.ts')});
 await fs.copyFile(path.join(root, 'industry/local-sources.json'), path.join(checkout, 'data/sources.json'));
 for (const file of ['app.js','style.css','curation.js']) await fs.copyFile(path.join(preview, file), path.join(checkout, 'public', file));
+await fs.cp(path.join(preview, 'brand'), path.join(checkout, 'public/brand'), {recursive:true});
 const html = await fs.readFile(path.join(preview, 'index.html'), 'utf8');
 const body = html.match(/<body>([\s\S]*?)<\/body>/i)?.[1];
 if (!body || /<script\b/i.test(body)) throw Error('阅读页模板无效');

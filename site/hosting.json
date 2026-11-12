@@ -4,10 +4,10 @@
   "url": "https://amazon-marketing-digest.jasmineztoh.chatgpt.site",
   "audience": "public",
   "contentMode": "curated-public-and-owner-candidates",
-  "deploymentId": "appgdep_6af414c291ac81918980f3b933c2266f",
-  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_03dcff5fa3408191a48f37829c8406bb",
-  "sourceCommit": "66d5f3a48d4014dba065c07c73939a7447f286ab",
-  "deployedAt": "2026-11-11T07:10:01.421803+00:00",
+  "deploymentId": "appgdep_6af53661cf34819190dac60dc7fb72e5",
+  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_1cf8fc3e601081918f4d14fcfe07a494",
+  "sourceCommit": "ad1f0091fd594013c978e3e6571c36c90754cda7",
+  "deployedAt": "2026-11-12T03:45:45.474425+00:00",
   "verified": {
     "deploymentStatus": "succeeded",
     "localBaselineArticles": 92,
@@ -50,6 +50,9 @@
       },
       "questions": 12
     },
-    "aiMarketingBrowserChecked": false
+    "aiMarketingBrowserChecked": false,
+    "localBrandUiChecked": true,
+    "liveBrandUiChecked": false,
+    "liveBrandUiCheckIssue": "公开部署成功；当前浏览器访问超时，直接 HTTP 返回 403，待外部浏览器核对"
   }
 }
