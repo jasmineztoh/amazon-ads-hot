@@ -1,5 +1,7 @@
 // Adapted from AIHOT packages/backend/src/events/hot.ts at upstream e7dba13.
-// Same 48h evidence window, 24h half-life, participant deduplication and 10x scale.
+// Keep the original participant deduplication and 10x scale, with a longer window for this market.
+export const HOT_WINDOW_DAYS = 7;
+export const HOT_HALF_LIFE_HOURS = 72;
 export type Assessment = {
   eventId: string | null; eventTitle: string; kind: 'event' | 'evergreen';
   sourceTime: string | null; participant: string; sourceName: string; url: string;
@@ -12,7 +14,7 @@ export function rankHot(items: HotArticle[], now = Date.now()) {
   for (const item of items) {
     const a = item.assessment, at = Date.parse(a?.sourceTime || '');
     if (!item.collectionApproved || !a || a.kind !== 'event' || !a.eventId ||
-      !Number.isFinite(at) || at > now || at <= now - 48 * 3600_000) continue;
+      !Number.isFinite(at) || at > now || at <= now - HOT_WINDOW_DAYS * 24 * 3600_000) continue;
     events.set(a.eventId, [...(events.get(a.eventId) || []), item]);
   }
   return [...events].flatMap(([eventId, reports]) => {
@@ -23,7 +25,7 @@ export function rankHot(items: HotArticle[], now = Date.now()) {
     }
     if (participants.size < 2) return [];
     const heat = Math.round([...participants.values()].reduce((sum, item) =>
-      sum + 0.5 ** ((now - Date.parse(item.assessment!.sourceTime!)) / 3600_000 / 24), 0) * 100) / 10;
+      sum + 0.5 ** ((now - Date.parse(item.assessment!.sourceTime!)) / 3600_000 / HOT_HALF_LIFE_HOURS), 0) * 100) / 10;
     const representative = [...reports].sort((a,b) => Number(b.sourceRole==='official') - Number(a.sourceRole==='official') || b.assessment!.score - a.assessment!.score || a.id.localeCompare(b.id))[0];
     return [{ eventId, itemId: representative.id, title: representative.assessment!.eventTitle,
       heat, score: representative.assessment!.score, latestAt: Math.max(...reports.map(x => Date.parse(x.assessment!.sourceTime!))),

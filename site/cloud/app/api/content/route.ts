@@ -1,7 +1,7 @@
 import aiMarketing from '@/data/ai-marketing.json';
 import { applyAiMarketing } from '@/lib/ai-marketing';
 import baseline from '@/data/baseline.json';
-import { rankHot, type HotArticle } from '@/lib/hot-ranking';
+import { HOT_WINDOW_DAYS, rankHot, type HotArticle } from '@/lib/hot-ranking';
 import { digestKey, readJson, type Digest, type DigestItem } from '@/lib/daily-store';
 
 export const dynamic = 'force-dynamic';
@@ -24,7 +24,7 @@ export async function GET() {
   return Response.json({
     aiMarketing,
     total: items.length,
-    hot: { computedAt: new Date().toISOString(), entries: rankHot(items as HotArticle[]) },
+    hot: { computedAt: new Date().toISOString(), windowDays: HOT_WINDOW_DAYS, entries: rankHot(items as HotArticle[]) },
     sections: baseline.sections,
     guides: baseline.guides,
     tutorialTags: baseline.tutorialTags,

@@ -43,6 +43,12 @@ const dateText = value => {
   if (Number.isNaN(parsed.valueOf())) return '未知';
   return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(parsed);
 };
+const collectionTimeText = value => {
+  if (!value || !/T\d{2}:\d{2}/.test(value)) return null;
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.valueOf())) return null;
+  return new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(parsed);
+};
 function updateNote() {
   const featured = data.featuredUpdatedAt || null;
   $('collection-note').textContent = `${data.total} 篇已收录 · 精选更新至 ${dateText(featured)}`;
@@ -146,11 +152,14 @@ function renderHot() {
   if (block.hidden) return;
   const hot = data.hot?.entries || [];
   $('hot-items').replaceChildren();
+  const days = data.hot?.windowDays || 7;
+  $('hot-note').textContent = `近 ${days} 天 · 多来源事件`;
   if (!hot.length) {
-    block.hidden = true;
+    $('hot-items').append(el('li', `近 ${days} 天暂无两家以上独立来源报道的同一事件。新收录内容见下方时间线。`, 'hot-empty'));
+    $('hot-more').hidden = true;
+    block.classList.remove('expanded');
     return;
   }
-  $('hot-note').textContent = '近 48 小时';
   block.classList.toggle('expanded',hotExpanded);
   $('hot-more').hidden = hot.length<=3;
   $('hot-more').textContent = hotExpanded ? '收起 ↑' : '完整榜单 →';
@@ -171,7 +180,7 @@ function renderHot() {
     const value = el('span', `${item.score} AI价值`, 'hot-value');
     value.title='DeepSeek独立评分两次的平均分，满分100';
     const heat = el('span', `${Math.round(item.heat)} 热度`, 'hot-heat');
-    heat.title='48小时内每个参与方计一次，24小时半衰期';
+    heat.title=`近${days}天每个参与方计一次，72小时半衰期`;
     row.append(el('span',String(index+1),'hot-rank'),title,faces,value,heat);
     $('hot-items').append(row);
   }
@@ -197,6 +206,13 @@ function render() {
       lastDay = day;
     }
     const item = el('article', '', sort === 'collected' ? 'article timeline-entry' : 'article'); item.dataset.id = a.id;
+    if (sort === 'collected') {
+      const clock = collectionTimeText(a.collectedAt);
+      const time = el(clock ? 'time' : 'span', clock || '未记录', 'collection-time');
+      if (clock) time.dateTime = a.collectedAt;
+      else time.title = '未记录具体收录时刻';
+      item.append(time);
+    }
     const meta = el('div', '', 'meta');
     if (a.assessment) meta.append(el('span', `${a.assessment.score} AI价值`, 'score'));
     meta.append(el('span', a.sourceName, 'source'), el('span', `原文 ${dateText(a.publishedAt)}`));
