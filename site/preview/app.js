@@ -12,7 +12,7 @@ const internalLink = (text, id) => {
   a.href = `/items/${encodeURIComponent(id)}`;
   a.addEventListener('click', () => {
     if (!currentId()) {
-      try { sessionStorage.setItem('amazon-marketing-list', JSON.stringify({ section, tutorialTag, query: $('search').value, sort: $('sort').value, savedOnly, limit })); } catch {}
+      try { sessionStorage.setItem('amazon-marketing-list', JSON.stringify({ section, tutorialTag, query: $('search').value, sort: $('sort').value, savedOnly, limit, collapsedDays: [...collapsedDays] })); } catch {}
     }
   });
   return a;
@@ -35,7 +35,7 @@ try {
 let data, section = '', limit = 12, hosted = false, savedOnly = false;
 let tutorialTag = '';
 let eventMembers = new Map();
-let canUpdate = false, guidePage = 0, hotExpanded = false;
+let canUpdate = false, guidePage = 0, hotExpanded = false, collapsedDays = new Set();
 const dateText = value => {
   if (!value) return '未知';
   if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
@@ -196,13 +196,38 @@ function render() {
   $('result-count').textContent = `${result.groups.length} 条${visible.length < result.groups.length ? ` · 当前展示 ${visible.length} 条` : ''}`;
   $('articles').replaceChildren();
   if (!visible.length) $('articles').append(el('p', savedOnly ? '没有找到收藏内容。' : '没有找到相关内容，试试其它关键词或栏目。', 'empty'));
-  let lastDay = null;
+  let lastDay = null, dayItems = null;
   for (const { article: a } of visible) {
     const day = dateText(a.collectedAt);
     if (sort === 'collected' && day !== lastDay) {
-      const heading = el('h3', day === '未知' ? '收录日期未记录' : `${day} · 收录`, 'date-heading');
-      if (day !== '未知') { const time = el('time'); time.dateTime = day; heading.replaceChildren(time); time.textContent = `${day} · 收录`; }
-      $('articles').append(heading);
+      const heading = el('h3', '', 'date-heading');
+      heading.setAttribute('aria-label', day === '未知' ? '收录日期未记录' : `${day} · 收录`);
+      const toggle = el('button', '', 'date-toggle');
+      const expanded = !collapsedDays.has(day);
+      const contentId = `date-items-${day}`;
+      toggle.type = 'button';
+      toggle.setAttribute('aria-controls', contentId);
+      toggle.setAttribute('aria-expanded', String(expanded));
+      toggle.setAttribute('aria-label', `${expanded ? '收起' : '展开'}${day === '未知' ? '收录日期未记录的文章' : `${day}收录的文章`}`);
+      if (day === '未知') toggle.append(el('span', '收录日期未记录'));
+      else {
+        const time = el('time', day); time.dateTime = day;
+        toggle.append(time, el('span', '· 收录', 'date-kind'));
+      }
+      toggle.append(el('span', '', 'date-chevron'));
+      const group = el('div', '', 'date-items');
+      group.id = contentId;
+      group.hidden = !expanded;
+      dayItems = group;
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', `${open ? '收起' : '展开'}${day === '未知' ? '收录日期未记录的文章' : `${day}收录的文章`}`);
+        group.hidden = !open;
+        if (open) collapsedDays.delete(day); else collapsedDays.add(day);
+      });
+      heading.append(toggle);
+      $('articles').append(heading, group);
       lastDay = day;
     }
     const item = el('article', '', sort === 'collected' ? 'article timeline-entry' : 'article'); item.dataset.id = a.id;
@@ -240,7 +265,7 @@ function render() {
     bottom.append(tags, actions); item.append(bottom);
     const sources = sourcesBlock(a);
     if (sources) item.append(sources);
-    $('articles').append(item);
+    (sort === 'collected' ? dayItems : $('articles')).append(item);
   }
   $('more').hidden = visible.length >= result.groups.length;
 }
@@ -327,6 +352,7 @@ try {
       if (['collected', 'recommended', 'date'].includes(state.sort)) $('sort').value = state.sort;
       savedOnly = state.savedOnly === true;
       if (Number.isInteger(state.limit) && state.limit > 0) limit = state.limit;
+      if (Array.isArray(state.collapsedDays)) collapsedDays = new Set(state.collapsedDays.filter(day => typeof day === 'string'));
       $('saved-filter').setAttribute('aria-pressed', String(savedOnly));
       if (location.search) history.replaceState(null, '', '/');
     } catch {}

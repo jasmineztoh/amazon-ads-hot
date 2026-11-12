@@ -4,10 +4,10 @@
   "url": "https://amazon-marketing-digest.jasmineztoh.chatgpt.site",
   "audience": "public",
   "contentMode": "curated-public-and-owner-candidates",
-  "deploymentId": "appgdep_6af53a76635481918647f3b7092e9938",
-  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_6399f3ba4cec81919222817eed65f83b",
-  "sourceCommit": "fd9152df0347085ccbe3af08466e2cc566f01131",
-  "deployedAt": "2026-11-12T04:03:09.593724+00:00",
+  "deploymentId": "appgdep_6af53e9d1ca88191933435f1efad5467",
+  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_c0c06cbee48c8191aa823b356f541b00",
+  "sourceCommit": "c529f9eb726eec8f5598bf0d5c6674ab23359442",
+  "deployedAt": "2026-11-12T04:20:52.818698+00:00",
   "verified": {
     "deploymentStatus": "succeeded",
     "localBaselineArticles": 92,
@@ -57,6 +57,8 @@
     "hotWindowDays": 7,
     "liveHotEntries": 1,
     "liveHotCheckedAt": "2026-11-12T04:03:17.538Z",
-    "timelineClockLocalChecked": true
+    "timelineClockLocalChecked": true,
+    "dateCollapseLocalChecked": true,
+    "tutorialAndAiStyleLocalChecked": true
   }
 }
