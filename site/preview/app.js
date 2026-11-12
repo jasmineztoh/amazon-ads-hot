@@ -185,11 +185,37 @@ function renderHot() {
     $('hot-items').append(row);
   }
 }
+function renderIndustryOverview() {
+  const block = $('industry-overview');
+  block.hidden = section !== '行业动态' || !!$('search').value.trim() || savedOnly;
+  if (block.hidden) return;
+  const today = dateText(new Date().toISOString());
+  const from = Date.parse(`${today}T00:00:00+08:00`) - 2 * 86_400_000;
+  const recent = data.items.filter(item => item.collectionApproved && item.features?.sections?.includes('行业动态') && item.collectedAt && new Date(item.collectedAt).getTime() >= from);
+  const groups = feed(recent, { section: '行业动态', sort: 'collected' }).groups;
+  $('overview-items').replaceChildren();
+  if (!groups.length) {
+    $('overview-lead').textContent = '近 3 天暂无新收录的行业动态。';
+    return;
+  }
+  const ranked = [...groups].sort((a, b) => (b.article.assessment?.score || 0) - (a.article.assessment?.score || 0) || (b.article.collectedAt || '').localeCompare(a.article.collectedAt || ''));
+  const selected = ranked.slice(0, 5);
+  $('overview-lead').textContent = `近 3 天收录 ${recent.length} 篇行业动态，以下是值得先看的 ${selected.length} 件事。`;
+  for (const { article } of selected) {
+    const row = el('li', '', 'overview-row');
+    const heading = el('div', '', 'overview-row-heading');
+    heading.append(internalLink(article.title, article.id), el('span', `原文 ${dateText(article.publishedAt)} · ${article.sourceName}`, 'overview-meta'));
+    row.append(heading, el('p', article.summary || '查看站内详情了解具体内容。', 'overview-summary'));
+    if (article.reason) row.append(el('p', `值得读：${article.reason}`, 'overview-reason'));
+    $('overview-items').append(row);
+  }
+}
 function render() {
   renderTutorialFilters();
   renderGuides();
   const sort = $('sort').value;
   renderHot();
+  renderIndustryOverview();
   const items = data.items.filter(a => (!savedOnly || saved.has(a.id)) && (!tutorialTag || !['教程','AI营销'].includes(section) || a[section === 'AI营销' ? 'aiTags' : 'tutorialTags']?.includes(tutorialTag)));
   const result = feed(items, { section, query: $('search').value, sort });
   const visible = result.groups.slice(0, limit);
@@ -375,7 +401,7 @@ try {
     try {
       const next = await readContent(), changed = next.revision !== data.revision;
       data = next; if (changed) indexEvents(); updateNote(); if (changed) { if (isDetail) renderDetail(); else render(); }
-      if (!isDetail && !changed) renderHot();
+      if (!isDetail && !changed) { renderHot(); renderIndustryOverview(); }
     } catch { /* 暂时读取失败时保留当前内容。 */ }
   }, 60_000);
 } catch {
