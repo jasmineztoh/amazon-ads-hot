@@ -4,10 +4,10 @@
   "url": "https://amazon-marketing-digest.jasmineztoh.chatgpt.site",
   "audience": "public",
   "contentMode": "curated-public-and-owner-candidates",
-  "deploymentId": "appgdep_6af53e9d1ca88191933435f1efad5467",
-  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_c0c06cbee48c8191aa823b356f541b00",
-  "sourceCommit": "c529f9eb726eec8f5598bf0d5c6674ab23359442",
-  "deployedAt": "2026-11-12T04:20:52.818698+00:00",
+  "deploymentId": "appgdep_6af56779477081919df3cb27bd10060b",
+  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_69cd1f15e14c8191856e3b8e5e0af5e5",
+  "sourceCommit": "d5055d1772e72b9823ed52b5f00b5e7ec1d85378",
+  "deployedAt": "2026-11-12T07:15:13.748917+00:00",
   "verified": {
     "deploymentStatus": "succeeded",
     "localBaselineArticles": 92,
@@ -59,6 +59,9 @@
     "liveHotCheckedAt": "2026-11-12T04:03:17.538Z",
     "timelineClockLocalChecked": true,
     "dateCollapseLocalChecked": true,
-    "tutorialAndAiStyleLocalChecked": true
+    "tutorialAndAiStyleLocalChecked": true,
+    "industryOverviewLocalChecked": true,
+    "industryOverviewLocalData": "近三天无新收录，已验证空状态；线上动态内容未直接读取",
+    "industryOverviewDeploymentStatus": "succeeded"
   }
 }
