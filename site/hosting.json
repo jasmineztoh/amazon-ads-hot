@@ -4,10 +4,10 @@
   "url": "https://amazon-marketing-digest.jasmineztoh.chatgpt.site",
   "audience": "public",
   "contentMode": "curated-public-and-owner-candidates",
-  "deploymentId": "appgdep_6af56779477081919df3cb27bd10060b",
-  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_69cd1f15e14c8191856e3b8e5e0af5e5",
-  "sourceCommit": "d5055d1772e72b9823ed52b5f00b5e7ec1d85378",
-  "deployedAt": "2026-11-12T07:15:13.748917+00:00",
+  "deploymentId": "appgdep_6afc123a9320819189439d3ceaa301c0",
+  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_234420b79e1881918e992ec6bcd6a72b",
+  "sourceCommit": "17405794e069d98eb77f3513ce93bea2c8c47772",
+  "deployedAt": "2026-11-17T08:37:27.041615+00:00",
   "verified": {
     "deploymentStatus": "succeeded",
     "localBaselineArticles": 92,
@@ -56,12 +56,16 @@
     "liveBrandUiCheckIssue": "公开部署成功；当前浏览器访问超时，直接 HTTP 返回 403，待外部浏览器核对",
     "hotWindowDays": 7,
     "liveHotEntries": 1,
-    "liveHotCheckedAt": "2026-11-12T04:03:17.538Z",
+    "liveHotCheckedAt": "2026-11-17T08:37:59.845Z",
     "timelineClockLocalChecked": true,
     "dateCollapseLocalChecked": true,
     "tutorialAndAiStyleLocalChecked": true,
     "industryOverviewLocalChecked": true,
     "industryOverviewLocalData": "近三天无新收录，已验证空状态；线上动态内容未直接读取",
-    "industryOverviewDeploymentStatus": "succeeded"
+    "industryOverviewDeploymentStatus": "succeeded",
+    "liveTotal": 120,
+    "liveScoredCount": 18,
+    "liveHotCount": 5,
+    "timelineBrowserVerified": false
   }
 }
