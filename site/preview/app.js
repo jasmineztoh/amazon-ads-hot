@@ -1,6 +1,13 @@
 import { feed } from '/curation.js';
 
 const $ = id => document.getElementById(id);
+function syncTimelineRail() {
+  const list = $('articles'), marker = list.querySelector('.date-marker');
+  if (!marker) { list.style.removeProperty('--timeline-start'); return; }
+  const dot = marker.getBoundingClientRect(), container = list.getBoundingClientRect();
+  list.style.setProperty('--timeline-start', `${dot.top + dot.height / 2 - container.top}px`);
+}
+new ResizeObserver(syncTimelineRail).observe($('articles'));
 const el = (tag, text, className) => {
   const node = document.createElement(tag);
   if (text) node.textContent = text;
@@ -255,7 +262,9 @@ function render() {
         group.hidden = !open;
         if (open) collapsedDays.delete(day); else collapsedDays.add(day);
       });
-      heading.append(toggle);
+      const marker = el('span', '', 'date-marker');
+      marker.setAttribute('aria-hidden', 'true');
+      heading.append(marker, toggle);
       $('articles').append(heading, group);
       lastDay = day;
     }
@@ -297,6 +306,7 @@ function render() {
     (sort === 'collected' ? dayItems : $('articles')).append(item);
   }
   $('more').hidden = visible.length >= result.groups.length;
+  syncTimelineRail();
 }
 function renderDetail() {
   const id = currentId();
