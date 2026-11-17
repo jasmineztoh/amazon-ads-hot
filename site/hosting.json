@@ -4,18 +4,18 @@
   "url": "https://amazon-marketing-digest.jasmineztoh.chatgpt.site",
   "audience": "public",
   "contentMode": "curated-public-and-owner-candidates",
-  "deploymentId": "appgdep_6afc123a9320819189439d3ceaa301c0",
-  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_234420b79e1881918e992ec6bcd6a72b",
-  "sourceCommit": "17405794e069d98eb77f3513ce93bea2c8c47772",
-  "deployedAt": "2026-11-17T08:37:27.041615+00:00",
+  "deploymentId": "appgdep_6afc1b7d5c708191a9f95c8ba6659420",
+  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_cdf740c0cea88191863df728dcd4bee8",
+  "sourceCommit": "505c69861a8a8285382066827542ff57e0b79332",
+  "deployedAt": "2026-11-17T09:16:56.680963+00:00",
   "verified": {
     "deploymentStatus": "succeeded",
     "localBaselineArticles": 92,
     "localGuideCount": 8,
     "liveContentChecked": false,
     "liveCheckIssue": "线上MCP执行读者内容接口处理函数，已核对真实榜单和评分；直接HTTP返回403，浏览器检查超时",
-    "dailySchedule": "Automation_66846bb2f74c8191b931297be7c5ca4b",
-    "firstScheduledRun": "2026-11-07 08:30 Asia/Shanghai",
+    "dailySchedule": "Automation_3d47d37d6c288191a7362f08115cfef4",
+    "firstScheduledRun": "2026-11-18 08:30 Asia/Shanghai",
     "scheduledExecutionVerified": false,
     "firstScheduledRunReportedAt": "2026-11-07 08:40 Asia/Shanghai",
     "scheduledExecutionEvidence": "任务会话报告了执行；部署时没有逐阶段运行日志，故仍不标为独立验证",
@@ -56,7 +56,7 @@
     "liveBrandUiCheckIssue": "公开部署成功；当前浏览器访问超时，直接 HTTP 返回 403，待外部浏览器核对",
     "hotWindowDays": 7,
     "liveHotEntries": 1,
-    "liveHotCheckedAt": "2026-11-17T08:37:59.845Z",
+    "liveHotCheckedAt": "2026-11-17T09:18:17.632Z",
     "timelineClockLocalChecked": true,
     "dateCollapseLocalChecked": true,
     "tutorialAndAiStyleLocalChecked": true,
@@ -66,6 +66,7 @@
     "liveTotal": 120,
     "liveScoredCount": 18,
     "liveHotCount": 5,
-    "timelineBrowserVerified": false
+    "timelineBrowserVerified": false,
+    "firstDateRailCapPublished": true
   }
 }
