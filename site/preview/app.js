@@ -164,7 +164,7 @@ function renderHot() {
     return;
   }
   block.classList.toggle('expanded',hotExpanded);
-  $('hot-more').hidden = hot.length<=3;
+  $('hot-more').hidden = hot.length<=5;
   $('hot-more').textContent = hotExpanded ? '收起 ↑' : '完整榜单 →';
   $('hot-more').setAttribute('aria-expanded', String(hotExpanded));
   $('hot-more').onclick = () => { hotExpanded=!hotExpanded; renderHot(); };
