@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { XMLParser } from 'fast-xml-parser';
 import configured from '../data/sources.json';
-import { batchKey, readJson, type Batch, type Candidate, writeJson } from './daily-store';
+import { batchKey, readJson, recentCandidates, type Batch, type Candidate, writeJson } from './daily-store';
 
 type Source = {
   id: string; name: string; kind: 'rss' | 'web_list' | 'amazon_updates'; url: string;
@@ -156,7 +156,10 @@ export async function refreshBatch(batchNumber: number): Promise<Batch> {
       return { check: { id: source.id, name: source.name, count: all.length, error: null }, items: selectRecent(all, source) };
     } catch (error) { return { check: { id: source.id, name: source.name, count: 0, error: String((error as Error).message).slice(0, 180) }, items: [] as Candidate[] }; }
   }));
-  const batch = { checkedAt: now, sources: results.map(x => x.check), items: results.flatMap(x => x.items) };
+  // Keep discovered links until their intake window expires; a later list refresh
+  // must not discard an article while it is being verified or scored.
+  const pending = { checkedAt: now, sources: [], items: [...results.flatMap(x => x.items), ...(previous?.items || [])] };
+  const batch = { checkedAt: now, sources: results.map(x => x.check), items: recentCandidates([pending], Number.MAX_SAFE_INTEGER) };
   await writeJson(batchKey(batchNumber), batch);
   return batch;
 }

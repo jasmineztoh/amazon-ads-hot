@@ -57,11 +57,12 @@ const collectionTimeText = value => {
   return new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(parsed);
 };
 function updateNote() {
-  const featured = data.featuredUpdatedAt || null;
-  $('collection-note').textContent = `${data.total} 篇已收录 · 精选更新至 ${dateText(featured)}`;
+  const articles = data.items.filter(item => !section || item.features?.sections?.includes(section));
+  const featured = articles.map(item=>item.collectedAt||'').sort().at(-1) || null;
+  $('collection-note').textContent = `${section || '全部'} · ${articles.length} 篇 · 最近收录 ${dateText(featured)}`;
   const age = Date.now() - Date.parse(featured || '');
   $('update-note').textContent = Number.isFinite(age) && age > 36 * 3600_000
-    ? '超过 36 小时没有新收录，内容更新可能延迟。'
+    ? '本栏目超过 36 小时没有新收录，内容更新可能延迟。'
     : '公开内容已整理；具体适用条件请结合原文核对。';
 }
 function bookmark(article) {
@@ -221,6 +222,7 @@ function renderIndustryOverview() {
   }
 }
 function render() {
+  updateNote();
   renderTutorialFilters();
   renderGuides();
   const sort = $('sort').value;

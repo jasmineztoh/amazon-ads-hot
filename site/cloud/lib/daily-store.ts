@@ -26,7 +26,7 @@ export type DigestItem = {
   reason?: string;
   sourceRole?: string;
   tutorialTags?: string[];
-  updatedAt: null;
+  updatedAt: string | null;
   summary: string;
   points: string[];
   materialNote: string;
@@ -96,5 +96,6 @@ export function recentCandidates(batches: Batch[], limit = 40): Candidate[] {
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
-  }).sort((a, b) => (b.publishedAt || b.capturedAt).localeCompare(a.publishedAt || a.capturedAt)).slice(0, limit);
+  }).sort((a, b) => Number(!!b.publishedAt) - Number(!!a.publishedAt) ||
+    (b.publishedAt || b.capturedAt).localeCompare(a.publishedAt || a.capturedAt)).slice(0, limit);
 }
