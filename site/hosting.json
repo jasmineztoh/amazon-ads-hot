@@ -4,10 +4,10 @@
   "url": "https://amazon-marketing-digest.jasmineztoh.chatgpt.site",
   "audience": "public",
   "contentMode": "curated-public-and-owner-candidates",
-  "deploymentId": "appgdep_6afc1b7d5c708191a9f95c8ba6659420",
-  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_cdf740c0cea88191863df728dcd4bee8",
-  "sourceCommit": "505c69861a8a8285382066827542ff57e0b79332",
-  "deployedAt": "2026-11-17T09:16:56.680963+00:00",
+  "deploymentId": "appgdep_6afc216ec2788191b7a3bdade030d412",
+  "versionId": "appgprj_6ae3019c6b588191b973803a2593165f~appgver_bdc4043bfd8c819192276cad27394e67",
+  "sourceCommit": "a5718ac031870c355042dc40ae7d28d982641f23",
+  "deployedAt": "2026-11-17T09:42:17.963171+00:00",
   "verified": {
     "deploymentStatus": "succeeded",
     "localBaselineArticles": 92,
@@ -67,6 +67,10 @@
     "liveScoredCount": 18,
     "liveHotCount": 5,
     "timelineBrowserVerified": false,
-    "firstDateRailCapPublished": true
+    "firstDateRailCapPublished": true,
+    "timelineDesktopBrowserVerified": true,
+    "timelineMobileBrowserVerified": false,
+    "timelineDesktopBrowserRun": "https://agent.tinyfish.ai/runs/60bfbd65-37c9-4ed6-9250-985093a67664",
+    "timelineBrowserCheckIssue": "TinyFish不支持手机视口测试，且不导出截图URL；桌面检查报告通过"
   }
 }
