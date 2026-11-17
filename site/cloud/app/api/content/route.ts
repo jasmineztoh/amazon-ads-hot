@@ -14,6 +14,7 @@ export async function GET() {
     digest = await readJson<Digest>(digestKey, digest);
   } catch (error) {
     console.error('Could not read cloud digest', error);
+    return Response.json({ error: '云端内容暂时无法读取，请稍后重试' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
   }
 
   const byUrl = new Map<string, Content['items'][number] | DigestItem>();

@@ -1,5 +1,4 @@
-// Adapted from AIHOT packages/backend/src/events/hot.ts at upstream e7dba13.
-// Keep the original participant deduplication and 10x scale, with a longer window for this market.
+// Weekly editorial ranking; coverage is evidence, not a prerequisite for inclusion.
 export const HOT_WINDOW_DAYS = 7;
 export const HOT_HALF_LIFE_HOURS = 72;
 export type Assessment = {
@@ -8,30 +7,33 @@ export type Assessment = {
   score: number; scores: [number, number]; model: string; promptVersion: string;
   bodyHash: string; assessedAt: string; receipts: string[];
 };
-export type HotArticle = { id: string; title: string; url: string; collectionApproved: boolean; sourceRole?: string; assessment?: Assessment };
+
+export type HotArticle = { id: string; title: string; url: string; publishedAt?: string; collectionApproved: boolean; sourceName?: string; sourceRole?: string; features?: { eventGroup?: string }; assessment?: Assessment };
 export function rankHot(items: HotArticle[], now = Date.now()) {
   const events = new Map<string, HotArticle[]>();
+  const published = (item: HotArticle) => Date.parse(item.assessment?.sourceTime || item.publishedAt || '');
   for (const item of items) {
-    const a = item.assessment, at = Date.parse(a?.sourceTime || '');
-    if (!item.collectionApproved || !a || a.kind !== 'event' || !a.eventId ||
-      !Number.isFinite(at) || at > now || at <= now - HOT_WINDOW_DAYS * 24 * 3600_000) continue;
-    events.set(a.eventId, [...(events.get(a.eventId) || []), item]);
+    const at = published(item);
+    if (!item.collectionApproved || !Number.isFinite(at) || at > now || at <= now - HOT_WINDOW_DAYS * 86400_000) continue;
+    const key = item.assessment?.eventId || item.features?.eventGroup || item.url.replace(/\?.*$/, '').replace(/\/$/, '');
+    events.set(key, [...(events.get(key) || []), item]);
   }
-  return [...events].flatMap(([eventId, reports]) => {
+  return [...events].map(([eventId, reports]) => {
     const participants = new Map<string, HotArticle>();
     for (const item of reports) {
-      const a = item.assessment!, previous = participants.get(a.participant)?.assessment;
-      if (!previous || Date.parse(a.sourceTime!) > Date.parse(previous.sourceTime!)) participants.set(a.participant, item);
+      const key = item.assessment?.participant || new URL(item.url).hostname.replace(/^www\./, '');
+      const previous = participants.get(key);
+      if (!previous || published(item) > published(previous)) participants.set(key, item);
     }
-    if (participants.size < 2) return [];
-    const heat = Math.round([...participants.values()].reduce((sum, item) =>
-      sum + 0.5 ** ((now - Date.parse(item.assessment!.sourceTime!)) / 3600_000 / HOT_HALF_LIFE_HOURS), 0) * 100) / 10;
-    const representative = [...reports].sort((a,b) => Number(b.sourceRole==='official') - Number(a.sourceRole==='official') || b.assessment!.score - a.assessment!.score || a.id.localeCompare(b.id))[0];
-    return [{ eventId, itemId: representative.id, title: representative.assessment!.eventTitle,
-      heat, score: representative.assessment!.score, latestAt: Math.max(...reports.map(x => Date.parse(x.assessment!.sourceTime!))),
-      participants: [...participants.values()].map(x => ({ name: x.assessment!.sourceName, url: x.url })),
-      // Without continuous source clocks, a six-hour arrow would be unverified.
-      trend: 'unknown' as const }];
-  }).sort((a,b) => b.heat - a.heat || b.latestAt - a.latestAt).slice(0,10)
+    const representative = [...reports].sort((a,b) => (b.assessment?.score ?? -1) - (a.assessment?.score ?? -1) ||
+      Number(b.sourceRole === 'official') - Number(a.sourceRole === 'official') || published(b) - published(a) || a.id.localeCompare(b.id))[0];
+    const latestAt = Math.max(...reports.map(published));
+    const score = representative.assessment?.score ?? null;
+    // 70% assessed value, 30% freshness, up to ten points for independent coverage.
+    const heat = Math.round(Math.min(100, (score ?? 0) * .7 + 30 * .5 ** ((now - latestAt) / 3600_000 / HOT_HALF_LIFE_HOURS) + Math.min(10, (participants.size - 1) * 5)));
+    return { eventId, itemId: representative.id, title: representative.title, heat, score, latestAt,
+      participants: [...participants.values()].map(x => ({ name: x.assessment?.sourceName || x.sourceName || new URL(x.url).hostname, url: x.url })),
+      trend: 'unknown' as const };
+  }).sort((a,b) => b.heat - a.heat || b.latestAt - a.latestAt || a.itemId.localeCompare(b.itemId)).slice(0,5)
     .map((entry,index) => ({ ...entry, rank: index + 1 }));
 }

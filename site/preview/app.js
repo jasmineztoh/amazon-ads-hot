@@ -52,7 +52,10 @@ const collectionTimeText = value => {
 function updateNote() {
   const featured = data.featuredUpdatedAt || null;
   $('collection-note').textContent = `${data.total} 篇已收录 · 精选更新至 ${dateText(featured)}`;
-  $('update-note').textContent = '公开内容已整理；具体适用条件请结合原文核对。';
+  const age = Date.now() - Date.parse(featured || '');
+  $('update-note').textContent = Number.isFinite(age) && age > 36 * 3600_000
+    ? '超过 36 小时没有新收录，内容更新可能延迟。'
+    : '公开内容已整理；具体适用条件请结合原文核对。';
 }
 function bookmark(article) {
   const button = el('button', saved.has(article.id) ? '已收藏' : '收藏', 'bookmark');
@@ -153,9 +156,9 @@ function renderHot() {
   const hot = data.hot?.entries || [];
   $('hot-items').replaceChildren();
   const days = data.hot?.windowDays || 7;
-  $('hot-note').textContent = `近 ${days} 天 · 多来源事件`;
+  $('hot-note').textContent = `近 ${days} 天 · 综合排行`;
   if (!hot.length) {
-    $('hot-items').append(el('li', `近 ${days} 天暂无两家以上独立来源报道的同一事件。新收录内容见下方时间线。`, 'hot-empty'));
+    $('hot-items').append(el('li', `近 ${days} 天暂无已核实的新内容，更新恢复后自动生成榜单。`, 'hot-empty'));
     $('hot-more').hidden = true;
     block.classList.remove('expanded');
     return;
@@ -177,10 +180,10 @@ function renderHot() {
       icon.addEventListener('error',()=>icon.remove(),{once:true}); avatar.append(icon); faces.append(avatar);
     }
     if (item.participants.length>4) faces.append(el('span',`+${item.participants.length-4}`,'hot-extra'));
-    const value = el('span', `${item.score} AI价值`, 'hot-value');
+    const value = el('span', item.score == null ? '待评分' : `${item.score} AI价值`, 'hot-value');
     value.title='DeepSeek独立评分两次的平均分，满分100';
     const heat = el('span', `${Math.round(item.heat)} 热度`, 'hot-heat');
-    heat.title=`近${days}天每个参与方计一次，72小时半衰期`;
+    heat.title=`近${days}天按AI价值、发布时间和独立来源覆盖综合排序；不是点击量`;
     row.append(el('span',String(index+1),'hot-rank'),title,faces,value,heat);
     $('hot-items').append(row);
   }
@@ -402,7 +405,7 @@ try {
       const next = await readContent(), changed = next.revision !== data.revision;
       data = next; if (changed) indexEvents(); updateNote(); if (changed) { if (isDetail) renderDetail(); else render(); }
       if (!isDetail && !changed) { renderHot(); renderIndustryOverview(); }
-    } catch { /* 暂时读取失败时保留当前内容。 */ }
+    } catch { $('update-note').textContent = '云端内容读取失败，当前保留上次成功读取的内容。'; }
   }, 60_000);
 } catch {
   $('result-count').textContent = '内容暂时无法读取，请刷新重试。';
