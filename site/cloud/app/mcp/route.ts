@@ -18,7 +18,7 @@ const tools = [
   { name: 'refresh_batch', description: '联网检查已配置的6个左右公开信源，保存最新线索和来源状态。批次为0至6。每日任务传同一个runId以记录运行结果。', inputSchema: { type: 'object', properties: { batch: { type: 'integer', minimum: 0, maximum: 6 }, runId: { type: 'string' } }, required: ['batch'] } },
   { name: 'get_recent', description: '读取近期已采集线索及各来源检查状态，日期缺失的线索须核对原文后再选材。', inputSchema: { type: 'object', properties: { limit: { type: 'integer', minimum: 1, maximum: 80 } } } },
   { name: 'record_verification', description: '记录逐篇原文核实结果与失败原因。每日任务传与信源检查相同的runId。', inputSchema: { type: 'object', properties: { runId: { type: 'string' }, items: { type: 'array', minItems: 1, maxItems: 15, items: { type: 'object', properties: { url: { type: 'string' }, status: { enum: ['verified', 'failed'] }, evidence: { type: 'string' }, error: { type: 'string' } }, required: ['url', 'status'] } } }, required: ['items'] } },
-  { name: 'publish_digest', description: '发布已采集核实的中文文章，可用sections交叉归类；工具或案例可同时提供教程标签。每次最多15条，重试按URL去重；发布后逐栏目验收。每日任务传相同runId。', inputSchema: { type: 'object', properties: { runId: { type: 'string' }, items: { type: 'array', maxItems: 15, items: { type: 'object', properties: { url: { type: 'string' }, title: { type: 'string' }, summary: { type: 'string' }, points: { type: 'array', items: { type: 'string' } }, section: { type: 'string' }, sections: { type: 'array', items: { type: 'string', enum: ['行业动态','教程','案例','工具','AI营销'] }, minItems: 1, maxItems: 5, description: '按内容选择所有相关栏目；不可为了凑更新乱分。' }, reason: { type: 'string' }, materialNote: { type: 'string' }, sourceRole: { enum: ['official','analysis','reprint'] }, eventGroup: { type: 'string', description: '同一事件或通稿共用的稳定标识' }, publishedAt: { type: 'string', description: '原文核实的当地发布日期，最多与信源列表日期相差一天' }, aiTags: { type: 'array', items: { type: 'string', enum: aiMarketing.tags }, maxItems: 4, description: '仅实际使用AI完成亚马逊广告业务任务的文章可进入AI营销，需选择已确认标签。' }, tutorialTags: { type: 'array', items: { type: 'string' }, maxItems: 5 } }, required: ['url', 'title', 'summary', 'points', 'reason', 'materialNote'] } } }, required: ['items'] } },
+  { name: 'publish_digest', description: '发布已采集核实的中文文章，可用sections交叉归类；工具或案例可同时提供教程标签。每次最多15条，重试按URL去重；发布后逐栏目验收。每日任务传相同runId。', inputSchema: { type: 'object', properties: { runId: { type: 'string' }, items: { type: 'array', maxItems: 15, items: { type: 'object', properties: { url: { type: 'string' }, title: { type: 'string' }, summary: { type: 'string' }, points: { type: 'array', items: { type: 'string' } }, section: { type: 'string' }, sections: { type: 'array', items: { type: 'string', enum: ['行业动态','教程','案例','工具','AI营销'] }, minItems: 1, maxItems: 5, description: '按内容选择所有相关栏目；不可为了凑更新乱分。' }, reason: { type: 'string' }, materialNote: { type: 'string' }, sourceRole: { enum: ['official','analysis','reprint'] }, eventGroup: { type: 'string', description: '同一事件或通稿共用的稳定标识' }, publishedAt: { type: 'string', description: '原文核实的当地发布日期，最多与信源列表日期相差一天' }, aiTags: { type: 'array', items: { type: 'string', enum: aiMarketing.tags }, maxItems: 4, description: '仅实际使用AI完成亚马逊广告业务任务的文章可进入AI营销，需选择已确认标签。' }, tutorialTags: { type: 'array', items: { type: 'string', enum: [...allowedTutorialTags] }, maxItems: 5 } }, required: ['url', 'title', 'summary', 'points', 'reason', 'materialNote'] } } }, required: ['items'] } },
   { name: 'get_status', description: '读取全部来源状态、各栏目最近更新、近期条数和更新要求；发布后必须逐栏目回读。', inputSchema: { type: 'object', properties: {} } },
   { name: 'get_run_log', description: '按runId读取信源检查、原文核实、精选发布的运行事件与失败记录。', inputSchema: { type: 'object', properties: { runId: { type: 'string' } }, required: ['runId'] } },
 ];
@@ -71,10 +71,10 @@ async function publish(args: Record<string, unknown>) {
   for (const raw of input) {
     if (!raw || typeof raw !== 'object') throw Error('条目格式错误');
     const x = raw as Record<string, unknown>;
-    const candidate = candidates.get(String(x.url || ''));
+    const previous = byUrl.get(String(x.url || '')) || baseline.items.find(item => item.url === String(x.url || ''));
+    const candidate = candidates.get(String(x.url || '')) || previous;
     if (!candidate) throw Error(`网址不在最近采集结果中: ${String(x.url || '').slice(0, 120)}`);
     if (verified.get(candidate.url) !== 'verified') throw Error('发布前必须在同一runId记录原文核实结果');
-    const previous = byUrl.get(candidate.url) || baseline.items.find(item => item.url === candidate.url);
     const title = String(x.title || '').trim(), summary = String(x.summary || '').trim();
     if (!/[\p{Script=Han}]/u.test(title) || title.length < 8 || summary.length < 30 || summary.length > 1000) throw Error('中文标题或摘要不完整');
     const points = Array.isArray(x.points) ? x.points.filter(p => typeof p === 'string' && p.trim()).slice(0, 5) as string[] : [];
@@ -85,7 +85,7 @@ async function publish(args: Record<string, unknown>) {
     const verifiedAt = String(x.publishedAt || '').slice(0, 10);
     const publishedAt = verifiedAt || listedAt || '';
     const t = Date.parse(publishedAt);
-    if (!Number.isFinite(t) || t > Date.now() + 86_400_000 || t < Date.now() - 60 * 86_400_000) throw Error('发布日期缺失或超出最近60天');
+    if (!Number.isFinite(t) || t > Date.now() + 86_400_000 || (!previous && t < Date.now() - 60 * 86_400_000)) throw Error('发布日期缺失或超出最近60天');
     if (listedAt && verifiedAt && !sourceDateMatches(listedAt, verifiedAt)) throw Error('原文日期与信源列表差异超过一天，先核实来源');
     const {sections, tutorialTags, aiTags} = classify(x, aiMarketing.tags, allowedTutorialTags,
       previous ? {sections:previous.features.sections,aiTags:previous.aiTags,tutorialTags:previous.tutorialTags} : undefined);
@@ -224,7 +224,9 @@ async function call(name: string, args: Record<string, unknown>) {
     return { reader: { aiMarketing: { tags: aiMarketing.tags, counts: Object.fromEntries(aiMarketing.tags.map(tag => [tag, publicContent.items.filter(item => item.aiTags?.includes(tag)).length])), questions: aiMarketing.guides.length }, total: publicContent.total, hot: publicContent.hot, scoredCount: scored.length, scored: scored.slice(0, 20) }, modelReady: modelReady(), configuredSources: sources.length, checkedAt: batches.map(x => x.checkedAt).sort().at(-1) || null,
       checkedSources: batches.flatMap(x => x.sources).length, errors: batches.flatMap(x => x.sources).filter(x => x.error),
       latestCandidates: recentCandidates(batches, 80).length, publishedItems: digest.items.length, publishedAt: digest.updatedAt,
-      sectionStatus: sectionStatus(publicContent.items), updatePolicy };
+      sectionStatus: sectionStatus(publicContent.items),
+      sectionsWithoutRecentItems: sectionStatus(publicContent.items).filter(row=>!row.recentCount).map(row=>row.section),
+      allowedTutorialTags: [...allowedTutorialTags], updatePolicy };
   }
   throw Error('未知工具');
 }
